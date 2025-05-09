@@ -1,0 +1,60 @@
+name: Update References
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # 每周日午夜执行
+  workflow_dispatch: # 允许手动触发
+  push:
+    paths:
+      - "custom/**/*.md" # 当自定义 .md 文件更改时触发
+
+jobs:
+  update-references:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # 获取完整历史以便正确提交
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pyyaml
+
+      - name: Check if custom files changed only
+        id: check_changes
+        run: |
+          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q "^custom/.*\.md$" && \
+             ! git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -v "^custom/.*\.md$" | grep -q ".*"; then
+            echo "custom_only=true" >> $GITHUB_OUTPUT
+          else
+            echo "custom_only=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update references (custom files only)
+        if: github.event_name == 'push' && steps.check_changes.outputs.custom_only == 'true'
+        run: python update_references.py --custom-only
+
+      - name: Update all references
+        if: github.event_name != 'push' || steps.check_changes.outputs.custom_only != 'true'
+        run: python update_references.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add -A
+
+          # 只在有更改时提交
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update references - $(date +%Y-%m-%d)"
+            git push
+          fi
