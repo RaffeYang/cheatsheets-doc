@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/homebrew.md
-Retrieved on: 2025-05-09
+Retrieved on: 2025-05-10
 -->
 
 Homebrew 备忘清单

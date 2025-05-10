@@ -67,17 +67,188 @@ def transform_content(content, transformations=None):
 
 
 def capitalize_filename(filename):
-    """将文件名首字母大写"""
+    """将文件名按照特定规则处理，同时尊重特定技术名称的大小写约定"""
     # 分割路径和文件名
     path, name = os.path.split(filename)
 
-    # 处理文件名（可能包含连字符）
-    parts = name.split("-")
-    capitalized_parts = [p.capitalize() for p in parts]
-    capitalized_name = "-".join(capitalized_parts)
+    # 处理文件扩展名
+    name_parts = name.rsplit(".", 1)
+    base_name = name_parts[0]
+    extension = name_parts[1] if len(name_parts) > 1 else ""
+
+    # 特殊技术名称的大小写映射
+    special_cases = {
+        "swiftui": "SwiftUI",
+        "mysql": "MySQL",
+        "mariadb": "MariaDB",
+        "postgresql": "PostgreSQL",
+        "mongodb": "MongoDB",
+        "redis": "Redis",
+        "latex": "LaTeX",
+        "openssl": "OpenSSL",
+        "javascript": "JavaScript",
+        "typescript": "TypeScript",
+        "nodejs": "Node.js",
+        "nextjs": "Next.js",
+        "reactjs": "React.js",
+        "vuejs": "Vue.js",
+        "angularjs": "AngularJS",
+        "expressjs": "Express.js",
+        "css": "CSS",
+        "html": "HTML",
+        "http": "HTTP",
+        "https": "HTTPS",
+        "json": "JSON",
+        "yaml": "YAML",
+        "xml": "XML",
+        "api": "API",
+        "rest": "REST",
+        "graphql": "GraphQL",
+        "sql": "SQL",
+        "nosql": "NoSQL",
+        "php": "PHP",
+        "ios": "iOS",
+        "macos": "macOS",
+        "linux": "Linux",
+        "unix": "UNIX",
+        "windows": "Windows",
+        "github": "GitHub",
+        "gitlab": "GitLab",
+        "bitbucket": "Bitbucket",
+        "git": "Git",
+        "svn": "SVN",
+        "ssh": "SSH",
+        "ftp": "FTP",
+        "sftp": "SFTP",
+        "tcp": "TCP",
+        "ip": "IP",
+        "dns": "DNS",
+        "url": "URL",
+        "uri": "URI",
+        "jwt": "JWT",
+        "oauth": "OAuth",
+        "saml": "SAML",
+        "ldap": "LDAP",
+        "ui": "UI",
+        "ux": "UX",
+        "cli": "CLI",
+        "gui": "GUI",
+        "sdk": "SDK",
+        "ide": "IDE",
+        "vscode": "VSCode",
+        "intellij": "IntelliJ",
+        "aws": "AWS",
+        "azure": "Azure",
+        "gcp": "GCP",
+        "docker": "Docker",
+        "kubernetes": "Kubernetes",
+        "k8s": "K8s",
+        "nginx": "NGINX",
+        "apache": "Apache",
+        "webpack": "Webpack",
+        "babel": "Babel",
+        "eslint": "ESLint",
+        "prettier": "Prettier",
+        "npm": "npm",
+        "yarn": "Yarn",
+        "pnpm": "pnpm",
+        "pip": "pip",
+        "conda": "Conda",
+        "homebrew": "Homebrew",
+        "apt": "APT",
+        "yum": "YUM",
+        "ffmpeg": "FFmpeg",
+        "iso": "ISO",
+        "ascii": "ASCII",
+        "utf": "UTF",
+        "mime": "MIME",
+        "css3": "CSS3",
+        "html5": "HTML5",
+        "es6": "ES6",
+        "ecmascript": "ECMAScript",
+        "dom": "DOM",
+        "bom": "BOM",
+        "regex": "RegEx",
+        "regexp": "RegExp",
+        "ai": "AI",
+        "ml": "ML",
+        "nlp": "NLP",
+        "cv": "CV",
+        "chatgpt": "ChatGPT",
+        "openai": "OpenAI",
+        "copilot": "Copilot",
+        "stylex": "StyleX",
+        "chakraui": "Chakra UI",
+        "materialui": "Material UI",
+        "tailwindcss": "Tailwind CSS",
+        "bootstrap": "Bootstrap",
+        "sass": "Sass",
+        "scss": "SCSS",
+        "less": "Less",
+        "golang": "Go",
+        "dotnet": ".NET",
+        "csharp": "C#",
+        "fsharp": "F#",
+        "cpp": "C++",
+        "aspnet": "ASP.NET",
+        "webapi": "Web API",
+        "mvc": "MVC",
+        "mvvm": "MVVM",
+        "crud": "CRUD",
+        "restapi": "REST API",
+        "websocket": "WebSocket",
+        "sse": "SSE",
+        "seo": "SEO",
+        "analytics": "Analytics",
+        "cicd": "CI/CD",
+        "devops": "DevOps",
+        "sre": "SRE",
+        "tdd": "TDD",
+        "bdd": "BDD",
+        "ddd": "DDD",
+        "solid": "SOLID",
+        "package.json": "package.json",
+        "tsconfig.json": "tsconfig.json",
+        "webpack.config.js": "webpack.config.js",
+        "babel.config.js": "babel.config.js",
+        "eslintrc": ".eslintrc",
+        "gitignore": ".gitignore",
+        "npmrc": ".npmrc",
+        "dockerignore": ".dockerignore",
+        "editorconfig": ".editorconfig",
+    }
+
+    # 将连字符替换为空格
+    words = base_name.replace("-", " ").split()
+
+    # 处理每个单词，检查特殊情况
+    processed_words = []
+    for word in words:
+        word_lower = word.lower()
+        if word_lower in special_cases:
+            processed_words.append(special_cases[word_lower])
+        else:
+            processed_words.append(word.capitalize())
+
+    # 重新组合文件名
+    new_base_name = " ".join(processed_words)
+
+    # 处理特殊的复合名称
+    for compound, replacement in special_cases.items():
+        if " " in compound:  # 只处理包含空格的复合名称
+            compound_pattern = compound.replace(" ", "").lower()
+            if compound_pattern == new_base_name.replace(" ", "").lower():
+                new_base_name = replacement
+                break
+
+    # 重新组合文件名和扩展名
+    if extension:
+        new_name = f"{new_base_name}.{extension}"
+    else:
+        new_name = new_base_name
 
     # 重新组合路径
-    return os.path.join(path, capitalized_name)
+    return os.path.join(path, new_name)
 
 
 def save_file(content, destination):

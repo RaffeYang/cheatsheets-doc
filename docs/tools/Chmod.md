@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/chmod.md
-Retrieved on: 2025-05-09
+Retrieved on: 2025-05-10
 -->
 
 Chmod 备忘清单

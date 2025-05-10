@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/mime.md
-Retrieved on: 2025-05-09
+Retrieved on: 2025-05-10
 -->
 
 MIME 类型 备忘清单

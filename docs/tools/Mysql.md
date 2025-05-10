@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/mysql.md
-Retrieved on: 2025-05-09
+Retrieved on: 2025-05-10
 -->
 
 MySQL 备忘清单
