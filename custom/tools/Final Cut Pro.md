@@ -1,6 +1,6 @@
-# Final Cut Pro 备忘清单
+Final Cut Pro 备忘清单
 
-## 应用控制 | Application
+### 应用控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|
@@ -14,7 +14,7 @@
 | `Command-,` | Settings | 打开设置窗口 |
 | `Command-Z` | Undo Change | 撤销上一个操作 |
 
-## 编辑操作（部分） | Editing
+### 编辑操作
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|
@@ -98,7 +98,7 @@
 | `Command-Up Arrow` | Select Clip Above | 选择上方片段 |
 | `Command-Down Arrow` | Select Clip Below | 选择下方片段 |
 
-## 效果控制 | Effects
+### 效果控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|
@@ -136,7 +136,7 @@
 | `Command-R` | Show/Hide Retime Editor | 显示/隐藏重定时编辑器 |
 | `Control-Shift-V` | Solo Animation | 视频动画编辑器中独显某效果 |
 
-## 通用操作 | General
+### 通用操作
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|
@@ -153,7 +153,7 @@
 | `Control-R` | Render Selection | 渲染所选项 |
 | `Shift-Command-R` | Reveal in Finder | 在 Finder 中显示 |
 
-## 标记与关键词 | Marking
+### 标记与关键词
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|
@@ -201,7 +201,7 @@
 | `Shift-Command-C` | Transcribe to Captions | 语音转字幕 |
 | `U` | Unrate | 移除评分 |
 
-## 播放与导航 | Playback and Navigation
+### 播放与导航
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|
@@ -235,7 +235,7 @@
 | `Control-Space` | Play/Pause (Text Field) | 播放 / 暂停（文本编辑时） |
 | `Option-Space` | Play from Playhead | 从播放头播放 |
 
-## 视图控制 | View
+### 视图控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|
@@ -267,7 +267,7 @@
 | `Shift-Z` | Zoom to Fit | 缩放以适配 |
 | `Control-Z` | Zoom to Samples | 精确音频采样缩放 |
 
-## 窗口控制 | Window
+### 窗口控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|
@@ -315,7 +315,7 @@
 | `Control-Option-Command-6` | Superimpose | 叠加双眼视图 |
 | `Control-Command-4` | Toggle Inspector Height | 切换检查器高度 |
 
-## 导出与工具 | Share and Tools
+### 导出与工具
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|
@@ -331,7 +331,7 @@
 | `T` | Trim Tool | 修剪工具 |
 | `Z` | Zoom Tool | 缩放工具 |
 
-## 时间线与杂项控制 | Timeline & Miscellaneous
+### 时间线与杂项控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
 |---------------|------------|------------|

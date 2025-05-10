@@ -1,6 +1,6 @@
-# Keynote 备忘清单
+Keynote 备忘清单
 
-## 通用操作 General Actions
+### 通用操作
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 开始语音输入 | Start dictation | Fn-D |
@@ -46,7 +46,7 @@
 | 退出 Keynote | Quit Keynote | ⌘Q |
 | 退出但保留窗口 | Quit Keynote and keep windows open | ⌥⌘Q |
 
-## 文本导航 Text Navigation
+### 文本导航
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 左移一个字符 | Move one character to the left | ← |
@@ -74,7 +74,7 @@
 | 跳转到最后一张幻灯片 | Move to last slide | Fn+→ 或 End |
 | 跳转到指定幻灯片 | Go to specific slide | ⌃⌘G |
 
-## 文本选择 Text Selection
+### 文本选择
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 选择一个或多个字符 | Select one or more characters | 点击并拖动 |
@@ -98,7 +98,7 @@
 | 选择项目符号及其文字 | Select bullet and text | 点击项目符号 |
 | 移动项目符号及其子项 | Move bullet with sub-bullets | 拖动项目符号 |
 
-## 文字格式 Text Formatting
+### 文字格式
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 显示字体窗口 | Show the Fonts window | ⌘T |
@@ -140,7 +140,7 @@
 | 输入特殊字符 | Enter special characters | ⌃⌘空格 |
 | 交换前后字符 | Transpose characters | ⌃T |
 
-## 表格与对象操作 Table and Object Operations
+### 表格与对象操作
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 显示或隐藏对象列表 | Show or hide the object list | ⇧⌘L |
@@ -185,7 +185,7 @@
 | 定义为媒体占位符 | Define as media placeholder | ⌃⌥⌘I |
 | 定义为文本占位符 | Define as text placeholder | ⌃⌥⌘T |
 
-## 演示控制 Presentation Controls
+### 演示控制
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 播放演示文稿 | Play presentation | ⌥⌘P |
@@ -220,7 +220,7 @@
 | 跳转到最后一张幻灯片 | Go to last slide | End 或 Fn+↓ |
 | 排练模式中切换显示器 | Switch displays in rehearsal mode | ⌥X |
 
-## 幻灯片管理 Slide Management
+### 幻灯片管理
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 创建同级新幻灯片 | Create new slide (same level) | Return 或 ⇧⌘N |
@@ -246,7 +246,7 @@
 | 选择第一张幻灯片 | Select first slide | ⌘↑ |
 | 选择最后一张幻灯片 | Select last slide | ⌘↓ |
 
-## 图形编辑 Chart and Shape Editing
+### 图形编辑
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 编辑自定义形状 | Make a custom shape editable | 双击形状边缘 |
@@ -260,7 +260,7 @@
 | 调整平滑曲线 | Reshape smooth point | 拖动相邻线段 |
 | 调整贝塞尔曲线 | Reshape Bézier control | 拖动控制柄 |
 
-## 表格编辑 Table Editing
+### 表格编辑
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 插入公式 | Insert equation | ⌥⌘E |

@@ -1,6 +1,6 @@
-# Ableton Live 备忘清单
+Ableton Live 备忘清单
 
-## 显示与隐藏视图 | Showing and Hiding Views
+### 显示与隐藏视图
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -24,7 +24,7 @@
 | `Cmd,` | Open the Settings | 打开设置 |
 | `Esc` | Close Window/Dialog | 关闭窗口或对话框 |
 
-## 键盘焦点与导航 | Keyboard Focus and Navigation
+### 键盘焦点与导航
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -43,7 +43,7 @@
 | `OptionTab` | Move to Next Neighbor of Current Control | 移动到当前控件右侧控件 |
 | `OptionShiftTab` | Move to Previous Neighbor of Current Control | 移动到当前控件左侧控件 |
 
-## 工程管理 | Working with Sets and the Program
+### 工程管理
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -56,7 +56,7 @@
 | `CmdShiftR` | Export Audio/Video | 导出音频/视频 |
 | `CmdShiftE` | Export MIDI File | 导出 MIDI 文件 |
 
-## 设备与插件操作 | Working with Devices and Plug-Ins
+### 设备与插件操作
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -71,7 +71,7 @@
 | `CmdOptionP` | Show/Hide Plug-In Window | 显示/隐藏插件窗口 |
 | `Cmd` | Open Multiple Windows with Plug-In Button | 打开多个插件窗口 |
 
-## 编辑操作 | Editing
+### 编辑操作
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -89,7 +89,7 @@
 | `Tab` | Move to Next Track/Scene | 重命名时跳转到下一个轨/场景 |
 | `Cmd` | Ignore Grid When Dragging | 拖拽时忽略量化网格 |
 
-## 参数调整 | Adjusting Values
+### 参数调整
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -102,7 +102,7 @@
 | `Esc` | Cancel Entry | 取消输入 |
 | `Enter` | Confirm Entry | 确认输入 |
 
-## 自动化操作 | Breakpoint Envelopes
+### 自动化操作
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -113,7 +113,7 @@
 | `CmdDelete` | Delete Selected Breakpoint Envelope | 删除选中自动化点 |
 | `Cmd` | Ignore Grid When Dragging | 拖拽时忽略量化网格 |
 
-## 循环点与标记 | Loop Brace and Markers
+### 循环点与标记
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -129,7 +129,7 @@
 | `Cmd ← / →` | Shorten/Lengthen Loop | 缩短/延长循环 |
 | `CmdShiftL` | Select Material in Loop | 选中循环区域 |
 
-## 缩放与选择 | Zooming, Display and Selections
+### 缩放与选择
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -144,14 +144,14 @@
 | `Shift Click` | Add Adjacent Items | 添加相邻项目 |
 | `Cmd Click` | Add Nonadjacent Items | 添加非连续项目 |
 
-## Clip 视图编辑模式 | Clip View Editor View Modes
+### Clip 视图编辑模式
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
 | `OptionTab` | Switch Sample/Envelopes Tabs | 切换采样/包络线标签 |
 | `OptionTab` | Switch Notes/Envelopes/MPE Tabs | 切换音符/包络/MPE 标签 |
 
-## Clip 采样编辑器 | Clip View Sample Editor
+### Clip 采样编辑器
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -170,7 +170,7 @@
 | `W` | Fit to View Width | 适应宽度 |
 | `H` | Fit to View Height | 适应高度 |
 
-## MIDI 音符编辑器 | Clip View MIDI Note Editor
+### MIDI 音符编辑器
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -212,7 +212,7 @@
 | `CmdShiftE` | Split Arrangement Clip | 分割剪辑（按时间） |
 | `CmdShiftF` | Show/Hide MIDI Filters | 显示/隐藏 MIDI 过滤器 |
 
-## 网格与绘图模式 | Grid Snapping and Drawing
+### 网格与绘图模式
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -224,7 +224,7 @@
 | `Cmd5` | Fixed/Zoom-Adaptive Grid | 固定/缩放自适应网格 |
 | `Cmd` | Bypass Snapping While Dragging | 拖动时临时取消吸附 |
 
-## 全局量化 | Global Quantization
+### 全局量化
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -234,7 +234,7 @@
 | `Cmd9` | 1-Bar Quantization | 1 小节量化 |
 | `Cmd0` | Quantization Off | 关闭量化 |
 
-## Session 视图 | Session View
+### Session 视图
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -261,7 +261,7 @@
 | `Home` | Jump to First Track of Scene | 跳至当前场景第一轨 |
 | `End` | Jump to Last Track of Scene | 跳至当前场景最后轨 |
 
-## 编曲视图 | Arrangement View
+### 编曲视图
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -301,7 +301,7 @@
 | `Esc` | Jump to Track Title | 跳转轨道标题 |
 | `OptionShiftM` | Focus Mixer | 焦点切换至混音器 |
 
-## 片段合并 | Comping
+### 片段合并
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -312,7 +312,7 @@
 | `CmdD` | Duplicate Take Lane | 复制 Take 轨 |
 | `Cmd ↑ / ↓` | Replace Take | 切换主轨剪辑 |
 
-## 轨道操作 | Track Commands
+### 轨道操作
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -332,7 +332,7 @@
 | `0` | Deactivate Track | 禁用轨道 |
 | `CmdOptionShiftF` | Freeze/Unfreeze Track | 冻结/取消冻结轨道 |
 
-## 传输控制 | Transport
+### 传输控制
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -348,13 +348,13 @@
 | `F1–F8` | Toggle Track 1–8 | 激活/关闭轨道 1–8 |
 | `O` | Toggle Metronome | 开关节拍器 |
 
-## 音频引擎 | Audio Engine
+### 音频引擎
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
 | `CmdOptionShiftE` | Toggle Audio Engine | 打开/关闭音频引擎 |
 
-## 浏览器操作 | Browser
+### 浏览器操作
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -371,7 +371,7 @@
 | `Cmd[` | Browser Back | 浏览器后退 |
 | `Cmd]` | Browser Forward | 浏览器前进 |
 
-## 相似样本替换 | Similar Sample Swapping
+### 相似样本替换
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -381,7 +381,7 @@
 | `Cmd ↓` | Return to Reference | 返回参考样本 |
 | `Option` | Toggle Swap Controls | 暂时启用替换控制 |
 
-## 键盘/MIDI 映射 | Key/MIDI Map Mode
+### 键盘/MIDI 映射
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -391,7 +391,7 @@
 | `X / Z` | Octave Up/Down | 提升/降低音区 |
 | `C / V` | Velocity Up/Down | 调整音符力度 |
 
-## 暂时锁定快捷键 | Momentary Latching Shortcuts
+### 暂时锁定快捷键
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -402,7 +402,7 @@
 | `F1–F8` | Toggle Track 1–8 Activator | 激活/关闭轨道 1–8 |
 | `Tab` | Switch Session/Arrangement | 切换 Session / Arrangement 视图 |
 
-## 通用键盘导航 | General Keyboard Navigation and Workflow
+### 通用键盘导航
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -411,7 +411,7 @@
 | `OptionTab` | Next Control in Mixer | 下一个混音控件 |
 | `OptionShiftTab` | Previous Control in Mixer | 上一个混音控件 |
 
-## 设置菜单导航 | Navigating Settings Menu
+### 设置菜单导航
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -420,7 +420,7 @@
 | `Enter` | Apply Toggle | 确认/切换开关 |
 | `OptionTab / OptionShiftTab` | Navigate Settings Tabs | 切换设置标签页 |
 
-## 访问菜单 | Accessing Menus
+### 访问菜单
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|
@@ -429,7 +429,7 @@
 | `→ / ←` | Switch Menu Column | 切换菜单栏 |
 | `Enter` | Select Menu Item | 选择菜单项 |
 
-## 右键菜单操作 | Using Live’s Context Menu
+### 右键菜单操作
 
 | 快捷键 (Mac) | 操作名称 (英文) | 操作说明 (中文) |
 |---------------|------------------|------------------|

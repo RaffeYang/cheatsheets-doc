@@ -1,6 +1,6 @@
-# Things 备忘清单
+Things 备忘清单
 
-## 创建与编辑
+### 创建与编辑
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 新建待办事项 | New to-do | ⌘ N |
@@ -21,7 +21,7 @@
 | 取消所选项 | Cancel selected item | ⌥⌘ K |
 | 将已完成项移至日志 | Move completed to Logbook | ⇧⌘ Y |
 
-## 选择、移动、日期
+### 选择、移动、日期
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 选择第一个项目 | Select first | ⌥ ↑ |
@@ -53,7 +53,7 @@
 | 截止日期提前一周 | Deadline -1 week | ^⇧ , |
 | 添加重复计划 | Add repetition schedule | ⇧⌘ R |
 
-## 窗口与导航
+### 窗口与导航
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 打开新窗口 | Open new window | ^⌘ N |
@@ -78,7 +78,7 @@
 | 跳至顶部 | Jump to top | fn ← |
 | 跳至底部 | Jump to bottom | fn → |
 
-## 标签、过滤
+### 标签、过滤
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 打开标签窗口 | Open tag window | ^⌘ T |
@@ -90,7 +90,7 @@
 | 打开链接 | Open link | ⌥⌘ Return |
 | 后台打开链接 | Open link in background | ⌘ + 点击 |
 | 标题1：# | Heading 1 | ^⌘ 1 |
-| 标题2：## | Heading 2 | ^⌘ 2 |
+| 标题2：### | Heading 2 | ^⌘ 2 |
 | 斜体：*...* | Italics | ⌘ I |
 | 加粗：**...** | Bold | ⌘ B |
 | 项目符号列表：- ... | Bulleted list | ⇧⌘ L |
@@ -107,7 +107,7 @@
 | 增加缩进（2格） | Increase indent | ⌘ ] |
 | 减少缩进（2格） | Decrease indent | ⌘ [ |
 
-## 项目管理
+### 项目管理
 | 命令（中文） | Command (EN) | Shortcut |
 |---|---|---|
 | 显示/隐藏稍后项目 | Show/Hide later items | ⇧⌘ E |
