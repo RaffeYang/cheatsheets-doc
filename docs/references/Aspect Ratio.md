@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/aspect-ratio.md
-Retrieved on: 2025-05-10
+Retrieved on: 2025-05-12
 -->
 
 Aspect Ratio 备忘清单

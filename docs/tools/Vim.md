@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/vim.md
-Retrieved on: 2025-05-10
+Retrieved on: 2025-05-12
 -->
 
 Vim 备忘清单

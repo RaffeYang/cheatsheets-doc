@@ -216,7 +216,14 @@ def capitalize_filename(filename):
         "npmrc": ".npmrc",
         "dockerignore": ".dockerignore",
         "editorconfig": ".editorconfig",
+        "shapr3d": "Shapr3D",  # 添加 Shapr3D 支持
     }
+
+    # 检查文件名是否已经匹配任何特殊情况的正确大小写
+    for _, correct_case in special_cases.items():
+        if base_name == correct_case:
+            # 如果已经是正确的格式，直接返回原文件名
+            return filename
 
     # 将连字符替换为空格
     words = base_name.replace("-", " ").split()

@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/nginx.md
-Retrieved on: 2025-05-10
+Retrieved on: 2025-05-12
 -->
 
 NGINX 备忘清单
