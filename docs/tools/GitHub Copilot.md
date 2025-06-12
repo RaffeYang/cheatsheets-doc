@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/github-copilot.md
-Retrieved on: 2025-05-12
+Retrieved on: 2025-06-12
 -->
 
 Github Copilot 备忘清单

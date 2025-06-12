@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/emoji.md
-Retrieved on: 2025-05-12
+Retrieved on: 2025-06-12
 -->
 
 Emoji 备忘清单

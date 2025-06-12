@@ -17,8 +17,6 @@ repositories:
         destination: "docs/languages/Swift.md"
       - path: "docs/swiftui.md"
         destination: "docs/languages/SwiftUI.md"
-      - path: "docs/golang.md"
-        destination: "docs/languages/Golang.md"
       - path: "docs/typescript.md"
         destination: "docs/languages/TypeScript.md"
       - path: "docs/python.md"

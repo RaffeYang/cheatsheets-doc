@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/bash.md
-Retrieved on: 2025-05-12
+Retrieved on: 2025-06-12
 -->
 
 Bash 备忘清单
