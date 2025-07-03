@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/symbol-code.md
-Retrieved on: 2025-06-12
+Retrieved on: 2025-07-03
 -->
 
 Symbol Code 备忘清单

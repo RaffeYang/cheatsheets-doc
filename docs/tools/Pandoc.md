@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/pandoc.md
-Retrieved on: 2025-06-12
+Retrieved on: 2025-07-03
 -->
 
 Pandoc 备忘清单

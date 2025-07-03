@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/http-status-code.md
-Retrieved on: 2025-06-12
+Retrieved on: 2025-07-03
 -->
 
 HTTP 状态码备忘清单
