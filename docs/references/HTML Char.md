@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/html-char.md
-Retrieved on: 2025-07-03
+Retrieved on: 2025-07-04
 -->
 
 HTML 字符实体备忘清单

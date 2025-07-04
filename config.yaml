@@ -27,6 +27,8 @@ repositories:
         destination: "docs/languages/HTML.md"
       - path: "docs/css.md"
         destination: "docs/languages/CSS.md"
+      - path: "docs/golang.md"
+        destination: "docs/languages/Golang.md"
 
       # 框架
       - path: "docs/react.md"
