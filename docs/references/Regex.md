@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/regex.md
-Retrieved on: 2025-07-04
+Retrieved on: 2025-09-22
 -->
 
 RegEX 备忘清单

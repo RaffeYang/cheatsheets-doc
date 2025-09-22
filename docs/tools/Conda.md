@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/conda.md
-Retrieved on: 2025-07-04
+Retrieved on: 2025-09-22
 -->
 
 Conda备忘清单

@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/sqlite.md
-Retrieved on: 2025-07-04
+Retrieved on: 2025-09-22
 -->
 
 SQLite 备忘清单

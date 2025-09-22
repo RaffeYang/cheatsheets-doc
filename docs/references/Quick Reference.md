@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/quickreference.md
-Retrieved on: 2025-07-04
+Retrieved on: 2025-09-22
 -->
 
 Quick Reference 备忘清单
@@ -257,6 +257,26 @@ LICENSE=Copyright (c) <b>2022</b> 小弟调调™
 ```
 
 在项目根目录中创建 <pur>**.env**</pur> 文件
+
+### 图片
+
+![alt text](../icons/favicon.svg)
+<img src="../icons/favicon.svg?#sss=1" alt="alt text" height="95" width="95" />
+
+<hr />
+
+```markdown
+![alt text](./quickreference.svg?#sss=1)
+
+<img
+  src="./quickreference.svg?#sss=1"
+  alt="alt text"
+  height="95"
+  width="95"
+/>
+```
+
+在 Markdown 中引入图片
 
 Markdown 语法注释
 ---
@@ -887,6 +907,50 @@ H2 部分
 <!--rehype:className=style-list-->
 
 [#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L850-L855)<!--rehype:target=__blank--> `<!--rehype:className=style-list-->`
+
+### 列表圆圈样式展示表格
+
+:- | :-
+:- | :-
+`visualEffectState.inactive` | 后台应一直显示为非激活状态。
+`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
+`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
+<!--rehype:className=style-list-arrow circle-->
+
+添加 `style-list-arrow` 和 `circle` 样式
+
+### 列表实心圆圈样式展示表格
+
+:- | :-
+:- | :-
+`visualEffectState.inactive` | 后台应一直显示为非激活状态。
+`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
+`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
+<!--rehype:className=style-list-arrow circlefill-->
+
+添加 `style-list-arrow` 和 `circlefill` 样式
+
+### 列表方形展示表格
+
+:- | :-
+:- | :-
+`visualEffectState.inactive` | 后台应一直显示为非激活状态。
+`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
+`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
+<!--rehype:className=style-list-arrow square-->
+
+添加 `style-list-arrow` 和 `square` 样式
+
+### 列表实心方形展示表格
+
+:- | :-
+:- | :-
+`visualEffectState.inactive` | 后台应一直显示为非激活状态。
+`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
+`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
+<!--rehype:className=style-list-arrow squarefill-->
+
+添加 `style-list-arrow` 和 `squarefill` 样式
 
 ### 列表箭头样式展示表格
 

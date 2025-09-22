@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/colors-named.md
-Retrieved on: 2025-07-04
+Retrieved on: 2025-09-22
 -->
 
 Colors Named 备忘清单

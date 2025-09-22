@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/curl.md
-Retrieved on: 2025-07-04
+Retrieved on: 2025-09-22
 -->
 
 Curl 备忘清单
