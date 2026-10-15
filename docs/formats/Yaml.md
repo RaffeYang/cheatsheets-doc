@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/yaml.md
-Retrieved on: 2025-09-22
+Retrieved on: 2026-10-15
 -->
 
 YAML 备忘清单

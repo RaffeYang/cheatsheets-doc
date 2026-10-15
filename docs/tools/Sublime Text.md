@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/sublime-text.md
-Retrieved on: 2025-09-22
+Retrieved on: 2026-10-15
 -->
 
 Sublime Text 备忘清单

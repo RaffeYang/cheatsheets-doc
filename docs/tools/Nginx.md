@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/nginx.md
-Retrieved on: 2025-09-22
+Retrieved on: 2026-10-15
 -->
 
 NGINX 备忘清单
@@ -16,27 +16,28 @@ NGINX 备忘清单
 <!--rehype:wrap-class=row-span-2-->
 
 ```bash
-sudo systemctl status nginx # nginx当前状态
-sudo systemctl reload nginx # 重新加载 nginx
+sudo systemctl reload nginx  # 重新加载 nginx
 sudo systemctl restart nginx # 重启nginx
-
-sudo nginx -t   # 检查语法
 nginx           # 启动
 nginx -s reload # 重启
 nginx -s stop   # 关闭进程
 nginx -s quit   # 平滑关闭nginx
+```
+
+状态
+
+```bash
+sudo systemctl status nginx # nginx当前状态
 nginx -V        # 查看nginx的安装状态，
 ```
 
-### Docker 安装
-<!--rehype:wrap-class=col-span-2-->
+检查语法
 
 ```bash
-docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d nginx
+sudo nginx -t   # 检查语法
 ```
 
 ### 简单代理
-<!--rehype:wrap-class=col-span-2-->
 
 ```nginx
 location / {
@@ -45,6 +46,41 @@ location / {
   proxy_set_header    Host $host;
 }
 ```
+
+### 简单代理
+<!--rehype:wrap-class=row-span-2-->
+
+Ubuntu/Debian
+
+```shell
+$ sudo apt update && sudo apt install -y nginx
+```
+<!--rehype:className=wrap-text-->
+
+RHEL/CentOS
+
+```shell
+$ sudo yum install -y epel-release nginx && sudo systemctl enable --now nginx
+```
+<!--rehype:className=wrap-text-->
+
+Docker 安装
+
+```bash
+$ docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d nginx
+```
+<!--rehype:className=wrap-text-->
+
+### 配置路径
+
+- `/etc/nginx/nginx.conf` _(main config)_
+- `/etc/nginx/conf.d/*.conf` _(drop‑ins)_
+- `/etc/nginx/sites-available/` + `sites-enabled/` _(Debian style)_
+- `/var/www/html` _(default docroot)_
+- `logs`: `/var/log/nginx/access.log`, `/var/log/nginx/error.log`
+
+配置
+---
 
 ### 全局变量
 <!--rehype:wrap-class=col-span-2 row-span-4-->
@@ -325,16 +361,51 @@ server {
 
 您可以使用 Let's Encrypt 轻松保护您的网站/应用程序。去 [lets-encrypt](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx.html) 获取更多信息
 
-### 重定向(301永久)
-<!--rehype:wrap-class=row-span-2-->
+虚拟主机与重定向
+---
 
-将 <www.example.com> 重定向到 example.com
+### 基础服务器块
 
 ```nginx
 server {
   listen 80;
-  server_name www.example.com;
-  return 301 http://example.com$request_uri;
+  server_name example.com www.example.com;
+  root /var/www/example/public;
+  index index.html index.htm;
+}
+```
+
+### HTTP→HTTPS 重定向
+
+```nginx
+server {
+  listen 80;
+  server_name demo.com www.demo.com;
+  return 301 https://demo.com$request_uri;
+}
+```
+
+### 规范主机
+
+```nginx
+# Force non-www
+server {
+  listen 80;
+  server_name www.demo.com;
+  return 301 $scheme://demo.com$request_uri;
+}
+```
+
+### 重定向(301永久)
+<!--rehype:wrap-class=row-span-2-->
+
+将 <www.demo.com> 重定向到 demo.com
+
+```nginx
+server {
+  listen 80;
+  server_name www.demo.com;
+  return 301 http://demo.com$request_uri;
 }
 ```
 
@@ -343,8 +414,8 @@ server {
 ```nginx
 server {
   listen 80;
-  server_name example.com;
-  return 301 https://example.com$request_uri;
+  server_name demo.com;
+  return 301 https://demo.com$request_uri;
 }
 ```
 

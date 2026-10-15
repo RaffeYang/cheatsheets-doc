@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/html.md
-Retrieved on: 2025-09-22
+Retrieved on: 2026-10-15
 -->
 
 HTML 备忘清单

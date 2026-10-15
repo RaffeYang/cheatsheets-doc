@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/vim.md
-Retrieved on: 2025-09-22
+Retrieved on: 2026-10-15
 -->
 
 Vim 备忘清单
@@ -862,3 +862,4 @@ dfx # 删除文本直到字符“x”(包括字符“x”): delete forward x
 - [Vim cheatsheet](https://vim.rtorr.com/lang/zh_cn/) _(vim.rotrr.com)_
 - [Vim documentation](http://vimdoc.sourceforge.net/htmldoc/) _(vimdoc.sourceforge.net)_
 - [Interactive Vim tutorial](http://openvim.com/) _(openvim.com)_
+- [nvim-edu 交互式 Vim/Neovim 练习](https://s3onghyun.github.io/nvim-edu/) _(github.io)_

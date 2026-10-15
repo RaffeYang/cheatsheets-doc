@@ -1,7 +1,7 @@
 
 <!-- 
 Source: https://github.com/jaywcjlove/reference/blob/main/docs/ascii-code.md
-Retrieved on: 2025-09-22
+Retrieved on: 2026-10-15
 -->
 
 ASCII Code 备忘清单
