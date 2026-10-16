@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md
-Retrieved on: 2026-10-15
--->
-
-Markdown 备忘清单
-===
+# Markdown 备忘清单
 
 这是 Markdown 语法的快速参考备忘单。
 
-Markdown 快速参考
-----
+## Markdown 快速参考
 
 ### 标题 (atx 风格)
 
@@ -46,7 +38,6 @@ Header 2
 ```
 
 ### 无序列表
-<!--rehype:wrap-class=row-span-3-->
 
 ```markdown
 * Item 1
@@ -105,7 +96,6 @@ Header 2
 ```
 
 ### 水平线
-<!--rehype:wrap-class=row-span-2-->
 
 连字符
 
@@ -205,7 +195,6 @@ Markdown 表格生成器：[tableconvert.com](https://tableconvert.com/)
 ```
 
 ### 图片
-<!--rehype:wrap-class=col-span-2-->
 
 ```markdown
 ![图片名称](http://图片网址/images/logo.png)
@@ -230,32 +219,29 @@ Markdown 表格生成器：[tableconvert.com](https://tableconvert.com/)
 ```
 
 ### 反斜杠转义
-<!--rehype:wrap-class=row-span-2-->
 
 | 字符 | 转义 | 描述 |
-|------------|--------|-------------|
-| <pur>\\</pur>         | \\\\   | backslash 反斜杠             |
-| <pur>\`</pur>         | \\\`   | backtick 反引号              |
-| <pur>\*</pur>         | \\\*   | asterisk 星号                |
-| <pur>\_</pur>         | \\\_   | underscore 下划线            |
-| <pur>\{\}</pur>       | \\\{\} | curly braces 花括号          |
-| <pur>\[\]</pur>       | \\\[\] | square brackets 方括号       |
-| <pur>\(\)</pur>       | \\\(\) | parentheses 圆括号           |
-| <pur>\#</pur>         | \\\#   | hash mark 哈希标记           |
-| <pur>\+</pur>         | \\\+   | plus sign 加号               |
-| <pur>\-</pur>         | \\\-   | minus sign \(hyphen\) 减号(连字符) |
-| <pur>\.</pur>         | \\\.   | dot 点                      |
-| <pur>\!</pur>         | \\\!   | exclamation mark 感叹号      |
+| ------------ | -------- | ------------- |
+| \\ | \\\\ | backslash 反斜杠 |
+| \` | \\\` | backtick 反引号 |
+| \* | \\\* | asterisk 星号 |
+| \_ | \\\_ | underscore 下划线 |
+| \{\} | \\\{\} | curly braces 花括号 |
+| \[\] | \\\[\] | square brackets 方括号 |
+| \(\) | \\\(\) | parentheses 圆括号 |
+| \# | \\\# | hash mark 哈希标记 |
+| \+ | \\\+ | plus sign 加号 |
+| \- | \\\- | minus sign \(hyphen\) 减号(连字符) |
+| \. | \\\. | dot 点 |
+| \! | \\\! | exclamation mark 感叹号 |
 
 ### 行内 HTML 元素
-<!--rehype:wrap-class=col-span-2-->
 
 ```html
 目前只支持部分段内 HTML 元素效果，包括 <kbd>, <b>, <i>, <em>, <sup>, <sub>, <br>
 ```
 
-Github 相关语法
-----
+## Github 相关语法
 
 ### 代码语法高亮
 
@@ -268,7 +254,6 @@ function hello() {
 ````
 
 ### 任务列表
-<!--rehype:wrap-class=col-span-2-->
 
 ```markdown
 - [x] 已完成的任务
@@ -284,14 +269,12 @@ function hello() {
 ```markdown
 任何用两个波浪号包裹的词语 (例如 ~~这样~~) 都会出现删除线。
 ```
-<!--rehype:className=wrap-text-->
 
 ### 自动链接
 
 ```markdown
 http://www.github.com/ 和 https://help.github.com/ 会自动转换为链接。
 ```
-<!--rehype:className=wrap-text-->
 
 ### @提及 和 Issues 引用
 
@@ -306,10 +289,8 @@ http://www.github.com/ 和 https://help.github.com/ 会自动转换为链接。
 GitHub 支持表情符号！ :+1: :sparkles: :camel: :tada:
 :rocket: :metal: :octocat:
 ```
-<!--rehype:className=wrap-text-->
 
 ### 警告框
-<!--rehype:wrap-class=row-span-2-->
 
 ```markdown
 > [!NOTE]
@@ -390,8 +371,11 @@ graph TD;
 
 有关语法文档，请参阅 [Mermaid 文档](https://mermaid.js.org)
 
-另见
-----
+## 另见
 
 - [GitHub 风格的 Markdown 规范](https://github.github.com/gfm/) _(github.com)_
 - [GitHub 基本写作和格式语法](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) _(docs.github.com)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md)
+
+获取日期：2026-10-15

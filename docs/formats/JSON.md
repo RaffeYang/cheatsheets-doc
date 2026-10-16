@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/json.md
-Retrieved on: 2026-10-15
--->
-
-JSON 备忘清单
-===
+# JSON 备忘清单
 
 这是理解和编写 JSON 格式配置文件的快速参考备忘单。
 
-入门
-----
+## 入门
 
 ### 介绍
 
@@ -41,30 +33,29 @@ JSON 备忘清单
 
 ### 类型
 
-| 类型      | 描述                             |
-|-----------|---------------------------------|
-| `Number`  | 双精度浮点                       |
-| `String`  | 字符系列                         |
-| `Boolean` | “true”或“false”                 |
-| `Array`   | 有序的值序列                      |
-| `Value`   | 字符串、数字、布尔值、空值等         |
-| `Object`  | 键/值对的无序集合                 |
-| `null`    | Null 或 Empty                   |
+| 类型 | 描述 |
+| ----------- | --------------------------------- |
+| `Number` | 双精度浮点 |
+| `String` | 字符系列 |
+| `Boolean` | “true”或“false” |
+| `Array` | 有序的值序列 |
+| `Value` | 字符串、数字、布尔值、空值等 |
+| `Object` | 键/值对的无序集合 |
+| `null` | Null 或 Empty |
 
 ### 字符串
-<!--rehype:wrap-style=grid-row: span 3/span 3;-->
 
-|      |                            |
-|------|----------------------------|
-| `\"` | 双引号 Double quote         |
-| `\\` | 反斜杠 Backslash            |
-| `\/` | 正斜杠 Forward slash        |
-| `\b` | 退格 Backspace              |
-| `\f` | 换页 Form feed              |
-| `\n` | 换行 Newline                |
-| `\r` | 回车 Carriage return        |
-| `\t` | 标签 Tab                    |
-| `\u` | 后跟四个十六进制数字           |
+|  |  |
+| ------ | ---------------------------- |
+| `\"` | 双引号 Double quote |
+| `\\` | 反斜杠 Backslash |
+| `\/` | 正斜杠 Forward slash |
+| `\b` | 退格 Backspace |
+| `\f` | 换页 Form feed |
+| `\n` | 换行 Newline |
+| `\r` | 回车 Carriage return |
+| `\t` | 标签 Tab |
+| `\u` | 后跟四个十六进制数字 |
 
 #### 示例
 
@@ -85,14 +76,12 @@ JSON 备忘清单
 Have to be delimited by double quotes
 
 ### 数字
-<!--rehype:wrap-class=row-span-2-->
 
- 类型 | 说明
------|------
-`Integer`  | 数字 1-9、0 和正数或负数
-`Fraction` | 0.3、3.9 等分数
-`Exponent` | 指数，如 e、e+、e-、E、E+、E
-<!--rehype:className=show-header -->
+| 类型 | 说明 |
+| ----- | ------ |
+| `Integer` | 数字 1-9、0 和正数或负数 |
+| `Fraction` | 0.3、3.9 等分数 |
+| `Exponent` | 指数，如 e、e+、e-、E、E+、E |
 
 #### 示例
 
@@ -204,8 +193,7 @@ Have to be delimited by double quotes
 }
 ```
 
-JSON 5
-----
+## JSON 5
 
 ### Objects
 
@@ -249,20 +237,19 @@ JSON 5
 
 ### 允许附加空白字符
 
-代码点 | 描述
-:-- | ---
-`U+0009` | 水平制表符
-`U+000A` | 换行符
-`U+000B` | 垂直制表符
-`U+000C` | 换页符
-`U+000D` | 回车符
-`U+0020` | 空格
-`U+00A0` | 不间断空格
-`U+2028` | 行分隔符
-`U+2029` | 段落分隔符
-`U+FEFF` | 字节顺序标记
-Unicode Zs 类别 | 空格分隔符 Unicode 类别中的任何其他字符
-<!--rehype:className=left-align-->
+| 代码点 | 描述 |
+| :-- | --- |
+| `U+0009` | 水平制表符 |
+| `U+000A` | 换行符 |
+| `U+000B` | 垂直制表符 |
+| `U+000C` | 换页符 |
+| `U+000D` | 回车符 |
+| `U+0020` | 空格 |
+| `U+00A0` | 不间断空格 |
+| `U+2028` | 行分隔符 |
+| `U+2029` | 段落分隔符 |
+| `U+FEFF` | 字节顺序标记 |
+| Unicode Zs 类别 | 空格分隔符 Unicode 类别中的任何其他字符 |
 
 ### 数字
 
@@ -299,7 +286,6 @@ Unicode Zs 类别 | 空格分隔符 Unicode 类别中的任何其他字符
 数字可以以明确的加号开头
 
 ### 字符串
-<!--rehype:wrap-class=col-span-2-->
 
 ```js
 'Lorem ipsum dolor sit amet, \
@@ -322,8 +308,7 @@ consectetur adipiscing elit.'
 'AC/DC'
 ```
 
-在 JavaScript 中访问 JSON
-----
+## 在 JavaScript 中访问 JSON
 
 ### 访问对象
 
@@ -338,18 +323,15 @@ let myObject = {
 };
 ```
 
-----
-
-|                    |           |
-|--------------------|-----------|
-| `myObject.name`    | "Jason"   |
-| `myObject["name"]` | "Jason"   |
-| `myObject.age`     | 39        |
-| `myObject.other`   | undefined |
-| `myObject[0]`      | undefined |
+|  |  |
+| -------------------- | ----------- |
+| `myObject.name` | "Jason" |
+| `myObject["name"]` | "Jason" |
+| `myObject.age` | 39 |
+| `myObject.other` | undefined |
+| `myObject[0]` | undefined |
 
 ### 访问嵌套
-<!--rehype:wrap-style=grid-row: span 2/span 2;-->
 
 ```javascript
 let myObject = {
@@ -380,18 +362,15 @@ let myObject = {
 };
 ```
 
-----
-
-|                          |                          |
-|--------------------------|--------------------------|
-| `myObject.ref.age`       | 2                        |
-| `myObject["ref"]["age"]` | 2                        |
-| `myObject.jdoe`          | ["Jason", "Doe", 39 ...] |
-| `myObject.jsmith[3]`     | "F"                      |
-| `myObject[1]`            | undefined                |
+|  |  |
+| -------------------------- | -------------------------- |
+| `myObject.ref.age` | 2 |
+| `myObject["ref"]["age"]` | 2 |
+| `myObject.jdoe` | ["Jason", "Doe", 39 ...] |
+| `myObject.jsmith[3]` | "F" |
+| `myObject[1]` | undefined |
 
 ### 访问对象数组
-<!--rehype:wrap-style=grid-row: span 2/span 2;-->
 
 ```javascript
 let myArray = [
@@ -422,15 +401,13 @@ let myArray = [
 ];
 ```
 
-----
-
-|                     |                            |
-|---------------------|----------------------------|
-| `myArray[0]`        | `{`"name": "Jason", ...`}` |
-| `myArray[1].name`   | "Tom"                      |
-| `myArray[1][2]`     | 42                         |
-| `myArray[3]`        | undefined                  |
-| `myArray[3].gender` | TypeError: Cannot read...  |
+|  |  |
+| --------------------- | ---------------------------- |
+| `myArray[0]` | `{`"name": "Jason", ...`}` |
+| `myArray[1].name` | "Tom" |
+| `myArray[1][2]` | 42 |
+| `myArray[3]` | undefined |
+| `myArray[3].gender` | TypeError: Cannot read... |
 
 ### 访问阵列
 
@@ -445,17 +422,18 @@ let myArray = [
 ];
 ```
 
-----
-
-|              |           |
-|--------------|-----------|
-| `myArray[1]` | "Doe"     |
-| `myArray[5]` | true      |
+|  |  |
+| -------------- | ----------- |
+| `myArray[1]` | "Doe" |
+| `myArray[5]` | true |
 | `myArray[6]` | undefined |
 
-另见
-----
+## 另见
 
 - [JSON](https://www.json.org/json-en.html) _(json.org)_
 - [JSON Editor Online](http://jsoneditoronline.org/) _(jsoneditoronline.org)_
 - [Convert JSON Array to Markdown Table, CSV and more](https://tableconvert.com/json-to-markdown) _(tableconvert.com)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/json.md](https://github.com/jaywcjlove/reference/blob/main/docs/json.md)
+
+获取日期：2026-10-15

@@ -1,11 +1,4 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/react.md
-Retrieved on: 2026-10-15
--->
-
-React 备忘清单
-===
+# React 备忘清单
 
 [![NPM version](https://img.shields.io/npm/v/react.svg?style=flat)](https://npmjs.org/package/react)
 [![Downloads](https://img.shields.io/npm/dm/react.svg?style=flat)](https://www.npmjs.com/package/react)
@@ -13,25 +6,21 @@ React 备忘清单
 [![Github repo](https://badgen.net/badge/icon/Github?icon=github&label)](https://github.com/facebook/react)
 
 适合初学者的综合 React 备忘清单
-<!--rehype:style=padding-top: 12px;-->
 
-入门
-----
+## 入门
 
 ### 介绍
 
 React 是一个用于构建用户界面的 JavaScript 库
 
 - [React 官方文档](https://react.dev) _(react.dev)_
-- [Styled Components 备忘清单](./styled-components.md) _(jaywcjlove.github.io)_
-- [TypeScript JSX 备忘清单](./typescript.md#jsx) _(jaywcjlove.github.io)_
+- [Styled Components 备忘清单](https://github.com/jaywcjlove/reference/blob/main/docs/styled-components.md) _(jaywcjlove.github.io)_
+- [TypeScript JSX 备忘清单](https://github.com/jaywcjlove/reference/blob/main/docs/typescript.md#jsx) _(jaywcjlove.github.io)_
 
 ```js
 import {createRoot} from 'react-dom/client'
 import App from './App'
 ```
-
------
 
 ```jsx
 const elm = document.getElementById('app')
@@ -51,8 +40,6 @@ npx create-react-app my-app
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 ```
-
------
 
 ```jsx
 export class Hello extends Component {
@@ -123,7 +110,6 @@ class Student extends React.Component {
 `class` 组件使用 `this.props` 访问传递给组件的属性。
 
 ### Children
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 function Example() {
@@ -147,8 +133,6 @@ function AlertBox(props) {
 }
 ```
 
------
-
 ```jsx
 {props.children}
 ```
@@ -167,8 +151,6 @@ class AlertBox extends React.Component {
 }
 ```
 
------
-
 ```jsx
 {this.props.children}
 ```
@@ -176,7 +158,6 @@ class AlertBox extends React.Component {
 `children` 作为子组件的的属性传递。
 
 ### State
-<!--rehype:wrap-class=row-span-3-->
 
 函数中的 State，Hook 是 React 16.8 的新增特性
 
@@ -232,7 +213,7 @@ class Student extends React.Component {
 }
 ```
 
-使用 `setState` 更新状态，`class` 组件中不能使用 <yel>~~hooks~~</yel>。下面是 `class` 组件读取状态
+使用 `setState` 更新状态，`class` 组件中不能使用 ~~hooks~~。下面是 `class` 组件读取状态
 
 ```jsx
 <p>您点击了{this.state.count}次</p>
@@ -320,7 +301,6 @@ render() {
 提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的优秀的方案
 
 ### Fragment
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx {1,6,9}
 import { Fragment } from 'react'
@@ -447,8 +427,6 @@ function CustomTextInput(props) {
 </div>
 ```
 
------
-
 - [识别不安全的生命周期](https://zh-hans.reactjs.org/docs/strict-mode.html#identifying-unsafe-lifecycles)
 - [关于使用过时字符串 ref API 的警告](https://zh-hans.reactjs.org/docs/strict-mode.html#warning-about-legacy-string-ref-api-usage)
 - [关于使用废弃的 findDOMNode 方法的警告](https://zh-hans.reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage)
@@ -459,7 +437,6 @@ function CustomTextInput(props) {
 突出显示应用程序中潜在问题的工具。请参阅：[严格模式](https://zh-hans.reactjs.org/docs/strict-mode.html)
 
 ### Profiler
-<!--rehype:wrap-class=col-span-2-->
 
 测量一个 React 应用多久渲染一次以及渲染一次的 `代价`
 
@@ -471,27 +448,25 @@ function CustomTextInput(props) {
 
 为了分析 `Navigation` 组件和它的子代。应该在需要时才去使用它。
 
-:- | :-
-:- | :-
-`id(string)` | 发生提交的 `Profiler` 树的 `id`
-`onRender(function)` | 组件树任何组件 “提交” 一个更新的时候调用这个函数
+| :- | :- |
+| :- | :- |
+| `id(string)` | 发生提交的 `Profiler` 树的 `id` |
+| `onRender(function)` | 组件树任何组件 “提交” 一个更新的时候调用这个函数 |
 
 #### onRender 回调函数
 
-:- | :-
-:- | :-
-`phase: "mount" \| "update"` |  判断是由 `props`/`state`/`hooks` 改变 或 “第一次装载” 引起的重渲染
-`actualDuration: number` | 本次更新在渲染 Profiler 和它的子代上花费的时间
-`baseDuration: number` | 在 Profiler 树中最近一次每一个组件 render 的持续时间
-`startTime: number` | 本次更新中 React 开始渲染的时间戳
-`commitTime: number` | 本次更新中 React commit 阶段结束的时间戳
-`interactions: Set` | 当更新被制定时，“[interactions](https://fb.me/react-interaction-tracing)” 的集合会被追踪
+| :- | :- |
+| :- | :- |
+| `phase: "mount" \| "update"` | 判断是由 `props`/`state`/`hooks` 改变 或 “第一次装载” 引起的重渲染 |
+| `actualDuration: number` | 本次更新在渲染 Profiler 和它的子代上花费的时间 |
+| `baseDuration: number` | 在 Profiler 树中最近一次每一个组件 render 的持续时间 |
+| `startTime: number` | 本次更新中 React 开始渲染的时间戳 |
+| `commitTime: number` | 本次更新中 React commit 阶段结束的时间戳 |
+| `interactions: Set` | 当更新被制定时，“[interactions](https://fb.me/react-interaction-tracing)” 的集合会被追踪 |
 
-默认值
----
+## 默认值
 
 ### Class 组件默认 props
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 class CustomButton extends React.Component {
@@ -511,7 +486,6 @@ CustomButton.defaultProps = {
 不传值 `props.color` 将自动设置为 `blue`
 
 ### Class 组件默认 state
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 class Hello extends Component {
@@ -548,8 +522,7 @@ function CustomButton() {
 }
 ```
 
-Props
----
+## Props
 
 ### Props 的 Spread 运算符
 
@@ -618,7 +591,6 @@ function Greeting({ name, isLoggedIn }) {
 ```
 
 ### Prop Drilling（属性传递）
-<!--rehype:wrap-class=row-span-2-->
 
 ```js
 function Parent() {
@@ -638,7 +610,6 @@ function Grandchild({ name }) {
 将属性（props）在多个组件层级中逐层传递可能会变得繁琐。这种方式称为属性传递（prop drilling）。
 
 ### Props 与 State
-<!--rehype:wrap-class=row-span-2-->
 
 - `props` 被传递给组件并且是不可变的。
 - `State` 是组件的本地状态，可以更改。
@@ -692,11 +663,9 @@ function App() {
 }
 ```
 
-JSX
----
+## JSX
 
 ### 介绍
-<!--rehype:wrap-class=row-span-2-->
 
 `JSX` 仅仅只是 `React.createElement(component, props, ...children)` 函数的语法糖
 
@@ -863,7 +832,6 @@ const MyComponent = () => (
 React 中使用 [Web Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components) 使用 `class` 属性代替
 
 ### JSX 条件渲染
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 import React from "react";
@@ -906,8 +874,6 @@ export default function Weather(props) {
   );
 }
 ```
-
------
 
 ```js
 {isShow && <div>内容</div>}
@@ -955,11 +921,9 @@ function Student() {
 }
 ```
 
-组件
-----
+## 组件
 
 ### 函数组件
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 import React from 'react';
@@ -989,29 +953,28 @@ class Welcome extends React.Component {
 ```
 
 ### Class 组件 API
-<!--rehype:wrap-class=row-span-2-->
 
 #### 额外的 API
 
-:- | -
-:- | -
-`this.forceUpdate()` | 强制重新渲染
-`this.setState({ ... })` | 更新状态
-`this.setState(state =>{ ... })` | 更新状态
+| :- | - |
+| :- | - |
+| `this.forceUpdate()` | 强制重新渲染 |
+| `this.setState({ ... })` | 更新状态 |
+| `this.setState(state =>{ ... })` | 更新状态 |
 
 #### 属性
 
-:- | -
-:- | -
-`defaultProps` | 默认 props
-`displayName` | 显示组件名称(用于调试)
+| :- | - |
+| :- | - |
+| `defaultProps` | 默认 props |
+| `displayName` | 显示组件名称(用于调试) |
 
 #### 实例属性
 
-:- | -
-:- | -
-`this.props` | 组件接受参数
-`this.state` | 组件内状态
+| :- | - |
+| :- | - |
+| `this.props` | 组件接受参数 |
+| `this.state` | 组件内状态 |
 
 ### Pure 组件
 
@@ -1155,8 +1118,6 @@ Menu.Item = ({ children }) => (
 );
 ```
 
------
-
 ```jsx
 <Menu>
   <Menu.Item>菜单一</Menu.Item>
@@ -1164,44 +1125,41 @@ Menu.Item = ({ children }) => (
 <Menu>
 ```
 
-Hooks
----
+## Hooks
 
 ### Hooks API 参考
-<!--rehype:wrap-class=row-span-2-->
 
 #### 基础 Hook
 
-方法 | 描述
-:- | -
-`useState` | 返回一个 `state`，更新 `state` 的函数 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usestate)
-`useEffect` | 可能有副作用代码的函数 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#useeffect)
-`useContext` | 接收并返回该 `context` 的当前值 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usecontext)
+| 方法 | 描述 |
+| :- | - |
+| `useState` | 返回一个 `state`，更新 `state` 的函数 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usestate) |
+| `useEffect` | 可能有副作用代码的函数 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#useeffect) |
+| `useContext` | 接收并返回该 `context` 的当前值 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usecontext) |
 
 #### 额外的 Hook
 
-方法 | 描述
-:- | -
-`useReducer` | `useState` 的替代方案 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usestate)
-`useCallback` | 返回一个回调函数 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usecallback)
-`useMemo` | 返回一个 [memoized](https://en.wikipedia.org/wiki/Memoization) 值[#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usememo)
-`useRef` | 返回一个可变的 `ref` 对象 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#useref)
-`useImperativeHandle` | 暴露给父组件的实例值 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#useimperativehandle)
-`useLayoutEffect` | DOM 变更后同步调用函数 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#uselayouteffect)
-`useDebugValue` | 开发者工具中显示标签 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usedebugvalue)
-`useDeferredValue` | 接受并返回该值的新副本 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usedeferredvalue)
-`useTransition` | 过渡任务的等待状态 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usetransition)
-`useId` | 用于生成唯一 ID [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#useid)
+| 方法 | 描述 |
+| :- | - |
+| `useReducer` | `useState` 的替代方案 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usestate) |
+| `useCallback` | 返回一个回调函数 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usecallback) |
+| `useMemo` | 返回一个 [memoized](https://en.wikipedia.org/wiki/Memoization) 值[#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usememo) |
+| `useRef` | 返回一个可变的 `ref` 对象 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#useref) |
+| `useImperativeHandle` | 暴露给父组件的实例值 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#useimperativehandle) |
+| `useLayoutEffect` | DOM 变更后同步调用函数 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#uselayouteffect) |
+| `useDebugValue` | 开发者工具中显示标签 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usedebugvalue) |
+| `useDeferredValue` | 接受并返回该值的新副本 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usedeferredvalue) |
+| `useTransition` | 过渡任务的等待状态 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usetransition) |
+| `useId` | 用于生成唯一 ID [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#useid) |
 
 #### Library Hooks
 
-方法 | 描述
-:- | -
-`useSyncExternalStore` | 读取和订阅外部数据源 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usesyncexternalstore)
-`useInsertionEffect` |  DOM 突变之前 同步触发 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usesyncexternalstore)
+| 方法 | 描述 |
+| :- | - |
+| `useSyncExternalStore` | 读取和订阅外部数据源 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usesyncexternalstore) |
+| `useInsertionEffect` | DOM 突变之前 同步触发 [#](https://zh-hans.reactjs.org/docs/hooks-reference.html#usesyncexternalstore) |
 
 ### 函数式更新
-<!--rehype:wrap-class=col-span-2-->
 
 ```jsx
 function Counter({ initialCount }) {
@@ -1326,7 +1284,6 @@ function useFriendStatus(friendID) {
   return isOnline;
 }
 ```
-<!--rehype:className=wrap-text -->
 
 不推荐你向每个自定义 `Hook` 添加 `debug` 值
 
@@ -1348,57 +1305,52 @@ useEffect(
 
 这是一个类似 `class` 组件中 `componentDidMount` & `componentWillUnmount` 两个生命周期函数的写法。
 
-生命周期
----
-<!--rehype:body-class=cols-2-->
+## 生命周期
 
 ### 挂载
-<!--rehype:wrap-class=row-span-2-->
 
-方法 | 描述
-:- | -
-`constructor` _(props)_  | 渲染前 [#](https://zh-hans.reactjs.org/docs/react-component.html#constructor)
-`static getDerivedStateFromProps()` | 调用 `render` 方法之前调用 [#](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops)
-`render()`               |  `class` 组件中唯一必须实现的方法 [#](https://reactjs.org/docs/react-component.html#render)
-`componentDidMount()`    | 在组件挂载后(插入 DOM 树中)立即调用 [#](https://reactjs.org/docs/react-component.html#componentdidmount)
-`UNSAFE_componentWillMount()` | 在挂载之前被调用，建议使用 `constructor()` [#](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillmount)
+| 方法 | 描述 |
+| :- | - |
+| `constructor` _(props)_ | 渲染前 [#](https://zh-hans.reactjs.org/docs/react-component.html#constructor) |
+| `static getDerivedStateFromProps()` | 调用 `render` 方法之前调用 [#](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops) |
+| `render()` | `class` 组件中唯一必须实现的方法 [#](https://reactjs.org/docs/react-component.html#render) |
+| `componentDidMount()` | 在组件挂载后(插入 DOM 树中)立即调用 [#](https://reactjs.org/docs/react-component.html#componentdidmount) |
+| `UNSAFE_componentWillMount()` | 在挂载之前被调用，建议使用 `constructor()` [#](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillmount) |
 
 在 `constructor()` 上设置初始状态。在 `componentDidMount()` 上添加 DOM 事件处理程序、计时器(等），然后在 `componentWillUnmount()` 上删除它们。
 
 ### 卸载
 
-方法 | 描述
-:- | -
-`componentWillUnmount()` | 在组件卸载及销毁之前直接调用 [#](https://zh-hans.reactjs.org/docs/react-component.html#componentwillunmount)
+| 方法 | 描述 |
+| :- | - |
+| `componentWillUnmount()` | 在组件卸载及销毁之前直接调用 [#](https://zh-hans.reactjs.org/docs/react-component.html#componentwillunmount) |
 
 ### 过时 API
 
-过时方法 | 新方法
-:- | -
-~~`componentWillMount()`~~ | `UNSAFE_componentWillMount()`  [#](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillmount)
-~~`componentWillReceiveProps()`~~ | `UNSAFE_componentWillReceiveProps()`  [#](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops)
-~~`componentWillUpdate()`~~ | `UNSAFE_componentWillUpdate()`  [#](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillupdate)
+| 过时方法 | 新方法 |
+| :- | - |
+| ~~`componentWillMount()`~~ | `UNSAFE_componentWillMount()`  [#](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillmount) |
+| ~~`componentWillReceiveProps()`~~ | `UNSAFE_componentWillReceiveProps()`  [#](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops) |
+| ~~`componentWillUpdate()`~~ | `UNSAFE_componentWillUpdate()`  [#](https://zh-hans.reactjs.org/docs/react-component.html#unsafe_componentwillupdate) |
 
 17+ 之后不再支持，在 `17` 版本之后，只有新的 `UNSAFE_` 生命周期名称可以使用。
 
 ### 更新
-<!--rehype:wrap-class=col-span-2-->
 
-方法 | 描述
-:- | -
-`static getDerivedStateFromProps(props, state)` | 调用 `render` 之前调用，在初始挂载及后续更新时都会被调用 [#](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops)
-`shouldComponentUpdate(nextProps, nextState)` | 如果返回 `false`，则跳过 `render()` [#](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops)
-`render()` | 在不修改组件 `state` 的情况下，每次调用时都返回相同的结果 [#](https://zh-hans.reactjs.org/docs/react-component.html#render)
-`getSnapshotBeforeUpdate()` | 在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置） [#](https://zh-hans.reactjs.org/docs/react-component.html#getsnapshotbeforeupdate)
-`componentDidUpdate()` | 这里使用 `setState()`，但记得比较 `props`。首次渲染不会执行此方法 [#](https://zh-hans.reactjs.org/docs/react-component.html#componentdidupdate)
+| 方法 | 描述 |
+| :- | - |
+| `static getDerivedStateFromProps(props, state)` | 调用 `render` 之前调用，在初始挂载及后续更新时都会被调用 [#](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops) |
+| `shouldComponentUpdate(nextProps, nextState)` | 如果返回 `false`，则跳过 `render()` [#](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops) |
+| `render()` | 在不修改组件 `state` 的情况下，每次调用时都返回相同的结果 [#](https://zh-hans.reactjs.org/docs/react-component.html#render) |
+| `getSnapshotBeforeUpdate()` | 在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置） [#](https://zh-hans.reactjs.org/docs/react-component.html#getsnapshotbeforeupdate) |
+| `componentDidUpdate()` | 这里使用 `setState()`，但记得比较 `props`。首次渲染不会执行此方法 [#](https://zh-hans.reactjs.org/docs/react-component.html#componentdidupdate) |
 
 ### 错误处理
-<!--rehype:wrap-class=col-span-2-->
 
-方法 | 描述
-:- | -
-`static getDerivedStateFromError(error)` | 后代组件抛出错误后被调用，它将抛出的错误作为参数，并返回一个值以更新 `state` [#](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromerror)
-`componentDidCatch(error, info)` | 在后代组件抛出错误后被调用，会在“提交”阶段被调用，因此允许执行副作用 [#](https://zh-hans.reactjs.org/docs/react-component.html#componentdidcatch)
+| 方法 | 描述 |
+| :- | - |
+| `static getDerivedStateFromError(error)` | 后代组件抛出错误后被调用，它将抛出的错误作为参数，并返回一个值以更新 `state` [#](https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromerror) |
+| `componentDidCatch(error, info)` | 在后代组件抛出错误后被调用，会在“提交”阶段被调用，因此允许执行副作用 [#](https://zh-hans.reactjs.org/docs/react-component.html#componentdidcatch) |
 
 ### render()
 
@@ -1422,7 +1374,6 @@ constructor(props) {
 ```
 
 ### static getDerivedStateFromError()
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx {7,13}
 class ErrorBoundary extends React.Component {
@@ -1472,70 +1423,66 @@ getSnapshotBeforeUpdate(prevProps, prevState) {
 }
 ```
 
-PropTypes 属性类型检查
----
+## PropTypes 属性类型检查
 
 ### PropTypes
-<!--rehype:wrap-class=row-span-3-->
 
 ```jsx
 import PropTypes from 'prop-types'
 ```
 
------
-
-:- | -
-:- | -
-`any` | 任意类型
-`(props, propName, 组件名称)=>{}` | 自定义验证器
+| :- | - |
+| :- | - |
+| `any` | 任意类型 |
+| `(props, propName, 组件名称)=>{}` | 自定义验证器 |
 
 #### _基础_
 
-:- | -
-:- | -
-`string` | 字符串
-`number` | 数组
-`func` | 函数
-`bool` | 布尔值
-`symbol` | -
+| :- | - |
+| :- | - |
+| `string` | 字符串 |
+| `number` | 数组 |
+| `func` | 函数 |
+| `bool` | 布尔值 |
+| `symbol` | - |
 
 #### _枚举 Enum_
 
-:- | -
-:- | -
-`oneOf(any)` | 枚举类型
-`oneOfType([type])` | 几种类型中的任意一个类型
+| :- | - |
+| :- | - |
+| `oneOf(any)` | 枚举类型 |
+| `oneOfType([type])` | 几种类型中的任意一个类型 |
 
 #### _数组 Array_
 
-:- | -
-:- | -
-`array` | 数组
-`arrayOf` | 数组由某一类型的元素组成
+| :- | - |
+| :- | - |
+| `array` | 数组 |
+| `arrayOf` | 数组由某一类型的元素组成 |
 
 #### _对象 Object_
 
-:- | -
-:- | -
-`object` | 对象
-`objectOf` | 对象由某一类型的值组成
-`instanceOf(...)` | 类的实例
-`shape` | 对象由特定的类型值组成
-`exact` | 有额外属性警告
+| :- | - |
+| :- | - |
+| `object` | 对象 |
+| `objectOf` | 对象由某一类型的值组成 |
+| `instanceOf(...)` | 类的实例 |
+| `shape` | 对象由特定的类型值组成 |
+| `exact` | 有额外属性警告 |
 
 #### _元素 Elements_
 
-:- | -
-:- | -
-`element` | React 元素
-`elementType` | React 元素类型(即 `MyComponent`)
-`node` | DOM 节点
+| :- | - |
+| :- | - |
+| `element` | React 元素 |
+| `elementType` | React 元素类型(即 `MyComponent`) |
+| `node` | DOM 节点 |
 
 #### _必需的_
 
-:- | -
-:- | -
-`(···).isRequired` | 必需的
+| :- | - |
+| :- | - |
+| `(···).isRequired` | 必需的 |
 
 请参阅：[使用 PropTypes 进行类型检查](https://zh-hans.reactjs.org/docs/typechecking-with-proptypes.html)
 
@@ -1644,7 +1591,6 @@ MyComponent.propTypes = {
 请不要使用 `console.warn` 或抛出异常，因为这在 `oneOfType` 中不会起作用。
 
 ### 自定义的 `arrayOf` 或 `objectOf` 验证器
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```jsx
 MyComponent.propTypes = {
@@ -1682,10 +1628,13 @@ MyComponent.propTypes = {
 
 声明 `message` 为类的实例
 
-另见
-----
+## 另见
 
 - [React 官方中文文档](https://zh-hans.reactjs.org/) _(zh-hans.reactjs.org)_
 - [反应生命周期方法图](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) _(projects.wojtekmaj.pl)_
 - [React 16 Cheat Sheet](https://reactcheatsheet.com)
 - [Awesome React](https://github.com/enaqx/awesome-react) _(github.com)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/react.md](https://github.com/jaywcjlove/reference/blob/main/docs/react.md)
+
+获取日期：2026-10-15

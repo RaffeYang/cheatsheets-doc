@@ -1,37 +1,25 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/github-actions.md
-Retrieved on: 2026-10-15
--->
-
-Github Actions 备忘清单
-====
+# Github Actions 备忘清单
 
 本备忘单总结了 [Github Actions](https://github.com/actions) 常用的配置说明，以供快速参考。
 
-入门
----
+## 入门
 
 ### 介绍
 
 GitHub [Actions](https://github.com/actions) 的仓库中自动化、自定义和执行软件开发工作流程，有四个基本的概念，如下：
 
-:- | :-
-:- | :-
-`workflow` _(工作流程)_ | 持续集成一次运行的过程，就是一个 `workflow`
-`job` _(任务)_ | 一个 `workflow` 由一个或多个 `jobs` 构成，含义是一次持续集成的运行，可以完成多个任务
-`step` _(步骤)_ | 每个 `job` 由多个 `step` 构成，一步步完成
-`action` _(动作)_ | 每个 `step` 可以依次执行一个或多个命令(`action`)
-<!--rehype:className=style-list-arrow-->
+| :- | :- |
+| :- | :- |
+| `workflow` _(工作流程)_ | 持续集成一次运行的过程，就是一个 `workflow` |
+| `job` _(任务)_ | 一个 `workflow` 由一个或多个 `jobs` 构成，含义是一次持续集成的运行，可以完成多个任务 |
+| `step` _(步骤)_ | 每个 `job` 由多个 `step` 构成，一步步完成 |
+| `action` _(动作)_ | 每个 `step` 可以依次执行一个或多个命令(`action`) |
 
----
-
-- 采用 [YAML](./yaml.md) 格式定义配置文件
+- 采用 [YAML](https://github.com/jaywcjlove/reference/blob/main/docs/yaml.md) 格式定义配置文件
 - 存放在代码仓库的 `.github/workflows` 目录中
 - 后缀名统一为 `.yml`，比如 `ci.yml`
 - 一个库可以有多个 `workflow` 文件
 - 根据配置事件自动运行配置文件
-<!--rehype:className=style-round-->
 
 ### 配置文件
 
@@ -60,7 +48,6 @@ jobs:
 存放到 `.github/workflows` 目录中，命名为 `ci.yml`，当 `push` 代码到仓库 `main` 分支中，该配置自动运行配置。
 
 ### 指定触发
-<!--rehype:wrap-class=row-span-2-->
 
 `push` 事件触发 `workflow`
 
@@ -139,7 +126,6 @@ jobs:
 上面配置中，`job1` 必须先于 `job2` 完成，而 `job3` 等待 `job1` 和 `job2` 的完成才能运行。因此，这个 `workflow` 的运行顺序依次为：`job1`、`job2`、`job3`
 
 ### 多项任务传递参数
-<!--rehype:wrap-class=col-span-2-->
 
 ```yml {2,5,9,11,15}
 jobs:
@@ -196,13 +182,10 @@ jobs:
     runs-on: ubuntu-latest # 虚拟机环境配置
 ```
 
----
-
 - `Windows Server 2022` _(windows-latest)_ 或 _(windows-2022)_
 - `Ubuntu 20.04` _(ubuntu-latest)_ 或 _(ubuntu-20.04)_
 - `macOS Monterey 12` _(macos-12)_
 - `macOS Big Sur 11` _(macos-latest)_,_(macos-11)_
-<!--rehype:className=style-arrow-->
 
 另见: [选择 GitHub 托管的运行器](https://docs.github.com/cn/actions/using-workflows/workflow-syntax-for-github-actions#选择-github-托管的运行器)
 
@@ -298,32 +281,29 @@ env:
 - `!=` _(不等)_
 - `&&` _(和)_
 - `||` _(或)_
-<!--rehype:className=cols-2 style-none-->
 
 ### Github 上下文
-<!--rehype:wrap-class=col-span-2 row-span-3-->
 
-属性名称 | 类型 | 描述
----- | ---- | ----
-`github` _(object)_ | 工作流程中任何作业或步骤期间可用的顶层上下文。
-`github.event` _(object)_ | 完整事件 web 挂钩有效负载。 更多信息请参阅“触发工作流程的事件”。
-`github.event_path` _(string)_ | 运行器上完整事件 web 挂钩有效负载的路径。
-`github.workflow` _(string)_ | 工作流程的名称。 如果工作流程文件未指定 name，此属性的值将是仓库中工作流程文件的完整路径。
-`github.job` _(string)_ | 当前作业的 job_id。
-`github.run_id` _(string)_ | 仓库中每个运行的唯一编号。 如果您重新执行工作流程运行，此编号不变。
-`github.run_number` _(string)_ | 仓库中特定工作流程每个运行的唯一编号。 此编号从 1（对应于工作流程的第一个运行）开始，然后随着每个新的运行而递增。 如果您重新执行工作流程运行，此编号不变。
-`github.actor` _(string)_ | 发起工作流程运行的用户的登录名。
-`github.repository` _(string)_ | 所有者和仓库名称。 例如 Codertocat/Hello-World。
-`github.repository_owner` _(string)_ | 仓库所有者的名称。 例如 Codertocat。
-`github.event_name` _(string)_ | 触发工作流程运行的事件的名称。
-`github.sha` _(string)_ | 触发工作流程的提交 SHA。
-`github.ref` _(string)_ | 触发工作流程的分支或标记参考。
-`github.head_ref` _(string)_ | 工作流程运行中拉取请求的 head_ref 或来源分支。 此属性仅在触发工作流程运行的事件为 pull_request 时才可用。
-`github.base_ref` _(string)_ | 工作流程运行中拉取请求的 base_ref 或目标分支。 此属性仅在触发工作流程运行的事件为 pull_request 时才可用。
-`github.token` _(string)_ | 代表仓库上安装的 GitHub 应用程序进行身份验证的令牌。 这在功能上等同于 GITHUB_TOKEN 密码。 更多信息请参阅“使用 GITHUB_TOKEN 验证身份”。
-`github.workspace` _(string)_ | 使用 checkout 操作时步骤的默认工作目录和仓库的默认位置。
-`github.action` _(string)_ | 正在运行的操作的名称。 在当前步骤运行脚本时，GitHub 删除特殊字符或使用名称 run。 如果在同一作业中多次使用相同的操作，则名称将包括带有序列号的后缀。 例如，运行的第一个脚本名称为 run1，则第二个脚本将命名为 run2。 同样，actions/checkout 第二次调用时将变成 actionscheckout2。
-<!--rehype:className=style-list-arrow-->
+| 属性名称 | 类型 | 描述 |
+| ---- | ---- | ---- |
+| `github` _(object)_ | 工作流程中任何作业或步骤期间可用的顶层上下文。 |
+| `github.event` _(object)_ | 完整事件 web 挂钩有效负载。 更多信息请参阅“触发工作流程的事件”。 |
+| `github.event_path` _(string)_ | 运行器上完整事件 web 挂钩有效负载的路径。 |
+| `github.workflow` _(string)_ | 工作流程的名称。 如果工作流程文件未指定 name，此属性的值将是仓库中工作流程文件的完整路径。 |
+| `github.job` _(string)_ | 当前作业的 job_id。 |
+| `github.run_id` _(string)_ | 仓库中每个运行的唯一编号。 如果您重新执行工作流程运行，此编号不变。 |
+| `github.run_number` _(string)_ | 仓库中特定工作流程每个运行的唯一编号。 此编号从 1（对应于工作流程的第一个运行）开始，然后随着每个新的运行而递增。 如果您重新执行工作流程运行，此编号不变。 |
+| `github.actor` _(string)_ | 发起工作流程运行的用户的登录名。 |
+| `github.repository` _(string)_ | 所有者和仓库名称。 例如 Codertocat/Hello-World。 |
+| `github.repository_owner` _(string)_ | 仓库所有者的名称。 例如 Codertocat。 |
+| `github.event_name` _(string)_ | 触发工作流程运行的事件的名称。 |
+| `github.sha` _(string)_ | 触发工作流程的提交 SHA。 |
+| `github.ref` _(string)_ | 触发工作流程的分支或标记参考。 |
+| `github.head_ref` _(string)_ | 工作流程运行中拉取请求的 head_ref 或来源分支。 此属性仅在触发工作流程运行的事件为 pull_request 时才可用。 |
+| `github.base_ref` _(string)_ | 工作流程运行中拉取请求的 base_ref 或目标分支。 此属性仅在触发工作流程运行的事件为 pull_request 时才可用。 |
+| `github.token` _(string)_ | 代表仓库上安装的 GitHub 应用程序进行身份验证的令牌。 这在功能上等同于 GITHUB_TOKEN 密码。 更多信息请参阅“使用 GITHUB_TOKEN 验证身份”。 |
+| `github.workspace` _(string)_ | 使用 checkout 操作时步骤的默认工作目录和仓库的默认位置。 |
+| `github.action` _(string)_ | 正在运行的操作的名称。 在当前步骤运行脚本时，GitHub 删除特殊字符或使用名称 run。 如果在同一作业中多次使用相同的操作，则名称将包括带有序列号的后缀。 例如，运行的第一个脚本名称为 run1，则第二个脚本将命名为 run2。 同样，actions/checkout 第二次调用时将变成 actionscheckout2。 |
 
 [Github 上下文](https://help.github.com/cn/actions/reference/context-and-expression-syntax-for-github-actions)是访问有关工作流运行、运行器环境、作业和步骤的信息的一种方式
 
@@ -356,7 +336,6 @@ contains('Hello world', 'llo') // 返回 true
 ```js
 contains(github.event.issue.labels.*.name, 'bug')
 ```
-<!--rehype:className=wrap-text -->
 
 另见: [函数 contains](https://docs.github.com/cn/actions/learn-github-actions/expressions#contains)
 
@@ -369,29 +348,27 @@ startsWith('Hello world', 'He') // 返回 true
 另见: [函数 startsWith](https://docs.github.com/cn/actions/learn-github-actions/expressions#startswith)，此函数不区分大小写
 
 ### 默认环境变量
-<!--rehype:wrap-class=row-span-8 col-span-2-->
 
-环境变量 | 描述
----- | ----
-`CI` | 始终设置为 `true`
-`HOME` | 用于存储用户数据的 GitHub 主目录路径。 例如 `/github/home`
-`GITHUB_WORKFLOW` | 工作流程的名称。
-`GITHUB_RUN_ID` | 仓库中每个运行的唯一编号。 如果您重新执行工作流程运行，此编号不变。
-`GITHUB_RUN_NUMBER` | 仓库中特定工作流程每个运行的唯一编号。 此编号从 1（对应于工作流程的第一个运行）开始，然后随着每个新的运行而递增。 如果您重新执行工作流程运行，此编号不变。
-`GITHUB_ACTION` | 操作唯一的标识符 (id)。
-`GITHUB_ACTIONS` |  当 GitHub 操作 运行工作流程时，始终设置为 true。 您可以使用此变量来区分测试是在本地运行还是通过 GitHub 操作 运行。
-`GITHUB_ACTION_PATH` | GitHub 操作所在的路径
-`GITHUB_ACTOR` | 发起工作流程的个人或应用程序的名称。 例如 octocat
-`GITHUB_API_URL` | 返回 `API URL`。例如：`https://api.github.com`
-`GITHUB_REPOSITORY` | 所有者和仓库名称。 例如 octocat/Hello-World
-`GITHUB_EVENT_NAME` | 触发工作流程的 web 挂钩事件的名称
-`GITHUB_EVENT_PATH` | 具有完整 web 挂钩事件有效负载的文件路径。 例如 /github/workflow/event.json
-`GITHUB_WORKSPACE` | GitHub 工作空间目录路径。 如果您的工作流程使用 [actions/checkout](https://github.com/actions/checkout) 操作，工作空间目录将包含存储仓库副本的子目录。 如果不使用 [actions/checkout](https://github.com/actions/checkout) 操作，该目录将为空。 例如 /home |/runner/work/my-repo-name/my-repo-name
-`GITHUB_SHA` | 触发工作流程的提交 SHA。 例如 ffac537e6cbbf9
-`GITHUB_REF` | 触发工作流程的分支或标记参考。 例如 refs/heads/feature-branch-1。 如果分支或标记都不适用于事件类型，则变量不会存在
-`GITHUB_HEAD_REF` | 仅为复刻的仓库设置。头部仓库的分支
-`GITHUB_BASE_REF` | 仅为复刻的仓库设置。基础仓库的分支
-<!--rehype:className=style-list-arrow-->
+| 环境变量 | 描述 |
+| ---- | ---- |
+| `CI` | 始终设置为 `true` |
+| `HOME` | 用于存储用户数据的 GitHub 主目录路径。 例如 `/github/home` |
+| `GITHUB_WORKFLOW` | 工作流程的名称。 |
+| `GITHUB_RUN_ID` | 仓库中每个运行的唯一编号。 如果您重新执行工作流程运行，此编号不变。 |
+| `GITHUB_RUN_NUMBER` | 仓库中特定工作流程每个运行的唯一编号。 此编号从 1（对应于工作流程的第一个运行）开始，然后随着每个新的运行而递增。 如果您重新执行工作流程运行，此编号不变。 |
+| `GITHUB_ACTION` | 操作唯一的标识符 (id)。 |
+| `GITHUB_ACTIONS` | 当 GitHub 操作 运行工作流程时，始终设置为 true。 您可以使用此变量来区分测试是在本地运行还是通过 GitHub 操作 运行。 |
+| `GITHUB_ACTION_PATH` | GitHub 操作所在的路径 |
+| `GITHUB_ACTOR` | 发起工作流程的个人或应用程序的名称。 例如 octocat |
+| `GITHUB_API_URL` | 返回 `API URL`。例如：`https://api.github.com` |
+| `GITHUB_REPOSITORY` | 所有者和仓库名称。 例如 octocat/Hello-World |
+| `GITHUB_EVENT_NAME` | 触发工作流程的 web 挂钩事件的名称 |
+| `GITHUB_EVENT_PATH` | 具有完整 web 挂钩事件有效负载的文件路径。 例如 /github/workflow/event.json |
+| `GITHUB_WORKSPACE` | GitHub 工作空间目录路径。 如果您的工作流程使用 [actions/checkout](https://github.com/actions/checkout) 操作，工作空间目录将包含存储仓库副本的子目录。 如果不使用 [actions/checkout](https://github.com/actions/checkout) 操作，该目录将为空。 例如 /home | /runner/work/my-repo-name/my-repo-name |
+| `GITHUB_SHA` | 触发工作流程的提交 SHA。 例如 ffac537e6cbbf9 |
+| `GITHUB_REF` | 触发工作流程的分支或标记参考。 例如 refs/heads/feature-branch-1。 如果分支或标记都不适用于事件类型，则变量不会存在 |
+| `GITHUB_HEAD_REF` | 仅为复刻的仓库设置。头部仓库的分支 |
+| `GITHUB_BASE_REF` | 仅为复刻的仓库设置。基础仓库的分支 |
 
 另见: [默认环境变量](https://docs.github.com/cn/actions/learn-github-actions/environment-variables#default-environment-variables)
 
@@ -401,7 +378,6 @@ startsWith('Hello world', 'He') // 返回 true
 format('{{Hello {0} {1} {2}!}}', 'Mona', 'the', 'Octocat')
 // 返回 '{Hello Mona the Octocat!}'.
 ```
-<!--rehype:className=wrap-text -->
 
 另见: [函数 format](https://docs.github.com/cn/actions/learn-github-actions/expressions#format)
 
@@ -424,16 +400,15 @@ toJSON(job)
 另见: [函数 toJSON](https://docs.github.com/cn/actions/learn-github-actions/expressions#tojson)
 
 ### 函数
-<!--rehype:wrap-class=row-span-2-->
 
-:- | :-
-:- | :-
-`fromJSON` | 返回 JSON 对象或 JSON 数据类型的值 [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#fromjson)
-`hashFiles` | 返回与路径模式匹配的文件集的单个哈希 [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#hashfiles)
-`success` | 当前面的步骤都没失败或被取消时返回 true [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#success)
-`always` | 使步骤始终执行，返回 `true` 即使取消也是如此 [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#always)
-`cancelled` | 如果工作流被取消，则返回 true [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#cancelled)
-`failure` | 当作业的任何先前步骤失败时返回 true [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#failure)
+| :- | :- |
+| :- | :- |
+| `fromJSON` | 返回 JSON 对象或 JSON 数据类型的值 [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#fromjson) |
+| `hashFiles` | 返回与路径模式匹配的文件集的单个哈希 [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#hashfiles) |
+| `success` | 当前面的步骤都没失败或被取消时返回 true [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#success) |
+| `always` | 使步骤始终执行，返回 `true` 即使取消也是如此 [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#always) |
+| `cancelled` | 如果工作流被取消，则返回 true [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#cancelled) |
+| `failure` | 当作业的任何先前步骤失败时返回 true [#](https://docs.github.com/cn/actions/learn-github-actions/expressions#failure) |
 
 ### 函数 success()
 
@@ -453,11 +428,9 @@ steps:
     if: ${{ failure() }}
 ```
 
-常用实例
-----
+## 常用实例
 
 ### 获取版本信息
-<!--rehype:wrap-class=col-span-2-->
 
 ```yml
 - name: Test
@@ -470,7 +443,6 @@ steps:
     # [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
     echo "$VERSION"
 ```
-<!--rehype:className=wrap-text -->
 
 ### 提交到 gh-pages 分支
 
@@ -490,7 +462,6 @@ steps:
   run: |
     node -e 'var pkg = require("./package.json"); pkg.version= (new Date().getFullYear().toString().substr(2)) + "." + (new Date().getMonth() + 1) + "." + (new Date().getDate()); require("fs").writeFileSync("./package.json", JSON.stringify(pkg, null, 2))'
 ```
-<!--rehype:className=wrap-text -->
 
 使用 [github-action-package](https://github.com/jaywcjlove/github-action-package) 修改 `name` 字段
 
@@ -523,7 +494,6 @@ steps:
 ```
 
 ### 步骤依赖作业
-<!--rehype:wrap-class=row-span-2-->
 
 使用 `jobs.<job_id>.needs` 识别在此作业运行之前必须成功完成的任何作业。它可以是一个字符串，也可以是字符串数组。 如果某个作业失败，则所有需要它的作业都会被跳过，除非这些作业使用让该作业继续的条件表达式。
 
@@ -559,7 +529,6 @@ jobs:
 在此示例中，`job3` 使用 `always()` 条件表达式，因此它始终在 `job1` 和 `job2` 完成后运行，不管它们是否成功。
 
 ### 同步 Gitee
-<!--rehype:wrap-class=col-span-2-->
 
 ```yml
 - name: Sync to Gitee
@@ -574,7 +543,6 @@ jobs:
     }
     mirror uiwjs uiw
 ```
-<!--rehype:className=wrap-text -->
 
 ### 提交 NPM 包
 
@@ -592,7 +560,6 @@ npm token list [--json|--parseable] # 查看
 npm token create [--read-only] [--cidr=1.1.1.1/24,2.2.2.2/16] # 创建
 npm token revoke <id|token> # 撤销
 ```
-<!--rehype:className=wrap-text -->
 
 可以使用 [JS-DevTools/npm-publish](https://github.com/JS-DevTools/npm-publish) 提交
 
@@ -663,7 +630,6 @@ steps:
 ```
 
 ### 提交 docker 镜像
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```yml
 # https://www.basefactor.com/github-actions-docker
@@ -712,10 +678,8 @@ steps:
 - name: Get the changelog
   run: echo "${{ steps.changelog.outputs.changelog }}"
 ```
-<!--rehype:className=wrap-text -->
 
 ### 提交到 GitHub docker 镜像仓库
-<!--rehype:wrap-class=col-span-3-->
 
 ```yml
 - name: '登录到 GitHub 注册表'
@@ -736,7 +700,6 @@ steps:
 ```
 
 ### 提交 commit 到 master 分支
-<!--rehype:wrap-class=col-span-2-->
 
 ```yml
 - name: 生成一个文件，并将它提交到 master 分支
@@ -845,26 +808,23 @@ steps:
 您可以使用 `shell` 关键字覆盖运行器操作系统中的默认 `shell` 设置
 
 ### 一些 actions 推荐
-<!--rehype:wrap-class=row-span-2-->
 
-:- | :-
-:- | :-
-[`create-tag-action`](https://github.com/jaywcjlove/create-tag-action) | 根据 package.json 创建 `Tag` / `Release`
-[`changelog-generator`](https://github.com/jaywcjlove/changelog-generator) | 生成 `changelog` 日志
-[`github-action-modify-file-content`](https://github.com/jaywcjlove/github-action-modify-file-content) | 修改仓库文件内容
-[`github-action-contributors`](https://github.com/jaywcjlove/github-action-contributors) | 生成贡献(contributors.svg)图片
-[`generated-badges`](https://github.com/jaywcjlove/generated-badges) | 生成徽章(Badges)图片
-[`coverage-badges-cli`](https://github.com/jaywcjlove/coverage-badges-cli) | 生成覆盖率徽章(Badges)图片
-[`action-ejs`](https://github.com/jaywcjlove/action-ejs) | 基于 ejs 生成 HTML
-[`github-action-package`](https://github.com/jaywcjlove/github-action-package) | 修改 JSON 文件内容
-[`github-action-read-file`](https://github.com/jaywcjlove/github-action-read-file) | 读取文件内容
-[`markdown-to-html-cli`](https://github.com/jaywcjlove/markdown-to-html-cli) | Markdown 转换成 HTML
-[`ncipollo/release-action`](https://github.com/ncipollo/release-action) | 创建 `Release`
-[`peaceiris/actions-gh-pages`](https://github.com/peaceiris/actions-gh-pages) | 将文件或文件夹内容提交到 `gh-pages` 分支
-<!--rehype:className=style-list-->
+| :- | :- |
+| :- | :- |
+| [`create-tag-action`](https://github.com/jaywcjlove/create-tag-action) | 根据 package.json 创建 `Tag` / `Release` |
+| [`changelog-generator`](https://github.com/jaywcjlove/changelog-generator) | 生成 `changelog` 日志 |
+| [`github-action-modify-file-content`](https://github.com/jaywcjlove/github-action-modify-file-content) | 修改仓库文件内容 |
+| [`github-action-contributors`](https://github.com/jaywcjlove/github-action-contributors) | 生成贡献(contributors.svg)图片 |
+| [`generated-badges`](https://github.com/jaywcjlove/generated-badges) | 生成徽章(Badges)图片 |
+| [`coverage-badges-cli`](https://github.com/jaywcjlove/coverage-badges-cli) | 生成覆盖率徽章(Badges)图片 |
+| [`action-ejs`](https://github.com/jaywcjlove/action-ejs) | 基于 ejs 生成 HTML |
+| [`github-action-package`](https://github.com/jaywcjlove/github-action-package) | 修改 JSON 文件内容 |
+| [`github-action-read-file`](https://github.com/jaywcjlove/github-action-read-file) | 读取文件内容 |
+| [`markdown-to-html-cli`](https://github.com/jaywcjlove/markdown-to-html-cli) | Markdown 转换成 HTML |
+| [`ncipollo/release-action`](https://github.com/ncipollo/release-action) | 创建 `Release` |
+| [`peaceiris/actions-gh-pages`](https://github.com/peaceiris/actions-gh-pages) | 将文件或文件夹内容提交到 `gh-pages` 分支 |
 
 ### 在 Github 中创建 Docker 镜像
-<!--rehype:wrap-class=row-span-2 col-span-2-->
 
 ```yml
 - name: Set up Docker Buildx
@@ -906,7 +866,6 @@ steps:
 ```
 
 ### 在 Docker Hub 中创建 Docker 镜像
-<!--rehype:wrap-class=row-span-3 col-span-2-->
 
 ```yml
 - name: Set up Docker Buildx
@@ -966,7 +925,6 @@ steps:
 ```
 
 ### 传递环境变量
-<!--rehype:wrap-class=col-span-2-->
 
 在 `ci.yml` 上保存环境变量
 
@@ -1006,12 +964,11 @@ on:
     types: [tag-creation-success]
 ```
 
-GitLab CI/CD 迁移到 GitHub Actions
----
+## GitLab CI/CD 迁移到 GitHub Actions
 
 ### 语法示例
 
-<yel>GitLab CI/CD</yel>
+GitLab CI/CD
 
 ```yml
 job1:
@@ -1032,9 +989,8 @@ jobs:
 ```
 
 ### 运行程序
-<!--rehype:wrap-class=row-span-2-->
 
-<yel>GitLab CI/CD</yel>
+GitLab CI/CD
 
 ```yml
 windows_job:
@@ -1066,7 +1022,7 @@ linux_job:
 
 ### Docker 映像
 
-<yel>GitLab CI/CD</yel>
+GitLab CI/CD
 
 ```yml
 my_job:
@@ -1083,7 +1039,7 @@ jobs:
 
 ### 条件和表达式语法
 
-<yel>GitLab CI/CD</yel>
+GitLab CI/CD
 
 ```yml
 deploy_prod:
@@ -1107,7 +1063,7 @@ jobs:
 
 ### Artifacts
 
-<yel>GitLab CI/CD</yel>
+GitLab CI/CD
 
 ```yml
 script:
@@ -1128,7 +1084,7 @@ GitHub Actions
 
 ### 作业之间的依赖关系
 
-<yel>GitLab CI/CD</yel>
+GitLab CI/CD
 
 ```yml
 stages:
@@ -1178,7 +1134,7 @@ jobs:
 
 ### 缓存
 
-<yel>GitLab CI/CD</yel>
+GitLab CI/CD
 
 ```yml
 image: node:latest
@@ -1210,7 +1166,7 @@ jobs:
 
 ### 数据库和服务容器
 
-<yel>GitLab CI/CD</yel>
+GitLab CI/CD
 
 ```yml
 container-job:
@@ -1268,9 +1224,12 @@ jobs:
           POSTGRES_PORT: 5432
 ```
 
-另见
----
+## 另见
 
 - [Github Actions 学习笔记](https://jaywcjlove.github.io/github-actions) _(jaywcjlove.github.io)_
 - [了解 GitHub Actions](https://docs.github.com/cn/actions/learn-github-actions) _(docs.github.com)_
 - [从 GitLab CI/CD 迁移到 GitHub Actions](https://docs.github.com/cn/actions/migrating-to-github-actions/migrating-from-gitlab-cicd-to-github-actions) _(docs.github.com)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/github-actions.md](https://github.com/jaywcjlove/reference/blob/main/docs/github-actions.md)
+
+获取日期：2026-10-15

@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/chatgpt.md
-Retrieved on: 2026-10-15
--->
-
-ChatGPT
-===
+# ChatGPT
 
 此备忘单列出了来自世界各地的提示和提示，说明如何有效使用 ChatGPT。
 
-入门指南
----
+## 入门指南
 
 ### ChatGPT 介绍
 
@@ -28,7 +20,6 @@ ChatGPT 是 OpenAI 于 2022 年发布的 AI 聊天机器人，基于 GPT-3.5、G
 - [讯飞星火](https://xinghuo.xfyun.cn/) _xfyun.cn_
 
 ### 通用
-<!--rehype:wrap-class=row-span-2-->
 
 为你的企业或创意命名
 
@@ -71,7 +62,6 @@ ChatGPT 是 OpenAI 于 2022 年发布的 AI 聊天机器人，基于 GPT-3.5、G
 ```
 
 ### 编程
-<!--rehype:wrap-class=row-span-3-->
 
 解释代码为什么无法正常工作
 
@@ -146,28 +136,24 @@ return a + b;
 ```
 你能帮我创建一个公式来计算单元格 A1 到 A10 的总和吗？
 ```
-<!--rehype:className=wrap-text-->
 
 解释一个公式
 
 ```
 你能用简单的语言解释一下公式 =SUM(A1:A10) 的含义吗？
 ```
-<!--rehype:className=wrap-text-->
 
 创建占位符的虚拟数据
 
 ```
 你能帮我生成一些虚拟数据，作为我的电子表格的占位符吗？
 ```
-<!--rehype:className=wrap-text-->
 
 帮助创建复杂的宏
 
 ```
 我需要创建一个宏，计算单元格 B1 到 B10 的平均值并将结果插入到单元格 C1。你能帮我吗？
 ```
-<!--rehype:className=wrap-text-->
 
 提供提高电子表格效率的建议
 
@@ -176,7 +162,6 @@ return a + b;
 ```
 
 ### 电子邮件
-<!--rehype:wrap-class=row-span-2-->
 
 创建电子邮件活动
 
@@ -192,7 +177,6 @@ return a + b;
 帮我校对并格式化我刚写的这封邮件：
 Hello, do you have any actual tips or tricks for ChatGPT please?
 ```
-<!--rehype:className=wrap-text-->
 
 提供有效电子邮件营销的建议
 
@@ -201,7 +185,6 @@ Hello, do you have any actual tips or tricks for ChatGPT please?
 
 建议一些方法，让我的邮件内容对订阅者更具吸引力和相关性。
 ```
-<!--rehype:className=wrap-text-->
 
 自动回复邮件
 
@@ -209,7 +192,6 @@ Hello, do you have any actual tips or tricks for ChatGPT please?
 给他发送邮件，内容为 "That's a good suggestion, it's coming soon":
 Hello, do you have any actual tips or tricks for ChatGPT please?
 ```
-<!--rehype:className=wrap-text-->
 
 从文本中提取电子邮件地址
 
@@ -217,7 +199,6 @@ Hello, do you have any actual tips or tricks for ChatGPT please?
 帮我提取所有的电子邮件地址：
 Sed sit amet sodales tom@gmail.com, at jack@gmail.com enim. 18261@outlook.com ut eros
 ```
-<!--rehype:className=wrap-text-->
 
 ### 社交媒体
 
@@ -232,21 +213,18 @@ Sed sit amet sodales tom@gmail.com, at jack@gmail.com enim. 18261@outlook.com ut
 ```
 我想发一个关于气候变化的帖子，能与我的粉丝产生互动。你能给我一些创意吗？
 ```
-<!--rehype:className=wrap-text-->
 
 生成标签和配文
 
 ```
 我需要一些适合风景日落照片的标签和配文。你能帮我生成一些吗？
 ```
-<!--rehype:className=wrap-text-->
 
 提供回复建议
 
 ```
 我刚收到一条关于项目状态的消息。你能给我一个回复建议吗？
 ```
-<!--rehype:className=wrap-text-->
 
 ### 阅读
 
@@ -281,7 +259,6 @@ Sed sit amet sodales tom@gmail.com, at jack@gmail.com enim. 18261@outlook.com ut
 ```
 你能推荐一些引人注目的缩略图设计，适合我最新关于健康饮食的 YouTube 视频吗？
 ```
-<!--rehype:className=wrap-text-->
 
 字体搭配
 
@@ -378,10 +355,8 @@ Facebook 受众建议
 ```
 你能帮我把产品和定价信息整理成一个整洁易管理的表格吗？
 ```
-<!--rehype:className=wrap-text-->
 
 ### SEO
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 生成或查找关键词
 
@@ -398,7 +373,6 @@ Facebook 受众建议
 - 查找[主题]的最佳关键词。
 - 查找[主题] AMP 优化的最佳关键词。
 - 查找[主题]社交媒体优化的最佳关键词。
-<!--rehype:className=style-round-->
 
 更多关于 SEO 的 ChatGPT 提示
 
@@ -440,7 +414,6 @@ Facebook 受众建议
 - 为[主题]创建一个面向多个地理位置的示例关键词列表。
 - 生成针对不同客户购买漏斗阶段的[主题]关键词创意。
 - 识别与[主题]相关的行业标签。
-<!--rehype:className=style-round-->
 
 ### 写作/博客
 
@@ -523,28 +496,24 @@ Facebook 受众建议
 ```sh
 你能把这份关于世界历史的事实列表转成多项选择题吗？[你的列表]
 ```
-<!--rehype:className=wrap-text-->
 
 特定主题的作业创意
 
 ```
 我需要一些关于美国独立战争的历史作业创意。你能建议一些吗？
 ```
-<!--rehype:className=wrap-text-->
 
 从学生列表中创建分组
 
 ```
 我有一份30名学生的名单。你能把他们分成6人一组进行小组项目吗？
 ```
-<!--rehype:className=wrap-text-->
 
 根据考试成绩创建曲线
 
 ```
 我需要根据学生的考试成绩创建一个评分曲线。你能帮忙吗？
 ```
-<!--rehype:className=wrap-text-->
 
 评分作业
 
@@ -559,14 +528,12 @@ Facebook 受众建议
 ```
 你能为这段播客节目的文字稿创建时间戳吗？[你的文字稿]
 ```
-<!--rehype:className=wrap-text-->
 
 将 YouTube 视频转换为带格式的博客文章
 
 ```
 你能把这段关于烹饪的 YouTube 视频转成带有标题和项目符号的博客文章吗？[视频链接]
 ```
-<!--rehype:className=wrap-text-->
 
 想出视频大纲或脚本
 
@@ -579,28 +546,24 @@ Facebook 受众建议
 ```
 你能写一个周到且礼貌的回复，回应我 YouTube 视频上的这条负面评论吗？
 ```
-<!--rehype:className=wrap-text-->
 
 给你缩略图创意
 
 ```
 我需要一些关于“DIY 家居装饰”视频的缩略图创意。你能建议一些吗？
 ```
-<!--rehype:className=wrap-text-->
 
 分析你的脚本或文字稿并告诉你语气
 
 ```
 你能分析这段关于环境问题的视频脚本，并告诉我语气是什么吗？[你的脚本]
 ```
-<!--rehype:className=wrap-text-->
 
 任何主题的视频创意
 
 ```
 我想制作一系列关于时尚的视频。你能给我建议一些单集的创意吗？
 ```
-<!--rehype:className=wrap-text-->
 
 ### 研究
 
@@ -615,7 +578,6 @@ Facebook 受众建议
 - 你能给我关于法国大革命的信息吗？
 - 我对拜占庭帝国的历史感兴趣。你能帮我了解更多吗？
 - 等等...
-<!--rehype:className=style-round-->
 
 ## 参考资料
 
@@ -623,3 +585,7 @@ Facebook 受众建议
 - [原始资料](https://github.com/Fechin/reference/blob/main/source/_posts/chatgpt.md)
 - [ChatGPT](https://chatgpt.com/)
 - [Comprehensive Cheatsheet](https://github.com/bg-write/chatGPT-cheatsheet)
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/chatgpt.md](https://github.com/jaywcjlove/reference/blob/main/docs/chatgpt.md)
+
+获取日期：2026-10-15

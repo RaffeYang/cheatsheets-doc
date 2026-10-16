@@ -1,23 +1,15 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/python.md
-Retrieved on: 2026-10-15
--->
-
-Python 3 备忘清单
-===
+# Python 3 备忘清单
 
 Python 备忘单是 [Python 3](https://www.python.org/) 编程语言的单页参考表
 
-入门
------
+## 入门
 
 ### 介绍
 
 - [Python 官方网站](https://www.python.org/)  _(python.org)_
 - [Python 文档](https://docs.python.org/zh-cn/3/index.html)  _(docs.python.org)_
 - [Y 分钟学会 Python](https://learnxinyminutes.com/docs/zh-cn/python-cn/) _(learnxinyminutes.com)_
-- [Python 中的正则表达式](./regex.md#python-中的正则表达式) _(jaywcjlove.github.io)_
+- [Python 中的正则表达式](https://github.com/jaywcjlove/reference/blob/main/docs/regex.md#python-中的正则表达式) _(jaywcjlove.github.io)_
 
 ### 控制台打印
 
@@ -40,18 +32,18 @@ print(name)
 - 变量可以存放不同类型的值
 
 ### 内置数据类型
-<!--rehype:wrap-class=row-span-2-->
+
 序列指一批有序的元素，集合指一批无序且不重复的元素
 
-| :-                                      | :-               |
-|:----------------------------------------|:-----------------|
-| `str`                                   | 文本／字符串（Text）     |
-| `int`, `float`, `complex`               | 数值（Numeric）      |
-| `dict`                                  | 映射／键值对（Mapping）  |
-| `list`, `tuple`, `range`                | 序列（Sequence）     |
-| `set`, `frozenset`                      | 集合（Set）          |
-| `bool`                                  | 布尔值／逻辑值（Boolean） |
-| `bytes`, `bytearray`, <br> `memoryview` | 二进制数据（Binary）    |
+| :- | :- |
+| :---------------------------------------- | :----------------- |
+| `str` | 文本／字符串（Text） |
+| `int`, `float`, `complex` | 数值（Numeric） |
+| `dict` | 映射／键值对（Mapping） |
+| `list`, `tuple`, `range` | 序列（Sequence） |
+| `set`, `frozenset` | 集合（Set） |
+| `bool` | 布尔值／逻辑值（Boolean） |
+| `bytes`, `bytearray`,  /  `memoryview` | 二进制数据（Binary） |
 
 查看: [数据类型](#python-数据类型)
 
@@ -114,7 +106,6 @@ else:
 查看: [函数](#函数)
 
 ### 文件处理
-<!--rehype:wrap-class=col-span-2-->
 
 ```python
 with open("myfile.txt", "r", encoding='utf8') as file:
@@ -163,8 +154,7 @@ message += "Part 2."
 
 查看: [f-字符串](#python-f-字符串-python-36)
 
-Python 数据类型
----------------
+## Python 数据类型
 
 ### 字符串
 
@@ -277,8 +267,7 @@ y = str(2)       # 得到 "2"
 z = str(3.0)     # 得到 "3.0"
 ```
 
-Python 字符串
-------------
+## Python 字符串
 
 ### 下标访问
 
@@ -305,7 +294,6 @@ o
 对字符串 for-in 可以得到每个字符（类型还是字符串）
 
 ### 切割字符串
-<!--rehype:wrap-class=row-span-4-->
 
 ```java
  ┌───┬───┬───┬───┬───┬───┬───┐
@@ -315,8 +303,6 @@ o
 -7  -6  -5  -4  -3  -2  -1
 ```
 
----
-
 ```python
 >>> s = 'mybacon'
 >>> s[2:5]
@@ -324,8 +310,6 @@ o
 >>> s[0:2]
 'my'
 ```
-
----
 
 ```python
 >>> s = 'mybacon'
@@ -338,8 +322,6 @@ o
 >>> s[:]
 'mybacon'
 ```
-
----
 
 ```python
 >>> s = 'mybacon'
@@ -408,14 +390,11 @@ True
 ```
 
 ### 格式化
-<!--rehype:wrap-class=col-span-2-->
 
 ```python
 name = "John"
 print("Hello, %s!" % name)
 ```
-
----
 
 ```python
 name = "John"
@@ -432,17 +411,16 @@ txt3 = "My name is {}, I'm {}".format("John", 36)
 ```
 
 ### 转义符号
-<!--rehype:wrap-class=row-span-2-->
 
-| 转义符号 | 对应的操作  |
-|------|--------|
-| `\\` | 输出反斜杠  |
-| `\'` | 输出单引号  |
-| `\"` | 输出双引号  |
-| `\n` | 换行     |
-| `\t` | 水平制表符  |
+| 转义符号 | 对应的操作 |
+| ------ | -------- |
+| `\\` | 输出反斜杠 |
+| `\'` | 输出单引号 |
+| `\"` | 输出双引号 |
+| `\n` | 换行 |
+| `\t` | 水平制表符 |
 | `\r` | 光标回到首位 |
-| `\b` | 退格     |
+| `\b` | 退格 |
 
 ### 控制台输入
 
@@ -456,7 +434,6 @@ Enter your name: Tom
 从控制台获取输入数据
 
 ### 头尾判断
-<!--rehype:wrap-class=row-span-2-->
 
 ```python
 >>> # 是否以 H 开头
@@ -477,11 +454,9 @@ True
 'John、Peter、Vicky'
 ```
 
-Python f-字符串 (Python 3.6+)
-----------------
+## Python f-字符串 (Python 3.6+)
 
 ### f-字符串 用法
-<!--rehype:wrap-class=row-span-2-->
 
 ```python
 >>> website = 'Reference'
@@ -522,7 +497,6 @@ Python f-字符串 (Python 3.6+)
 ```
 
 ### 按类型输出
-<!--rehype:wrap-class=row-span-2-->
 
 ```python
 >>> f'{10:b}'     # 输出二进制数值
@@ -582,8 +556,7 @@ Python f-字符串 (Python 3.6+)
 '25%'
 ```
 
-Python 列表
-------------
+## Python 列表
 
 ### 定义
 
@@ -603,7 +576,6 @@ Python 列表
 ```
 
 ### 生成
-<!--rehype:wrap-class=col-span-2-->
 
 ```python
 >>> list(filter(lambda x : x % 2 == 1, range(1, 20)))
@@ -635,7 +607,6 @@ Python 列表
 ```
 
 ### 切片
-<!--rehype:wrap-class=col-span-2 row-span-3-->
 
 列表切片的语法：
 
@@ -720,7 +691,6 @@ IndexError: list index out of range
 ```
 
 ### 连接
-<!--rehype:wrap-class=row-span-2-->
 
 ```python
 >>> odd = [1, 3, 5]
@@ -733,7 +703,6 @@ IndexError: list index out of range
 ```
 
 ### 排序和反转
-<!--rehype:wrap-class=row-span-2-->
 
 ```python
 >>> li = [3, 1, 3, 2, 5]
@@ -762,7 +731,7 @@ IndexError: list index out of range
 ```
 
 ### 搜索
-  
+
 ```python
 >>> nums = [40, 36, 89, 2, 36, 100, 7, -20.5, -999]
 >>> nums.index(2)
@@ -774,9 +743,8 @@ IndexError: list index out of range
 ```  
 
 当寻找一个不存在的值时，抛出`ValueError`。
-  
-Python 判断
-------------
+
+## Python 判断
 
 ### if-else
 
@@ -812,8 +780,7 @@ print(tip)
 
 注意条件是放在中间的
 
-Python 循环
---------
+## Python 循环
 
 ### 一般形式
 
@@ -882,7 +849,6 @@ for n, a in zip(name, age):
 ```
 
 ### 列表生成式
-<!--rehype:wrap-class=col-span-2-->
 
 ```python
 result = [x**2 for x in range(10) if x % 2 == 0]
@@ -891,8 +857,7 @@ print(result)
 # [0, 4, 16, 36, 64]
 ```
 
-Python 函数
---------
+## Python 函数
 
 ### 基础
 
@@ -959,8 +924,7 @@ add(5, 20)  # => 25
 (lambda x, y: x ** 2 + y ** 2)(2, 1)
 ```
 
-Python 解包
---------
+## Python 解包
 
 - 解包是将一个
   [序列](https://docs.python.org/zh-cn/3/library/stdtypes.html#sequence-types-list-tuple-range)
@@ -1132,8 +1096,7 @@ print(version())
 # -> ("3", "10", "2", "beta", "0", "x64")
 ```
 
-Python 模块
---------
+## Python 模块
 
 ### 导入模块
 
@@ -1171,8 +1134,7 @@ import math
 dir(math)
 ```
 
-Python 文件处理
-----------
+## Python 文件处理
 
 ### 读取文件
 
@@ -1252,8 +1214,7 @@ import os
 os.rmdir("myfolder")
 ```
 
-Python 类和继承
---------
+## Python 类和继承
 
 ### 定义
 
@@ -1291,7 +1252,6 @@ charlie.bark()   # => "Ham-Ham"
 ```
 
 ### 类变量
-<!--rehype:wrap-class=row-span-2-->
 
 ```python
 class MyClass:
@@ -1305,7 +1265,6 @@ print(x.class_variable)
 ```
 
 ### super() 函数
-<!--rehype:wrap-class=row-span-2-->
 
 ```python
 class ParentClass:
@@ -1318,8 +1277,6 @@ class ChildClass(ParentClass):
         # 调用父级的 print_test()
         super().print_test() 
 ```
-
----
 
 ```python
 >>> child_instance = ChildClass()
@@ -1428,8 +1385,7 @@ p.age = 31    # 赋值操作调用 @age.setter → 验证通过
 p.age = -5    # 抛出 ValueError: 年龄不能为负数
 ```
 
-Python 数据模型
---------
+## Python 数据模型
 
 更多请移步 <https://docs.python.org/zh-cn/3/reference/datamodel.html>
 
@@ -1462,7 +1418,7 @@ obj()
 ```
 
 ### 上下文管理器
-<!--rehype:wrap-class=col-span-2-->
+
 参见 [上下文管理器](https://docs.python.org/zh-cn/3/reference/datamodel.html#with-statement-context-managers) 。
 
 ```python
@@ -1490,127 +1446,126 @@ with obj as alias:
 ```
 
 ### 特殊方法
-<!--rehype:wrap-class=col-span-3-->
-下表使用 `-> *` 代表返回值类型是任意的，或者需要视情况而定，实际上并不存在这种写法。  
-诸如 `-> str` 仅表示绝大多数情况下应当返回 `str` 类型，或者推荐返回 `str` 类型。  
-没有 `->` 的方法一般没有返回值。  
+
+下表使用 `-> *` 代表返回值类型是任意的，或者需要视情况而定，实际上并不存在这种写法。
+诸如 `-> str` 仅表示绝大多数情况下应当返回 `str` 类型，或者推荐返回 `str` 类型。
+没有 `->` 的方法一般没有返回值。
 参见 <https://docs.python.org/zh-cn/3/reference/datamodel.html>
 
-| 语句                  | 特殊方法                               | 备注                                                                                                                                                                                                                                                 |     |
-|---------------------|------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `repr(obj)`         | `__repr__(self) -> str`            | 详见 [`repr()`](https://docs.python.org/zh-cn/3/library/functions.html#repr) 。                                                                                                                                                                       |     |
-| `str(obj)`          | `__str__(self) -> str`             | 详见 [`str` 类型](https://docs.python.org/zh-cn/3/library/stdtypes.html#str) 。                                                                                                                                                                         |     |
-| `bytes(obj)`        | `__bytes__(self) -> bytes`         | 详见 [`bytes()`](https://docs.python.org/zh-cn/3/library/functions.html#func-bytes) 。                                                                                                                                                                |     |
-| `format(obj, spec)` | `__format__(self, spec) -> str`    | 详见 [`format()`](https://docs.python.org/zh-cn/3/library/functions.html#format)、[格式化字符串字面值](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#f-strings)、[格式规格迷你语言](https://docs.python.org/zh-cn/3/library/string.html#formatspec) 。 |     |
-| `hash(obj)`         | `__hash__(self) -> int`            | 详见 [`hash()`](https://docs.python.org/zh-cn/3/library/functions.html#hash) 。                                                                                                                                                                       |     |
-| `bool(obj)`         | `__bool__(self) -> bool`           | 未定义时调用 `obj.__len__() != 0` ，若 `__len__()` 也未定义，则所有对象都被视为 `True` 。另见 [`bool()`](https://docs.python.org/zh-cn/3/library/functions.html#bool) 。                                                                                                     |     |
-| `dir(obj)`          | `__dir__(self) -> list`            | 返回值必须是一个序列，[`dir()`](https://docs.python.org/zh-cn/3/library/functions.html#dir) 会把返回的序列转换为列表并对其排序。                                                                                                                                                |     |
-| `Object[key]`       | `__class_getitem__(cls, key) -> *` | 不建议用于除了 [模拟泛型类型](https://docs.python.org/zh-cn/3/reference/datamodel.html#emulating-generic-types) 以外的用途，避免 IDE 误判。                                                                                                                                |     |
+| 语句 | 特殊方法 | 备注 |  |
+| --------------------- | ------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| `repr(obj)` | `__repr__(self) -> str` | 详见 [`repr()`](https://docs.python.org/zh-cn/3/library/functions.html#repr) 。 |  |
+| `str(obj)` | `__str__(self) -> str` | 详见 [`str` 类型](https://docs.python.org/zh-cn/3/library/stdtypes.html#str) 。 |  |
+| `bytes(obj)` | `__bytes__(self) -> bytes` | 详见 [`bytes()`](https://docs.python.org/zh-cn/3/library/functions.html#func-bytes) 。 |  |
+| `format(obj, spec)` | `__format__(self, spec) -> str` | 详见 [`format()`](https://docs.python.org/zh-cn/3/library/functions.html#format)、[格式化字符串字面值](https://docs.python.org/zh-cn/3/reference/lexical_analysis.html#f-strings)、[格式规格迷你语言](https://docs.python.org/zh-cn/3/library/string.html#formatspec) 。 |  |
+| `hash(obj)` | `__hash__(self) -> int` | 详见 [`hash()`](https://docs.python.org/zh-cn/3/library/functions.html#hash) 。 |  |
+| `bool(obj)` | `__bool__(self) -> bool` | 未定义时调用 `obj.__len__() != 0` ，若 `__len__()` 也未定义，则所有对象都被视为 `True` 。另见 [`bool()`](https://docs.python.org/zh-cn/3/library/functions.html#bool) 。 |  |
+| `dir(obj)` | `__dir__(self) -> list` | 返回值必须是一个序列，[`dir()`](https://docs.python.org/zh-cn/3/library/functions.html#dir) 会把返回的序列转换为列表并对其排序。 |  |
+| `Object[key]` | `__class_getitem__(cls, key) -> *` | 不建议用于除了 [模拟泛型类型](https://docs.python.org/zh-cn/3/reference/datamodel.html#emulating-generic-types) 以外的用途，避免 IDE 误判。 |  |
 
 - 自定义实例及子类检查，参见 <https://docs.python.org/zh-cn/3/reference/datamodel.html#customizing-instance-and-subclass-checks>
 
-| 语句                            | 特殊方法                                              | 备注                                        |     |
-|-------------------------------|---------------------------------------------------|:------------------------------------------|-----|
-| `isinstance(instance, class)` | `class.__instancecheck__(self, instance) -> bool` | 如果 instance 应被视为 class 的一个（直接或间接）实例则返回真值。 |     |
-| `issubclass(subclass, class)` | `class.__subclasscheck__(self, subclass) -> bool` | 如果 subclass 应被视为 class 的一个（直接或间接）子类则返回真值。 |     |
+| 语句 | 特殊方法 | 备注 |  |
+| ------------------------------- | --------------------------------------------------- | :------------------------------------------ | ----- |
+| `isinstance(instance, class)` | `class.__instancecheck__(self, instance) -> bool` | 如果 instance 应被视为 class 的一个（直接或间接）实例则返回真值。 |  |
+| `issubclass(subclass, class)` | `class.__subclasscheck__(self, subclass) -> bool` | 如果 subclass 应被视为 class 的一个（直接或间接）子类则返回真值。 |  |
 
 - “富比较”方法，参见 <https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__lt__>
 
-| 语句              | 特殊方法                           | 备注                                                                                                                                                  |     |
-|-----------------|--------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `obj < other`   | `__lt__(self, other) -> bool`  |                                                                                                                                                     |     |
-| `obj <= other`  | `__le__(self, other) -> bool`  |                                                                                                                                                     |     |
-| `obj == other`  | `__eq__(self, other) -> bool`  | 默认返回 `obj is other` ，如果结果为 `False` ，则会返回 [`NotImplemented`](https://docs.python.org/zh-cn/3/reference/datamodel.html#the-standard-type-hierarchy) 。 |     |
-| `obj != other`  | `__ne__(self, other) -> bool`  | 默认返回 `not obj.__eq__(other)` 。                                                                                                                      |     |
-| `obj > other`   | `__gt__(self, other) -> bool`  |                                                                                                                                                     |     |
-| `obj >= other`  | `__ge__(self, other) -> bool`  |                                                                                                                                                     |     |
+| 语句 | 特殊方法 | 备注 |  |
+| ----------------- | -------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| `obj < other` | `__lt__(self, other) -> bool` |  |  |
+| `obj <= other` | `__le__(self, other) -> bool` |  |  |
+| `obj == other` | `__eq__(self, other) -> bool` | 默认返回 `obj is other` ，如果结果为 `False` ，则会返回 [`NotImplemented`](https://docs.python.org/zh-cn/3/reference/datamodel.html#the-standard-type-hierarchy) 。 |  |
+| `obj != other` | `__ne__(self, other) -> bool` | 默认返回 `not obj.__eq__(other)` 。 |  |
+| `obj > other` | `__gt__(self, other) -> bool` |  |  |
+| `obj >= other` | `__ge__(self, other) -> bool` |  |  |
 
 - 自定义属性访问，参见 <https://docs.python.org/zh-cn/3/reference/datamodel.html#customizing-attribute-access>
 
-| 语句                  | 特殊方法                                | 备注                                                                                                                               |     |
-|---------------------|-------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|-----|
-| `obj.name`          | `__getattr__(self, name) -> *`      | 优先调用。当抛出 [`AttributeError`](https://docs.python.org/zh-cn/3/library/exceptions.html#AttributeError) 时转向调用 `__getattribute__()` 。 |     |
-| `obj.name`          | `__getattribute__(self, name) -> *` | 参见 [自定义属性访问](https://docs.python.org/zh-cn/3/reference/datamodel.html#customizing-attribute-access) 避免无限递归。                      |     |
-| `obj.name = value`  | `__setattr__(self, name, value)`    |                                                                                                                                  |     |
-| `del obj.name`      | `__delattr__(self, name)`           | 仅在 `del obj.name` 对于该对象有意义时才应该被实现。                                                                                               |     |
+| 语句 | 特殊方法 | 备注 |  |
+| --------------------- | ------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| `obj.name` | `__getattr__(self, name) -> *` | 优先调用。当抛出 [`AttributeError`](https://docs.python.org/zh-cn/3/library/exceptions.html#AttributeError) 时转向调用 `__getattribute__()` 。 |  |
+| `obj.name` | `__getattribute__(self, name) -> *` | 参见 [自定义属性访问](https://docs.python.org/zh-cn/3/reference/datamodel.html#customizing-attribute-access) 避免无限递归。 |  |
+| `obj.name = value` | `__setattr__(self, name, value)` |  |  |
+| `del obj.name` | `__delattr__(self, name)` | 仅在 `del obj.name` 对于该对象有意义时才应该被实现。 |  |
 
 - 模拟容器类型，参见 <https://docs.python.org/zh-cn/3/reference/datamodel.html#emulating-container-types>
 
-| 语句                    | 特殊方法                               | 备注                                                                                                                                                                                                                                                                                                            |     |
-|-----------------------|------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `len(obj)`            | `__len__(self) -> int`             |                                                                                                                                                                                                                                                                                                               |     |
-| `op.length_hint(obj)` | `__length_hint__(self) -> int`     | 在使用标准库 [operator](https://docs.python.org/zh-cn/3/library/operator.html) 的 [`length_hint()`](https://docs.python.org/zh-cn/3/library/operator.html#operator.length_hint) 时会被调用（Python 3.4+）。                                                                                                                  |     |
-| `obj[key]`            | `__getitem__(self, key) -> *`      | 需要抛出 [IndexError](https://docs.python.org/zh-cn/3/library/exceptions.html#IndexError) 以便正确地结束 [for](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#for) 循环。                                                                                                                                    |     |
-| `obj[key]`            | `__missing__(self, key) -> *`      | 仅在 dict 的子类找不到键时被调用（不能重写 `__getitem__` 方法）。                                                                                                                                                                                                                                                                   |     |
-| `obj[key] = value`    | `__setitem__(self, key, value)`    | `a[1:2] = b` 实际上是 `a[slice(1, 2, None)] = b` ，其它情形及在其余方法中同理。详见 [`slice()`](https://docs.python.org/zh-cn/3/library/functions.html#slice) 。                                                                                                                                                                    |     |
-| `del obj[key]`        | `__delitem__(self, key)`           |                                                                                                                                                                                                                                                                                                               |     |
-| _调用途径有很多_             | `__iter__(self) -> Iterator`       | 在需要创建一个 [迭代器](https://docs.python.org/zh-cn/3/glossary.html#term-iterator) 时被调用，例如使用 [`iter()`](https://docs.python.org/zh-cn/3/library/functions.html#iter) 、 [`for` 循环](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#for) 。<br>最好返回一个新对象，因为迭代器在语义上是一次性的。若返回 `self` ，则必须实现 `__next__()` 方法。 |     |
-| `reversed(obj)`       | `__reversed__(self) -> *`          | 详见 [`reversed()`](https://docs.python.org/zh-cn/3/library/functions.html#reversed) 。                                                                                                                                                                                                                          |     |
-| `item in obj`         | `__contains__(self, item) -> bool` | 对于未定义该方法的对象在 `in` 和 `not in` 时，参考 [成员检测运算](https://docs.python.org/zh-cn/3/reference/expressions.html#membership-test-details) 。                                                                                                                                                                              |     |
+| 语句 | 特殊方法 | 备注 |  |
+| ----------------------- | ------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| `len(obj)` | `__len__(self) -> int` |  |  |
+| `op.length_hint(obj)` | `__length_hint__(self) -> int` | 在使用标准库 [operator](https://docs.python.org/zh-cn/3/library/operator.html) 的 [`length_hint()`](https://docs.python.org/zh-cn/3/library/operator.html#operator.length_hint) 时会被调用（Python 3.4+）。 |  |
+| `obj[key]` | `__getitem__(self, key) -> *` | 需要抛出 [IndexError](https://docs.python.org/zh-cn/3/library/exceptions.html#IndexError) 以便正确地结束 [for](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#for) 循环。 |  |
+| `obj[key]` | `__missing__(self, key) -> *` | 仅在 dict 的子类找不到键时被调用（不能重写 `__getitem__` 方法）。 |  |
+| `obj[key] = value` | `__setitem__(self, key, value)` | `a[1:2] = b` 实际上是 `a[slice(1, 2, None)] = b` ，其它情形及在其余方法中同理。详见 [`slice()`](https://docs.python.org/zh-cn/3/library/functions.html#slice) 。 |  |
+| `del obj[key]` | `__delitem__(self, key)` |  |  |
+| _调用途径有很多_ | `__iter__(self) -> Iterator` | 在需要创建一个 [迭代器](https://docs.python.org/zh-cn/3/glossary.html#term-iterator) 时被调用，例如使用 [`iter()`](https://docs.python.org/zh-cn/3/library/functions.html#iter) 、 [`for` 循环](https://docs.python.org/zh-cn/3/reference/compound_stmts.html#for) 。 / 最好返回一个新对象，因为迭代器在语义上是一次性的。若返回 `self` ，则必须实现 `__next__()` 方法。 |  |
+| `reversed(obj)` | `__reversed__(self) -> *` | 详见 [`reversed()`](https://docs.python.org/zh-cn/3/library/functions.html#reversed) 。 |  |
+| `item in obj` | `__contains__(self, item) -> bool` | 对于未定义该方法的对象在 `in` 和 `not in` 时，参考 [成员检测运算](https://docs.python.org/zh-cn/3/reference/expressions.html#membership-test-details) 。 |  |
 
 - 模拟数字类型，参见 <https://docs.python.org/zh-cn/3/reference/datamodel.html#emulating-numeric-types>
 
-| 语句                   | 特殊方法                               | 备注                                                                                                                                                                                 |     |
-|----------------------|------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `+obj`               | `__neg__(self) -> *`               |                                                                                                                                                                                    |     |
-| `-obj`               | `__pos__(self) -> *`               |                                                                                                                                                                                    |     |
-| `~obj`               | `__invert__(self) -> *`            |                                                                                                                                                                                    |     |
-| `abs(obj)`           | `__abs__(self) -> *`               |                                                                                                                                                                                    |     |
-| `int(obj)`           | `__int__(self) -> *`               |                                                                                                                                                                                    |     |
-| `float(obj)`         | `__float__(self) -> *`             |                                                                                                                                                                                    |     |
-| `complex(obj)`       | `__complex__(self) -> *`           |                                                                                                                                                                                    |     |
-| `round(obj)`         | `__round__(self) -> int`           | 详见 [`round()`](https://docs.python.org/zh-cn/3/library/functions.html#round) 。                                                                                                     |     |
-| `round(obj)`         | `__round__(self, ndigits) -> *`    | 详见 [`round()`](https://docs.python.org/zh-cn/3/library/functions.html#round) 。                                                                                                     |     |
-| `math.ceil(obj)`     | `__ceil__(self) -> int`            | 详见标准库 [math](https://docs.python.org/zh-cn/3/library/math.html#module-math) 的 [`ceil()`](https://docs.python.org/zh-cn/3/library/math.html#math.ceil) 。                            |     |
-| `math.floor(obj)`    | `__floor__(self) -> int`           | 详见标准库 [math](https://docs.python.org/zh-cn/3/library/math.html#module-math) 的 [`floor()`](https://docs.python.org/zh-cn/3/library/math.html#math.floor) 。                          |     |
-| `math.trunc(obj)`    | `__trunc__(self) -> int`           | 详见标准库 [math](https://docs.python.org/zh-cn/3/library/math.html#module-math) 的 [`trunc()`](https://docs.python.org/zh-cn/3/library/math.html#math.trunc) 。                          |     |
-|                      | `__index__(self) -> int`           | 需要无损地将数值转换为整数的时候会被调用。详见 [这里](https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__index__) 。                                                                          |     |
-| `obj + other`        | `__add__(self, other) -> *`        |                                                                                                                                                                                    |     |
-| `obj - other`        | `__sub__(self, other) -> *`        |                                                                                                                                                                                    |     |
-| `obj * other`        | `__mul__(self, other) -> *`        |                                                                                                                                                                                    |     |
-| `obj @ other`        | `__matmul__(self, other) -> *`     | 为第三方库而生的矩阵乘法运算符，[这里](https://docs.python.org/zh-cn/3/reference/expressions.html#binary-arithmetic-operations)提了一嘴。（Python 3.5+）                                                    |     |
-| `obj / other`        | `__truediv__(self, other) -> *`    |                                                                                                                                                                                    |     |
-| `obj // other`       | `__floordiv__(self, other) -> *`   |                                                                                                                                                                                    |     |
-| `obj % other`        | `__mod__(self, other) -> *`        |                                                                                                                                                                                    |     |
-| `divmod(obj, other)` | `__divmod__(self, other) -> tuple` | `divmod(a, b)` 返回一个元组 `(a // b, a % b)` ，详见 [`divmod()`](https://docs.python.org/zh-cn/3/library/functions.html#divmod) 。                                                          |     |
-| `obj ** exp`         | `__pow__(self, exp) -> *`          |                                                                                                                                                                                    |     |
-| `pow(obj, exp, mod)` | `__pow__(self, exp, mod) -> *`     | `pow(base, exp, mod)` 比 `pow(base, exp) % mod` 更高效。                                                                                                                                |     |
-| `obj << other`       | `__lshift__(self, other) -> *`     |                                                                                                                                                                                    |     |
-| `obj >> other`       | `__rshift__(self, other) -> *`     |                                                                                                                                                                                    |     |
-| `obj & other`        | `__and__(self, other) -> *`        |                                                                                                                                                                                    |     |
-| `obj ^ other`        | `__xor__(self, other) -> *`        |                                                                                                                                                                                    |     |
-| `obj \| other`       | `__or__(self, other) -> *`         |                                                                                                                                                                                    |     |
-| `other + obj`        | `__radd__(self, obj) -> *`         | 仅当 obj 未定义 `__add__()` 或其返回 `NotImplemented` ，<br>且与 other 互相都没有继承关系时，调用 other 的 `__radd__()` 。详见 [这里](https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__radd__) 。 |     |
-| `other - obj`        | `__rsub__(self, obj) -> *`         | 以下，如此类推。                                                                                                                                                                           |     |
-| `other * obj`        | `__rmul__(self, obj) -> *`         |                                                                                                                                                                                    |     |
-| `other @ obj`        | `__rmatmul__(self, obj) -> *`      |                                                                                                                                                                                    |     |
-| `other / obj`        | `__rtruediv__(self, obj) -> *`     |                                                                                                                                                                                    |     |
-| `other // obj`       | `__rfloordiv__(self, obj) -> *`    |                                                                                                                                                                                    |     |
-| `other % obj`        | `__rmod__(self, obj) -> *`         |                                                                                                                                                                                    |     |
-| `divmod(other, obj)` | `__rdivmod__(self, obj) -> tuple`  |                                                                                                                                                                                    |     |
-| `other ** obj`       | `__rpow__(self, obj) -> *`         |                                                                                                                                                                                    |     |
-|                      | `__rpow__(self, obj, mod) -> *`    | `pow(obj, other, mod)` 不会尝试调用 `other.__rpow__(obj, mod)` ，因为强制转换规则会太过复杂。                                                                                                           |     |
-| `other << obj`       | `__rlshift__(self, obj) -> *`      |                                                                                                                                                                                    |     |
-| `other >> obj`       | `__rrshift__(self, obj) -> *`      |                                                                                                                                                                                    |     |
-| `other & obj`        | `__rand__(self, obj) -> *`         |                                                                                                                                                                                    |     |
-| `other ^ obj`        | `__rxor__(self, obj) -> *`         |                                                                                                                                                                                    |     |
-| `other \| obj`       | `__ror__(self, obj) -> *`          |                                                                                                                                                                                    |     |
-| `obj += other`       | `__iadd__(self, other) -> *`       | 若方法已定义，则 `a += b` 等价于 `a.__iadd(b)` ；<br>若未定义，则回退到 `a + b` 选择 `x.__add__(y)` 和 `y.__radd__(x)` 。                                                                                   |     |
-| `obj -= other`       | `__isub__(self, other) -> *`       | 以下，如此类推。                                                                                                                                                                           |     |
-| `obj *= other`       | `__imul__(self, other) -> *`       |                                                                                                                                                                                    |     |
-| `obj @= other`       | `__imatmul__(self, other) -> *`    |                                                                                                                                                                                    |     |
-| `obj /= other`       | `__itruediv__(self, other) -> *`   |                                                                                                                                                                                    |     |
-| `obj //= other`      | `__ifloordiv__(self, other) -> *`  |                                                                                                                                                                                    |     |
-| `obj %= other`       | `__imod__(self, other) -> *`       |                                                                                                                                                                                    |     |
-| `obj **= exp`        | `__ipow__(self, other) -> *`       |                                                                                                                                                                                    |     |
-| `obj <<= other`      | `__ilshift__(self, other) -> *`    |                                                                                                                                                                                    |     |
-| `obj >>= other`      | `__irshift__(self, other) -> *`    |                                                                                                                                                                                    |     |
-| `obj &= other`       | `__iand__(self, other) -> *`       |                                                                                                                                                                                    |     |
-| `obj ^= other`       | `__ixor__(self, other) -> *`       |                                                                                                                                                                                    |     |
-| `obj \|= other`      | `__ior__(self, other) -> *`        |                                                                                                                                                                                    |     |
+| 语句 | 特殊方法 | 备注 |  |
+| ---------------------- | ------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| `+obj` | `__neg__(self) -> *` |  |  |
+| `-obj` | `__pos__(self) -> *` |  |  |
+| `~obj` | `__invert__(self) -> *` |  |  |
+| `abs(obj)` | `__abs__(self) -> *` |  |  |
+| `int(obj)` | `__int__(self) -> *` |  |  |
+| `float(obj)` | `__float__(self) -> *` |  |  |
+| `complex(obj)` | `__complex__(self) -> *` |  |  |
+| `round(obj)` | `__round__(self) -> int` | 详见 [`round()`](https://docs.python.org/zh-cn/3/library/functions.html#round) 。 |  |
+| `round(obj)` | `__round__(self, ndigits) -> *` | 详见 [`round()`](https://docs.python.org/zh-cn/3/library/functions.html#round) 。 |  |
+| `math.ceil(obj)` | `__ceil__(self) -> int` | 详见标准库 [math](https://docs.python.org/zh-cn/3/library/math.html#module-math) 的 [`ceil()`](https://docs.python.org/zh-cn/3/library/math.html#math.ceil) 。 |  |
+| `math.floor(obj)` | `__floor__(self) -> int` | 详见标准库 [math](https://docs.python.org/zh-cn/3/library/math.html#module-math) 的 [`floor()`](https://docs.python.org/zh-cn/3/library/math.html#math.floor) 。 |  |
+| `math.trunc(obj)` | `__trunc__(self) -> int` | 详见标准库 [math](https://docs.python.org/zh-cn/3/library/math.html#module-math) 的 [`trunc()`](https://docs.python.org/zh-cn/3/library/math.html#math.trunc) 。 |  |
+|  | `__index__(self) -> int` | 需要无损地将数值转换为整数的时候会被调用。详见 [这里](https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__index__) 。 |  |
+| `obj + other` | `__add__(self, other) -> *` |  |  |
+| `obj - other` | `__sub__(self, other) -> *` |  |  |
+| `obj * other` | `__mul__(self, other) -> *` |  |  |
+| `obj @ other` | `__matmul__(self, other) -> *` | 为第三方库而生的矩阵乘法运算符，[这里](https://docs.python.org/zh-cn/3/reference/expressions.html#binary-arithmetic-operations)提了一嘴。（Python 3.5+） |  |
+| `obj / other` | `__truediv__(self, other) -> *` |  |  |
+| `obj // other` | `__floordiv__(self, other) -> *` |  |  |
+| `obj % other` | `__mod__(self, other) -> *` |  |  |
+| `divmod(obj, other)` | `__divmod__(self, other) -> tuple` | `divmod(a, b)` 返回一个元组 `(a // b, a % b)` ，详见 [`divmod()`](https://docs.python.org/zh-cn/3/library/functions.html#divmod) 。 |  |
+| `obj ** exp` | `__pow__(self, exp) -> *` |  |  |
+| `pow(obj, exp, mod)` | `__pow__(self, exp, mod) -> *` | `pow(base, exp, mod)` 比 `pow(base, exp) % mod` 更高效。 |  |
+| `obj << other` | `__lshift__(self, other) -> *` |  |  |
+| `obj >> other` | `__rshift__(self, other) -> *` |  |  |
+| `obj & other` | `__and__(self, other) -> *` |  |  |
+| `obj ^ other` | `__xor__(self, other) -> *` |  |  |
+| `obj \| other` | `__or__(self, other) -> *` |  |  |
+| `other + obj` | `__radd__(self, obj) -> *` | 仅当 obj 未定义 `__add__()` 或其返回 `NotImplemented` ， / 且与 other 互相都没有继承关系时，调用 other 的 `__radd__()` 。详见 [这里](https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__radd__) 。 |  |
+| `other - obj` | `__rsub__(self, obj) -> *` | 以下，如此类推。 |  |
+| `other * obj` | `__rmul__(self, obj) -> *` |  |  |
+| `other @ obj` | `__rmatmul__(self, obj) -> *` |  |  |
+| `other / obj` | `__rtruediv__(self, obj) -> *` |  |  |
+| `other // obj` | `__rfloordiv__(self, obj) -> *` |  |  |
+| `other % obj` | `__rmod__(self, obj) -> *` |  |  |
+| `divmod(other, obj)` | `__rdivmod__(self, obj) -> tuple` |  |  |
+| `other ** obj` | `__rpow__(self, obj) -> *` |  |  |
+|  | `__rpow__(self, obj, mod) -> *` | `pow(obj, other, mod)` 不会尝试调用 `other.__rpow__(obj, mod)` ，因为强制转换规则会太过复杂。 |  |
+| `other << obj` | `__rlshift__(self, obj) -> *` |  |  |
+| `other >> obj` | `__rrshift__(self, obj) -> *` |  |  |
+| `other & obj` | `__rand__(self, obj) -> *` |  |  |
+| `other ^ obj` | `__rxor__(self, obj) -> *` |  |  |
+| `other \| obj` | `__ror__(self, obj) -> *` |  |  |
+| `obj += other` | `__iadd__(self, other) -> *` | 若方法已定义，则 `a += b` 等价于 `a.__iadd(b)` ； / 若未定义，则回退到 `a + b` 选择 `x.__add__(y)` 和 `y.__radd__(x)` 。 |  |
+| `obj -= other` | `__isub__(self, other) -> *` | 以下，如此类推。 |  |
+| `obj *= other` | `__imul__(self, other) -> *` |  |  |
+| `obj @= other` | `__imatmul__(self, other) -> *` |  |  |
+| `obj /= other` | `__itruediv__(self, other) -> *` |  |  |
+| `obj //= other` | `__ifloordiv__(self, other) -> *` |  |  |
+| `obj %= other` | `__imod__(self, other) -> *` |  |  |
+| `obj **= exp` | `__ipow__(self, other) -> *` |  |  |
+| `obj <<= other` | `__ilshift__(self, other) -> *` |  |  |
+| `obj >>= other` | `__irshift__(self, other) -> *` |  |  |
+| `obj &= other` | `__iand__(self, other) -> *` |  |  |
+| `obj ^= other` | `__ixor__(self, other) -> *` |  |  |
+| `obj \|= other` | `__ior__(self, other) -> *` |  |  |
 
-Python 类型标注 (Python 3.5+)
---------
+## Python 类型标注 (Python 3.5+)
 
 ### 变量
 
@@ -1741,7 +1696,7 @@ class Employee:
 ```
 
 ### 标注一个值为类型的参数
-<!--rehype:wrap-class=col-span-2-->
+
 ```python
 from typing import TypeVar, Type
 
@@ -1761,7 +1716,6 @@ result: int = converter(raw, mapper=int, default=0)
 ```
 
 ### 标注一个值为函数的参数
-<!--rehype:wrap-class=col-span-2-->
 
 ```python
 from typing import TypeVar, Callable, Any
@@ -1785,8 +1739,7 @@ resp = dict(code=0, message="OK", data=[])
 successed: bool = converter(resp.message, mapper=is_success, default=False)
 ```
 
-各种各样的
-----------
+## 各种各样的
 
 ### 注释
 
@@ -1794,16 +1747,12 @@ successed: bool = converter(resp.message, mapper=is_success, default=False)
 # 这是单行注释
 ```
 
----
-
 ```python
 """ 可以写多行字符串
     使用三个"，并且经常使用
     作为文档。
 """
 ```
-
----
 
 ```python
 ''' 可以写多行字符串
@@ -1832,7 +1781,6 @@ print(gen_to_list)
 ```
 
 ### 处理异常
-<!--rehype:wrap-class=col-span-3-->
 
 ```python
 try:
@@ -1928,7 +1876,6 @@ print(square(10)) # 输出: 100 (10²)
 ```
 
 ### pyenv & pipenv
-<!--rehype:wrap-class=col-span-3-->
 
 pyenv 用于管理python版本，pipenv 用于管理项目包版本
 
@@ -1994,10 +1941,13 @@ pipenv --python 3.10.12
 pipenv shell
 ```
 
-另见
-----
+## 另见
 
 - [Python 官方网站](https://www.python.org/)  _(python.org)_
 - [Python 文档](https://docs.python.org/zh-cn/3/index.html)  _(docs.python.org)_
 - [Y 分钟学会 Python](https://learnxinyminutes.com/docs/zh-cn/python-cn/) _(learnxinyminutes.com)_
-- [Python 中的正则表达式](./regex.md#python-中的正则表达式) _(jaywcjlove.github.io)_
+- [Python 中的正则表达式](https://github.com/jaywcjlove/reference/blob/main/docs/regex.md#python-中的正则表达式) _(jaywcjlove.github.io)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/python.md](https://github.com/jaywcjlove/reference/blob/main/docs/python.md)
+
+获取日期：2026-10-15

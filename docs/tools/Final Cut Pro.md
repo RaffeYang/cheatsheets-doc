@@ -3,7 +3,7 @@ Final Cut Pro 备忘清单
 ### 应用控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Command-H` | Hide Application | 隐藏 Final Cut Pro |
 | `Option-Command-H` | Hide Other Applications | 隐藏除 Final Cut Pro 以外的所有应用 |
 | `Option-Command-K` | Keyboard Customization | 打开命令编辑器 |
@@ -17,7 +17,7 @@ Final Cut Pro 备忘清单
 ### 编辑操作
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Control-Option-L` | Adjust Volume Absolute | 设置选中片段音量为指定值 |
 | `Control-L` | Adjust Volume Relative | 相对调整音量 |
 | `E` | Append to Storyline | 将选中内容添加至故事线末尾 |
@@ -101,7 +101,7 @@ Final Cut Pro 备忘清单
 ### 效果控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Option-A` | Add Adjustment Clip | 添加调整片段 |
 | `Control-Shift-T` | Add Basic Lower Third | 添加基础下三分之一标题 |
 | `Control-T` | Add Basic Title | 添加基础标题 |
@@ -139,7 +139,7 @@ Final Cut Pro 备忘清单
 ### 通用操作
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Option-Shift-Command-C` | Consolidate Motion Content | 整合素材文件 |
 | `Delete` | Delete | 删除选区/拒绝素材 |
 | `Command-F` | Find | 查找 |
@@ -156,7 +156,7 @@ Final Cut Pro 备忘清单
 ### 标记与关键词
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Option-C` | Add Caption | 添加字幕 |
 | `M` | Add Marker | 添加标记 |
 | `Control-C` | All Clips | 浏览器显示全部片段 |
@@ -204,7 +204,7 @@ Final Cut Pro 备忘清单
 ### 播放与导航
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Shift-S` | Audio Skimming | 开关音频滑动预览 |
 | `Control-Command-Y` | Audition: Preview | 在时间线中试听 |
 | `Option-Command-S` | Clip Skimming | 开关片段滑动预览 |
@@ -238,7 +238,7 @@ Final Cut Pro 备忘清单
 ### 视图控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Control-Option-F` | Show/Hide Cinematic Editor | 显示/隐藏电影编辑器 |
 | `Control-Option-6` | Clip Labels Only | 仅显示片段标签 |
 | `Control-Option-Down Arrow` | Decrease Waveform Size | 减小音频波形 |
@@ -270,7 +270,7 @@ Final Cut Pro 备忘清单
 ### 窗口控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Control-Option-Command-3` | Anaglyph | 立体视图（红青） |
 | `Control-Option-Command-4` | Anaglyph Monochrome | 立体视图（灰度） |
 | `Control-Option-Command-5` | Anaglyph Outline | 立体视图（线框） |
@@ -318,7 +318,7 @@ Final Cut Pro 备忘清单
 ### 导出与工具
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Command-E` | Share to Default Destination | 导出/分享至默认位置 |
 | `A` | Select Tool | 选择工具 |
 | `B` | Blade Tool | 刀具工具 |
@@ -334,7 +334,7 @@ Final Cut Pro 备忘清单
 ### 时间线与杂项控制
 
 | 快捷键 (Mac) | 英文命令 | 中文说明 |
-|---------------|------------|------------|
+| --------------- | ------------ | ------------ |
 | `Command-[` | Timeline History Back | 时间线历史后退 |
 | `Command-]` | Timeline History Forward | 时间线历史前进 |
 | `Up` | Go to Previous Edit | 上一剪辑点 |
@@ -349,5 +349,3 @@ Final Cut Pro 备忘清单
 | `Set Monitoring Angle` | Shift-V | 设置多机位监控角度 |
 | `Skimming` | S | 启用/禁用滑动预览 |
 | `Start/Stop Voiceover Recording` | Option-Shift-A | 开始/停止配音录制 |
-
-

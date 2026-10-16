@@ -1,53 +1,41 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/npm.md
-Retrieved on: 2026-10-15
--->
-
-npm 备忘清单
-===
+# npm 备忘清单
 
 这个 [npm](https://www.npmjs.com/) 快速参考备忘单显示了它的常用命令使用清单
 
-常用命令
-----
-<!--rehype:body-class=cols-2-->
+## 常用命令
 
 ### 包管理
 
-命令 | 描述
-:- |:-
-`npm init -y`                      | 创建 `package.json` 文件
-`npm install` 或 `npm i`           | 安装 `package.json` 中的所有内容
-`npm install --production`         | 安装 `package.json` 中的所有内容 <br /> _(除了 `devDependecies`)_
-`npm install lodash`               | 安装一个包
-`npm install --save-dev lodash`    | 安装为 `devDependency`
-`npm install --save-exact lodash`  | 准确安装
-`npm install @scope/package-name`  | 安装一个作用域的公共包
-`npm install <package_name>@<tag>` | 使用 `dist-tags` 安装包
-`npm install -g <package_name>`    | 全局安装包
-`npm uninstall <package_name>`     | 卸载包
-`npm uninstall -g <package_name>`  | 全局卸载包
-<!--rehype:class=auto-wrap-->
+| 命令 | 描述 |
+| :- | :- |
+| `npm init -y` | 创建 `package.json` 文件 |
+| `npm install` 或 `npm i` | 安装 `package.json` 中的所有内容 |
+| `npm install --production` | 安装 `package.json` 中的所有内容  /  _(除了 `devDependecies`)_ |
+| `npm install lodash` | 安装一个包 |
+| `npm install --save-dev lodash` | 安装为 `devDependency` |
+| `npm install --save-exact lodash` | 准确安装 |
+| `npm install @scope/package-name` | 安装一个作用域的公共包 |
+| `npm install <package_name>@<tag>` | 使用 `dist-tags` 安装包 |
+| `npm install -g <package_name>` | 全局安装包 |
+| `npm uninstall <package_name>` | 卸载包 |
+| `npm uninstall -g <package_name>` | 全局卸载包 |
 
 ### 安装
-<!--rehype:wrap-class=row-span-3-->
 
-命令 | 描述
-:- |:-
-`npm i sax`                          | `NPM` 包
-`npm i sax@latest`                   | 指定标签 `最新`
-`npm i sax@3.0.0`                    | 指定版本 `3.0.0`
-`npm i sax@">=1 <2.0"`               | 指定版本范围
-`npm i @org/sax`                     | 范围内的 `NPM` 包
-`npm i user/repo`                    | GitHub
-`npm i user/repo#master`             | GitHub
-`npm i github:user/repo`             | GitHub
-`npm i gitlab:user/repo`             | GitLab
-`npm i /path/to/repo`                | 绝对路径
-`npm i ./archive.tgz`                | 压缩包
-`npm i https://site.com/archive.tgz` | 通过 `HTTP` 压缩包
-<!--rehype:class=auto-wrap-->
+| 命令 | 描述 |
+| :- | :- |
+| `npm i sax` | `NPM` 包 |
+| `npm i sax@latest` | 指定标签 `最新` |
+| `npm i sax@3.0.0` | 指定版本 `3.0.0` |
+| `npm i sax@">=1 <2.0"` | 指定版本范围 |
+| `npm i @org/sax` | 范围内的 `NPM` 包 |
+| `npm i user/repo` | GitHub |
+| `npm i user/repo#master` | GitHub |
+| `npm i github:user/repo` | GitHub |
+| `npm i gitlab:user/repo` | GitLab |
+| `npm i /path/to/repo` | 绝对路径 |
+| `npm i ./archive.tgz` | 压缩包 |
+| `npm i https://site.com/archive.tgz` | 通过 `HTTP` 压缩包 |
 
 安装依赖的可用参数
 
@@ -55,21 +43,19 @@ npm 备忘清单
 - `-D`, `--save-dev` 包会出现在你的 `devDependencies` 中
 - `-O`, `--save-optional` 包将出现在您的 `optionalDependencies` 中
 - `--no-save` 防止保存到依赖项
-- `-E`, `--save-exact` 依赖项将使用精确的版本进行配置，而不是使用 `npm` 的默认 [`semver`](./semver.md) 范围运算符
-- `-B`, `--save-bundle` 依赖项也将添加到您的 [`bundleDependencies`](./package.json.md#bundleddependencies) 列表中
-<!--rehype:className=style-arrow-->
+- `-E`, `--save-exact` 依赖项将使用精确的版本进行配置，而不是使用 `npm` 的默认 [`semver`](https://github.com/jaywcjlove/reference/blob/main/docs/semver.md) 范围运算符
+- `-B`, `--save-bundle` 依赖项也将添加到您的 [`bundleDependencies`](https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md#bundleddependencies) 列表中
 
 命令 `npm i` 是 `npm install` 的别名
 
 ### 清单
 
-命令 | 描述
-:- |:-
-`npm list`              | 列出此软件中所有依赖项的已安装版本
-`npm list -g --depth 0` | 列出所有全局安装包的安装版本
-`npm view`              | 列出此软件中所有依赖项的最新版本
-`npm outdated`          | 仅列出此软件中已过时的依赖项
-<!--rehype:class=auto-wrap-->
+| 命令 | 描述 |
+| :- | :- |
+| `npm list` | 列出此软件中所有依赖项的已安装版本 |
+| `npm list -g --depth 0` | 列出所有全局安装包的安装版本 |
+| `npm view` | 列出此软件中所有依赖项的最新版本 |
+| `npm outdated` | 仅列出此软件中已过时的依赖项 |
 
 ### 缓存 cache
 
@@ -85,16 +71,15 @@ $ npm cache verify # 验证缓存文件夹的内容，垃圾收集任何不需�
 
 ### 更新
 
-命令 | 描述
-:- | -
-`npm version <version>` | 要更改 `package.json` 中的版本号
-`npm update`            | 更新生产包
-`npm update --dev`      | 更新开发包
-`npm update -g`         | 更新全局包
-`npm update lodash`     | 更新 `lodash` 包
+| 命令 | 描述 |
+| :- | - |
+| `npm version <version>` | 要更改 `package.json` 中的版本号 |
+| `npm update` | 更新生产包 |
+| `npm update --dev` | 更新开发包 |
+| `npm update -g` | 更新全局包 |
+| `npm update lodash` | 更新 `lodash` 包 |
 
 ### 杂项功能
-<!--rehype:wrap-class=row-span-2-->
 
 ```bash
 # 将某人添加为所有者
@@ -173,14 +158,13 @@ $ npm init <@scope>       # (如同 `npx <@scope>/create`)
 
 别名: `create`, `innit`
 
-:- | --
-:- | --
-`npm init foo` | `npm exec create-foo`
-`npm init @usr/foo` | `npm exec @usr/create-foo`
-`npm init @usr` | `npm exec @usr/create`
-`npm init @usr@2.0.0` | `npm exec @usr/create@2.0.0`
-`npm init @usr/foo@2.0.0` | `npm exec @usr/create-foo@2.0.0`
-<!--rehype:className=left-align-->
+| :- | -- |
+| :- | -- |
+| `npm init foo` | `npm exec create-foo` |
+| `npm init @usr/foo` | `npm exec @usr/create-foo` |
+| `npm init @usr` | `npm exec @usr/create` |
+| `npm init @usr@2.0.0` | `npm exec @usr/create@2.0.0` |
+| `npm init @usr/foo@2.0.0` | `npm exec @usr/create-foo@2.0.0` |
 
 ### exec
 
@@ -203,8 +187,7 @@ $ npm exec --package=foo -- bar --bar-argument
 $ npx --package=foo bar --bar-argument
 ```
 
-npx
----
+## npx
 
 ### 介绍
 
@@ -216,7 +199,6 @@ npx --package=<pkg>[@<version>] -- <cmd> [args...]
 npx -c '<cmd> [args...]'
 npx --package=foo -c '<cmd> [args...]'
 ```
-<!--rehype:className=wrap-text-->
 
 `npx` 二进制文件在 `npm v7.0.0` 中被重写，并且当时不推荐使用独立的 `npx` 包
 
@@ -241,7 +223,6 @@ $ npx foo@latest bar --package=@npmcli/foo
 # npm 将解析 foo 包名，并运行以下命令：
 $ foo bar --package=@npmcli/foo
 ```
-<!--rehype:className=wrap-text-->
 
 由于 npm 的参数解析逻辑，运行这个命令是不同的:
 
@@ -252,7 +233,6 @@ $ npm exec foo@latest bar --package=@npmcli/foo
 # 然后，它将在该上下文中执行以下命令：
 $ foo@latest bar
 ```
-<!--rehype:className=wrap-text-->
 
 下面命令是与 `npx` 等效的
 
@@ -261,7 +241,6 @@ $ npm exec -- foo@latest bar --package=@npmcli/foo
 # 等效的
 $ npx foo@latest bar --package=@npmcli/foo
 ```
-<!--rehype:className=wrap-text-->
 
 ### npx VS npm exec 示例
 
@@ -279,7 +258,6 @@ $ npm exec --package=foo -- bar --bar-argument
 # ~ or ~
 $ npx --package=foo bar --bar-argument
 ```
-<!--rehype:className=wrap-text-->
 
 在当前项目的上下文中运行任意 `shell` 脚本：
 
@@ -287,7 +265,6 @@ $ npx --package=foo bar --bar-argument
 $ npm x -c 'eslint && say "hooray, lint passed"'
 $ npx -c 'eslint && say "hooray, lint passed"'
 ```
-<!--rehype:className=wrap-text-->
 
 ### 创建一个 React Naive 项目
 
@@ -295,7 +272,6 @@ $ npx -c 'eslint && say "hooray, lint passed"'
 $ npx react-native init AwesomeProject
 $ npx react-native init AwesomeTSProject --template react-native-template-typescript
 ```
-<!--rehype:className=wrap-text-->
 
 使用 `npx` 直接创建一个  [React Native](https://reactnative.dev/docs/environment-setup#creating-a-new-application) 应用
 
@@ -305,22 +281,19 @@ $ npx react-native init AwesomeTSProject --template react-native-template-typesc
 $ npx create-react-app my-app
 $ npx create-react-app my-app --template typescript
 ```
-<!--rehype:className=wrap-text-->
 
-使用 `npx` 跳过安装 [CRA](https://reactnative.dev/docs/environment-setup#creating-a-new-application)，直接创建一个 [React](./react.md) 应用
+使用 `npx` 跳过安装 [CRA](https://reactnative.dev/docs/environment-setup#creating-a-new-application)，直接创建一个 [React](https://github.com/jaywcjlove/reference/blob/main/docs/react.md) 应用
 
-配置
----
+## 配置
 
 ### .npmrc
 
-:- | :-
-:- | :-
-`/path/to/project/.npmrc` | 每个项目的配置文件
-`~/.npmrc` | 每个用户的配置文件
-`$PREFIX/etc/npmrc` | 全局配置文件
-`/path/to/npm/npmrc` | npm 内置配置文件
-<!--rehype:className=left-align-->
+| :- | :- |
+| :- | :- |
+| `/path/to/project/.npmrc` | 每个项目的配置文件 |
+| `~/.npmrc` | 每个用户的配置文件 |
+| `$PREFIX/etc/npmrc` | 全局配置文件 |
+| `/path/to/npm/npmrc` | npm 内置配置文件 |
 
 ### 配置内容
 
@@ -329,21 +302,19 @@ $ npx create-react-app my-app --template typescript
 ; Set a new registry for a scoped package
 @myscope:registry=https://registry.npmmirror.com
 ```
-<!--rehype:className=wrap-text -->
 
 注释使用 `#`, `;` 放置到一行的开头， [`.npmrc`](https://docs.npmjs.com/cli/v8/configuring-npm/npmrc) 文件由指定此注释语法的 [`npm/ini`](https://github.com/npm/ini) 解析
 
 ### registry
 
-:- | :-
-:- | :-
-`npm` | <https://registry.npmjs.org/>
-`yarn` | <https://registry.yarnpkg.com/>
-`tencent` | <https://mirrors.cloud.tencent.com/npm/>
-`cnpm` | <https://r.cnpmjs.org/>
-`taobao` | <https://registry.npmmirror.com/>
-`npmMirror` | <https://skimdb.npmjs.com/registry/>
-<!--rehype:className=left-align-->
+| :- | :- |
+| :- | :- |
+| `npm` | <https://registry.npmjs.org/> |
+| `yarn` | <https://registry.yarnpkg.com/> |
+| `tencent` | <https://mirrors.cloud.tencent.com/npm/> |
+| `cnpm` | <https://r.cnpmjs.org/> |
+| `taobao` | <https://registry.npmmirror.com/> |
+| `npmMirror` | <https://skimdb.npmjs.com/registry/> |
 
 ### `.npmignore`
 
@@ -360,10 +331,9 @@ $ npx create-react-app my-app --template typescript
 !logs/.gitkeep
 ```
 
-`.npmignore` 文件就像 [`.gitignore`](./git.md#忽略文件) 一样工作。它不能覆盖 `package.json#files` 字段。
+`.npmignore` 文件就像 [`.gitignore`](https://github.com/jaywcjlove/reference/blob/main/docs/git.md#忽略文件) 一样工作。它不能覆盖 `package.json#files` 字段。
 
 ### 中国镜像站安装
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```bash
 # 临时使用
@@ -377,7 +347,7 @@ $ npm install -g <package-name> --registry=https://registry.npmmirror.com
 registry=https://registry.npmmirror.com
 ```
 
-或者配置到 [`package.json#publishConfig`](./package.json.md#publishconfig) 字段上
+或者配置到 [`package.json#publishConfig`](https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md#publishconfig) 字段上
 
 ```json
 "publishConfig":{
@@ -400,7 +370,6 @@ ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
 ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/
 ; ELECTRON_CUSTOM_DIR="{{ version }}"
 ```
-<!--rehype:className=wrap-text -->
 
 ### 身份验证相关配置
 
@@ -414,15 +383,13 @@ ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-
 //somewhere.com/another/:_authToken=MYTOKEN2
 ```
 
-纯 ESM 包
-----
+## 纯 ESM 包
 
 ### CommonJS 项目移动到 ESM
-<!--rehype:wrap-class=col-span-3-->
 
-- 将 `"type": "module"` 添加到您的 [package.json](./package.json.md)
-- 将 [package.json](./package.json.md) 中的 `"main": "index.js"` 替换为 `"exports": "./index.js"`。
-- 将 [package.json](./package.json.md) 中的 `"engines"` 字段更新为 Node.js 14: `"node": ">=14.16"`。(不包括 <red>~~Node.js 12~~</red>，因为它不再受支持)
+- 将 `"type": "module"` 添加到您的 [package.json](https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md)
+- 将 [package.json](https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md) 中的 `"main": "index.js"` 替换为 `"exports": "./index.js"`。
+- 将 [package.json](https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md) 中的 `"engines"` 字段更新为 Node.js 14: `"node": ">=14.16"`。(不包括 ~~Node.js 12~~，因为它不再受支持)
 - 删除 `"use strict"`；来自所有 JavaScript 文件
 - 将所有 `require()` / `module.export` 替换为 `import` / `export`
 - 仅使用完整的相对文件路径进行导入：`import x from '.';` → `import x from './index.js';`
@@ -430,13 +397,12 @@ ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-
 - 可选但推荐使用 `node:` 导入[协议](https://nodejs.org/api/esm.html#esm_node_imports)
 
 ### TypeScript 项目输出 ESM
-<!--rehype:wrap-class=col-span-3-->
 
 - 确保您使用的是 TypeScript 4.7 或更高版本
-- 将 `"type": "module"` 添加到您的 [package.json](./package.json.md)
-- 将 [package.json](./package.json.md) 中的 `"main": "index.js"` 替换为 `"exports": "./index.js"`
-- 将 [package.json](./package.json.md) 中的 `"engines"` 字段更新为 Node.js 14: `"node": ">=14.16"`。 （不包括 <red>~~Node.js 12~~</red>，因为它不再受支持）
-- 将 `"module": "node16"`, `"moduleResolution": "node16"` 添加到您的 [tsconfig.json](./typescript.md) ([列子](https://github.com/sindresorhus/tsconfig/blob/main/tsconfig.json))
+- 将 `"type": "module"` 添加到您的 [package.json](https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md)
+- 将 [package.json](https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md) 中的 `"main": "index.js"` 替换为 `"exports": "./index.js"`
+- 将 [package.json](https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md) 中的 `"engines"` 字段更新为 Node.js 14: `"node": ">=14.16"`。 （不包括 ~~Node.js 12~~，因为它不再受支持）
+- 将 `"module": "node16"`, `"moduleResolution": "node16"` 添加到您的 [tsconfig.json](https://github.com/jaywcjlove/reference/blob/main/docs/typescript.md) ([列子](https://github.com/sindresorhus/tsconfig/blob/main/tsconfig.json))
 - 仅使用完整的相对文件路径进行导入：`import x from '.';` → `import x from './index.js';`
 - 删除 `namespace` 使用并改用 `export`
 - 可选但推荐使用 `node:` 导入[协议](https://nodejs.org/api/esm.html#esm_node_imports)
@@ -444,9 +410,12 @@ ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-
 
 阅读[官方 ESM 指南](https://www.typescriptlang.org/docs/handbook/esm-node.html)
 
-另见
-----
+## 另见
 
 - [npm 仓库、网站和命令行界面的文档](https://docs.npmjs.com/) _(npmjs.com)_
 - [npmmirror 中国镜像站](https://npmmirror.com/) _(npmmirror.com)_
 - [Dev Cheatsheets npx](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/package-managers/javascript/npm/commands/npx.html) _(michaelcurrin.github.io)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/npm.md](https://github.com/jaywcjlove/reference/blob/main/docs/npm.md)
+
+获取日期：2026-10-15

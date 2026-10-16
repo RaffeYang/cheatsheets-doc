@@ -100,7 +100,7 @@ Things 备忘清单
 | 取消任务：- [~] | Cancel task | ⌥⌘ K |
 | 引用：> ... | Quote | ⌘ ' |
 | 高亮：::...:: | Highlight | ⇧⌘ U |
-| 链接：[...](url.com) | Link | ⇧⌘ K |
+| 链接：`[...](url.com)` | Link | ⇧⌘ K |
 | 删除线：~~...~~ | Strikethrough | ⌥⌘ U |
 | 代码片段：`...` | Code | ⇧⌘ J |
 | 代码块：```...``` | Code block | ⌥⇧⌘ J |

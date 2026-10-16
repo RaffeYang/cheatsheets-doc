@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/pandoc.md
-Retrieved on: 2026-10-15
--->
-
-Pandoc 备忘清单
-===
+# Pandoc 备忘清单
 
 Pandoc 是一个文档转换器，这个 [pandoc](https://pandoc.org/) 备忘单包含 pandoc 命令和一些常见的 pandoc 技巧
 
-入门
----
+## 入门
 
 ### 语法
 
@@ -18,16 +10,14 @@ Pandoc 是一个文档转换器，这个 [pandoc](https://pandoc.org/) 备忘单
 $ pandoc -s [source file] -o [output file]
 ```
 
----
-
 - [Pandoc 官方文档](https://pandoc.org/)
 
 #### 安装
 
-安装命令 | 环境
-:-|-
-`$ brew install pandoc`   | macos
-`$ choco install pandoc`    | windows
+| 安装命令 | 环境 |
+| :- | - |
+| `$ brew install pandoc` | macos |
+| `$ choco install pandoc` | windows |
 
 #### Debian/Ubuntu
 
@@ -49,7 +39,6 @@ $ sudo pacman -S pandoc
 ```
 
 ### 将 LaTeX 转换为 MS Word
-<!--rehype:wrap-class=col-span-2-->
 
 简单的 `.tex` 到 `.docx`
 
@@ -75,8 +64,7 @@ $ pandoc -s file.tex --citeproc --bibliography=bib_library.bib --csl=apa.csl -o 
 $ pandoc -s file.tex --filter pandoc-crossref -o file.docx
 ```
 
-使用示例
----
+## 使用示例
 
 ### 转换文件格式
 
@@ -101,14 +89,12 @@ $ pandoc input.md --to=latex -o output.tex
 ```bash
 $ pandoc input.md -o output.pdf --metadata title="My Document"
 ```
-<!--rehype:className=wrap-text-->
 
 ### 从 URL 转换
 
 ```bash
 $ pandoc https://example.com/document.md -o output.pdf
 ```
-<!--rehype:className=wrap-text-->
 
 ### 生成幻灯片
 
@@ -127,7 +113,6 @@ $ pandoc file1.md file2.md -o output.pdf
 ```bash
 $ pandoc input.md -o output.pdf --css=style.css
 ```
-<!--rehype:className=wrap-text-->
 
 ### 转换为 AsciiDoc
 
@@ -146,7 +131,6 @@ $ pandoc input.md -o output.docx
 ```bash
 $ pandoc input.md --lua-filter=custom-filter.lua -o output.pdf
 ```
-<!--rehype:className=wrap-text-->
 
 ### 自动生成目录
 
@@ -159,7 +143,6 @@ $ pandoc input.md -o output.pdf --toc
 ```bash
 $ pandoc input.md -o output.pdf --toc --toc-depth=2
 ```
-<!--rehype:className=wrap-text-->
 
 ### 显示详细信息
 
@@ -172,3 +155,7 @@ $ pandoc input.md -o output.pdf -v
 ```bash
 $ pandoc --list-output-formats
 ```
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/pandoc.md](https://github.com/jaywcjlove/reference/blob/main/docs/pandoc.md)
+
+获取日期：2026-10-15

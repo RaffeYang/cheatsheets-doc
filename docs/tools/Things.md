@@ -1,8 +1,9 @@
 Things 备忘清单
 
 ### 创建与编辑
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 新建待办事项 | New to-do | ⌘ N |
 | 在所选项下方创建待办 | New to-do below selection | 空格键 |
 | 从剪贴板创建多个待办 | New to-dos from clipboard | ⌘ V |
@@ -22,8 +23,9 @@ Things 备忘清单
 | 将已完成项移至日志 | Move completed to Logbook | ⇧⌘ Y |
 
 ### 选择、移动、日期
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 选择第一个项目 | Select first | ⌥ ↑ |
 | 选择最后一个项目 | Select last | ⌥ ↓ |
 | 向上扩展选择 | Extend selection upwards | ⇧ ↑ |
@@ -54,8 +56,9 @@ Things 备忘清单
 | 添加重复计划 | Add repetition schedule | ⇧⌘ R |
 
 ### 窗口与导航
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 打开新窗口 | Open new window | ^⌘ N |
 | 显示/隐藏侧边栏 | Show/hide sidebar | ⌘ / |
 | 显示/隐藏工具栏 | Show/hide toolbar | ⌥⌘ T |
@@ -79,8 +82,9 @@ Things 备忘清单
 | 跳至底部 | Jump to bottom | fn → |
 
 ### 标签、过滤
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 打开标签窗口 | Open tag window | ^⌘ T |
 | 编辑所选项目标签 | Edit tags for selected item | ⇧⌘ T |
 | 切换标签开关 | Toggle tag on/off | ^ + 快捷键 |
@@ -100,7 +104,7 @@ Things 备忘清单
 | 取消任务：- [~] | Cancel task | ⌥⌘ K |
 | 引用：> ... | Quote | ⌘ ' |
 | 高亮：::...:: | Highlight | ⇧⌘ U |
-| 链接：[...](url.com) | Link | ⇧⌘ K |
+| 链接：`[...](url.com)` | Link | ⇧⌘ K |
 | 删除线：~~...~~ | Strikethrough | ⌥⌘ U |
 | 代码片段：`...` | Code | ⇧⌘ J |
 | 代码块：```...``` | Code block | ⌥⇧⌘ J |
@@ -108,8 +112,9 @@ Things 备忘清单
 | 减少缩进（2格） | Decrease indent | ⌘ [ |
 
 ### 项目管理
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 显示/隐藏稍后项目 | Show/Hide later items | ⇧⌘ E |
 | 展开/折叠所有区域 | Expand/Collapse all areas | ⌘ + 点击 |
 | 展开一个区域并折叠其他 | Expand one area and collapse others | ⌥⌘ + 点击 |
@@ -122,4 +127,3 @@ Things 备忘清单
 | 在新窗口中打开项目 | Open project in new window | ⌘ Return / ⌘ + 双击 |
 | 在新窗口中打开当前列表 | Open current list in new window | ⌥ + New Window |
 | 用 Things URL 在新窗口打开 | Open Things URL in new window | ⌘ + 点击 |
-

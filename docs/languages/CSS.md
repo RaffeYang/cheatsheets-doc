@@ -1,19 +1,10 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/css.md
-Retrieved on: 2026-10-15
--->
-
-CSS 备忘清单
-===
+# CSS 备忘清单
 
 这是一份关于 CSS 优点的快速参考备忘单，列出了选择器语法、属性、单位和其他有用的信息
 
-入门
-------------
+## 入门
 
 ### 介绍
-<!--rehype:wrap-class=row-span-3-->
 
 CSS 功能丰富，不仅仅是布局页面
 
@@ -26,7 +17,6 @@ CSS 功能丰富，不仅仅是布局页面
   type="text/css"
 >
 ```
-<!--rehype:className=wrap-text -->
 
 #### 内部样式表 `<style>`
 
@@ -48,7 +38,6 @@ CSS 功能丰富，不仅仅是布局页面
   蓝色，18像素文本
 </p>
 ```
-<!--rehype:className=wrap-text -->
 
 ### 添加 class 类
 
@@ -189,11 +178,9 @@ element {
 
 查看: [动态内容](#css-动态内容)
 
-CSS 选择器
------------
+## CSS 选择器
 
 ### 示例
-<!--rehype:wrap-class=row-span-2-->
 
 #### 组选择器
 
@@ -239,55 +226,53 @@ p:first-child {
 
 ### 基础
 
-选择器 | 说明
-:- | :-
-`*`          | 所有元素
-`div`        | 所有 div 标签
-`.classname` | 具有类的所有元素
-`#idname`    | 带 ID 的元素
-`div,p`      | 所有 div 和段落
-`#idname *`  | #idname 中的所有元素
+| 选择器 | 说明 |
+| :- | :- |
+| `*` | 所有元素 |
+| `div` | 所有 div 标签 |
+| `.classname` | 具有类的所有元素 |
+| `#idname` | 带 ID 的元素 |
+| `div,p` | 所有 div 和段落 |
+| `#idname *` | #idname 中的所有元素 |
 
 另见: [元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Type_selectors) / [类](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Class_selectors) / [ID](https://developer.mozilla.org/zh-CN/docs/Web/CSS/ID_selectors) / [通配](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Universal_selectors) 选择器
 
 ### 组合器
 
-选择器 | 说明
-:- | :-
-`div.classname` | 具有特定类名的 div
-`div#idname`    | 具有特定 ID 的 div
-`div p`         | div 中的所有段落
-`div > p`       | 父元素是 div 的 `P` 标签
-`div + p`       | div 之后的第一个同级 `P` 标签
-`div ~ p`       | div 之后所有的同级 `P` 标签
+| 选择器 | 说明 |
+| :- | :- |
+| `div.classname` | 具有特定类名的 div |
+| `div#idname` | 具有特定 ID 的 div |
+| `div p` | div 中的所有段落 |
+| `div > p` | 父元素是 div 的 `P` 标签 |
+| `div + p` | div 之后的第一个同级 `P` 标签 |
+| `div ~ p` | div 之后所有的同级 `P` 标签 |
 
 另见: [相邻兄弟](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Adjacent_sibling_combinator) / [通用兄弟](https://developer.mozilla.org/zh-CN/docs/Web/CSS/General_sibling_combinator) / [子](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Child_combinator) 选择器
 
 ### 属性选择器
 
-选择器 | 说明
-:- | :-
-`a[target]`          | 带有 <yel>target</yel> 属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attr)
-`a[target="_blank"]` | 在新标签中打开 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue)
-`a[href^="/index"]`  | 以 <yel>/index</yel> 开头 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_4)
-`[class\|="chair"]`   | 以<yel>chair</yel>开头 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_3)
-`[class*="chair"]`   | 包含<yel>chair</yel> [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_6)
-`[title~="chair"]`   | 包含单词 <yel>chair</yel> [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_2)
-`a[href$=".doc"]`    | 以 <yel>.doc</yel> 结尾 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_5)
-`[type="button"]`    | 指定类型 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue)
+| 选择器 | 说明 |
+| :- | :- |
+| `a[target]` | 带有 target 属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attr) |
+| `a[target="_blank"]` | 在新标签中打开 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue) |
+| `a[href^="/index"]` | 以 /index 开头 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_4) |
+| `[class\|="chair"]` | 以chair开头 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_3) |
+| `[class*="chair"]` | 包含chair [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_6) |
+| `[title~="chair"]` | 包含单词 chair [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_2) |
+| `a[href$=".doc"]` | 以 .doc 结尾 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue_5) |
+| `[type="button"]` | 指定类型 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors#attrvalue) |
 
 另见: [属性选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors)
 
 ### 用户操作伪类
 
-选择器 | 说明
-:- | :-
-`a:link` | 链接正常 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:link)
-`a:active` | 链接处于点击状态 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:active)
-`a:hover` | 鼠标悬停链接 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:hover)
-`a:visited` | 访问链接 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:visited)
-
----
+| 选择器 | 说明 |
+| :- | :- |
+| `a:link` | 链接正常 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:link) |
+| `a:active` | 链接处于点击状态 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:active) |
+| `a:hover` | 鼠标悬停链接 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:hover) |
+| `a:visited` | 访问链接 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:visited) |
 
 ```css
 /* 未访问链接 */
@@ -302,87 +287,84 @@ a:active { color: red; }
 
 ### 伪类
 
-选择器 | 说明
-:- | :-
-`p::after`        | 在 p 之后添加内容 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::after)
-`p::before`       | 在 p 之前添加内容 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::before)
-`p::first-letter` | p中的第一个字母 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-letter)
-`p::first-line`   | p 中的第一行 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line)
-`::selection`     | 由用户选择 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::selection)
-`::placeholder`   | [占位符](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::placeholder) 属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::placeholder)
-`:root`           | 文档根元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:root)
-`:target`         | 突出显示活动锚点 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:target)
-`div:empty`       | 没有子元素的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:empty)
-`p:lang(en)`      | 带有 en 语言属性的 P [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:lang)
-`:not(span)`      | 不是跨度的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:not)
-`:host`           | shadowDOM 中选择自定义元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:root)
-`::backdrop`      | 处于全屏模式的元素样式 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::backdrop)
-`::marker`        | `li` 项目符号或者数字 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::marker)
-`::file-selector-button`      | type="file" `input` 按钮 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::file-selector-button)
+| 选择器 | 说明 |
+| :- | :- |
+| `p::after` | 在 p 之后添加内容 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::after) |
+| `p::before` | 在 p 之前添加内容 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::before) |
+| `p::first-letter` | p中的第一个字母 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-letter) |
+| `p::first-line` | p 中的第一行 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line) |
+| `::selection` | 由用户选择 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::selection) |
+| `::placeholder` | [占位符](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::placeholder) 属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::placeholder) |
+| `:root` | 文档根元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:root) |
+| `:target` | 突出显示活动锚点 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:target) |
+| `div:empty` | 没有子元素的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:empty) |
+| `p:lang(en)` | 带有 en 语言属性的 P [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:lang) |
+| `:not(span)` | 不是跨度的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:not) |
+| `:host` | shadowDOM 中选择自定义元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:root) |
+| `::backdrop` | 处于全屏模式的元素样式 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::backdrop) |
+| `::marker` | `li` 项目符号或者数字 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::marker) |
+| `::file-selector-button` | type="file" `input` 按钮 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::file-selector-button) |
 
 ### 输入伪类
 
-选择器 | 说明
-:- | :-
-`input:checked`       | 检查 `input` [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:checked)
-`input:disabled`      | 禁用 `input` [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:disabled)
-`input:enabled`       | 启用的 `input` [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:enabled)
-`input:default`       | 有默认值的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:default)
-`input:blank`         | 空的输入框 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:blank)
-`input:focus`         | `input` 有焦点 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:focus)
-`input:in-range`      | 范围内的值 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:in-range)
-`input:out-of-range`  | `input` 值超出范围 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:out-of-range)
-`input:valid`         | `input` 有效值 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:valid)
-`input:invalid`       | `input` 无效值 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:invalid)
-`input:optional`      | 没有必需的属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:optional)
-`input:required`      | 带有必需属性的 `input` [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:required)
-`input:read-only`     | 具有只读属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:read-only)
-`input:read-write`    | 没有只读属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:read-write)
-`input:indeterminate` | 带有 [indeterminate](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:indeterminate) 状态 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:indeterminate)
+| 选择器 | 说明 |
+| :- | :- |
+| `input:checked` | 检查 `input` [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:checked) |
+| `input:disabled` | 禁用 `input` [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:disabled) |
+| `input:enabled` | 启用的 `input` [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:enabled) |
+| `input:default` | 有默认值的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:default) |
+| `input:blank` | 空的输入框 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:blank) |
+| `input:focus` | `input` 有焦点 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:focus) |
+| `input:in-range` | 范围内的值 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:in-range) |
+| `input:out-of-range` | `input` 值超出范围 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:out-of-range) |
+| `input:valid` | `input` 有效值 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:valid) |
+| `input:invalid` | `input` 无效值 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:invalid) |
+| `input:optional` | 没有必需的属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:optional) |
+| `input:required` | 带有必需属性的 `input` [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:required) |
+| `input:read-only` | 具有只读属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:read-only) |
+| `input:read-write` | 没有只读属性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:read-write) |
+| `input:indeterminate` | 带有 [indeterminate](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:indeterminate) 状态 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:indeterminate) |
 
 ### 结构伪类
 
-选择器 | 说明
-:- | :-
-`p:first-child`         | 第一个孩子 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-child)
-`p:last-child`          | 最后一个孩子 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:last-child)
-`p:first-of-type`       | 第一个 p 类型的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-of-type)
-`p:last-of-type`        | 某种类型的最后一个 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:last-of-type)
-`p:nth-child(2)`        | 其父母的第二个孩子 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child)
-`p:nth-child(3n42)`     | Nth-child(an + b) 公式 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child)
-`p:nth-last-child(2)`   | 后面的二孩 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-last-child)
-`p:nth-of-type(2)`      | 其父级的第二个 p [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-of-type)
-`p:nth-last-of-type(2)` | ...从后面 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-last-of-type)
-`p:only-of-type`        | 其父级的唯一性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:only-of-type)
-`p:only-child`          | 其父母的唯一孩子 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:only-child)
-`:is(header, div) p`    | 可以选择的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:is)
-`:where(header, div) p` | 与 `:is` 相同 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:where)
-`a:has(> img)`          | 包含 `img` 元素的 `a` 元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:has)
-`::first-letter`        | 第一行的第一个字母 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-letter)
-`::first-line`          | 第一行应用样式 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line)
+| 选择器 | 说明 |
+| :- | :- |
+| `p:first-child` | 第一个孩子 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-child) |
+| `p:last-child` | 最后一个孩子 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:last-child) |
+| `p:first-of-type` | 第一个 p 类型的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-of-type) |
+| `p:last-of-type` | 某种类型的最后一个 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:last-of-type) |
+| `p:nth-child(2)` | 其父母的第二个孩子 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child) |
+| `p:nth-child(3n42)` | Nth-child(an + b) 公式 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child) |
+| `p:nth-last-child(2)` | 后面的二孩 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-last-child) |
+| `p:nth-of-type(2)` | 其父级的第二个 p [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-of-type) |
+| `p:nth-last-of-type(2)` | ...从后面 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-last-of-type) |
+| `p:only-of-type` | 其父级的唯一性 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:only-of-type) |
+| `p:only-child` | 其父母的唯一孩子 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:only-child) |
+| `:is(header, div) p` | 可以选择的元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:is) |
+| `:where(header, div) p` | 与 `:is` 相同 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:where) |
+| `a:has(> img)` | 包含 `img` 元素的 `a` 元素 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:has) |
+| `::first-letter` | 第一行的第一个字母 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-letter) |
+| `::first-line` | 第一行应用样式 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line) |
 
-CSS 字体
-------
+## CSS 字体
 
 ### 属性
-<!--rehype:wrap-class=row-span-3-->
 
-属性 | 说明
-:- | :-
-`font-family:`    | 字体族名或通用字体族名 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-family)
-`font-size:`      | 字体的大小 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-size)
-`letter-spacing:` | 文本字符的间距 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/letter-spacing)
-`line-height:`    | 多行文本间距 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/line-height)
-`font-weight:`     | 粗细程度 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-weight)
-`font-style:`      | 字体样式 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-style)
-`text-decoration:` | 文本的修饰线外观 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration)
-`text-align:`      | 相对它的块父元素对齐 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-align)
-`text-transform:`  | 指定文本大小写 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-transform)
+| 属性 | 说明 |
+| :- | :- |
+| `font-family:` | 字体族名或通用字体族名 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-family) |
+| `font-size:` | 字体的大小 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-size) |
+| `letter-spacing:` | 文本字符的间距 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/letter-spacing) |
+| `line-height:` | 多行文本间距 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/line-height) |
+| `font-weight:` | 粗细程度 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-weight) |
+| `font-style:` | 字体样式 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-style) |
+| `text-decoration:` | 文本的修饰线外观 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration) |
+| `text-align:` | 相对它的块父元素对齐 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-align) |
+| `text-transform:` | 指定文本大小写 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-transform) |
 
 另见: [Font](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font)
 
 ### 速记
-<!--rehype:wrap-class=col-span-2&style=background:#ffeb3bcf;color:#333;-->
 
 ```css
 font: italic    400     14px    /     1.5        sans-serif
@@ -399,7 +381,6 @@ letter-spacing: 0.02em;
 ```
 
 ### 大小写
-<!--rehype:wrap-class=row-span-2-->
 
 ```css
 div {
@@ -421,8 +402,7 @@ div {
 }
 ```
 
-CSS 颜色
-------------
+## CSS 颜色
 
 ### 命名颜色
 
@@ -433,7 +413,7 @@ color: tan;
 color: rebeccapurple;
 ```
 
-更多标准[颜色名称](./colors-named.md)
+更多标准[颜色名称](https://github.com/jaywcjlove/reference/blob/main/docs/colors-named.md)
 
 ### 十六进制颜色
 
@@ -485,25 +465,22 @@ color: initial;
 color: unset;
 ```
 
-CSS 背景
-----------
+## CSS 背景
 
 ### 属性
-<!--rehype:wrap-class=row-span-2-->
 
-属性 | 说明
-:- | :-
-`background:` | _([速记](#速记-1))_
-`background-color:`      | 查看: [Colors](#css-颜色)
-`background-image:`      | 一个或者多个背景图像
-`background-position:`   | 背景图片设置初始位置
-`background-size:`       | 背景图片大小
-`background-clip:`       | 背景(图片或颜色)是否延伸到边框、内边距盒子、内容盒子下面
-`background-repeat:`     | 图像重复方式
-`background-attachment:` | `scroll`/`fixed`/`local`
+| 属性 | 说明 |
+| :- | :- |
+| `background:` | _([速记](#速记-1))_ |
+| `background-color:` | 查看: [Colors](#css-颜色) |
+| `background-image:` | 一个或者多个背景图像 |
+| `background-position:` | 背景图片设置初始位置 |
+| `background-size:` | 背景图片大小 |
+| `background-clip:` | 背景(图片或颜色)是否延伸到边框、内边距盒子、内容盒子下面 |
+| `background-repeat:` | 图像重复方式 |
+| `background-attachment:` | `scroll`/`fixed`/`local` |
 
 ### 速记
-<!--rehype:wrap-class=col-span-2&style=background:#ffeb3bcf;color:#333;-->
 
 ```css
 background: #ff0   url(a.jpg)   left     top    /  100px auto   no-repeat   fixed;
@@ -513,7 +490,6 @@ background: #ff0   url(a.jpg)   left     top    /  100px auto   no-repeat   fixe
 ```
 
 ### 示例
-<!--rehype:wrap-class=col-span-2-->
 
 ```css
 background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
@@ -524,8 +500,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
   rgba(0,212,255,1) 100%);
 ```
 
-CSS 盒子模型
---------
+## CSS 盒子模型
 
 ### 最大值/最小值
 
@@ -592,12 +567,9 @@ div {
 
 另见: [溢出(overflow)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow)
 
-CSS 动画
----------
-<!--rehype:wrap-class=col-5-->
+## CSS 动画
 
 ### 速记
-<!--rehype:wrap-class=col-span-5&style=background:#ffeb3bcf;color:#333;-->
 
 ```css
 animation:  bounce   300ms      linear     100ms    infinite   alternate-reverse  both                   reverse  
@@ -606,24 +578,22 @@ animation:  bounce   300ms      linear     100ms    infinite   alternate-reverse
 ```
 
 ### 属性
-<!--rehype:wrap-class=row-span-2 col-span-3-->
 
-属性 | 说明
-:- | :-
-`animation:`                 |  _([速记](#速记-2))_
-`animation-name:`            | 动画名 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-name)
-`animation-duration:`        | 动画周期的时长 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-duration)
-`animation-timing-function:` | 缓动函数 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-timing-function)
-`animation-delay:`           | 延迟 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-delay)
-`animation-iteration-count:` | 运行的次数 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-iteration-count)
-`animation-direction:`       | 动画是否反向播放 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-direction)
-`animation-fill-mode:`       | 如何将样式应用于其目标 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-fill-mode)
-`animation-play-state:`      | 是否运行或者暂停 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-play-state)
+| 属性 | 说明 |
+| :- | :- |
+| `animation:` | _([速记](#速记-2))_ |
+| `animation-name:` | 动画名 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-name) |
+| `animation-duration:` | 动画周期的时长 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-duration) |
+| `animation-timing-function:` | 缓动函数 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-timing-function) |
+| `animation-delay:` | 延迟 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-delay) |
+| `animation-iteration-count:` | 运行的次数 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-iteration-count) |
+| `animation-direction:` | 动画是否反向播放 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-direction) |
+| `animation-fill-mode:` | 如何将样式应用于其目标 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-fill-mode) |
+| `animation-play-state:` | 是否运行或者暂停 [#](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-play-state) |
 
 另见: [动画(Animation)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation)
 
 ### 示例
-<!--rehype:wrap-class=col-span-2-->
 
 ```css
 /* @keyframes duration | timing-function | delay |
@@ -641,15 +611,12 @@ animation: bounce 300ms linear 2s infinite alternate-reverse forwards normal;
 ```
 
 ### Javascript 事件
-<!--rehype:wrap-class=col-span-2-->
 
 ```js
 .one('webkitAnimationEnd oanimationend msAnimationEnd animationend')
 ```
 
-CSS Flexbox
--------
-<!--rehype:body-class=cols-2-->
+## CSS Flexbox
 
 ### 简单实例
 
@@ -666,7 +633,6 @@ CSS Flexbox
 ```
 
 ### 容器
-<!--rehype:wrap-class=row-span-2-->
 
 ```css {2-3,5-8,10-11,13-16,18-23}
 .container {
@@ -715,7 +681,6 @@ CSS Flexbox
 ```
 
 ### justify-content
-<!--rehype:wrap-class=row-span-2-->
 
 ```css
 justify-content: flex-start | flex-end | center | space-between
@@ -807,8 +772,6 @@ flex-wrap: nowrap | wrap | wrap-reverse;
 flex-direction: row | row-reverse | column | column-reverse;
 ```
 
----
-
 ```bash
 ╭┈┈╮  ▲         ╭┈┈╮  ┆
 ╰┈┈╯  ┆         ╰┈┈╯  ┆
@@ -827,8 +790,6 @@ column-reverse  column       row             row-reverse
 ```css
 align-items: flex-start | flex-end | center | baseline | stretch;
 ```
-
----
 
 ```css
   ▶ flex-start(起点对齐)    ▶ flex-end(终点对齐)
@@ -864,9 +825,6 @@ align-items: flex-start | flex-end | center | baseline | stretch;
 ```css
 align-content: flex-start | flex-end | center | space-between | space-around | stretch;
 ```
-<!--rehype:className=wrap-text -->
-
----
 
 ```css
  ▶ flex-start(起点对齐)     ▶ flex-end(终点对齐)
@@ -906,8 +864,6 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 }
 ```
 
----
-
 ```css
 ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮ ╭┈┈┈┈┈┈┈┈┈╮
 ┆ ╭1┈╮ ╭1┈┈╮ ╭1┈╮ ╭2┈╮ ╭3┈┈┈┈┈┈╮ ┆ ┆ ╭2┈┈┈┈╮ ┆
@@ -930,8 +886,6 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 }
 ```
 
----
-
 ```css
 ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
 ┆ ╭┈┈1┈┈╮╭┈┈2┈┈╮╭┈┈1┈┈╮ ┆
@@ -945,8 +899,7 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 
 属性 [flex-grow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-grow) 定义项目的放大比例，默认为`0`，即如果存在剩余空间，也不放大
 
-CSS Flexbox 技巧
---------------
+## CSS Flexbox 技巧
 
 ### 垂直中心
 
@@ -1002,7 +955,6 @@ CSS Flexbox 技巧
 一个固定高度的顶部栏和一个动态高度的内容区域
 
 ### Table-like 像表格
-<!--rehype:wrap-class=col-span-2-->
 
 ```css
 .container {
@@ -1027,15 +979,13 @@ CSS Flexbox 技巧
 垂直居中所有项目
 
 ### 左和右
-<!--rehype:wrap-class=col-span-2-->
 
 ```css
 .menu > .left  { align-self: flex-start; }
 .menu > .right { align-self: flex-end; }
 ```
 
-CSS Grid 网格布局
-------------
+## CSS Grid 网格布局
 
 ### 网格模板列
 
@@ -1069,7 +1019,6 @@ CSS Grid 网格布局
 ```
 
 ### CSS 网格行
-<!--rehype:wrap-class=row-span-2-->
 
 CSS 语法:
 
@@ -1116,7 +1065,6 @@ grid-row-gap: length;
 ```
 
 ### minmax() 函数
-<!--rehype:wrap-class=col-span-2-->
 
 ```css
 .grid {
@@ -1124,7 +1072,6 @@ grid-row-gap: length;
   grid-template-columns: 100px minmax(100px, 500px) 100px; 
 }
 ```
-<!--rehype:className=wrap-text -->
 
 定义了一个长宽范围的闭区间
 
@@ -1194,8 +1141,7 @@ grid-row-end: span 2;
 }
 ```
 
-CSS 动态内容
-------------
+## CSS 动态内容
 
 ### 变量
 
@@ -1264,8 +1210,7 @@ li::before {
 }
 ```
 
-CSS 函数
------------
+## CSS 函数
 
 ### calc()
 
@@ -1297,7 +1242,6 @@ p:before {
 获取选择到的元素的某一 HTML 属性值
 
 ### counter()
-<!--rehype:wrap-class=row-span-2-->
 
 返回一个代表计数器的当前值的字符串
 
@@ -1354,9 +1298,6 @@ li::before {
 ```html
 <meta name="viewport" content="... viewport-fit=cover">
 ```
-<!--rehype:className=wrap-text-->
-
----
 
 ```css
 body {
@@ -1430,7 +1371,6 @@ repeat(4, [col-start] 60% [col-end])
 background: url("topbanner.png") #00D no-repeat fixed;
 list-style: square url(http://www.example.com/redball.png)
 ```
-<!--rehype:className=wrap-text-->
 
 ### var()
 
@@ -1443,12 +1383,10 @@ body {
   background-color: var(--main-bg-color);
 }
 ```
-<!--rehype:className=wrap-text-->
 
 代替元素中任何属性中的值的任何部分
 
-CSS 技巧
-------------
+## CSS 技巧
 
 ### 强制不换行
 
@@ -1489,7 +1427,6 @@ input[type="text"]:autofill {
 另见: [:autofill](https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill)
 
 ### 修改 input type="color" 样式
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```css
 input[type="color"] {
@@ -1523,7 +1460,6 @@ br + br {
 ```
 
 ### CSS 重置
-<!--rehype:wrap-class=row-span-2-->
 
 ```css
 html {
@@ -1548,7 +1484,6 @@ body {
 ```
 
 ### 设置整个页面灰色
-<!--rehype:wrap-style=-webkit-filter: grayscale(.95);-->
 
 ```css
 html {
@@ -1614,7 +1549,6 @@ body {
 这样文本元素可以很容易地从 `body` 继承
 
 ### 使用图像作为光标
-<!--rehype:wrap-class=col-span-2-->
 
 ```css
 div {
@@ -1623,7 +1557,6 @@ div {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🚀</text></svg>"), auto;
 }
 ```
-<!--rehype:className=wrap-text -->
 
 ### 文本溢出显示省略号
 
@@ -1673,7 +1606,6 @@ a[href^="http"]:empty::before {
 如果 `<a>` 标签里面没有内容，将 `href` 的值作为内容展示
 
 ### 使用 :root 表示灵活类型
-<!--rehype:wrap-class=row-span-2-->
 
 响应式布局中的字体大小应该能够根据每个视口进行调整，您可以使用 `:root` 根据视口高度和宽度计算字体大小
 
@@ -1692,7 +1624,6 @@ body {
 ```
 
 ### 吸附滚动
-<!--rehype:wrap-class=row-span-2-->
 
 ```css {5,12}
 .container {
@@ -1720,7 +1651,6 @@ div {
     read-write-plaintext-only;
 }
 ```
-<!--rehype:className=wrap-text -->
 
 通过样式来控制一个元素 `div` 是否可以编辑
 
@@ -1758,7 +1688,6 @@ a[href]:not([class]) {
 通常没有 `class` 属性，以上样式可以甄别它们，而且不会影响其它样式
 
 ### 用 rem 调整全局大小；用 em 调整局部大小
-<!--rehype:wrap-class=row-span-2-->
 
 在根元素设置基本字体大小后 (`html { font-size: 100%; }`), 使用 em 设置文本元素的字体大小:
 
@@ -1859,7 +1788,6 @@ body {
 您不需要为每个 `<p>`、`<h*>` 等分别添加行高。相反，将其添加到正文
 
 ### 检查本地是否安装了字体
-<!--rehype:wrap-class=row-span-2-->
 
 ```css
 @font-face {
@@ -1909,7 +1837,6 @@ select:focus, textarea:focus {
 有视力的键盘用户依靠焦点来确定键盘事件在页面中的位置。使表单元素的焦点比浏览器的默认实现更加突出和一致
 
 ### 垂直居中任何东西
-<!--rehype:wrap-class=row-span-2-->
 
 ```css
 html, body {
@@ -1993,8 +1920,7 @@ ul > li:not(:last-child)::after {
 
 表格中一列数字列对其
 
-另见
----------
+## 另见
 
 - [CSS selectors cheatsheet](https://frontend30.com/css-selectors-cheatsheet/) _(frontend30.com)_
 - [MDN: Using CSS flexbox](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Flexible_boxes)
@@ -2004,3 +1930,7 @@ ul > li:not(:last-child)::after {
 - [Browser support](https://caniuse.com/#feat=css-grid)
 - [Flex 布局教程：语法篇](https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool)
 - [CSS 专业技巧](https://github.com/AllThingsSmitty/css-protips/tree/master/translations/zh-CN)
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/css.md](https://github.com/jaywcjlove/reference/blob/main/docs/css.md)
+
+获取日期：2026-10-15

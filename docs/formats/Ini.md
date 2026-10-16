@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/ini.md
-Retrieved on: 2026-10-15
--->
-
-INI 备忘清单
-====
+# INI 备忘清单
 
 这是理解和编写 INI 格式配置文件的快速参考备忘单，此清单包含配置的内容，结构和语法等内容。
 
-入门
-------
+## 入门
 
 ### 介绍
 
@@ -37,7 +29,6 @@ file="acme payroll.dat"
 - 每个键由`名称`和`值`构成，等号 (=) 分隔
 - `键名称`显示在等号的`左侧`
 - `等号`和`分号`是`保留`字符
-<!--rehype:className=style-round-->
 
 ```ini
 name = value
@@ -81,7 +72,6 @@ foo = bar     # 这是另一个内联注释
 - 没有明确的 `section 结束` 分隔符
 - 在下一个 `section` 声明处或文件末尾处结束
 - 部分和属性名称不区分大小写
-<!--rehype:className=style-round-->
 
 ```ini
 [section]
@@ -134,22 +124,22 @@ foo = bar
 
 ### 转义字符
 
-序列 | 意思
-:- | :-
-`\\` | \ (单个反斜杠，转义转义字符)
-`\'` | 撇号
-`\"` | 双引号
-`\0` | 空字符
-`\a` | 铃声/警报/声音
-`\b` | 退格键，某些应用程序的[贝尔字符](https://en.wikipedia.org/wiki/Bell_character)
-`\t` | 制表符
-`\r` | 回车
-`\n` | 换行
-`\;` | 分号
-`\#` | 数字符号
-`\=` | 等号
-`\:` | 冒号
-`\x????` | 十六进制代码点的 Unicode 字符对应于 ????
+| 序列 | 意思 |
+| :- | :- |
+| `\\` | \ (单个反斜杠，转义转义字符) |
+| `\'` | 撇号 |
+| `\"` | 双引号 |
+| `\0` | 空字符 |
+| `\a` | 铃声/警报/声音 |
+| `\b` | 退格键，某些应用程序的[贝尔字符](https://en.wikipedia.org/wiki/Bell_character) |
+| `\t` | 制表符 |
+| `\r` | 回车 |
+| `\n` | 换行 |
+| `\;` | 分号 |
+| `\#` | 数字符号 |
+| `\=` | 等号 |
+| `\:` | 冒号 |
+| `\x????` | 十六进制代码点的 Unicode 字符对应于 ???? |
 
 ### 数组
 
@@ -183,9 +173,12 @@ array[]=second value
 - [@rickyah/ini-parser](https://github.com/rickyah/ini-parser) _(c#)_
 - [@Enichan/Ini](https://github.com/Enichan/Ini) _(c#)_
 
-另见
----
+## 另见
 
 - [INI 文件配置](https://en.wikipedia.org/wiki/INI_file) _(wikipedia.org)_
-- [YAML 格式配置文件备忘清单](./yaml.md) _(jaywcjlove.github.io)_
-- [TOML 格式配置文件备忘清单](./toml.md) _(jaywcjlove.github.io)_
+- [YAML 格式配置文件备忘清单](https://github.com/jaywcjlove/reference/blob/main/docs/yaml.md) _(jaywcjlove.github.io)_
+- [TOML 格式配置文件备忘清单](https://github.com/jaywcjlove/reference/blob/main/docs/toml.md) _(jaywcjlove.github.io)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/ini.md](https://github.com/jaywcjlove/reference/blob/main/docs/ini.md)
+
+获取日期：2026-10-15

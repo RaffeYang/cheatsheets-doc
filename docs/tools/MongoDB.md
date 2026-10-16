@@ -1,19 +1,10 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/mongodb.md
-Retrieved on: 2026-10-15
--->
-
-MongoDB 备忘清单
-===
+# MongoDB 备忘清单
 
 [MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/#connect-mongodb-shell) 此备忘单包含一些方便的提示、命令和快速参考，可让您立即连接并进行 CRUD
 
-入门
----
+## 入门
 
 ### 连接 MongoDB Shell
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 mongo # 默认连接到 mongodb://127.0.0.1:27017
@@ -48,11 +39,9 @@ show collections
 load("myScript.js")
 ```
 
-CRUD
----
+## CRUD
 
 ### 创建
-<!--rehype:wrap-class=col-span-3-->
 
 ```mongodb
 db.coll.insertOne({ name: "Max" })
@@ -64,28 +53,26 @@ db.coll.insert({ name: "Max"}, {"writeConcern": {"w": "majority", "wtimeout": 50
 
 ### 寻找文件
 
-Commands | Description
-:-- | ---
-`db.docx.findOne()` | 查找一个随机文档
-`db.docx.find().prettyPrint()` | 查找所有文档
-`db.docx.find({}, {name:true, _id:false})` | 仅显示文档 Docx 的名称
-`db.docx.find({}, {name:true, _id:false})` | 可以在多个文件中按属性查找一个文件
+| Commands | Description |
+| :-- | --- |
+| `db.docx.findOne()` | 查找一个随机文档 |
+| `db.docx.find().prettyPrint()` | 查找所有文档 |
+| `db.docx.find({}, {name:true, _id:false})` | 仅显示文档 Docx 的名称 |
+| `db.docx.find({}, {name:true, _id:false})` | 可以在多个文件中按属性查找一个文件 |
 
 ### 使用运算符查找文档
-<!--rehype:wrap-class=col-span-2-->
 
-Operator | Description | Commands
-:-- | --- | ---
-`$gt`  | 大于 | `db.docx.find({class:{$gt:'T'}`
-`$gte`  | 大于等于 | `db.docx.find({class:{$gt:'T'}`
-`$lt`  | 小于 | `db.docx.find({class:{$lt:'T'}`
-`$lte` | 小于等于 | `db.docx.find({class:{$lte:'T'}`
-`$exists` | 属性是否存在 | `db.docx.find({class:{$gt:'T'}`
-`$regex` | 正则表达式匹配 | `db.docx.find({name:{$regex:'^USS\\sE'}})`
-`$type`  | 按元素类型搜索 | `db.docx.find({name : {$type:4}})`
+| Operator | Description | Commands |
+| :-- | --- | --- |
+| `$gt` | 大于 | `db.docx.find({class:{$gt:'T'}` |
+| `$gte` | 大于等于 | `db.docx.find({class:{$gt:'T'}` |
+| `$lt` | 小于 | `db.docx.find({class:{$lt:'T'}` |
+| `$lte` | 小于等于 | `db.docx.find({class:{$lte:'T'}` |
+| `$exists` | 属性是否存在 | `db.docx.find({class:{$gt:'T'}` |
+| `$regex` | 正则表达式匹配 | `db.docx.find({name:{$regex:'^USS\\sE'}})` |
+| `$type` | 按元素类型搜索 | `db.docx.find({name : {$type:4}})` |
 
 ### 读取
-<!--rehype:wrap-class=col-span-3-->
 
 ```mongodb
 db.coll.findOne() // 返回单个文档
@@ -162,7 +149,6 @@ db.coll.find().readConcern("majority")
 ```
 
 ### 更新
-<!--rehype:wrap-class=col-span-3-->
 
 ```mongodb
 db.coll.update({"_id": 1}, {"year": 2016}) // 警告！ 替换整个文档
@@ -209,7 +195,6 @@ db.coll.update({}, {$set: {"x": 1}}, {"writeConcern": {"w": "majority", "wtimeou
 ```
 
 ### 删除
-<!--rehype:wrap-class=col-span-3-->
 
 ```mongodb
 db.coll.remove({name: "Max"})
@@ -219,8 +204,7 @@ db.coll.remove({name: "Max"}, {"writeConcern": {"w": "majority", "wtimeout": 500
 db.coll.findOneAndDelete({"name": "Max"})
 ```
 
-数据库和集合
----
+## 数据库和集合
 
 ### Drop
 
@@ -232,7 +216,6 @@ db.dropDatabase()
 ```
 
 ### 创建集合
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```mongodb
 // 使用 $jsonschema 创建集合
@@ -271,8 +254,7 @@ db.coll.validate({full: true})
 db.coll.renameCollection("new_coll", true)
 ```
 
-索引
----
+## 索引
 
 ### 列表索引
 
@@ -282,7 +264,6 @@ db.coll.getIndexKeys()
 ```
 
 ### 创建索引
-<!--rehype:wrap-class=col-span-2 row-span-3-->
 
 ```mongodb
 // 索引类型
@@ -317,11 +298,9 @@ db.coll.hideIndex("name_1")
 db.coll.unhideIndex("name_1")
 ```
 
-方便的命令
----
+## 方便的命令
 
 ###
-<!--rehype:wrap-class=col-span-3&style=display:none;&wrap-style=padding-top: 0;-->
 
 ```mongodb
 use admin
@@ -364,8 +343,7 @@ db.getFreeMonitoringStatus()
 db.createView("viewName", "sourceColl", [{$project:{department: 1}}])
 ```
 
-各种各样的
----
+## 各种各样的
 
 ### 改变流
 
@@ -384,7 +362,6 @@ while (!watchCursor.isExhausted()){
 ```
 
 ### 分片集群
-<!--rehype:wrap-class=col-span-2 row-span-3-->
 
 ```mongodb
 sh.status()
@@ -438,3 +415,7 @@ rs.slaveOk()
 rs.stepDown(20, 5)
 // (stepDownSecs, secondaryCatchUpPeriodSecs)
 ```
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/mongodb.md](https://github.com/jaywcjlove/reference/blob/main/docs/mongodb.md)
+
+获取日期：2026-10-15

@@ -1,11 +1,4 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/nextjs.md
-Retrieved on: 2026-10-15
--->
-
-Next.js 备忘清单
-===
+# Next.js 备忘清单
 
 [![NPM version](https://img.shields.io/npm/v/next.svg?style=flat)](https://www.npmjs.com/package/next)
 [![Downloads](https://img.shields.io/npm/dm/next.svg?style=flat)](https://www.npmjs.com/package/next)
@@ -13,10 +6,8 @@ Next.js 备忘清单
 [![Github repo](https://badgen.net/badge/icon/Github?icon=github&label)](https://github.com/vercel/next.js)
 
 这是一份快速参考备忘单，包含 [Next.js](https://nextjs.org/) 的 API 参考列表和一些示例
-<!--rehype:style=padding-top: 12px;-->
 
-入门
-----
+## 入门
 
 ### 创建项目
 
@@ -28,7 +19,7 @@ yarn create next-app
 pnpm create next-app
 ```
 
-或者创建 [TypeScript](./typescript.md) 项目
+或者创建 [TypeScript](https://github.com/jaywcjlove/reference/blob/main/docs/typescript.md) 项目
 
 ```shell
 npx create-next-app@latest --typescript
@@ -55,7 +46,6 @@ export default HomePage
 `Next.js` 是围绕页面的概念构建的。 页面是从 `pages` 目录中的 `.js`、`.jsx`、`.ts` 或 `.tsx` 文件导出的 `React` 组件
 
 ### getServerSideProps
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 function Page({ data }) {
@@ -81,7 +71,6 @@ export default Page
 - 当您通过 `next/link` 或 `next/router` 在客户端页面转换上请求此页面时，`Next.js` 会向服务器发送 API 请求，服务器运行 `getServerSideProps`
 
 ### getStaticPaths
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 // pages/posts/[id].js
@@ -118,7 +107,6 @@ export async function getStaticPaths() {
 - 页面必须预渲染（用于 SEO）并且速度非常快 —— `getStaticProps` 生成 HTML 和 JSON 文件，这两种文件都可以由 CDN 缓存以提高性能
 
 ### getStaticProps
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 // 帖子将在构建时由 getStaticProps() 填充
@@ -153,7 +141,6 @@ export default Blog
 在服务器端的构建时被调用
 
 ### 增量静态再生
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 function Blog({ posts }) {
@@ -290,7 +277,6 @@ Next.js 支持零配置的现代浏览器
 - Firefox 67+
 - Opera 51+
 - Safari 12+
-<!--rehype:className=cols-3-->
 
 Next.js 支持在 `package.json` 文件中配置 `Browserslist`
 
@@ -306,11 +292,9 @@ Next.js 支持在 `package.json` 文件中配置 `Browserslist`
 }
 ```
 
-内置 CSS 支持
----
+## 内置 CSS 支持
 
 ### 添加全局样式表
-<!--rehype:wrap-class=row-span-2-->
 
 如果不存在，请创建一个 `pages/_app.js` 文件。 然后，导入 `styles.css` 文件
 
@@ -352,10 +336,9 @@ export default function MyApp({
 }
 ```
 
-从 <red>Next.js 9.5.4</red> 开始，您的应用程序中的任何地方都允许从 `node_modules` 导入 CSS 文件
+从 Next.js 9.5.4 开始，您的应用程序中的任何地方都允许从 `node_modules` 导入 CSS 文件
 
 ### 添加组件级 CSS (CSS Modules)
-<!--rehype:wrap-class=row-span-2-->
 
 您无需担心 .error {} 与任何其他 `.css` 或 `.module.css` 文件！他将被生成 `hash` 名称
 
@@ -393,10 +376,9 @@ Next.js 允许您使用 `.scss` 和 `.sass` 扩展名导入 Sass，可以通过 
 $ npm install --save-dev sass
 ```
 
-在使用 Next.js 的内置 `Sass` 支持之前，请务必<pur>安装 `sass`</pur>
+在使用 Next.js 的内置 `Sass` 支持之前，请务必安装 `sass`
 
 ### 自定义 Sass 选项
-<!--rehype:wrap-class=col-span-2-->
 
 通过在 `next.config.js` 中使用 `sassOptions` 来实现配置 `Sass` 编译器。例如添加 `includePaths`：
 
@@ -475,10 +457,9 @@ function HelloWorld() {
 export default HelloWorld
 ```
 
-当然，你也可以使用 [styled-components](./styled-components.md)
+当然，你也可以使用 [styled-components](https://github.com/jaywcjlove/reference/blob/main/docs/styled-components.md)
 
-Layouts
----
+## Layouts
 
 ### 基础示例
 
@@ -514,7 +495,6 @@ export default function MyApp({ Component, pageProps }) {
 ```
 
 ### 使用 TypeScript
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 // pages/index.tsx
@@ -614,8 +594,7 @@ export default function Layout({ children }) {
 }
 ```
 
-图片优化
----
+## 图片优化
 
 ### 本地图片
 
@@ -688,11 +667,9 @@ export default function Home() {
 }
 ```
 
-优化字体
----
+## 优化字体
 
 ### Google 字体
-<!--rehype:wrap-class=row-span-2-->
 
 自动托管任何 Google 字体。 字体包含在部署中，并从与您的部署相同的域提供服务。 浏览器不会向 Google 发送任何请求
 
@@ -715,7 +692,6 @@ export default function MyApp({
 ```
 
 ### 指定粗细
-<!--rehype:wrap-class=row-span-2-->
 
 如果不能使用可变字体，则需要指定粗细：
 
@@ -812,7 +788,6 @@ module.exports = {
 如果两者都配置，则使用函数调用中的子集
 
 ### 本地字体
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 // pages/_app.js
@@ -864,7 +839,6 @@ const roboto = localFont({
 ```
 
 ### 使用 Tailwind CSS
-<!--rehype:wrap-class=col-span-2-->
 
 ```jsx
 // pages/_app.js
@@ -904,8 +878,7 @@ module.exports = {
 }
 ```
 
-优化 Scripts
----
+## 优化 Scripts
 
 ### 页面脚本
 
@@ -924,7 +897,6 @@ export default function Dashboard() {
 ```
 
 ### App 脚本
-<!--rehype:wrap-class=row-span-2-->
 
 要为所有路由加载第三方脚本，导入 `next/script` 并将脚本直接包含在 `pages/_app.js` 中
 
@@ -946,7 +918,6 @@ export default function MyApp({
 ```
 
 ### 将脚本卸载到 Web Worker（实验性的）
-<!--rehype:wrap-class=row-span-2-->
 
 此策略仍处于试验阶段，只有在 `next.config.js` 中启用了 `nextScriptWorkers` 标志时才能使用：
 
@@ -995,7 +966,6 @@ export default function Page() {
 ```
 
 ### 内联脚本
-<!--rehype:wrap-class=col-span-2-->
 
 ```jsx
 <Script id="show-banner">
@@ -1031,8 +1001,7 @@ export default function Page() {
 }
 ```
 
-ESLint
----
+## ESLint
 
 ### 集成 ESLint
 
@@ -1091,7 +1060,6 @@ Base 基础配置：包括 Next.js 的基本 ESLint 配置
 `rootDir` 可以是路径（相对或绝对）、glob（即“`packages/*/`”）或路径和/或 `glob` 数组
 
 ### 对自定义目录和文件进行检查
-<!--rehype:wrap-class=row-span-2-->
 
 ```js
 module.exports = {
@@ -1106,10 +1074,8 @@ module.exports = {
 ```bash
 $ next lint --dir pages --dir utils --file bar.js
 ```
-<!--rehype:className=wrap-text-->
 
 ### 禁用规则
-<!--rehype:wrap-class=row-span-2-->
 
 您可以使用 `.eslintrc` 中的 `rules` 属性直接更改它们：
 
@@ -1141,8 +1107,6 @@ npm install -S eslint-config-prettier
 yarn add --dev eslint-config-prettier
 ```
 
----
-
 ```js
 {
   "extends": ["next", "prettier"]
@@ -1150,7 +1114,6 @@ yarn add --dev eslint-config-prettier
 ```
 
 ### lint-staged
-<!--rehype:wrap-class=col-span-2-->
 
 ```js
 const path = require('path')
@@ -1167,8 +1130,7 @@ module.exports = {
 
 内容添加到项目根目录中的 `.lintstagedrc.js` 文件中，以指定 `--file` 标志
 
-TypeScript
----
+## TypeScript
 
 ### create-next-app
 
@@ -1181,7 +1143,6 @@ pnpm create next-app --ts
 ```
 
 ### 静态生成和服务端渲染
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```tsx
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
@@ -1205,7 +1166,6 @@ touch tsconfig.json
 您还可以通过在 `next.config.js` 文件中设置 `typescript.tsconfigPath` 属性来提供 `tsconfig.json` 文件的相对路径
 
 ### API 路由
-<!--rehype:wrap-class=row-span-2-->
 
 ```tsx
 import type {
@@ -1279,8 +1239,7 @@ module.exports = {
 
 危险地允许生产构建成功完成，即使您的项目有类型错误
 
-环境变量
----
+## 环境变量
 
 ### 加载环境变量
 
@@ -1353,35 +1312,31 @@ function HomePage() {
 export default HomePage
 ```
 
-路由
----
+## 路由
 
 ### 介绍
-<!--rehype:wrap-class=row-span-2-->
 
 路由器将自动将名为 `index` 的文件路由到目录的根目录
 
-:-- | --
-:-- | --
-`pages/index.js` | <pur>`/`</pur>
-`pages/blog/index.js` | <pur>`/blog`</pur>
+| :-- | -- |
+| :-- | -- |
+| `pages/index.js` | `/` |
+| `pages/blog/index.js` | `/blog` |
 
 路由器支持嵌套文件。如果创建嵌套文件夹结构，文件将以同样的方式自动路由
 
-:-- | --
-:-- | --
-`pages/blog/first-post.js` | <pur>`/blog/first-post`</pur>
-`pages/dashboard/settings/username.js` | <pur>`/dashboard/settings/username`</pur>
-<!--rehype:className=style-list-->
+| :-- | -- |
+| :-- | -- |
+| `pages/blog/first-post.js` | `/blog/first-post` |
+| `pages/dashboard/settings/username.js` | `/dashboard/settings/username` |
 
 动态路由
 
-:-- | --
-:-- | --
-`pages/blog/[slug].js` | <pur>`/blog/:slug`</pur> (<yel>`/blog/hello-world`</yel>)
-`pages/[username]/settings.js` | <pur>`/:username/settings`</pur> (<yel>`/foo/settings`</yel>)
-`pages/post/[...all].js` | <pur>`/post/*`</pur> (<yel>`/post/2020/id/title`</yel>)
-<!--rehype:className=style-list-->
+| :-- | -- |
+| :-- | -- |
+| `pages/blog/[slug].js` | `/blog/:slug` (`/blog/hello-world`) |
+| `pages/[username]/settings.js` | `/:username/settings` (`/foo/settings`) |
+| `pages/post/[...all].js` | `/post/*` (`/post/2020/id/title`) |
 
 ### 具有动态路由的页面
 
@@ -1403,7 +1358,6 @@ export default Post
 使用 `useRouter` 获取动态路由参数 `pid`
 
 ### 页面之间的链接
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 import Link from 'next/link'
@@ -1427,13 +1381,11 @@ export default function Home() {
 }
 ```
 
----
-
-:-- | --
-:-- | --
-`/` | <pur>`pages/index.js`</pur>
-`/about` | <pur>`pages/about.js`</pur>
-`/blog/hello-world` | <pur>`pages/blog/[slug].js`</pur>
+| :-- | -- |
+| :-- | -- |
+| `/` | `pages/index.js` |
+| `/about` | `pages/about.js` |
+| `/blog/hello-world` | `pages/blog/[slug].js` |
 
 ### 链接到动态路径
 
@@ -1469,7 +1421,6 @@ export default function Posts({ posts }) {
 ```
 
 ### 动态路由
-<!--rehype:wrap-class=row-span-2-->
 
 考虑以下页面 `pages/post/[pid].js`：
 
@@ -1560,7 +1511,6 @@ export default function ReadMore() {
 ```
 
 ### 浅路由
-<!--rehype:wrap-class=col-span-2-->
 
 ```jsx
 import { useEffect } from 'react'
@@ -1591,7 +1541,10 @@ router.push('/?counter=10', '/about?counter=10', { shallow: true })
 
 由于这是一个新页面，它会卸载当前页面，加载新页面并等待数据获取，即使我们要求进行浅层路由
 
-另见
----
+## 另见
 
 - [Next.js 文档](https://nextjs.org/docs/getting-started)
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/nextjs.md](https://github.com/jaywcjlove/reference/blob/main/docs/nextjs.md)
+
+获取日期：2026-10-15

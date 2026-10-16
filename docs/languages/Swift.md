@@ -1,19 +1,10 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/swift.md
-Retrieved on: 2026-10-15
--->
-
-Swift 备忘清单
-===
+# Swift 备忘清单
 
 该备忘单提供了使用 [Swift](https://www.swift.org) 的示例，涵盖 Swift 基础知识、控制流、类型、结构/类、运算符、函数方法等。
 
-入门
----
+## 入门
 
 ### 变量
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 var score = 0 // 变量
@@ -38,16 +29,12 @@ var price: Double = 8.99
 ```
 
 ### 算术运算符
-<!--rehype:wrap-class=row-span-3-->
 
 - `+` 添加
 - `-` 减法
 - `*` 乘法
 - `/` 分配
 - `%` 余数
-<!--rehype:className=cols-5 style-none-->
-
-----
 
 ```swift
 var x = 0
@@ -67,14 +54,11 @@ print("有 \(numberOfDogs) 个斑点狗！")
 // 打印: 有 101 个斑点狗！
 ```
 
-----
-
 - `+=` 添加和分配总和
 - `-=` 减去并分配差值
 - `*=` 乘并赋值
 - `/=` 除并分配商
 - `%=` 除并分配余数
-<!--rehype:className=style-arrow cols-2-->
 
 ### 字符串插值
 
@@ -104,7 +88,6 @@ Swift?
 ```
 
 ### 组成一个元组
-<!--rehype:wrap-class=col-span-2-->
 
 ```swift
 let player = ("Maya", 5, 150)
@@ -146,8 +129,7 @@ print("\(currentName): level \(curLevel)")
 
 `FIXME` 用于显示需要修复的内容的提醒
 
-变量
-----
+## 变量
 
 ### 变量声明
 
@@ -202,7 +184,6 @@ numberOfToys += 1
 ```
 
 ### 计算属性（get 和 set）
-<!--rehype:wrap-class=row-span-3-->
 
 ```swift
 import Foundation
@@ -251,7 +232,6 @@ print(distanceInFeet) // 2624.0
 ```
 
 ### willSet
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 var distance = 5 {
@@ -305,8 +285,7 @@ var distance = 5 {
 distance = 10
 ```
 
-条件和逻辑
----
+## 条件和逻辑
 
 ### if 语句
 
@@ -370,7 +349,6 @@ if weather == "sunny" {
 - `>=` 大于或等于
 - `==` 等于
 - `!=` 不等于
-<!--rehype:className=style-round cols-2-->
 
 ### 三元条件运算符
 
@@ -517,8 +495,7 @@ greet(name: "Asma") // 输出：Hello Asma!
 greet(name: nil)    // 输出：Hello guest!
 ```
 
-循环
-----
+## 循环
 
 ### 范围
 
@@ -554,7 +531,6 @@ for char in "hehe" {
 ```
 
 ### continue 关键字
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 for num in 0...5 {
@@ -571,7 +547,6 @@ for num in 0...5 {
 `continue` 关键字将强制循环继续进行下一次迭代
 
 ### break 关键字
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 for char in "supercalifragilistice" {
@@ -652,8 +627,7 @@ for (key, value) in myDictionary {
 }
 ```
 
-数组和集合
-----
+## 数组和集合
 
 ### Array 数组
 
@@ -671,7 +645,6 @@ print(grocery.count)
 ```
 
 ### 索引
-<!--rehype:wrap-class=row-span-2-->
 
 索引是指项目在有序列表中的位置，使用下标语法 `array[index]` 从数组中检索单个元素。
 
@@ -876,8 +849,7 @@ print(setC)
 // 打印: ["B", "A"]
 ```
 
-字典
----
+## 字典
 
 ### 基础字典
 
@@ -947,7 +919,6 @@ pronunciation["programming"] = "prow·gra"
 ```
 
 ### 删除键值对
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 var bookShelf = [
@@ -968,7 +939,6 @@ bookShelf.removeAll()
 ```
 
 ### 修改键值对
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 var change = [
@@ -1050,8 +1020,7 @@ for meaning in emojiMeaning.values {
 }
 ```
 
-函数
----
+## 函数
 
 ### 基础函数
 
@@ -1091,7 +1060,6 @@ print(findAge()) // 打印: 26
 ```
 
 ### 多个参数
-<!--rehype:wrap-class=col-span-2-->
 
 ```swift
 func convertFracToDec(numerator: Double, denominator: Double) -> Double {
@@ -1113,7 +1081,6 @@ print(findDiff(6, b: 4)) // 打印: 2
 ```
 
 ### 返回多个值
-<!--rehype:wrap-class=col-span-2-->
 
 ```swift
 func smartphoneModel() -> (name: String, version: String, yearReleased: Int) {
@@ -1163,7 +1130,6 @@ greet(person: "Aliya") // Hello Aliya
 ```
 
 ### 输入输出参数
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 var currentSeason = "冬天" 
@@ -1207,7 +1173,6 @@ func getFirstInitial(from name: String?) -> String? {
   return name?.first
 }
 ```
-<!--rehype:className=wrap-text-->
 
 函数可以接受可选类型并返回可选类型。当一个函数不能返回请求类型的合理实例时，它应该返回 `nil`
 
@@ -1220,7 +1185,6 @@ func multiply(x: Int, y: Int) -> Int {
 ```
 
 ### 额外指定参数命名标签
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 func calculate(of numbers: Int...) -> Int {
@@ -1239,7 +1203,6 @@ print("Sum: \(result)")
 ```
 
 ### 函数作为参数
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 func doMath(
@@ -1268,8 +1231,7 @@ let result = add(3, 5)
 print("Sum: \(result)")
 ```
 
-结构
-----
+## 结构
 
 ### 结构创建
 
@@ -1319,7 +1281,6 @@ var morty = Person(name: "张三", age: 14)
 ```
 
 ### init() 方法
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 struct TV {
@@ -1347,7 +1308,6 @@ print(type(of: 123))   // 打印: 123
 ```
 
 ### 变异方法(mutating)
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 struct Menu {
@@ -1379,11 +1339,9 @@ let fido = Dog()
 fido.bark() // 打印: Woof
 ```
 
-Class
-----
+## Class
 
 ### 引用类型（类）
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 class Player {
@@ -1415,7 +1373,6 @@ var sonny = Person()
 ```
 
 ### init() 方法
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 class Fruit {
@@ -1448,7 +1405,6 @@ ferris.honors = false
 ```
 
 ### 继承
-<!--rehype:wrap-class=row-span-2-->
 
 假设我们有一个 BankAccount 类：
 
@@ -1535,8 +1491,7 @@ extension String {
 let isTure = "0".boolValue
 ```
 
-枚举
-----
+## 枚举
 
 ### 定义枚举
 
@@ -1614,7 +1569,6 @@ let order: Dessert = .cake(flavor: "红色")
 ```
 
 ### 枚举的可赋值性
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 enum Content {
@@ -1710,8 +1664,7 @@ currentTraffic.reportAccident()
 
 实例方法改变了枚举的值，则需要将其标记为 `mutating`
 
-扩展
----
+## 扩展
 
 ### 什么是扩展
 
@@ -1775,8 +1728,6 @@ print(boxCube)
 
 ### 扩展构造器
 
-<!--rehype:wrap-class=col-span-2-->
-
 ```swift
 // 给CGRect结构体提供允许center和size的构造器
 extension CGRect {
@@ -1793,8 +1744,6 @@ print("Origin is \(frame.origin)")
 ```
 
 ### 扩展协议
-
-<!--rehype:wrap-class=row-span-3-->
 
 它的工作方式与抽象类类似，适用于在所有实现某种协议的类中提供某些功能的情况（而不需要从一个公共的基类继承）。
 
@@ -1838,8 +1787,6 @@ square.draw()  // 打印: 画一个正方形
 
 ### 扩展方法
 
-<!--rehype:wrap-class=col-span-2-->
-
 ```swift
 extension String {
     func deletingPrefix(_ prefix: String) -> String {
@@ -1853,8 +1800,6 @@ print("Hello World".deletingPrefix("He"))
 ```
 
 ### 扩展存储属性
-
-<!--rehype:wrap-class=col-span-2-->
 
 ```swift
 // 但可以通过 objc_getAssociatedObject/objc_setAssociatedObject 实现添加存储属性 
@@ -1873,8 +1818,7 @@ extension UIColor {
 }
 ```
 
-泛型
----
+## 泛型
 
 ### 什么是泛型
 
@@ -1885,7 +1829,6 @@ extension UIColor {
 泛型使我们能够编写清晰简洁的代码，并能够与任何数据类型一起工作。通过使用占位符（如 `T`），可以减少引入错误的风险。
 
 ### 泛型函数
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 // 接受两个类型相同的参数并交换它们
@@ -1965,8 +1908,6 @@ print(floatBox.square()) // 输出 25.0
 
 ### 泛型类型别名
 
-<!--rehype:wrap-class=col-span-2-->
-
 为泛型类型创建别名`typealias`，这样可以给泛型类型起一个更具体的名字，使得代码更加清晰易懂
 
 #### 示例1
@@ -2020,36 +1961,31 @@ print(intStorage.retrieve() ?? "Empty")
 // 打印: 42
 ```
 
-命令工具
----
+## 命令工具
 
 ### 工具比对
-<!--rehype:wrap-class=col-span-2-->
 
-工具 | 功能 | 使用场景
-:-- | :-- | :--
-`swift` | 交互式执行器 / 脚本运行器 | 快速测试、运行脚本
-`swiftc` | 编译器 | 编译源码为可执行文件
-`swift-inspect` | 模块/符号分析工具 | 检查模块结构/调试工具输出
-<!--rehype:className=show-header left-align-->
+| 工具 | 功能 | 使用场景 |
+| :-- | :-- | :-- |
+| `swift` | 交互式执行器 / 脚本运行器 | 快速测试、运行脚本 |
+| `swiftc` | 编译器 | 编译源码为可执行文件 |
+| `swift-inspect` | 模块/符号分析工具 | 检查模块结构/调试工具输出 |
 
 ### swift — 脚本执行 & REPL
-<!--rehype:wrap-class=row-span-3-->
 
-命令 | 说明
-:-- | :--
-`swift`                             | 启动交互式环境（REPL）
-`swift my_script.swift`             | 运行 Swift 脚本文件
-`swift build`                       | 使用 SwiftPM 编译项目
-`swift build --clean`               | 清理构建缓存
-`swift build --disable-sandbox`     | 在禁用沙盒模式下构建（CI 用）
-`swift run`                         | 构建并运行当前 SwiftPM 项目
-`swift run --configuration release` | 以 release 模式构建并运行
-`swift run --verbose`               | 输出详细构建信息
-`swift test`                        | 运行测试（SwiftPM 项目）
-`swift test --enable-code-coverage` | 测试覆盖率（Xcode 项目）
-`swift package resolve`             | 解析依赖
-<!--rehype:className=style-list-->
+| 命令 | 说明 |
+| :-- | :-- |
+| `swift` | 启动交互式环境（REPL） |
+| `swift my_script.swift` | 运行 Swift 脚本文件 |
+| `swift build` | 使用 SwiftPM 编译项目 |
+| `swift build --clean` | 清理构建缓存 |
+| `swift build --disable-sandbox` | 在禁用沙盒模式下构建（CI 用） |
+| `swift run` | 构建并运行当前 SwiftPM 项目 |
+| `swift run --configuration release` | 以 release 模式构建并运行 |
+| `swift run --verbose` | 输出详细构建信息 |
+| `swift test` | 运行测试（SwiftPM 项目） |
+| `swift test --enable-code-coverage` | 测试覆盖率（Xcode 项目） |
+| `swift package resolve` | 解析依赖 |
 
 #### 创建项目
 
@@ -2070,40 +2006,39 @@ $ swift package dump-package
 ```
 
 ### swiftc — 编译器命令
-<!--rehype:wrap-class=col-span-2-->
 
-命令 | 说明
-:-- | :--
-`swiftc main.swift`                 | 编译为默认名 `main` 的可执行文件
-`swiftc main.swift -o myapp`        | 编译为 `myapp` 可执行文件
-`swiftc -c Foo.swift`               | 编译为中间的 `.o` 文件
-`swiftc Foo.swift Bar.swift -o app` | 编译多个文件成一个可执行文件
-`swiftc -emit-library Foo.swift`    | 编译为动态库 `.dylib`/`.so`
-`swiftc -emit-module Foo.swift`     | 仅生成 `.swiftmodule` 模块文件
-`swiftc -emit-sil Foo.swift`        | 输出 SIL（Swift Intermediate Language）
-`swiftc -emit-assembly Foo.swift`   | 输出汇编代码
-`swiftc -emit-object Foo.swift`     | 输出目标文件 `.o`
-<!--rehype:className=show-header left-align-->
+| 命令 | 说明 |
+| :-- | :-- |
+| `swiftc main.swift` | 编译为默认名 `main` 的可执行文件 |
+| `swiftc main.swift -o myapp` | 编译为 `myapp` 可执行文件 |
+| `swiftc -c Foo.swift` | 编译为中间的 `.o` 文件 |
+| `swiftc Foo.swift Bar.swift -o app` | 编译多个文件成一个可执行文件 |
+| `swiftc -emit-library Foo.swift` | 编译为动态库 `.dylib`/`.so` |
+| `swiftc -emit-module Foo.swift` | 仅生成 `.swiftmodule` 模块文件 |
+| `swiftc -emit-sil Foo.swift` | 输出 SIL（Swift Intermediate Language） |
+| `swiftc -emit-assembly Foo.swift` | 输出汇编代码 |
+| `swiftc -emit-object Foo.swift` | 输出目标文件 `.o` |
 
 ### swift-inspect
-<!--rehype:wrap-class=col-span-2-->
 
-命令 | 说明
-:-- | :--
-`swift-inspect MyApp`                          | 分析一个编译产物（如 `.app`、`.dylib`）
-`swift-inspect --symbols MyModule.swiftmodule` | 查看模块的符号信息
-`swift-inspect --help`                         | 查看所有可用选项
-`swift-inspect --types MyApp`                  | 查看类型信息
-`swift-inspect --protocols MyApp`              | 查看协议实现
-<!--rehype:className=show-header left-align-->
+| 命令 | 说明 |
+| :-- | :-- |
+| `swift-inspect MyApp` | 分析一个编译产物（如 `.app`、`.dylib`） |
+| `swift-inspect --symbols MyModule.swiftmodule` | 查看模块的符号信息 |
+| `swift-inspect --help` | 查看所有可用选项 |
+| `swift-inspect --types MyApp` | 查看类型信息 |
+| `swift-inspect --protocols MyApp` | 查看协议实现 |
 
 模块与符号分析工具（macOS 14+）
 
-另见
-----
+## 另见
 
 - [Swift 文档(官方)](https://www.swift.org/documentation/) _(swift.or)_
 - [快速编程语言(官方)](https://docs.swift.org/swift-book/) _(swift.or)_
 - [Learn Swift](https://www.codecademy.com/resources/cheatsheets/language/swift) _(codecademy.com)_
 - [Swift 开发人员的一站式快速参考](https://swiftly.dev/) _(swiftly.dev)_
 - [Swift 入门教程、读书笔记](https://jaywcjlove.github.io/swift-tutorial) _(jaywcjlove.github.io)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/swift.md](https://github.com/jaywcjlove/reference/blob/main/docs/swift.md)
+
+获取日期：2026-10-15

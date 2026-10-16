@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/openssl.md
-Retrieved on: 2026-10-15
--->
-
-OpenSSL 备忘清单
-===
+# OpenSSL 备忘清单
 
 这个 [OpenSSL](https://www.openssl.org/) 快速参考备忘单展示了它的常用命令使用清单
 
-入门
----
+## 入门
 
 ### 基础
 
@@ -57,10 +49,8 @@ Base64 解码一个文件并输出到另一个文件
 ```bash
 $ openssl base64 -d -in encode­d.data -out decode­d.data
 ```
-<!--rehype:className=wrap-text-->
 
 ### 使用哈希
-<!--rehype:wrap-class=row-span-2-->
 
 列出可用的摘要算法
 
@@ -85,24 +75,20 @@ $ openssl dgst -binary -sha256 file.data
 ```bash
 $ echo -n "some text" | openssl dgst -sha3-512
 ```
-<!--rehype:className=wrap-text-->
 
 创建 HMAC - 使用特定密钥（以字节为单位）的文件的 SHA384
 
 ```bash
 $ openssl dgst -SHA384 -mac HMAC -macopt hexkey:369bd7d655 file.data
 ```
-<!--rehype:className=wrap-text-->
 
 创建 HMAC - 一些文本的 SHA512
 
 ```bash
 $ echo -n "some text" | openssl dgst -mac HMAC -macopt hexkey­:36­9bd­7d655 -sha512
 ```
-<!--rehype:className=wrap-text-->
 
 ### 非对称加密
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 列出可用的椭圆曲线
 
@@ -177,38 +163,32 @@ $ openssl enc -list
 ```bash
 $ openssl enc -aes-128-ecb -in cleartext.file -out ciphertext.file -pass pass:thisisthepassword
 ```
-<!--rehype:className=wrap-text-->
 
 使用 AES-256-CBC 和密钥文件解密文件
 
 ```bash
 $ openssl enc -d -aes-256-cbc -in ciphertext.file -out cleartext.file -pass file:./key.file
 ```
-<!--rehype:className=wrap-text-->
 
 使用以十六进制数字形式提供的特定加密密钥 (K) 加密文件
 
 ```bash
 $ openssl enc -aes-128-ecb -in cleartext.file -out ciphertext.file -K 1881807b2d1b3d22f14e9ec52563d981 -nosalt
 ```
-<!--rehype:className=wrap-text-->
 
 使用指定的加密密钥（K：256 位）和初始化向量（iv：128 位）在 CBC 块密码模式下使用 ARIA 256 加密文件
 
 ```bash
 $ openssl enc -aria-256-cbc -in cleartext.file -out ciphertext.file -K f92d2e986b7a2a01683b4c40d0cbcf6feaa669ef2bb5ec3a25ce85d9548291c1 -iv 470bc29762496046882b61ecee68e07c -nosalt
 ```
-<!--rehype:className=wrap-text-->
 
 使用提供的密钥和 iv 在 COUNTER 块密码模式下使用 Camellia 192 算法加密文件
 
 ```bash
 $ openssl enc -camellia-192-ctr -in cleartext.file -out ciphertext.file -K 6c7a1b3487d28d3bf444186d7c529b48d67dd6206c7a1b34 -iv 470bc29762496046882b61ecee68e07c
 ```
-<!--rehype:className=wrap-text-->
 
 ### 数字签名
-<!--rehype:wrap-class=col-span-2-->
 
 为私钥生成 DSA 参数。 2048 位长度
 
@@ -221,7 +201,6 @@ $ openssl dsaparam -out dsaparam.pem 2048
 ```bash
 $ openssl gendsa -out dsaprivatekey.pem -aes-128-cbc dsaparam.pem
 ```
-<!--rehype:className=wrap-text-->
 
 将DSA公私钥文件的公钥复制到另一个文件中
 
@@ -240,7 +219,6 @@ $ openssl dsa -in dsaprivatekey.pem -text -noout
 ```bash
 $ openssl dgst -sha256 -sign rsakey.key -out signature.data document.pdf
 ```
-<!--rehype:className=wrap-text-->
 
 使用公钥验证 SHA-256 文件签名
 
@@ -253,7 +231,6 @@ $ openssl dgst -sha256 -verify publickey.pem -signature signature.data original.
 ```bash
 $ openssl pkeyutl -sign -pkeyopt digest:sha3-512 -in document.docx -inkey dsaprivatekey.pem -out signature.data
 ```
-<!--rehype:className=wrap-text-->
 
 验证 DSA 签名
 
@@ -278,7 +255,6 @@ $ openssl ec -in ecP384priv.key -des3 -out ecP384priv_enc.key
 ```bash
 $ openssl pkeyutl -sign -inkey ecP384priv_enc.key -pkeyopt digest:sha3-512 -in document.pdf -out signature.data
 ```
-<!--rehype:className=wrap-text-->
 
 验证文件的签名。 如果没问题，您必须收到“签名验证成功”
 
@@ -287,14 +263,12 @@ $ openssl pkeyutl -verify -in document.pdf -sigfile signature.data -inkey ecP384
 ```
 
 ### 数字证书
-<!--rehype:wrap-class=row-span-2-->
 
 生成 CSR 文件和 4096 位 RSA 密钥对
 
 ```bash
 $ openssl req -newkey rsa:4096 -keyout private.key -out request.csr
 ```
-<!--rehype:className=wrap-text-->
 
 显示证书签名请求 ( CSR ) 内容
 
@@ -307,42 +281,36 @@ $ openssl req -text -noout -in request.csr
 ```bash
 $ openssl req -pubkey -noout -in request.csr
 ```
-<!--rehype:className=wrap-text-->
 
 使用现有私钥创建证书签名请求 ( CSR )。 当您需要在不更改私钥的情况下更新公共数字证书时，这会很有用
 
 ```bash
 $ openssl req -new -key private.key -out request.csr
 ```
-<!--rehype:className=wrap-text-->
 
 创建 EC P384 曲线参数文件以在下一步中使用椭圆曲线生成 CSR
 
 ```bash
 $ openssl genpkey -genparam -algorithm EC -out EC_params.pem -pkeyopt ec_paramgen_curve:secp384r1 -pkeyopt ec_param_enc:named_curve
 ```
-<!--rehype:className=wrap-text-->
 
 使用在上一步中创建的椭圆曲线 P384 参数文件创建 CSR 文件。 而不是使用 RSA 密钥。
 
 ```bash
 $ openssl req -newkey ec:EC_params.pem -keyout EC_P384_priv.key -out EC_request.csr
 ```
-<!--rehype:className=wrap-text-->
 
 创建自签名证书，新的 2048 位 RSA 密钥对，有效期为一年
 
 ```bash
 $ openssl req -newkey rsa:2048 -nodes -keyout priv.key -x509 -days 365 -out cert.crt
 ```
-<!--rehype:className=wrap-text-->
 
 使用 CSR 文件和用于签名的私钥创建并签署新证书（您必须准备好 openssl.cnf 文件）
 
 ```bash
 $ openssl ca -in request.csr -out certificate.crt -config ./CA/config/openssl.cnf
 ```
-<!--rehype:className=wrap-text-->
 
 显示PEM格式证书信息
 
@@ -373,14 +341,12 @@ $ openssl x509 -modulus -noout -in cert.crt
 ```bash
 $ openssl s_client -connect domain.com:443 | openssl x509 -out certificate.crt
 ```
-<!--rehype:className=wrap-text-->
 
 将证书从 PEM 格式转换为 DER 格式
 
 ```bash
 $ openssl x509 -inform PEM -outform DER -in cert.crt -out cert.der
 ```
-<!--rehype:className=wrap-text-->
 
 检查证书公钥是否与私钥和请求文件匹配。 每个文件一步。 必须在输出哈希中匹配
 
@@ -389,10 +355,8 @@ $ openssl x509 -modulus -in certificate.crt -noout | openssl dgst -sha256
 $ openssl rsa -modulus -in private.key -noout | openssl dgst -sha256
 $ openssl req -modulus -in request.csr -noout | openssl dgst -sha256
 ```
-<!--rehype:className=wrap-text-->
 
 ### 使用 TLS 协议
-<!--rehype:wrap-class=row-span-2 col-span-2-->
 
 列出所有支持的密码套件
 
@@ -473,14 +437,12 @@ $ nmap --script ssl-enum-ciphers --script-args=tls.servername=domain.com 172.67.
 ```bash
 $ openssl x509 -in certif­ica­te.pem -outform DER -out certif­ica­te.der
 ```
-<!--rehype:className=wrap-text-->
 
 将证书和私钥插入 PKCS #12 格式文件。 这些文件可以导入到 Windows 证书管理器或 Java Key Store (jks) 文件中
 
 ```bash
 $ openssl pkcs12 -export -out cert_key.p12 -inkey private.key -in certificate.crt
 ```
-<!--rehype:className=wrap-text-->
 
 显示 PKCS #12 文件的内容
 
@@ -493,24 +455,20 @@ $ openssl pkcs12 -in cert_k­ey.p12
 ```bash
 keytool -importkeystore -destkeystore javakeystore.jks -srckeystore cert_key.p12 -srcstoretype pkcs12
 ```
-<!--rehype:className=wrap-text-->
 
 将 PEM 证书转换为 PKCS #7 格式
 
 ```bash
 $ openssl crl2pkcs7 -nocrl -certfile certificate.crt -out cert.p7b
 ```
-<!--rehype:className=wrap-text-->
 
 将 PKCS #7 文件从 PEM 转换为 DER
 
 ```bash
 $ openssl pkcs7 -in cert.p7b -outform DER -out p7.der
 ```
-<!--rehype:className=wrap-text-->
 
-查看
-----
+## 查看
 
 ### 查看 PEM 编码证书
 
@@ -528,10 +486,8 @@ $ openssl x509 -in cert.crt -text -noout
 unable to load certificate
 12626:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:647:Expecting: TRUSTED CERTIFICATE View DER encoded Certificate
 ```
-<!--rehype:className=wrap-text-->
 
 ### 查看 DER 编码证书
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 openssl x509 -in certificate.der -inform der -text -noout
@@ -544,10 +500,8 @@ unable to load certificate
 13978:error:0D0680A8:asn1 encoding routines:ASN1_CHECK_TLEN:wrong tag:tasn_dec.c:1306:
 13978:error:0D07803A:asn1 encoding routines:ASN1_ITEM_EX_D2I:nested asn1 error:tasn_dec.c:380:Type=X509
 ```
-<!--rehype:className=wrap-text-->
 
 ### 查看证书链中的所有证书
-<!--rehype:wrap-class=col-span-3-->
 
 ```bash
 # subject + issuer
@@ -556,25 +510,21 @@ openssl crl2pkcs7 -nocrl -certfile host.domain.tld-ca-chain.pem | openssl pkcs7 
 openssl crl2pkcs7 -nocrl -certfile host.domain.tld-ca-chain.pem | openssl pkcs7 -print_certs -text -noout
 ```
 
-转换
----
+## 转换
 
 ### 转换示例
-<!--rehype:wrap-class=row-span-3-->
 
 将 DER 文件 (.crt .cer .der) 转换为 PEM
 
 ```bash
 openssl x509 -inform der -in certificate.cer -out certificate.pem
 ```
-<!--rehype:className=wrap-text-->
 
 将 PEM 文件转换为 DER
 
 ```bash
 openssl x509 -outform der -in certificate.pem -out certificate.der
 ```
-<!--rehype:className=wrap-text-->
 
 将包含私钥和证书的 PKCS#12 文件 (.pfx .p12) 转换为 PEM
 
@@ -582,45 +532,38 @@ openssl x509 -outform der -in certificate.pem -out certificate.der
 openssl pkcs12 -in keyStore.pfx -out keyStore.pem -nodes
 # 您可以添加 -nocerts 以仅输出私钥或添加 -nokeys 以仅输出证书
 ```
-<!--rehype:className=wrap-text-->
 
 将 PEM 证书文件和私钥转换为 PKCS#12 (.pfx .p12)
 
 ```bash
 openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile CACert.crt
 ```
-<!--rehype:className=wrap-text-->
 
 将 PEM 转换为 CRT（.CRT 文件）
 
 ```bash
 openssl x509 -outform der -in certificate.pem -out certificate.crt
 ```
-<!--rehype:className=wrap-text-->
 
 ### OpenSSL 转换 PEM
-<!--rehype:wrap-class=row-span-2-->
 
 将 PEM 转换为 DER
 
 ```bash
 $ openssl x509 -outform der -in certificate.pem -out certificate.der
 ```
-<!--rehype:className=wrap-text-->
 
 将 PEM 转换为 P7B
 
 ```bash
 $ openssl crl2pkcs7 -nocrl -certfile certificate.cer -out certificate.p7b -certfile CACert.cer
 ```
-<!--rehype:className=wrap-text-->
 
 将 PEM 转换为 PFX
 
 ```bash
 $ openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile CACert.crt
 ```
-<!--rehype:className=wrap-text-->
 
 ### OpenSSL 转换 DER
 
@@ -629,7 +572,6 @@ $ openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certific
 ```bash
 $ openssl x509 -inform der -in certificate.cer -out certificate.pem
 ```
-<!--rehype:className=wrap-text-->
 
 ### OpenSSL 转换 PFX
 
@@ -638,7 +580,6 @@ $ openssl x509 -inform der -in certificate.cer -out certificate.pem
 ```bash
 $ openssl pkcs12 -in certificate.pfx -out certificate.cer -nodes
 ```
-<!--rehype:className=wrap-text-->
 
 ### OpenSSL 转换 P7B
 
@@ -647,7 +588,6 @@ $ openssl pkcs12 -in certificate.pfx -out certificate.cer -nodes
 ```bash
 $ openssl pkcs7 -print_certs -in certificate.p7b -out certificate.cer
 ```
-<!--rehype:className=wrap-text-->
 
 将 P7B 转换成 PFX
 
@@ -655,10 +595,8 @@ $ openssl pkcs7 -print_certs -in certificate.p7b -out certificate.cer
 $ openssl pkcs7 -print_certs -in certificate.p7b -out certificate.cer
 $ openssl pkcs12 -export -in certificate.cer -inkey privateKey.key -out certificate.pfx -certfile CACert.cer
 ```
-<!--rehype:className=wrap-text-->
 
 ### 通过 OpenSSL 生成 rsa 密钥
-<!--rehype:wrap-class=row-span-2-->
 
 在命令行上使用 OpenSSL 您首先需要生成公钥和私钥。 您应该使用 `-passout` 参数对这个文件进行密码保护，这个参数可以采用许多不同的形式，因此请查阅 OpenSSL 文档
 
@@ -675,7 +613,6 @@ $ openssl rsa -in private.pem -pubout > public.pem
 # or
 $ openssl rsa -in private.pem -pubout -out public.pem
 ```
-<!--rehype:className=wrap-text-->
 
 您现在将拥有仅包含您的公钥的 public.pem，您可以与第 3 方自由共享。 您可以通过使用您的公钥自己加密一些东西然后使用您的私钥解密来测试这一切，首先我们需要一些数据来加密：
 
@@ -690,14 +627,12 @@ $ echo 'too many secrets' > file.txt
 ```bash
 $ openssl rsautl -encrypt -inkey public.pem -pubin -in file.txt -out file.ssl
 ```
-<!--rehype:className=wrap-text-->
 
 这会创建一个 file.txt 的加密版本，称为 file.ssl，如果你看这个文件，它只是二进制垃圾，对任何人都没有什么用处。 现在您可以使用私钥对其进行解密：
 
 ```bash
 $ openssl rsautl -decrypt -inkey private.pem -in file.ssl -out decrypted.txt
 ```
-<!--rehype:className=wrap-text-->
 
 您现在将在 decrypted.txt 中有一个未加密的文件：
 
@@ -707,7 +642,6 @@ cat decrypted.txt
 ```
 
 ### OpenSSL 中的 RSA 工具选项
-<!--rehype:wrap-class=col-span-2 row-span-3-->
 
 NAME
 
@@ -720,7 +654,6 @@ SYNOPSIS 概要
 ```bash
 $ openssl rsa [-help] [-inform PEM|NET|DER] [-outform PEM|NET|DER] [-in filename] [-passin arg] [-out filename] [-passout arg] [-aes128] [-aes192] [-aes256] [-camellia128] [-camellia192] [-camellia256] [-des] [-des3] [-idea] [-text] [-noout] [-modulus] [-check] [-pubin] [-pubout] [-RSAPublicKey_in] [-RSAPublicKey_out] [-engine id]
 ```
-<!--rehype:className=wrap-text-->
 
 DESCRIPTION 描述
 
@@ -781,7 +714,6 @@ COMMAND OPTIONS 命令选项
 -engine id
 #> 指定引擎（通过其唯一 ID 字符串）将导致 rsa 尝试获取对指定引擎的功能引用，从而在需要时对其进行初始化。 然后引擎将被设置为所有可用算法的默认值。
 ```
-<!--rehype:className=wrap-text-->
 
 ### 支持以下加密算法
 
@@ -790,7 +722,6 @@ COMMAND OPTIONS 命令选项
 - `-aes256`
 - `-des3`
 - `-des`
-<!--rehype:className=cols-3-->
 
 ### 示例
 
@@ -805,38 +736,32 @@ $ openssl rsa -in key.pem -out keyout.pem
 ```bash
 $ openssl rsa -in key.pem -des3 -out keyout.pem
 ```
-<!--rehype:className=wrap-text-->
 
 要将私钥从 PEM 格式转换为 DER 格式：
 
 ```bash
 $ openssl rsa -in key.pem -outform DER -out keyout.der
 ```
-<!--rehype:className=wrap-text-->
 
 将私钥的组件打印到标准输出：
 
 ```bash
 $ openssl rsa -in key.pem -text -noout
 ```
-<!--rehype:className=wrap-text-->
 
 仅输出私钥的公共部分：
 
 ```bash
 $ openssl rsa -in key.pem -pubout -out pubkey.pem
 ```
-<!--rehype:className=wrap-text-->
 
 以 RSAPublicKey 格式输出私钥的公共部分：
 
 ```bash
 $ openssl rsa -in key.pem -RSAPublicKey_out -out pubkey.pem
 ```
-<!--rehype:className=wrap-text-->
 
-格式
----
+## 格式
 
 ### RSA 公钥
 
@@ -854,7 +779,6 @@ Proc-Type: 4,ENCRYPTED
 ```
 
 ### 识别为 PEM 格式
-<!--rehype:wrap-class=row-span-7-->
 
 为了让 OpenSSL 将其识别为 PEM 格式，它必须使用 Base64 进行编码，并带有以下标头：
 
@@ -869,15 +793,12 @@ and footer :
 ```
 2675996:error:0906D064:PEM routines:PEM_read_bio:bad base64 decode:pem_lib.c:818:
 ```
-<!--rehype:className=wrap-text-->
 
 注意：PEM 标准 (RFC1421) 要求行长度为 64 个字符。 可以使用 UNIX 命令行实用程序转换存储为单行的 PEM 证书：
 
 ```bash
 $ fold -w 64
 ```
-
----
 
 - PKCS#1 RSAPublicKey (PEM header: BEGIN RSA PUBLIC KEY)
 - PKCS#8 EncryptedPrivateKeyInfo (PEM header: BEGIN ENCRYPTED PRIVATE KEY)
@@ -963,8 +884,7 @@ $ fold -w 64
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
-校验
----
+## 校验
 
 ### 介绍
 
@@ -977,28 +897,24 @@ $ fold -w 64
 - **`它由受信任的 CA 签名`** 为了证明证书的真实性，我们需要获取 CA 证书并验证其可信度。然而在 PKI 中有一个信任链的概念，因此 CA 证书可能是由另一个 CA 颁发的。因此我们需要获得另一个 CA 的证书并验证它。依此类推……因此，为了信任证书，我们需要一直导航到根 CA。最后，如果我们信任根 CA，可以肯定地说我们信任整个链
 
 ### 验证信任链
-<!--rehype:wrap-class=col-span-2 -->
 
 a) 您的整个 CA 链在一个文件中，实际的网络服务器或客户端证书在另一个文件中
 
 ```bash
 $ openssl verify -untrusted ca-chain.pem 客户端证书.pem
 ```
-<!--rehype:className=wrap-text-->
 
 b) 单独文件中的根证书和中间证书以及另一个文件中的实际网络服务器或客户端证书
 
 ```bash
 $ openssl verify -CAfile root.pem -untrusted intermediate-chain.pem client-cert.pem
 ```
-<!--rehype:className=wrap-text-->
 
 如果您有多个中间 `CA`（例如 `root.pem -> intermediate1.pem -> intermediate2.pem -> client-cert.pem`），将它们连接到一个文件中并通过：`-untrusted intermediate-chain.pem` 或执行它与 cat：
 
 ```bash
 $ openssl verify -CAfile root.pem -untrusted <(cat intermediate1.pem intermediate2.pem) client-cert.pem
 ```
-<!--rehype:className=wrap-text-->
 
 实例
 
@@ -1006,10 +922,8 @@ $ openssl verify -CAfile root.pem -untrusted <(cat intermediate1.pem intermediat
 $ openssl verify -CAfile letsencrypt-root-cert/isrgrootx1.pem.txt -untrusted letsencrypt-intermediate-cert/letsencryptauthorityx3.pem.txt /etc/letsencrypt/live/sitename.tld/cert.pem 
 /etc/letsencrypt/live/sitename.tld/cert.pem: OK
 ```
-<!--rehype:className=wrap-text-->
 
 ### 截止日期
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```bash
 $ openssl x509 -enddate -noout -in file.pem
@@ -1026,7 +940,6 @@ for pem in /etc/ssl/certs/*.pem; do
       "$pem"
 done | sort
 ```
-<!--rehype:className=wrap-text-->
 
 示例输出：
 
@@ -1063,7 +976,6 @@ function check_certs () {
   done
 }
 ```
-<!--rehype:className=wrap-text-->
 
 输出示例：
 
@@ -1093,17 +1005,14 @@ curl --insecure -v https://www.google.com 2>&1 | awk 'BEGIN { cert=0 } /^\* Serv
 * Connection state changed (MAX_CONCURRENT_STREAMS updated)!
 * Connection #0 to host www.google.com left intact
 ```
-<!--rehype:className=wrap-text-->
 
-您需要为 [curl](./curl.md) 提供整个证书链，因为 [curl](./curl.md) 不再附带任何 CA 证书。 由于 cacert 选项只能使用一个文件，因此您需要将完整的链信息连接到 1 个文件中。 从 <https://curl.haxx.se/ca/cacert.pem> 获取根 CA 证书包。
+您需要为 [curl](https://github.com/jaywcjlove/reference/blob/main/docs/curl.md) 提供整个证书链，因为 [curl](https://github.com/jaywcjlove/reference/blob/main/docs/curl.md) 不再附带任何 CA 证书。 由于 cacert 选项只能使用一个文件，因此您需要将完整的链信息连接到 1 个文件中。 从 <https://curl.haxx.se/ca/cacert.pem> 获取根 CA 证书包。
 
 ```bash
 $ curl --cacert certRepo -u user:passwd -X GET -H 'Content-Type: application/json' "https//somesecureserver.com/rest/field"
 ```
-<!--rehype:className=wrap-text-->
 
 ### 验证 openssl s_client
-<!--rehype:wrap-class=row-span-2-->
 
 #### 使用 SNI
 
@@ -1112,7 +1021,6 @@ $ curl --cacert certRepo -u user:passwd -X GET -H 'Content-Type: application/jso
 ```bash
 $ openssl s_client -showcerts -servername www.example.com -connect www.example.com:443 </dev/null
 ```
-<!--rehype:className=wrap-text-->
 
 #### 没有 SNI
 
@@ -1121,7 +1029,6 @@ $ openssl s_client -showcerts -servername www.example.com -connect www.example.c
 ```bash
 openssl s_client -showcerts -connect www.example.com:443 </dev/null
 ```
-<!--rehype:className=wrap-text-->
 
 要查看站点证书的完整详细信息，您也可以使用以下命令链：
 
@@ -1130,14 +1037,12 @@ $ echo | \
     openssl s_client -servername www.example.com -connect www.example.com:443 2>/dev/null | \
     openssl x509 -text
 ```
-<!--rehype:className=wrap-text-->
 
 对于带有 starttls 的 SMTP，请使用：
 
 ```bash
 $ openssl s_client -connect server:port -starttls smtp
 ```
-<!--rehype:className=wrap-text-->
 
 对于 Client Auth 保护的资源，请使用：
 
@@ -1145,17 +1050,14 @@ $ openssl s_client -connect server:port -starttls smtp
 $ openssl s_client -connect host:port -key our_private_key.pem -showcerts \
     -cert our_server-signed_cert.pem
 ```
-<!--rehype:className=wrap-text-->
 
 `-prexit` 也会返回数据：
 
 ```bash
 $ openssl s_client -connect host:port -prexit
 ```
-<!--rehype:className=wrap-text-->
 
 ### 使用私钥验证 TLS 证书
-<!--rehype:wrap-class=col-span-2-->
 
 希望您永远不会遇到不知道用于生成 TLS 证书的私钥的情况，但如果您知道……这里是您可以检查的方法。
 
@@ -1182,11 +1084,9 @@ else
 fi
 ```
 
-Java Key store
----
+## Java Key store
 
 ### Java 密钥库
-<!--rehype:wrap-class=col-span-3-->
 
 ```bash
 $ keytool -importcert -file certificate.cer -keystore keystore.jks -alias "Alias" 
@@ -1194,11 +1094,9 @@ $ ..\..\bin\keytool -import -trustcacerts -keystore cacerts -storepass changeit 
 $ keytool -import -alias joe -file mycert.cer -keystore mycerts -storepass changeit
 ```
 
-创建
----
+## 创建
 
 ### 使用 `certstrap` 创建开发证书
-<!--rehype:wrap-class=col-span-3-->
 
 ```bash
 $ brew install certstrap
@@ -1206,10 +1104,8 @@ $ certstrap init --common-name "ExampleDevCA" --expires "10 years" -o "My Tech I
 $ certstrap request-cert --common-name "example.localhost" -o "My Tech Inc." -c "DE" -l "Muenchen" --st "Bayern" --stdout --domain "*.example.localhost","example.localhost","localhost"
 $ certstrap sign "example.localhost" --CA ExampleDevCA
 ```
-<!--rehype:className=wrap-text-->
 
 ### 使用 `mkcert` 创建开发证书
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 $ brew install mkcert
@@ -1218,11 +1114,13 @@ $ mkcert "*.example.localhost"
 # Clean up with:
 $ rm -vrf "$HOME/Library/Application Support/mkcert"  _wildcard.example*
 ```
-<!--rehype:className=wrap-text-->
 
-另见
----
+## 另见
 
 - [OpenSSL 官网](https://www.openssl.org/) _(openssl.org)_
 - [OpenSSL Cheat Sheet](https://cheatography.com/albertx/cheat-sheets/openssl/) _(cheatography.com)_
 - [OpenSSL Cheat Sheet](https://megamorf.gitlab.io/cheat-sheets/openssl/#convert) _(megamorf.gitlab.io)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/openssl.md](https://github.com/jaywcjlove/reference/blob/main/docs/openssl.md)
+
+获取日期：2026-10-15

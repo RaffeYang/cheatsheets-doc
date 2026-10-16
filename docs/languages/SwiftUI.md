@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/swiftui.md
-Retrieved on: 2026-10-15
--->
-
-SwiftUI 2.0 备忘清单
-===
+# SwiftUI 2.0 备忘清单
 
 该备忘单提供了使用 [SwiftUI](https://developer.apple.com/xcode/swiftui/) 的标签的一些示例等
 
-入门
----
+## 入门
 
 ### 介绍
 
@@ -18,7 +10,7 @@ SwiftUI 2.0 备忘清单
 
 - [SwiftUI Document](https://developer.apple.com/xcode/swiftui/) _(apple.com)_
 - [SwiftUI 2.0 备忘清单](https://wangchujiang.com/swiftui-example/cheat-sheet.html) _(swiftui-example)_
-- [Swift 备忘清单](./swift.md) _(jaywcjlove.github.io)_
+- [Swift 备忘清单](https://github.com/jaywcjlove/reference/blob/main/docs/swift.md) _(jaywcjlove.github.io)_
 
 ```swift
 import SwiftUI
@@ -39,7 +31,6 @@ struct AlbumDetail: View {
 ```
 
 ### SwiftUI 与 UIKit 效果一致
-<!--rehype:wrap-class=col-span-2-->
 
 - [Text](#text) & [Label](#label) _(UILabel)_
 - [Image](#image-图片) _(UIImageView)_
@@ -63,10 +54,8 @@ struct AlbumDetail: View {
 - [Map](#map-地图界面的视图) _(MapKit)_
 - [ProgressView](#progressview-进度视图) _(UIProgressView)_
 - [Shape](#shape) / [Rectangle](#shape) / [Circle](#shape)
-<!--rehype:className=cols-2-->
 
-View(视图)
----
+## View(视图)
 
 ### Text
 
@@ -88,7 +77,6 @@ Text("Hello World")
 ```
 
 ### Text 设置文本格式
-<!--rehype:wrap-class=col-span-2-->
 
 ```swift
 static let dateFormatter: DateFormatter = {
@@ -104,7 +92,6 @@ var body: some View {
 ```
 
 ### Label
-<!--rehype:wrap-class=col-span-2-->
 
 可以使用以下代码行在文本旁边设置图标。
 
@@ -125,7 +112,6 @@ Link("Click me", destination: URL(string: "your_url")!)
 文档 - [Label](https://developer.apple.com/documentation/swiftui/link)
 
 ### Image 图片
-<!--rehype:wrap-class=row-span-2-->
 
 显示与环境相关的图像的视图。
 
@@ -192,7 +178,6 @@ VStack {
     Button("More", action: { progress += 0.05 })
 }
 ```
-<!--rehype:className=wrap-text -->
 
 通过应用 `CircularProgressViewStyle`，可以将其用作 `UIActivityIndicatorView`。
 
@@ -200,12 +185,10 @@ VStack {
 ProgressView(value: progress)
     .progressViewStyle(CircularProgressViewStyle())
 ```
-<!--rehype:className=wrap-text -->
 
 文档 - [ProgressView](https://developer.apple.com/documentation/swiftui/progressview)
 
 ### Map 地图界面的视图
-<!--rehype:wrap-class=col-span-3-->
 
 显示指定区域的地图
 
@@ -215,7 +198,6 @@ import MapKit
 
 Map(coordinateRegion: $region)
 ```
-<!--rehype:className=wrap-text -->
 
 您可以通过指定 `interactionModes`（使用`[]`禁用所有交互）来控制地图的交互。
 
@@ -236,8 +218,7 @@ Map(coordinateRegion: $region,
 
 文档 - [Map](https://developer.apple.com/documentation/mapkit/map)
 
-Layout(布局)
-----
+## Layout(布局)
 
 ### VStack
 
@@ -297,7 +278,6 @@ ScrollView {
 - 懒加载：只有当子视图进入可视区域时，才会被创建和渲染
 - 自适应：子视图的宽高可以自适应
 - 性能优化：适用于大量子视图或动态内容的场景
-<!--rehype:className=style-round-->
 
 - 文档 - [LazyVStack](https://developer.apple.com/documentation/swiftui/lazyvstack)
 - 文档 - [LazyHStack](https://developer.apple.com/documentation/swiftui/lazyhstack)
@@ -386,8 +366,7 @@ Text("Hello World")
     )
 ```
 
-Input(输入)
----
+## Input(输入)
 
 ### Toggle 开关选择器
 
@@ -410,7 +389,6 @@ Toggle("Hello World", isOn: $isShowing)
 文档 - [Toggle](https://developer.apple.com/documentation/swiftui/toggle)
 
 ### Button 按钮控件
-<!--rehype:wrap-class=row-span-2-->
 
 在触发时执行操作的控件。
 
@@ -451,7 +429,6 @@ Button(action: {
 文档 - [Button](https://developer.apple.com/documentation/swiftui/button)
 
 ### TextField 输入框
-<!--rehype:wrap-class=row-span-2-->
 
 显示可编辑文本界面的控件。
 
@@ -516,7 +493,6 @@ var body: some View {
   TextEditor(text: $fullText)
 }
 ```
-<!--rehype:className=wrap-text -->
 
 设置 `TextEditor` 背景颜色
 
@@ -539,12 +515,10 @@ struct DetailContent: View {
   }
 }
 ```
-<!--rehype:className=wrap-text -->
 
 文档 - [TextEditor](https://developer.apple.com/documentation/swiftui/texteditor)
 
 ### DatePicker 日期控件
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 日期选择器(DatePicker)的样式也会根据其祖先而改变。 在 `Form` 或 `List` 下，它显示为单个列表行，您可以点击以展开到日期选择器（就像日历应用程序一样）。
 
@@ -638,7 +612,6 @@ HStack {
 文档 - [Slider](https://developer.apple.com/documentation/swiftui/slider)
 
 ### Picker 选择控件
-<!--rehype:wrap-class=row-span-2-->
 
 用于从一组互斥值中进行选择的控件。
 
@@ -678,7 +651,6 @@ Picker("Options", selection: $mapChoioce) {
 在 `SwiftUI` 中，`UISegmentedControl` 只是 `Picker`的另一种样式。分段控制(SegmentedControl)在 `iOS 13` 中也焕然一新。文档 - [Picker](https://developer.apple.com/documentation/swiftui/picker)
 
 ### Stepper 执行语义递增和递减操作的控件
-<!--rehype:wrap-class=row-span-2-->
 
 用于执行语义递增和递减操作的控件。
 
@@ -783,8 +755,7 @@ TextEditor(text: $currentText)
   }
 ```
 
-List(列表)
----
+## List(列表)
 
 ### List 列表
 
@@ -799,7 +770,6 @@ List {
 ```
 
 ### 创建动态列表
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```swift
 let names = ["John", "Apple", "Seed"]
@@ -848,10 +818,8 @@ List {
   }
 }.listStyle(GroupedListStyle())
 ```
-<!--rehype:className=wrap-text -->
 
 ### 插入分组
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 要使其插入分组(`.insetGrouped`)，请添加 `.listStyle(GroupedListStyle())` 并强制使用常规水平尺寸类 ``.environment(\.horizontalSizeClass, .regular)``。
 
@@ -891,8 +859,7 @@ ScrollView(alwaysBounceVertical: true) {
 
 文档 - [ScrollView](https://developer.apple.com/documentation/swiftui/scrollview)
 
-Containers(容器)
----
+## Containers(容器)
 
 ### NavigationView
 
@@ -965,7 +932,6 @@ VStack {
 ```
 
 ### TabView
-<!--rehype:wrap-class=row-span-2-->
 
 一个视图，允许使用可交互的用户界面元素在多个子视图之间进行切换。
 
@@ -1025,7 +991,6 @@ TabView {
 ```
 
 ### Form
-<!--rehype:wrap-class=col-span-2-->
 
 用于对用于数据输入的控件（例如在设置或检查器中）进行分组的容器。
 
@@ -1091,7 +1056,6 @@ Button("Alert") {
 ```
 
 ### Alert 也与可识别项绑定
-<!--rehype:wrap-class=row-span-2-->
 
 ```swift
 @State var error: AlertError?
@@ -1188,8 +1152,7 @@ struct SheetDetail: Identifiable {
 
 文档 - [ActionSheet](https://developer.apple.com/documentation/swiftui/actionsheet)
 
-SwiftData
----
+## SwiftData
 
 ### SwiftData声明
 
@@ -1271,8 +1234,6 @@ class Person {
 
 ### @Query
 
-<!--rehype:wrap-class=col-span-2-->
-
 ```swift
 struct ContentView: View  {
     // Query 可以高效地查询大型数据集，并自定义返回内容的方式，如排序、过滤
@@ -1291,8 +1252,6 @@ struct ContentView: View  {
 ```
 
 ### 构建ModelContainer
-
-<!--rehype:wrap-class=col-span-2-->
 
 ```swift
 // 用 Schema 进行初始化
@@ -1342,8 +1301,6 @@ try context.save()
 
 ### 查询
 
-<!--rehype:wrap-class=col-span-2-->
-
 ```swift
 let personPredicate = #Predicate<Person> {
     $0.name == "Lily" &&
@@ -1354,9 +1311,12 @@ let descriptor = FetchDescriptor<Person>(predicate: personPredicate)
 let persons = try? context.fetch(descriptor)
 ```
 
-另见
----
+## 另见
 
 - [SwiftUI 2.0 Cheat Sheet](https://github.com/SimpleBoilerplates/SwiftUI-Cheat-Sheet) _(github.com)_
 - [SwiftUI 2.0 备忘清单](https://wangchujiang.com/swiftui-example/cheat-sheet.html) _(swiftui-example)_
-- [Swift 备忘清单](./swift.md) _(jaywcjlove.github.io)_
+- [Swift 备忘清单](https://github.com/jaywcjlove/reference/blob/main/docs/swift.md) _(jaywcjlove.github.io)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/swiftui.md](https://github.com/jaywcjlove/reference/blob/main/docs/swiftui.md)
+
+获取日期：2026-10-15

@@ -18,7 +18,7 @@
 ### docs/ - 编程语言和工具参考
 
 包含各种编程语言、框架和工具的速查表，如：
-- 编程语言：Swift、Go、TypeScript、Python 等
+- 编程语言：Swift、Go、Rust、TypeScript、Python 等
 - 框架：React、NextJS 等
 - 工具：Git、Vim、Sublime Text 等
 - 格式：Markdown、JSON、YAML 等
@@ -136,3 +136,34 @@ repositories:
 
 **注意**：这个仓库是个人学习和工作的辅助工具，不试图成为全面的参考资料集合。它的价值在于精选内容和自动化维护，使我能够专注于实际开发工作。
 
+
+
+## Cheatsheets / Tinycast 显示规范
+
+文档保留普通 Markdown、表格、列表和代码示例；删除正文中的水平分割线、网页布局注释、颜色标签及样式属性。Setext 标题转换为 `#` / `##`，表格统一补齐外侧管道符。HTML 链接转换为 Markdown 链接，源码示例中的 HTML、注释和 `---` 保留。
+
+新增 `docs/languages/Rust.md`；Python 项目工具使用 `docs/tools/UV.md`，替代原 Conda 文档。来源和获取日期以普通 Markdown 标注；reference 项目的 MIT 许可证见 `THIRD_PARTY_NOTICES.md`。
+
+只格式化本地文档，不下载或覆盖最新上游内容：
+
+```bash
+python3 update_references.py --format-only
+python3 update_references.py --format-only --check
+python3 -m unittest test_markdown_format
+```
+
+更新脚本在下载资料、复制自定义文档时会自动应用相同格式规则，避免上游同步后恢复不兼容标记。首次下载需要 `requests`、`pyyaml`；离线格式化与测试仅使用 Python 标准库。
+
+## 离线质量验证与更新可靠性
+
+```sh
+python -B -m unittest
+python -B doc_quality.py
+python -B update_references.py --format-only --check
+```
+
+这些检查只需 Python 标准库，不访问网络。质量检查覆盖格式幂等性、围栏闭合、来源和获取日期、配置目标唯一性与本地相对文件链接。围栏内的链接示例不参与检查；锚点不做语义校验。远程链接仅在显式运行 `python doc_quality.py --check-remote-links` 时联网检查，网络或站点限流可能导致失败。
+
+更新仍需 `requests` 和 `pyyaml`。下载具有连接/读取超时与最多三次重试；所有下载和自定义候选内容先在内存中完成验证，任何下载或验证错误均以非零状态退出且不保存候选内容。自定义文档优先，并跳过被覆盖的上游下载。每个最终文件通过同目录临时文件及 `os.replace` 原子替换；文件系统故障时整批替换不保证事务回滚，但单个文件不会被截断。格式化前后逐块比较代码围栏，防止更新损坏代码示例。
+
+GitHub Actions 工作流位于 `.github/workflows/`，在更新前与提交前运行离线检查。Rust 冒烟测试在可用时调用实际 `rustc`；它只覆盖明确选择的完整示例，不表示所有教学片段均可独立编译。uv 命令参考 [官方 CLI 文档](https://docs.astral.sh/uv/reference/cli/)。

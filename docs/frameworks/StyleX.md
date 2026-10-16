@@ -1,48 +1,34 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/stylex.md
-Retrieved on: 2026-10-15
--->
-
-StyleX 备忘清单
-====
+# StyleX 备忘清单
 
 这是 [StyleX](https://github.com/facebook/stylex) 用户界面的样式系统的快速参考指南备忘单
 
-入门 StyleX
----
+## 入门 StyleX
 
 ### 介绍
-<!--rehype:wrap-class=row-span-2-->
 
 StyleX 是一个 CSS In JS 的用户界面的样式系统
 
 - [StyleX Intellisense](https://marketplace.visualstudio.com/items?itemName=yash-singh.stylex) _VSCode 插件_
 
 #### Vite
-<!--rehype:style=text-align: left;color: var(--primary-color)-->
 
 - [vite-plugin-stylex](https://www.npmjs.com/package/vite-plugin-stylex)
 - [vite-plugin-stylex-dev](https://www.npmjs.com/package/vite-plugin-stylex-dev)
 
 #### Babel 插件
-<!--rehype:style=text-align: left;color: var(--primary-color)-->
 
 - [tailwind-to-stylex](https://www.npmjs.com/package/tailwind-to-stylex) 支持在 Tailwind CSS 中使用
 - [@stylex-extend/babel-plugin](https://github.com/nonzzz/stylex-extend/tree/main/packages/babel-plugin) 使用 JSX 属性定义 StyleX
 
 #### Prettier
-<!--rehype:style=text-align: left;color: var(--primary-color)-->
 
 - [prettier-plugin-stylex-key-sort](https://github.com/nedjulius/prettier-plugin-stylex-key-sort)
 
 #### Bun
-<!--rehype:style=text-align: left;color: var(--primary-color)-->
 
 - [bun-plugin-stylex](https://www.npmjs.com/package/bun-plugin-stylex)
 
 #### 入门模板
-<!--rehype:style=text-align: left;color: var(--primary-color)-->
 
 - [next.js](https://github.com/nmn/nextjs-app-dir-stylex) _支持 StyleX 的 next.js 项目_
 - [qwik](https://github.com/nmn/qwik-stylex) _使用 StyleX 和 tailwind-to-stylex 的 Qwik 项目_
@@ -64,7 +50,6 @@ export default config;
 ```
 
 ### 使用样式
-<!--rehype:wrap-class=row-span-2-->
 
 ```js
 import * as React from 'react';
@@ -74,7 +59,7 @@ const styles = stylex.create({ ... });
 const colorStyles = stylex.create({ ... });
 ```
 
-在 [React](./react.md) 中使用
+在 [React](https://github.com/jaywcjlove/reference/blob/main/docs/react.md) 中使用
 
 ```jsx
 function ReactDemo(
@@ -111,19 +96,15 @@ const styles = stylex.create({
 
 样式是使用对象语法和 `create()` API 定义的
 
-安装
-----
-<!--rehype:body-class=cols-4-->
+## 安装
 
 ### StyleX 运行时包
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 npm install --save @stylexjs/stylex
 ```
 
 ### 编译器(生产) Rollup
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```bash
 npm install --save-dev @stylexjs/rollup-plugin
@@ -163,7 +144,6 @@ export default config;
 ```
 
 ### 编译器(开发)
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 npm install --save-dev @stylexjs/babel-plugin
@@ -197,7 +177,6 @@ export default config;
 ```
 
 ### 编译器(生产) Webpack
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 npm install --save-dev @stylexjs/webpack-plugin
@@ -254,7 +233,6 @@ module.exports = config;
 ```
 
 ### 编译器(生产) Next.js
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 npm install --save-dev @stylexjs/nextjs-plugin \
@@ -311,7 +289,6 @@ export default stylexPlugin({
 ```
 
 ### 仅限本地开发
-<!--rehype:wrap-class=col-span-2-->
 
 要开始使用 `StyleX` 而无需配置编译器和构建过程，您可以安装本地开发运行时
 
@@ -332,7 +309,6 @@ inject({
 ```
 
 ### 用 ESLint 捕捉错误
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 npm install --save-dev @stylexjs/eslint-plugin
@@ -349,8 +325,7 @@ module.exports = {
 };
 ```
 
-定义样式
-----
+## 定义样式
 
 ### 创建样式
 
@@ -370,7 +345,6 @@ const styles = stylex.create({
 ```
 
 ### 伪类
-<!--rehype:wrap-class=row-span-2-->
 
 ```js
 import * as stylex from '@stylexjs/stylex';
@@ -399,7 +373,6 @@ const styles = stylex.create({
 ```
 
 ### 伪元素
-<!--rehype:wrap-class=row-span-2-->
 
 ```js
 import * as stylex from '@stylexjs/stylex';
@@ -459,7 +432,6 @@ const styles = stylex.create({
 当您需要组合媒体查询和伪选择器时，嵌套超过`一层`
 
 ### 后备样式
-<!--rehype:wrap-class=col-span-2-->
 
 ```css
 .header {
@@ -502,7 +474,6 @@ const styles = stylex.create({
 使用 `stylex.keyframes()` 函数来定义关键帧动画
 
 ### 动态样式
-<!--rehype:wrap-class=col-span-2&style=background:#d7a100;-->
 
 ```js
 import * as stylex from '@stylexjs/stylex';
@@ -526,11 +497,9 @@ function MyComponent() {
 
 注意：动态样式是一项高级功能，应谨慎使用。对于大多数用例，条件样式应该足够了。
 
-使用样式
-----
+## 使用样式
 
 ### 合并样式
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx
 import * as stylex from '@stylexjs/stylex';
@@ -576,7 +545,6 @@ const styles = stylex.create({
 通过使用常见的 JavaScript 模式（例如三元表达式和 `&&` 运算符），可以在运行时有条件地应用样式。 `stylex.props` 忽略虚假值，例如 `null`、`undefined` 或 `false`
 
 ### 样式变体
-<!--rehype:wrap-class=row-span-2-->
 
 ```js
 import * as stylex from '@stylexjs/stylex';
@@ -625,7 +593,6 @@ function Button({variant, ...props}) {
   style={stylex.props(styles.base)}
 />
 ```
-<!--rehype:style=background: #ff00002b;-->
 
 ```jsx
 <CustomComponent
@@ -673,11 +640,9 @@ const styles = stylex.create({
 
 将样式属性设置为 `null` 会删除 StyleX 之前为其应用的任何样式。
 
-主题
-----
+## 主题
 
 ### 使用媒体查询
-<!--rehype:wrap-class=col-span-2-->
 
 ```js
 import * as stylex from '@stylexjs/stylex';
@@ -711,7 +676,6 @@ export const tokens = stylex.defineVars({
 这定义了 HTML 文档的 `:root` 处的变量。它们可以作为常量导入并在 `stylex.create` 调用中使用。
 
 ### 使用变量
-<!--rehype:wrap-class=col-span-2-->
 
 ```jsx
 import * as stylex from '@stylexjs/stylex';
@@ -802,10 +766,8 @@ export const colors = {
   }),
 };
 ```
-<!--rehype:style=background: #ff00001a;-->
 
 ### 创建主题
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```js
 import * as stylex from '@stylexjs/stylex';
@@ -886,7 +848,6 @@ export const high = stylex.defineVars({
 当在 `stylex.defineVars` 中使用特定类型声明变量时，静态类型将强制在 `stylex.createTheme` 调用中为该变量设置主题时使用相同类型的函数
 
 ### 动画渐变
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```js
 import * as stylex from '@stylexjs/stylex';
@@ -928,8 +889,7 @@ const styles = stylex.create({
 
 该功能通过一个整数类型的变量来模拟
 
-TypeScript 类型
----
+## TypeScript 类型
 
 ### StyleXStyles 样式 props 类型
 
@@ -957,10 +917,8 @@ function MyComponent(
   );
 }
 ```
-<!--rehype:className=wrap-text-->
 
 ### StyleXStylesWithout 禁止属性
-<!--rehype:wrap-class=col-span-2 row-span-3-->
 
 ```ts
 import type {StyleXStylesWithout} from '@stylexjs/stylex';
@@ -1033,7 +991,6 @@ type Props = {
   }>;
 };
 ```
-<!--rehype:className=wrap-text-->
 
 ### 限制样式的可能值
 
@@ -1049,7 +1006,6 @@ type Props = {
   }>,
 };
 ```
-<!--rehype:className=wrap-text-->
 
 ### VarGroup
 
@@ -1107,3 +1063,7 @@ export const theme: Theme<typeof vars> = stylex.createTheme(vars, {
   backgroundColor: 'blue', // OK
 });
 ```
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/stylex.md](https://github.com/jaywcjlove/reference/blob/main/docs/stylex.md)
+
+获取日期：2026-10-15

@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/quickreference.md
-Retrieved on: 2026-10-15
--->
-
-Quick Reference 备忘清单
-===
+# Quick Reference 备忘清单
 
 这是您可以在 Quick Reference 备忘单上使用的样式参考，快速参与[贡献](https://github.com/jaywcjlove/reference/blob/main/CONTRIBUTING.md)！
 
-入门
----
+## 入门
 
 ### 本地编译预览
 
@@ -21,7 +13,6 @@ Quick Reference 备忘清单
 ```shell
 git clone git@github.com:jaywcjlove/reference.git
 ```
-<!--rehype:className=wrap-text -->
 
 #### 安装依赖编译生成 HTML 页面
 
@@ -75,7 +66,6 @@ npm run start # 监听 md 文件编译输出 HTML
 上面 markdown 内容存放到 `docs` 目录中，命名为 `xxx.md`
 
 ### 首页导航
-<!--rehype:wrap-class=col-span-2-->
 
 首页(`README.md`)存放在仓库的根目录，通过这个 `README.md` 自动生成首页导航，下面是导航实例：
 
@@ -99,7 +89,6 @@ npm run start # 监听 md 文件编译输出 HTML
 ```markdown
 [Django](./docs/django.md)<!--rehype:style=background: rgb(12 75 51/var(\-\-bg\-opacity));&class=contributing-->
 ```
-<!--rehype:className=wrap-text-->
 
 添加 `contributing` 类名，会在卡片下方默认添加 `👆待完善需要您的参与`
 
@@ -112,7 +101,6 @@ class=tag&data-info=👆看看还缺点儿什么？
 ```markdown
 [Django](./docs/django.md)<!--rehype:style=background: rgb(12 75 51/var(\-\-bg\-opacity));&class=tag&data-lang=Python-->
 ```
-<!--rehype:className=wrap-text-->
 
 添加 `class=tag&data-lang=Python` 类名和参数，会在卡片右上角标记 _`Python`_
 
@@ -203,7 +191,6 @@ license = "支持 HTML 字符串"
 ```
 
 ### 支持更多配置加载
-<!--rehype:wrap-class=col-span-2-->
 
 - `.refsrc`
 - `.refsrc.json`
@@ -233,7 +220,6 @@ license = "支持 HTML 字符串"
 - `refs.config.ts`
 - `refs.config.cjs`
 - `refs.config.mjs`
-<!--rehype:className=cols-3 style-none-->
 
 ### 环境变量
 
@@ -256,14 +242,12 @@ REF_FOOTER=备案号：沪ICP备20220000000号-1
 LICENSE=Copyright (c) <b>2022</b> 小弟调调™
 ```
 
-在项目根目录中创建 <pur>**.env**</pur> 文件
+在项目根目录中创建 **.env** 文件
 
 ### 图片
 
-![alt text](../icons/favicon.svg)
-<img src="../icons/favicon.svg?#sss=1" alt="alt text" height="95" width="95" />
-
-<hr />
+![alt text](https://github.com/jaywcjlove/reference/blob/main/icons/favicon.svg)
+![图片](https://github.com/jaywcjlove/reference/blob/main/icons/favicon.svg#sss=1)
 
 ```markdown
 ![alt text](./quickreference.svg?#sss=1)
@@ -278,13 +262,11 @@ LICENSE=Copyright (c) <b>2022</b> 小弟调调™
 
 在 Markdown 中引入图片
 
-Markdown 语法注释
----
+## Markdown 语法注释
 
 ### 介绍
-<!--rehype:wrap-class=row-span-2-->
 
-在备忘清单采用 `HTML 注释语法`，标识网站布局和一些样式，目的是为了在 `GitHub` 中也是正常毫无瑕疵的预览 [`Markdown`](./markdown.md)。
+在备忘清单采用 `HTML 注释语法`，标识网站布局和一些样式，目的是为了在 `GitHub` 中也是正常毫无瑕疵的预览 [`Markdown`](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md)。
 
 ```markdown
 ### 卡片标题
@@ -293,20 +275,18 @@ Markdown 语法注释
 卡片 Markdown 内容展示，下面注释语法为文字内容改变样式
 <!--rehype:style=color: red;-->
 ```
-<!--rehype:className=wrap-text-->
 
 上面基础示例，使用 `col-span-2` 类标识，卡片占 `2` 列位置，参考现有备忘清单的源代码是一个好习惯！
 
 ### 注释语法介绍
-<!--rehype:wrap-class=row-span-4&style=color:black;background-color: #d7a100;-->
 
-- 在某个 [`Markdown`](./markdown.md) 语法下方或者后面，添加 HTML注释
+- 在某个 [`Markdown`](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 语法下方或者后面，添加 HTML注释
 - 以 `<!--rehype:` 开始，`-->` 结束，包裹参数内容
 - 内容采用 URL 参数的字符拼接方式
 
 #### 语法
 
-`<!--rehype:` _+_ `key=value` _+_ **`&`** _+_ `key=value` _+_ `-->`  
+`<!--rehype:` _+_ `key=value` _+_ **`&`** _+_ `key=value` _+_ `-->`
 `标识开始` + `参数` + `分隔符(&)` + `参数`  + `标识结束`
 
 #### 示例
@@ -325,16 +305,15 @@ Markdown 语法注释
 ### 标题
 <!--rehype:wrap-class=row-span-3&style=color:red;-->
 ```
-<!--rehype:className=wrap-text-->
 
 #### 参数说明
 
-类 | 说明
----- | ----
-`body-style` | 包裹所有卡片`外壳`的样式
-`body-class` | 用于卡片栏布局，添加`类`名
-`wrap-style` | 卡片栏添加 [CSS](./css.md) 样式
-`wrap-class` | 用于卡片占位，添加`类`名
+| 类 | 说明 |
+| ---- | ---- |
+| `body-style` | 包裹所有卡片`外壳`的样式 |
+| `body-class` | 用于卡片栏布局，添加`类`名 |
+| `wrap-style` | 卡片栏添加 [CSS](https://github.com/jaywcjlove/reference/blob/main/docs/css.md) 样式 |
+| `wrap-class` | 用于卡片占位，添加`类`名 |
 
 ### 文字颜色
 
@@ -343,7 +322,7 @@ _我是红色_<!--rehype:style=color: red;-->
 **加粗红色**<!--rehype:style=color: red;-->
 ```
 
-上面添加注释样式，文字 _我是红色_<!--rehype:style=color: red;--> 文字变`红`了
+上面添加注释样式，文字 _我是红色_ 文字变`红`了
 
 ### 文字大小
 
@@ -351,9 +330,8 @@ _我是红色_<!--rehype:style=color: red;-->
 **加粗变大红色**
 <!--rehype:style=color: red;font-size: 18px-->
 ```
-<!--rehype:className=wrap-text-->
 
-上面添加注释样式，文字 _加粗变大红色_<!--rehype:style=color: red;font-size: 18px--> 变`红`并且`大`了
+上面添加注释样式，文字 _加粗变大红色_ 变`红`并且`大`了
 
 ### 强制换行
 
@@ -378,7 +356,6 @@ function () {}
 注释配置添加 `show-header` 类，放置在表格下面，表头将被展示出来。
 
 ### 代码行高亮
-<!--rehype:wrap-class=row-span-2-->
 
 ```jsx {1,4-5}
 import React from "react";
@@ -389,7 +366,7 @@ export const Student = (
 );
 ```
 
-上面 `{1,4-5}` 行代码高亮，下面是 [`Markdown`](./markdown.md) 代码示例
+上面 `{1,4-5}` 行代码高亮，下面是 [`Markdown`](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 代码示例
 
 ```markdown
   ```jsx {1,4-5}
@@ -399,21 +376,18 @@ export const Student = (
 
 ### Tooltips
 
-[鼠标移动到上面有提示](https://github.com/jaywcjlove/reference) _Tooltips 的提示内容_<!--rehype:tooltips-->
+[鼠标移动到上面有提示](https://github.com/jaywcjlove/reference) _Tooltips 的提示内容_
 
 添加注释配置 `<!--rehype:tooltips-->` 添加一个 Tooltips 提示。
 
 ### H3 部分(卡片)背景颜色
-<!--rehype:wrap-style=background: #8dffd42e;-->
 
 ```markdown
 ### H3 部分(卡片)背景颜色
 <!--rehype:wrap-style=background: #8dffd42e;-->
 ```
-<!--rehype:className=wrap-text -->
 
 ### 红色标题
-<!--rehype:style=background:#e91e63;-->
 
 ```markdown
 ### 红色标题
@@ -426,17 +400,15 @@ export const Student = (
 
 | Key | value |
 | ---- | ---- |
-| `快捷键` | 说明    |
-| `快捷键` | 说明    |
-<!--rehype:className=shortcuts-->
+| `快捷键` | 说明 |
+| `快捷键` | 说明 |
 
 首列添加 `<!--rehype:className=shortcuts-->` 样式类，展示快捷键样式。
 
 | Key | value |
 | ---- | ---- |
-| 说明    | `快捷键` |
-| 说明    | `快捷键` |
-<!--rehype:className=shortcuts-last-->
+| 说明 | `快捷键` |
+| 说明 | `快捷键` |
 
 列尾添加 `<!--rehype:className=shortcuts-last-->` 样式类，展示快捷键样式。
 
@@ -457,25 +429,23 @@ const school = <div>学校</div>;
 
 ### 内置类样式
 
-:- | -
-:- | -
-`shortcuts` | 快捷键样式
-`wrap-text` | 超出换行
-`show-header` | 展示表头
-`style-none` | 隐藏 `<ul>` 列表样式
-`style-list` | `<table>` 单元格行展示
-<!--rehype:className=shortcuts-->
+| :- | - |
+| :- | - |
+| `shortcuts` | 快捷键样式 |
+| `wrap-text` | 超出换行 |
+| `show-header` | 展示表头 |
+| `style-none` | 隐藏 `<ul>` 列表样式 |
+| `style-list` | `<table>` 单元格行展示 |
 
 ### 颜色标签
 
-:- | -
-:- | -
-`<yel>` | <yel>黄色</yel>
-`<red>` | <red>红色</red>
-`<pur>` | <pur>紫色</pur>
-`<code>` 或 <code>\`\`</code> | <code>绿</code>`色`
-`<del>` 或 `~~删除~~` | <del>~~红色~~</del>
-<!--rehype:className=shortcuts-->
+| :- | - |
+| :- | - |
+| `<yel>` | 黄色 |
+| `<red>` | 红色 |
+| `<pur>` | 紫色 |
+| `<code>` 或 ``` `` ``` | `绿``色` |
+| `<del>` 或 `~~删除~~` | ~~红色~~ |
 
 ### HTML 代码预览
 
@@ -485,16 +455,13 @@ const school = <div>学校</div>;
   \```
 ```
 
----
-
 ```html preview
 <b>这里是你的 HTML 代码</b>
 ```
 
-上面的 [`markdown`](./markdown.md) 代码在 `meta` 位置添加 `preview` 标识，[HTML](./html.md) 代码将被执行预览
+上面的 [`markdown`](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 代码在 `meta` 位置添加 `preview` 标识，[HTML](https://github.com/jaywcjlove/reference/blob/main/docs/html.md) 代码将被执行预览
 
 ### 隐藏卡片标题
-<!--rehype:style=display:none;&wrap-style=padding-top: 0;-->
 
 ```
 隐藏卡片标题，在 H3 标题下面添加注释样式
@@ -504,25 +471,22 @@ const school = <div>学校</div>;
 ### 隐藏卡片标题
 <!--rehype:style=display:none;&wrap-style=padding-top: 0;-->
 ```
-<!--rehype:className=wrap-text -->
 
 ### 注释类配置
-<!--rehype:wrap-class=col-span-2-->
 
-类 | 说明
----- | ----
-`<!--rehype:className=wrap-text-->` | 强制`换行`
-`<!--rehype:className=show-header-->` | 展示表格`表头`
-`<!--rehype:className=shortcuts-->` | 首列`快捷键`样式
-`<!--rehype:className=shortcuts-last-->` | 尾列`快捷键`样式
-`<!--rehype:className=auto-wrap-->` | 隐藏表头强制小尺寸`自动换行`
-`<!--rehype:className=style-list-arrow-->` | 列表`箭头`样式展示表格
-`<!--rehype:className=style-list-->` | `列表`样式展示表格
-`<!--rehype:className=left-align-->` | 表格末尾列`左对齐`
-`<!--rehype:className=style-none-->` | \<li> 没有标记样式
-`<!--rehype:className=style-timeline-->` | `时间轴`样式
-`<!--rehype:className=style-arrow-->` | `箭头`标记
-<!--rehype:className=left-align-->
+| 类 | 说明 |
+| ---- | ---- |
+| `<!--rehype:className=wrap-text-->` | 强制`换行` |
+| `<!--rehype:className=show-header-->` | 展示表格`表头` |
+| `<!--rehype:className=shortcuts-->` | 首列`快捷键`样式 |
+| `<!--rehype:className=shortcuts-last-->` | 尾列`快捷键`样式 |
+| `<!--rehype:className=auto-wrap-->` | 隐藏表头强制小尺寸`自动换行` |
+| `<!--rehype:className=style-list-arrow-->` | 列表`箭头`样式展示表格 |
+| `<!--rehype:className=style-list-->` | `列表`样式展示表格 |
+| `<!--rehype:className=left-align-->` | 表格末尾列`左对齐` |
+| `<!--rehype:className=style-none-->` | \<li> 没有标记样式 |
+| `<!--rehype:className=style-timeline-->` | `时间轴`样式 |
+| `<!--rehype:className=style-arrow-->` | `箭头`标记 |
 
 ### KaTeX 数学渲染
 
@@ -531,7 +495,7 @@ c = \pm\sqrt{a^2 + b^2}
 L = \frac{1}{2} \rho v^2 S C_L
 ```
 
-上面示例 [`Markdown`](./markdown.md) 代码源码
+上面示例 [`Markdown`](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 代码源码
 
 ```markdown {1}
   ```KaTeX
@@ -539,13 +503,11 @@ L = \frac{1}{2} \rho v^2 S C_L
   L = \frac{1}{2} \rho v^2 S C_L
 ```
 
-还可以单行展示 `KaTeX:c = \pm\sqrt{a^2 + b^2}`，需要标记 <code>\`KaTeX:数学公式\`</code> 将被显示成数学公式，这是基于 [KaTeX](https://katex.org/) 生成
+还可以单行展示 `KaTeX:c = \pm\sqrt{a^2 + b^2}`，需要标记 `` `KaTeX:数学公式` `` 将被显示成数学公式，这是基于 [KaTeX](https://katex.org/) 生成
 
-布局
----
+## 布局
 
 ### H2 部分
-<!--rehype:wrap-class=row-span-2-->
 
 ```markdown
 H2 部分
@@ -569,15 +531,14 @@ H2 部分
 
 使用注释配置为 H2 部分 添加 `col-span-2` 类，将 ~~`3`~~ 栏布局变成 `2` 栏布局。
 
-类 | 说明
----- | ----
-`cols-1` | `1` 栏卡片布局
-`cols-2` | `2` 栏卡片布局
-`cols-3` | `3` 栏卡片布局
-`cols-4` | `4` 栏卡片布局
-`cols-5` | `5` 栏卡片布局
-`cols-{1~6}` | `1~6` 栏卡片布局
-<!--rehype:className=show-header -->
+| 类 | 说明 |
+| ---- | ---- |
+| `cols-1` | `1` 栏卡片布局 |
+| `cols-2` | `2` 栏卡片布局 |
+| `cols-3` | `3` 栏卡片布局 |
+| `cols-4` | `4` 栏卡片布局 |
+| `cols-5` | `5` 栏卡片布局 |
+| `cols-{1~6}` | `1~6` 栏卡片布局 |
 
 ### 占位布局 style 写法
 
@@ -585,7 +546,6 @@ H2 部分
 ### H3 部分
 <!--rehype:wrap-style=grid-row: span 2/span 2;-->
 ```
-<!--rehype:className=wrap-text -->
 
 放在 `### H3 部分` 下面的注释配置，与 `<!--rehype:wrap-class=row-span-2-->` 相同，设置 2 行占位布局。
 
@@ -595,7 +555,6 @@ H2 部分
 ## H2 部分
 <!--rehype:body-style=grid-template-columns: repeat(2,minmax(0,1fr));-->
 ```
-<!--rehype:className=wrap-text -->
 
 放在 `## H2 部分` 下面的注释配置，与 `<!--rehype:body-class=cols-2-->` 相同，设置 2 栏布局。
 
@@ -609,20 +568,18 @@ H2 部分
 ### 卡片 3 (H3 部分)
 ```
 
----
-
-:-- | --
-:-- | --
-合并 **列** 布局 |
-`col-span-2` | `2` 列占位
-`col-span-3` | `3` 列占位
-`col-span-4` | `4` 列占位
-`col-span-{2~10}` | `{2~10}` 列占位
-合并 **行** 布局 |
-`row-span-2` | `2` 行占位
-`row-span-3` | `3` 行占位
-`row-span-4` | `4` 行占位
-`row-span-{2~10}` | `{2~10}` 行占位
+| :-- | -- |
+| :-- | -- |
+| 合并 **列** 布局 |
+| `col-span-2` | `2` 列占位 |
+| `col-span-3` | `3` 列占位 |
+| `col-span-4` | `4` 列占位 |
+| `col-span-{2~10}` | `{2~10}` 列占位 |
+| 合并 **行** 布局 |
+| `row-span-2` | `2` 行占位 |
+| `row-span-3` | `3` 行占位 |
+| `row-span-4` | `4` 行占位 |
+| `row-span-{2~10}` | `{2~10}` 行占位 |
 
 ### 卡片合并行布局 1
 
@@ -635,7 +592,7 @@ H2 部分
 ╰┈┈┈╯ ╰┈┈┈╯ ╰┈┈┈╯
 ```
 
-上面布局效果 [Markdown](./markdown.md) 源码：
+上面布局效果 [Markdown](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 源码：
 
 ```markdown
 ### H3 Title 1
@@ -660,7 +617,7 @@ H2 部分
 ╰┈┈┈╯ ╰┈┈┈╯ ╰┈┈┈╯
 ```
 
-上面布局效果 [Markdown](./markdown.md) 源码：
+上面布局效果 [Markdown](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 源码：
 
 ```markdown
 ### Title 1
@@ -708,7 +665,7 @@ H2 部分
 ╰┈┈┈╯ ╰┈┈┈╯ ╰┈┈┈╯
 ```
 
-上面布局效果 [Markdown](./markdown.md) 源码：
+上面布局效果 [Markdown](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 源码：
 
 ```markdown
 ### Title 1
@@ -732,7 +689,7 @@ H2 部分
 ╰┈┈┈╯ ╰┈┈┈┈┈┈┈┈┈╯
 ```
 
-上面布局效果 [Markdown](./markdown.md) 源码：
+上面布局效果 [Markdown](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 源码：
 
 ```markdown
 ### Title 1
@@ -756,7 +713,7 @@ H2 部分
 ╰┈┈┈╯ ╰┈┈┈╯ ╰┈┈┈╯
 ```
 
-上面布局效果 [Markdown](./markdown.md) 源码：
+上面布局效果 [Markdown](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 源码：
 
 ```markdown
 ### Title 1
@@ -780,7 +737,7 @@ H2 部分
 ╰┈┈┈┈┈┈┈┈┈╯ ╰┈┈┈╯
 ```
 
-上面布局效果 [Markdown](./markdown.md) 源码：
+上面布局效果 [Markdown](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 源码：
 
 ```markdown
 ### Title 1
@@ -804,7 +761,7 @@ H2 部分
 ╰┈┈┈╯ ╰┈┈┈╯ ╰┈┈┈╯ ╰┈┈┈╯
 ```
 
-上面布局效果 [Markdown](./markdown.md) 源码：
+上面布局效果 [Markdown](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 源码：
 
 ```markdown
 H2 部分
@@ -821,7 +778,6 @@ H2 部分
 在 `H2 部分` 标题添加 `cols-4`，和 `Title 1` 添加 `col-span-4` 合并栏
 
 ### 卡片列合并布局 9
-<!--rehype:wrap-class=col-span-2-->
 
 ```shell
 ╭┈┈┈┈┈┈┈┈┈╮ ╭┈┈┈╮
@@ -835,7 +791,7 @@ H2 部分
 ╰┈┈┈╯ ╰┈┈┈╯ ╰┈┈┈╯
 ```
 
-上面布局效果 [Markdown](./markdown.md) 源码：
+上面布局效果 [Markdown](https://github.com/jaywcjlove/reference/blob/main/docs/markdown.md) 源码：
 
 ```markdown
 ### Title 1
@@ -847,156 +803,142 @@ H2 部分
 ### Title 6
 ```
 
-[#](https://github.com/jaywcjlove/reference/blob/8fad19506946ae84139002ff367e2f2bca9b0696/docs/quickreference.md?plain=1#L774-L775)<!--rehype:target=__blank--> 在 `Title 1` 标题添加 `col-span-2` 和 `row-span-2` 占位类，使用 `空格` 间隔。
+[#](https://github.com/jaywcjlove/reference/blob/8fad19506946ae84139002ff367e2f2bca9b0696/docs/quickreference.md?plain=1#L774-L775) 在 `Title 1` 标题添加 `col-span-2` 和 `row-span-2` 占位类，使用 `空格` 间隔。
 
-表格
----
+## 表格
 
 ### 基本表格
 
 #### Date
 
-:- | :-
-:- | :-
-`%m/%d/%Y` | 06/05/2013
-`%A, %B %e, %Y` | Sunday, June 5, 2013
-`%b %e %a` | Jun 5 Sun
+| :- | :- |
+| :- | :- |
+| `%m/%d/%Y` | 06/05/2013 |
+| `%A, %B %e, %Y` | Sunday, June 5, 2013 |
+| `%b %e %a` | Jun 5 Sun |
 
 #### Time (H4)
 
-:- | :-
-:- | :-
-`%H:%M` | 23:05
-`%I:%M %p` | 11:05 PM
+| :- | :- |
+| :- | :- |
+| `%H:%M` | 23:05 |
+| `%I:%M %p` | 11:05 PM |
 
-[#](https://github.com/jaywcjlove/reference/blob/8fad19506946ae84139002ff367e2f2bca9b0696/docs/quickreference.md?plain=1#L806-L823)<!--rehype:target=__blank--> 标题为 `H4` 的基本表格。
+[#](https://github.com/jaywcjlove/reference/blob/8fad19506946ae84139002ff367e2f2bca9b0696/docs/quickreference.md?plain=1#L806-L823) 标题为 `H4` 的基本表格。
 
 ### 快捷键
 
-:- | :-
-:- | :-
-`V` | Vector
-`P` | Pencil
-`T` | Text
-`L` | Line
-`R` | Rectangle
-`O` | Oval
-`U` | Rounded
-<!--rehype:className=shortcuts-->
+| :- | :- |
+| :- | :- |
+| `V` | Vector |
+| `P` | Pencil |
+| `T` | Text |
+| `L` | Line |
+| `R` | Rectangle |
+| `O` | Oval |
+| `U` | Rounded |
 
-[#](https://github.com/jaywcjlove/reference/blob/8fad19506946ae84139002ff367e2f2bca9b0696/docs/quickreference.md?plain=1#L827-L836)<!--rehype:target=__blank--> `<!--rehype:className=shortcuts-->`
+[#](https://github.com/jaywcjlove/reference/blob/8fad19506946ae84139002ff367e2f2bca9b0696/docs/quickreference.md?plain=1#L827-L836) `<!--rehype:className=shortcuts-->`
 
 ### 展示标题
 
 | Prefix | Example | What |
 | ---- | ---- | ---- |
-`//` | `//hr[@class='edge']` | Anywhere
-`./` | `./a` | Relative
-`/` | `/html/body/div` | Root
-<!--rehype:className=show-header-->
+| `//` | `//hr[@class='edge']` | Anywhere |
+| `./` | `./a` | Relative |
+| `/` | `/html/body/div` | Root |
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L839-L844)<!--rehype:target=__blank--> `<!--rehype:className=show-header-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L839-L844) `<!--rehype:className=show-header-->`
 
 ### 列表样式展示表格
 
-:- | :-
-:- | :-
-`visualEffectState.inactive` | 后台应一直显示为非激活状态。
-`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
-`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
-<!--rehype:className=style-list-->
+| :- | :- |
+| :- | :- |
+| `visualEffectState.inactive` | 后台应一直显示为非激活状态。 |
+| `titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_ |
+| `titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏 |
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L850-L855)<!--rehype:target=__blank--> `<!--rehype:className=style-list-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L850-L855) `<!--rehype:className=style-list-->`
 
 ### 列表圆圈样式展示表格
 
-:- | :-
-:- | :-
-`visualEffectState.inactive` | 后台应一直显示为非激活状态。
-`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
-`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
-<!--rehype:className=style-list-arrow circle-->
+| :- | :- |
+| :- | :- |
+| `visualEffectState.inactive` | 后台应一直显示为非激活状态。 |
+| `titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_ |
+| `titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏 |
 
 添加 `style-list-arrow` 和 `circle` 样式
 
 ### 列表实心圆圈样式展示表格
 
-:- | :-
-:- | :-
-`visualEffectState.inactive` | 后台应一直显示为非激活状态。
-`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
-`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
-<!--rehype:className=style-list-arrow circlefill-->
+| :- | :- |
+| :- | :- |
+| `visualEffectState.inactive` | 后台应一直显示为非激活状态。 |
+| `titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_ |
+| `titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏 |
 
 添加 `style-list-arrow` 和 `circlefill` 样式
 
 ### 列表方形展示表格
 
-:- | :-
-:- | :-
-`visualEffectState.inactive` | 后台应一直显示为非激活状态。
-`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
-`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
-<!--rehype:className=style-list-arrow square-->
+| :- | :- |
+| :- | :- |
+| `visualEffectState.inactive` | 后台应一直显示为非激活状态。 |
+| `titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_ |
+| `titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏 |
 
 添加 `style-list-arrow` 和 `square` 样式
 
 ### 列表实心方形展示表格
 
-:- | :-
-:- | :-
-`visualEffectState.inactive` | 后台应一直显示为非激活状态。
-`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
-`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
-<!--rehype:className=style-list-arrow squarefill-->
+| :- | :- |
+| :- | :- |
+| `visualEffectState.inactive` | 后台应一直显示为非激活状态。 |
+| `titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_ |
+| `titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏 |
 
 添加 `style-list-arrow` 和 `squarefill` 样式
 
 ### 列表箭头样式展示表格
 
-:- | :-
-:- | :-
-`visualEffectState.inactive` | 后台应一直显示为非激活状态。
-`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
-`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
-<!--rehype:className=style-list-arrow-->
+| :- | :- |
+| :- | :- |
+| `visualEffectState.inactive` | 后台应一直显示为非激活状态。 |
+| `titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_ |
+| `titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏 |
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L861-L866)<!--rehype:target=__blank--> `<!--rehype:className=style-list-arrow-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L861-L866) `<!--rehype:className=style-list-arrow-->`
 
 ### 隐藏表头强制小尺寸自动换行
 
-:- | :-
-:- | :-
-`visualEffectState.inactive` | 后台应一直显示为非激活状态。
-`titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_
-`titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏
-<!--rehype:className=auto-wrap-->
+| :- | :- |
+| :- | :- |
+| `visualEffectState.inactive` | 后台应一直显示为非激活状态。 |
+| `titleBarStyle` _string_ _(win/mac)_ | 窗口标题栏样式。默认值 _(default)_ |
+| `titleBarStyle.default` | 分别返回 _mac_ 或者 _win_ 的标准标题栏 |
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L872-L877)<!--rehype:target=__blank--> `<!--rehype:className=auto-wrap-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L872-L877) `<!--rehype:className=auto-wrap-->`
 
 ### 表格末尾列左对齐
-<!--rehype:wrap-class=col-span-2-->
 
 | Prefix | What |
 | ---- | ---- |
-`//`  | Anywhere
-`./`  | Relative
-<!--rehype:className=show-header left-align-->
+| `//` | Anywhere |
+| `./` | Relative |
 
-[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L884-L888)<!--rehype:target=__blank--> 默认表格末尾列`右对齐`，添加 `<!--rehype:className=left-align-->` 类让其`左对齐`
+[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L884-L888) 默认表格末尾列`右对齐`，添加 `<!--rehype:className=left-align-->` 类让其`左对齐`
 
 ### 强制 code 不换行
 
 | Command | Description |
 | ---- | ---- |
-| `adb remount`                     | Remounts file system with read/write access |
-| `adb reboot bootloader`           | Reboots the device into fastboot            |
-<!--rehype:className=show-header code-nowrap-->
+| `adb remount` | Remounts file system with read/write access |
+| `adb reboot bootloader` | Reboots the device into fastboot |
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L894-L898)<!--rehype:target=__blank-->  添加 `<!--rehype:className=code-nowrap-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L894-L898)  添加 `<!--rehype:className=code-nowrap-->`
 
-列表
----
+## 列表
 
 ### 一栏(默认)
 
@@ -1004,7 +946,7 @@ H2 部分
 - Item 2
 - Item 3
 
-[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L905-L909)<!--rehype:target=__blank-->
+[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L905-L909)
 
 ### 四列
 
@@ -1016,12 +958,10 @@ H2 部分
 - Item 6
 - Item 7
 - Item 8
-<!--rehype:className=cols-4-->
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L913-L921)<!--rehype:target=__blank--> `<!--rehype:className=cols-4-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L913-L921) `<!--rehype:className=cols-4-->`
 
 ### 列表步骤
-<!--rehype:wrap-class=row-span-2-->
 
 - **重命名为 new_name**
 
@@ -1040,9 +980,8 @@ H2 部分
   ```bash
   $ git push origin --delete <old>
   ```
-<!--rehype:className=style-timeline-->
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L928-L945)<!--rehype:target=__blank--> `<!--rehype:className=style-timeline-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L928-L945) `<!--rehype:className=style-timeline-->`
 
 ### 没有标记
 
@@ -1055,40 +994,34 @@ H2 部分
 - Item 7
 - Item 8
 - Item 9
-<!--rehype:className=cols-3 style-none-->
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L951-L960)<!--rehype:target=__blank--> `<!--rehype:className=cols-3 style-none-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L951-L960) `<!--rehype:className=cols-3 style-none-->`
 
 ### 圆圈标记
 
 - Item 1
 - Item 2
 - Item 3
-<!--rehype:className=style-round-->
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L966-L969)<!--rehype:target=__blank--> `<!--rehype:className=style-round-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L966-L969) `<!--rehype:className=style-round-->`
 
 ### 箭头标记
 
 - Item 1
 - Item 2
 - Item 3
-<!--rehype:className=style-arrow-->
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L975-L978)<!--rehype:target=__blank--> `<!--rehype:className=style-arrow-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L975-L978) `<!--rehype:className=style-arrow-->`
 
-H2 部分 - 5列效果展示
----
-<!--rehype:body-class=cols-5-->
+## H2 部分 - 5列效果展示
 
 ### One
-<!--rehype:wrap-style=background:#dba300;-->
 
 ```
 ...
 ```
 
-[#示例](https://github.com/jaywcjlove/reference/blob/8ae69f23860c1854a81aeceb81a6cc0bc0998fc4/docs/quickreference.md?plain=1#L1012-L1021)<!--rehype:target=__blank-->
+[#示例](https://github.com/jaywcjlove/reference/blob/8ae69f23860c1854a81aeceb81a6cc0bc0998fc4/docs/quickreference.md?plain=1#L1012-L1021)
 
 ### Two
 
@@ -1114,53 +1047,47 @@ H2 部分 - 5列效果展示
 ...
 ```
 
-H3 部分 - 占位效果展示
----
+## H3 部分 - 占位效果展示
 
 ### row-span-2
-<!--rehype:wrap-class=row-span-2-->
 
 ```
 ...合并两行
 ```
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1020-L1027)<!--rehype:target=__blank--> `<!--rehype:wrap-class=row-span-2-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1020-L1027) `<!--rehype:wrap-class=row-span-2-->`
 
 ### col-span-2
-<!--rehype:wrap-class=col-span-2-->
 
 ```
 ...合并两列
 ```
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1020-L1027)<!--rehype:target=__blank--> `<!--rehype:wrap-class=col-span-2-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1020-L1027) `<!--rehype:wrap-class=col-span-2-->`
 
 ### 红色标题
-<!--rehype:style=background:#e91e63;-->
 
 ```
 ...红色标题配置
 ```
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1038-L1043)<!--rehype:target=__blank-->  `<!--rehype:style=background:#e91e63;-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1038-L1043)  `<!--rehype:style=background:#e91e63;-->`
 
 ### 黄色标题
-<!--rehype:style=background:#d7a100;-->
 
 ```
 ...黄色标题配置
 ```
 
-[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1047-L1052)<!--rehype:target=__blank--> `<!--rehype:style=background:#d7a100;-->`
+[#](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1047-L1052) `<!--rehype:style=background:#d7a100;-->`
 
 ### col-span-3
-<!--rehype:wrap-class=col-span-3-->
 
-... [#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1056-L1061)<!--rehype:target=__blank--> 三列合并
+... [#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1056-L1061) 三列合并
 
 ### 卡片子项
 
-[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1063-L1077)<!--rehype:target=__blank--> 每个部分可以有以下子项：
+[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1063-L1077) 每个部分可以有以下子项：
 
 #### H4 子标题
 
@@ -1178,15 +1105,17 @@ H3 部分 - 占位效果展示
 
 每个盒子(卡片)都是一个 `H3` 部分。 盒子将包含 `H3` 自身内的所有东西。
 
-[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1079-L1083)<!--rehype:target=__blank--> 这是一个包含段落的基本部分
+[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1079-L1083) 这是一个包含段落的基本部分
 
 ### H3 部分背景颜色
-<!--rehype:wrap-style=background: #1e7da173;-->
 
 ```markdown
 注释配置：
 `<!--rehype:wrap-style=background: #1e7da173;-->`
 ```
-<!--rehype:className=wrap-text -->
 
-[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1085-L1087)<!--rehype:target=__blank-->
+[#示例](https://github.com/jaywcjlove/reference/blob/ee03850619440e3700ed68ccc2ed21d3591a1490/docs/quickreference.md?plain=1#L1085-L1087)
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/quickreference.md](https://github.com/jaywcjlove/reference/blob/main/docs/quickreference.md)
+
+获取日期：2026-10-15

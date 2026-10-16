@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/golang.md
-Retrieved on: 2026-10-15
--->
-
-Golang 备忘清单
-===
+# Golang 备忘清单
 
 该备忘单提供了帮助您使用 [Golang](https://golang.org) 的基本语法和方法。
 
-入门
---------
+## 入门
 
 ### hello.go
 
@@ -88,8 +80,7 @@ if true {
 
 参见：[条件控制](#golang-条件控制)
 
-Golang 基本类型
---------
+## Golang 基本类型
 
 ### 字符串 Strings
 
@@ -155,8 +146,6 @@ fmt.Println(!true)          // false
   0    1    2    3     4     5
 ```
 
----
-
 ```go
 primes := [...]int{2, 3, 5, 7, 11, 13}
 fmt.Println(len(primes)) // => 6
@@ -165,8 +154,6 @@ fmt.Println(primes)
 // 与 [:3] 相同，输出：[2 3 5]
 fmt.Println(primes[0:3])
 ```
-
----
 
 ```go
 var a [2]string
@@ -190,7 +177,6 @@ fmt.Println("2d: ", twoDimension)
 ```
 
 ### 指针(Pointers)
-<!--rehype:wrap-class=col-span-2-->
 
 ```go
 func main () {
@@ -207,8 +193,6 @@ func getPointer () (myPointer *int) {
 var p *int
 *p = 123      // panic   nil pointer
 ```
-
----
 
 ```go
 //而用new返回的是有默认值的指针, 为数据类型的默认值
@@ -307,8 +291,7 @@ str = strconv.FormatFloat(f, 'f', 2, 64)
 str = string(bytes[:])
 ```
 
-Golang 字符串
---------
+## Golang 字符串
 
 ### 字符串函数
 
@@ -331,7 +314,6 @@ func main() {
 ```
 
 ### fmt.Printf
-<!--rehype:wrap-class=row-span-2 col-span-2-->
 
 ```go
 package main
@@ -375,23 +357,22 @@ func main() {
 
 ### 函数实例
 
-| 实例                          | Result      |
+| 实例 | Result |
 | ----------------------------- | ----------- |
-| Contains("test", "es")        | true        |
-| Count("test", "t")            | 2           |
-| HasPrefix("test", "te")       | true        |
-| HasSuffix("test", "st")       | true        |
-| Index("test", "e")            | 1           |
-| Join([]string{"a", "b"}, "-") | a-b         |
-| Repeat("a", 5)                | aaaaa       |
-| Replace("foo", "o", "0", -1)  | f00         |
-| Replace("foo", "o", "0", 1)   | f0o         |
-| Split("a-b-c-d-e", "-")       | [a b c d e] |
-| ToLower("TEST")               | test        |
-| ToUpper("test")               | TEST        |
+| Contains("test", "es") | true |
+| Count("test", "t") | 2 |
+| HasPrefix("test", "te") | true |
+| HasSuffix("test", "st") | true |
+| Index("test", "e") | 1 |
+| Join([]string{"a", "b"}, "-") | a-b |
+| Repeat("a", 5) | aaaaa |
+| Replace("foo", "o", "0", -1) | f00 |
+| Replace("foo", "o", "0", 1) | f0o |
+| Split("a-b-c-d-e", "-") | [a b c d e] |
+| ToLower("TEST") | test |
+| ToUpper("test") | TEST |
 
-Golang 条件控制
---------
+## Golang 条件控制
 
 ### 有条件的
 
@@ -414,8 +395,6 @@ if count := len(x); count > 0 {
     fmt.Println("Yes")
 }
 ```
-
----
 
 ```go
 if _, err := doThing(); err != nil {
@@ -491,11 +470,9 @@ for {
 }
 ```
 
-Golang 结构和Maps
---------
+## Golang 结构和Maps
 
 ### 定义
-<!--rehype:wrap-class=row-span-2-->
 
 ```go
 package main
@@ -528,7 +505,6 @@ v := Vertex{X: 1}
 您还可以输入字段名
 
 ### Maps
-<!--rehype:wrap-class=row-span-2-->
 
 ```go
 m := make(map[string]int)
@@ -555,8 +531,7 @@ v.X = 2
 
 Doing `v.X` is the same as doing `(*v).X`, when `v` is a pointer.
 
-Golang 函数
---------
+## Golang 函数
 
 ### 多个参数
 
@@ -631,8 +606,6 @@ sum(nums...)  // => [1 2 3 4] 10
 import --> const --> var --> init()
 ```
 
----
-
 ```go
 var num = setNumber()
 func setNumber() int {
@@ -660,7 +633,7 @@ func main() {
 ```
 
 ### 闭包
-<!--rehype:wrap-class=col-span-2 row-span-2-->
+
 ```go
 func outer() (func() int, int) {
     outer_var := 2
@@ -693,11 +666,9 @@ func scope() func() int{
 fmt.Println(scope()())
 ```
 
-Golang 包(Packages)
---------
+## Golang 包(Packages)
 
 ### 导入
-<!--rehype:wrap-class=row-span-2-->
 
 ```go
 import "fmt"
@@ -716,13 +687,10 @@ import (
 另见：[导入](https://tour.golang.org/basics/1)
 
 ### 别名
-<!--rehype:wrap-class=row-span-2-->
 
 ```go
 import r "math/rand"
 ```
-
----
 
 ```go
 import (
@@ -730,8 +698,6 @@ import (
     r "math/rand"
 )
 ```
-
----
 
 ```go
 r.Intn()
@@ -759,11 +725,9 @@ func Hello () {
 
 另见：[导出的名称](https://tour.golang.org/basics/3)
 
-Golang 并发
---------
+## Golang 并发
 
 ### 协程
-<!--rehype:wrap-class=row-span-2-->
 
 ```go
 package main
@@ -790,7 +754,6 @@ func main() {
 参见：[Goroutines](https://tour.golang.org/concurrency/1), [Channels](https://tour.golang.org/concurrency/2)
 
 ### WaitGroup
-<!--rehype:wrap-class=row-span-2-->
 
 ```go
 package main
@@ -826,16 +789,12 @@ ch <- 3
 close(ch) // 关闭频道
 ```
 
----
-
 ```go
 // 迭代通道直到关闭
 for i := range ch {
   ···
 }
 ```
-
----
 
 ```go
 // Closed if `ok == false`
@@ -858,8 +817,6 @@ ch <- 3
 参见：[缓冲通道](https://tour.golang.org/concurrency/3)
 
 ### Context
-
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```go
 package main
@@ -905,8 +862,7 @@ func main() {
 }
 ```
 
-Golang 错误控制
---------
+## Golang 错误控制
 
 ### 延迟函数
 
@@ -945,12 +901,10 @@ func main() {
 
 参见：[Defer, panic and recover](https://blog.golang.org/defer-panic-and-recover)
 
-Golang 方法(Methods)
---------
-<!--rehype:body-class=cols-2-->
+## Golang 方法(Methods)
 
 ### 接收器
-<!--rehype:wrap-class=row-span-2-->
+
 ```go
 //Go语言中的方法（Method）是一种作用于特定类型变量的函数。
 //这种特定类型变量叫做接收者（Receiver）。
@@ -1049,9 +1003,7 @@ z : = z {
 - 若类型 T 包含匿名字段 *S ，则 T 的方法集包含 S 和*S方法集
 - 不管类型 T 中嵌入的匿名字段是 S 还是 *S ，*T 方法集总是包含 S 和 *S 方法集
 
-Golang 接口(Interfaces)
---------
-<!--rehype:body-class=cols-2-->
+## Golang 接口(Interfaces)
 
 ### 基本接口(Interfaces)
 
@@ -1093,10 +1045,8 @@ func main() {
   fmt.Printf("Type of r: %T, Area: %v, Perimeter: %v.", r, r.Area(), r.Perimeter())
 }
 ```
-<!--rehype:className=wrap-text -->
 
-Golang Embed (Go version >= 1.16)
----
+## Golang Embed (Go version >= 1.16)
 
 ### 嵌入为string
 
@@ -1197,11 +1147,9 @@ func main() {
 }
 ```
 
-Golang 泛型 (Go version >= 1.18)
--------------
+## Golang 泛型 (Go version >= 1.18)
 
 ### 泛型类型
-<!--rehype:wrap-class=row-span-1-->
 
 ```text
 type S[T int|float32|float64 ] []T
@@ -1209,7 +1157,6 @@ type S[T int|float32|float64 ] []T
        ┆          ╰─── 2. 类型约束
        ╰────────────── 1. 类型形参
 ```
-<!--rehype:className=wrap-text -->
 
 可以使用类型实参 int 或 string 实例化
 
@@ -1221,12 +1168,11 @@ var a MyMap[string, float64] = map[string]float64{
     "bob_score":  8.4,
 }
 ```
-<!--rehype:className=wrap-text -->
-- **匿名结构体不支持泛型**<!--rehype:style=color: #b43c29;-->
-- **匿名函数不支持泛型**<!--rehype:style=color: #b43c29;-->
+
+- **匿名结构体不支持泛型**
+- **匿名函数不支持泛型**
 
 ### 泛型函数
-<!--rehype:wrap-class=row-span-1-->
 
 任意类型
 
@@ -1255,7 +1201,6 @@ type WowStruct[T int | float32, S []T] struct {
 
 var ws WowStruct[int, []int]  
 ```
-<!--rehype:className=wrap-text -->
 
 泛型函数中进行类型声明 (go version >= 1.20)
 
@@ -1267,7 +1212,6 @@ func F[T1 any]() {
 ```
 
 ### 泛型约束
-<!--rehype:wrap-class=row-span-2-->
 
 通过接口实现
 
@@ -1280,7 +1224,6 @@ func Add[T Addable](a,b T) T {
     return  a+b
 }
 ```
-<!--rehype:className=wrap-text -->
 
 使用 ~ 符号
 
@@ -1309,16 +1252,13 @@ var s3 Slice[MyMyInt]  // 正确。MyMyInt 虽然基于 MyInt ，但底层类型
 type MyFloat32 float32  // 正确
 var s4 Slice[MyFloat32]
 ```
-<!--rehype:className=wrap-text -->
 
 使用 ~ 时的限制：
-<!--rehype:style=color: #b43c29;-->
+
 1. ~后面的类型不能为接口
 2. ~后面的类型必须为基本类型
-<!--rehype:style=color: #b43c29;-->
 
 ### 泛型 Receiver
-<!--rehype:wrap-class=row-span-1-->
 
 定义普通类型支持泛型
 
@@ -1333,7 +1273,6 @@ func (s MySlice[T]) Sum() T {
     return sum
 }
 ```
-<!--rehype:className=wrap-text -->
 
 结构体支持泛型
 
@@ -1346,10 +1285,8 @@ func (receiver A[T]) Add(a T, b T) T {
 }
 
 ```
-<!--rehype:className=wrap-text -->
 
 ### 泛型接口
-<!--rehype:wrap-class=row-span-1-->
 
 ``` go
 type Uint interface { // 接口 Uint 中有类型，所以是一般接口
@@ -1363,13 +1300,10 @@ type ReadWriter interface {  // ReadWriter 接口既有方法也有类型，所�
     Write(p []byte) (n int, err error)
 }
 ```
-<!--rehype:className=wrap-text -->
 
 一般接口类型不能用来定义变量，只能用于泛型的类型约束中
-<!--rehype:style=color: #b43c29;-->
 
-杂项
--------------
+## 杂项
 
 ### 关键字(Keywords)
 
@@ -1398,69 +1332,64 @@ type ReadWriter interface {  // ReadWriter 接口既有方法也有类型，所�
 - import
 - return
 - var
-<!--rehype:className=cols-3 style-none-->
 
 ### 运算符和标点符号
 
-|     |      |       |       |        |      |       |     |     |
+|  |  |  |  |  |  |  |  |  |
 | --- | ---- | ----- | ----- | ------ | ---- | ----- | --- | --- |
-| `+` | `&`  | `+=`  | `&=`  | `&&`   | `==` | `!=`  | `(` | `)` |
-| `-` | `\|` | `-=`  | `\|=` | `\|\|` | `<`  | `<=`  | `[` | `]` |
-| `*` | `^`  | `*=`  | `^=`  | `<-`   | `>`  | `>=`  | `{` | `}` |
-| `/` | `<<` | `/=`  | `<<=` | `++`   | `=`  | `:=`  | `,` | `;` |
-| `%` | `>>` | `%=`  | `>>=` | `--`   | `!`  | `...` | `.` | `:` |
-|     | `&^` | `&^=` |       |        |      |       |     |     |
+| `+` | `&` | `+=` | `&=` | `&&` | `==` | `!=` | `(` | `)` |
+| `-` | `\|` | `-=` | `\|=` | `\|\|` | `<` | `<=` | `[` | `]` |
+| `*` | `^` | `*=` | `^=` | `<-` | `>` | `>=` | `{` | `}` |
+| `/` | `<<` | `/=` | `<<=` | `++` | `=` | `:=` | `,` | `;` |
+| `%` | `>>` | `%=` | `>>=` | `--` | `!` | `...` | `.` | `:` |
+|  | `&^` | `&^=` |  |  |  |  |  |  |
 
-Go 命令
----
+## Go 命令
 
 ### Go 编译器命令
 
-:- | --
-:- | --
-`go command [参数]`  | go 命令 [参数]
-`go build`          | 编译包和依赖包
-`go clean`          | 移除对象和缓存文件
-`go doc`            | 显示包的文档
-`go env`            | 打印go的环境变量信息
-`go bug`            | 报告bug
-`go fix`            | 更新包使用新的api
-`go fmt`            | 格式规范化代码
-`go generate`       | 通过处理资源生成go文件
-`go get`            | 下载并安装包及其依赖
-`go install`        | 编译和安装包及其依赖
-`go list`           | 列出所有包
-`go run`            | 编译和运行go程序
-`go test`           | 测试
-`go tool`           | 运行给定的go工具
-`go version`        | 显示go当前版本
-`go vet`            | 发现代码中可能的错误
+| :- | -- |
+| :- | -- |
+| `go command [参数]` | go 命令 [参数] |
+| `go build` | 编译包和依赖包 |
+| `go clean` | 移除对象和缓存文件 |
+| `go doc` | 显示包的文档 |
+| `go env` | 打印go的环境变量信息 |
+| `go bug` | 报告bug |
+| `go fix` | 更新包使用新的api |
+| `go fmt` | 格式规范化代码 |
+| `go generate` | 通过处理资源生成go文件 |
+| `go get` | 下载并安装包及其依赖 |
+| `go install` | 编译和安装包及其依赖 |
+| `go list` | 列出所有包 |
+| `go run` | 编译和运行go程序 |
+| `go test` | 测试 |
+| `go tool` | 运行给定的go工具 |
+| `go version` | 显示go当前版本 |
+| `go vet` | 发现代码中可能的错误 |
 
 ### ENV
 
-:- | --
-:- | --
-`GOOS`         | 编译系统
-`GOARCH`       | 编译arch
-`GO111MODULE`  | gomod开关
-`GOPROXY`      | go代理 <https://goproxy.io>  <https://goproxy.cn>  <https://mirrors.aliyun.com/goproxy/>
-`GOSSAFUNC`    | 生成 `SSA.html` 文件，展示代码优化的每一步 `GOSSAFUNC=func_name go build`
-<!--rehype:className=style-list-arrow-->
+| :- | -- |
+| :- | -- |
+| `GOOS` | 编译系统 |
+| `GOARCH` | 编译arch |
+| `GO111MODULE` | gomod开关 |
+| `GOPROXY` | go代理 <https://goproxy.io>  <https://goproxy.cn>  <https://mirrors.aliyun.com/goproxy/> |
+| `GOSSAFUNC` | 生成 `SSA.html` 文件，展示代码优化的每一步 `GOSSAFUNC=func_name go build` |
 
 ### Module
 
-:- | --
-:- | --
-`go mod init`         | 初始化当前文件夹，创建go.mod文件
-`go mod download`     | 下载依赖的module到本地
-`go mod tidy`         | 增加缺少的module，删除无用的module
-`go mod vendor`       | 将依赖复制到vendor下
-文件 `go.mod`          |  依赖列表和版本约束
-文件 `go.sum`          |  记录 `module` 文件 `hash` 值，用于安全校验
-<!--rehype:className=style-list-arrow-->
+| :- | -- |
+| :- | -- |
+| `go mod init` | 初始化当前文件夹，创建go.mod文件 |
+| `go mod download` | 下载依赖的module到本地 |
+| `go mod tidy` | 增加缺少的module，删除无用的module |
+| `go mod vendor` | 将依赖复制到vendor下 |
+| 文件 `go.mod` | 依赖列表和版本约束 |
+| 文件 `go.sum` | 记录 `module` 文件 `hash` 值，用于安全校验 |
 
-另见
---------
+## 另见
 
 - [Devhints](https://devhints.io/go) *(devhints.io)*
 - [A tour of Go](https://tour.golang.org/welcome/1) *(tour.golang.org)*
@@ -1470,3 +1399,7 @@ Go 命令
 - [Awesome Go](https://awesome-go.com/) *(awesome-go.com)*
 - [JustForFunc Youtube](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw) *(youtube.com)*
 - [Style Guide](https://github.com/golang/go/wiki/CodeReviewComments) *(github.com)*
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/golang.md](https://github.com/jaywcjlove/reference/blob/main/docs/golang.md)
+
+获取日期：2026-10-15

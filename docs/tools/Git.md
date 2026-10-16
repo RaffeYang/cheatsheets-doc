@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/git.md
-Retrieved on: 2026-10-15
--->
-
-Git 备忘清单
-===
+# Git 备忘清单
 
 本备忘单总结了常用的 [Git](https://git-scm.com/) 命令行指令，以供快速参考。
 
-入门
-----
+## 入门
 
 ### 创建存储库
 
@@ -26,7 +18,6 @@ $ git clone <git_url> -b <分支名称> 指定目录
 ```
 
 ### 做出改变
-<!--rehype:wrap-class=row-span-3-->
 
 ```shell
 # 在工作目录中`显示`修改后的文件，
@@ -53,7 +44,6 @@ $ git rebase [branch]
 ```
 
 ### 配置
-<!--rehype:wrap-class=row-span-2-->
 
 ```shell
 # 设置将附加到您的提交和标签的名称
@@ -71,7 +61,6 @@ $ git config --global --unset <entry-name>
 ```
 
 ### 使用分支
-<!--rehype:wrap-class=row-span-4-->
 
 ```shell
 # 列出所有本地分支
@@ -98,7 +87,6 @@ $ git tag my_tag
 ```shell
 $ git checkout -b <branch-name> origin/<branch-name>
 ```
-<!--rehype:className=wrap-text-->
 
 ### 临时提交
 
@@ -118,7 +106,6 @@ $ git stash clear
 ```
 
 ### 观察你的存储库
-<!--rehype:wrap-class=row-span-2-->
 
 ```shell
 # 显示当前活动分支的提交历史
@@ -134,25 +121,23 @@ $ git show [SHA]
 ```
 
 ### 忽略文件 .gitignore
-<!--rehype:wrap-class=row-span-5-->
 
 文件 `.gitignore` 指定了 `Git` 应该忽略的 **未跟踪的** 文件
 
-:- | :-
-:- | :-
-行首 `#` | 全行注释，不支持行尾类注释 _(转义 `\#`)_
-行首 **`!`** | 否定模式 _(转义 `\!`)_
-`**` | 匹配任意路径
-`*` | 匹配任意多个字符
-`?` | 匹配任意一个字符
-`doc/**` | 匹配 `doc` 文件夹下的全部内容
-`doc/**/a` | 匹配任意深度路径下的 `a` 文件或文件夹
-`/` | 表示路径分隔符，不区分操作系统
-`/` 结尾 | 仅会匹配文件夹，否则会匹配文件和文件夹
-空行 | 不匹配任何文件
-行尾空格 | 默认被忽略，可使用`\`进行转义
-行首空格 | 被正常处理，不会被忽略
-<!--rehype:className=left-align-->
+| :- | :- |
+| :- | :- |
+| 行首 `#` | 全行注释，不支持行尾类注释 _(转义 `\#`)_ |
+| 行首 **`!`** | 否定模式 _(转义 `\!`)_ |
+| `**` | 匹配任意路径 |
+| `*` | 匹配任意多个字符 |
+| `?` | 匹配任意一个字符 |
+| `doc/**` | 匹配 `doc` 文件夹下的全部内容 |
+| `doc/**/a` | 匹配任意深度路径下的 `a` 文件或文件夹 |
+| `/` | 表示路径分隔符，不区分操作系统 |
+| `/` 结尾 | 仅会匹配文件夹，否则会匹配文件和文件夹 |
+| 空行 | 不匹配任何文件 |
+| 行尾空格 | 默认被忽略，可使用`\`进行转义 |
+| 行首空格 | 被正常处理，不会被忽略 |
 
 当前 `.gitignore` 文件定义规则的优先级高于上级路径 `.gitignore` 定义规则的优先级；后定义的规则优先级高于前面定义规则的优先级
 
@@ -181,7 +166,6 @@ target/
 # 使用 ! 重新包含指定文件（夹）
 !logs/.gitkeep
 ```
-<!--rehype:className=wrap-text-->
 
 ### 重构文件名
 
@@ -195,7 +179,6 @@ git mv <filename-orig> <filename-renamed>
 ```
 
 ### 同步
-<!--rehype:wrap-class=row-span-3-->
 
 从该 Git 远程获取所有分支
 
@@ -232,7 +215,6 @@ $ git cherry-pick [commit_id]
 ```
 
 ### 远程
-<!--rehype:wrap-class=row-span-2-->
 
 ```shell
 # 添加一个 git URL 作为别名
@@ -268,7 +250,6 @@ $ git log --stat -M
 ```
 
 ### .gitattributes
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```ini
 # 设置默认行为，以防人们没有设置 core.autocrlf
@@ -311,13 +292,10 @@ ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
 Host github.com
 ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
 ```
-<!--rehype:className=wrap-text-->
 
-Commit
----
+## Commit
 
 ### 改写历史
-<!--rehype:wrap-class=row-span-2-->
 
 ```shell
 # 重写最后的提交消息
@@ -333,7 +311,6 @@ $ git log --show-signature
 ```
 
 ### 修改远程 Commit 记录
-<!--rehype:wrap-class=row-span-6-->
 
 ```shell
 $ git rebase -i HEAD~3
@@ -374,7 +351,6 @@ $ git rebase --continue
 # 最后，确保没有人提交进行推送，最好不要加 -f 强制推送
 $ git push -f origin master
 ```
-<!--rehype:className=wrap-text-->
 
 ### Commit
 
@@ -426,7 +402,6 @@ $ git update-ref -d HEAD
 ```bash
 $ git fetch --all && git reset --hard origin/master
 ```
-<!--rehype:className=wrap-text-->
 
 抛弃本地所有的修改，回到远程仓库的状态
 
@@ -437,7 +412,6 @@ $ git log Branch1 ^Branch2
 ```
 
 ### git 迁移
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 # 从原地址克隆一份裸版本库
@@ -451,8 +425,7 @@ $ git push --mirror https://gitee.com/username/newproject.git
 $ git clone https://gitee.com/username/newproject.git
 ```
 
-Git Submodule 子模块
-------
+## Git Submodule 子模块
 
 ### 添加子模块
 
@@ -500,7 +473,6 @@ $ git submodule update --remote
 ```
 
 ### 获取并切换子模块的最新标签
-<!--rehype:wrap-class=col-span-2-->
 
 ```bash
 $ cd <path_to_submodule>
@@ -509,7 +481,6 @@ $ git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
 ```
 
 ### 子模块递归
-<!--rehype:wrap-class=col-span-2 row-span-3-->
 
 ```bash
 # 添加所有已存在的子模块
@@ -564,8 +535,7 @@ $ cd <path_to_submodule>
 $ git checkout tags/<tag_name>
 ```
 
-Config 设置
----
+## Config 设置
 
 ### 查看配置的信息
 
@@ -610,7 +580,6 @@ $ git config --global --unset <entry-name>
 ```
 
 ### 配置 http 和 socks 代理
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```bash
 # 查看代理
@@ -666,8 +635,7 @@ $ git config core.ignorecase false
 $ git rm -r --cached <目录/文件>
 ```
 
-Git 技巧
-------
+## Git 技巧
 
 ### 重命名分支
 
@@ -690,7 +658,6 @@ Git 技巧
   $ git push origin --delete <old> #方法1
   $ git push origin :oldBranchName #方法2
   ```
-<!--rehype:className=style-timeline-->
 
 ### Log
 
@@ -711,10 +678,8 @@ $ git log -p <file_name>
 ```shell
 $ git log --pretty=oneline --graph --decorate --all
 ```
-<!--rehype:className=wrap-text-->
 
 ### 分支
-<!--rehype:wrap-class=row-span-2-->
 
 列出所有分支及其上游
 
@@ -759,7 +724,6 @@ $ git rev-parse --short HEAD # e10721c
 ```shell
 $ git branch --merged master | grep -v '^\*\|  master' | xargs -n 1 git branch -d
 ```
-<!--rehype:className=wrap-text-->
 
 ### 查看冲突文件列表
 
@@ -768,7 +732,6 @@ $ git diff --name-only --diff-filter=U
 ```
 
 ### 展示工作区的冲突文件列表
-<!--rehype:wrap-class=row-span-2-->
 
 输出工作区和暂存区的 different (不同)。
 
@@ -801,10 +764,8 @@ $ git diff HEAD
 ```bash
 $ git branch --merged master | grep -v '^\*\|  master' | xargs -n 1 git branch -d
 ```
-<!--rehype:className=wrap-text-->
 
 ### 关联远程分支
-<!--rehype:wrap-class=row-span-2-->
 
 ```bash
 $ git branch -u origin/mybranch
@@ -835,14 +796,12 @@ $ git describe --tags --abbrev=0
 ```bash
 $ git commit --amend --author='Author Name <email@address.com>'
 ```
-<!--rehype:className=wrap-text-->
 
 ### 增加远程仓库
 
 ```bash
 $ git remote add origin <remote-url>
 ```
-<!--rehype:className=wrap-text-->
 
 ### 列出所有远程仓库
 
@@ -855,7 +814,6 @@ $ git remote -v
 ```bash
 $ git checkout <stash@{n}> -- <file-path>
 ```
-<!--rehype:className=wrap-text-->
 
 ### 展示所有 tracked 的文件
 
@@ -874,7 +832,6 @@ $ git ls-files --others
 ```bash
 $ git ls-files --others -i --exclude-standard
 ```
-<!--rehype:className=wrap-text-->
 
 ### 把某一个分支导出成一个文件
 
@@ -883,12 +840,10 @@ $ git bundle create <file> <branch-name>
 ```
 
 ### 从包中导入分支
-<!--rehype:wrap-class=row-span-2-->
 
 ```bash
 $ git clone repo.bundle <repo-dir> -b <branch-name>
 ```
-<!--rehype:className=wrap-text-->
 
 新建一个分支，分支内容就是上面 `git bundle create` 命令导出的内容
 
@@ -903,7 +858,6 @@ $ git rebase --autostash
 ```bash
 $ git fetch origin pull/<id>/head:<branch-name>
 ```
-<!--rehype:className=wrap-text-->
 
 ### 详细展示一行中的修改
 
@@ -946,21 +900,18 @@ $ git clone --depth=1 https://github.com/user/repo.git
 只会 `clone` 最近一次提交，将减少 `clone` 时间
 
 ### 忽略某个文件的改动
-<!--rehype:wrap-class=row-span-2-->
 
 关闭 track 指定文件的改动，也就是 Git 将不会在记录这个文件的改动
 
 ```bash
 git update-index --assume-unchanged path/to/file
 ```
-<!--rehype:className=wrap-text-->
 
 恢复 track 指定文件的改动
 
 ```bash
 git update-index --no-assume-unchanged path/to/file
 ```
-<!--rehype:className=wrap-text-->
 
 ### 以最后提交的顺序列出所有 Git 分支
 
@@ -986,17 +937,15 @@ git reset <file-name>
 Host github.com
   ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
 ```
-<!--rehype:className=wrap-text-->
 
 ### Fork仓库同步上游仓库
-<!--rehype:wrap-class=col-span-2-->
 
 - 设置上游仓库
 
   ```shell
   $ git remote add upstream https://github.com/jaywcjlove/reference.git
   ```
-  
+
 - 本地项目操作
 
   ```shell
@@ -1008,13 +957,9 @@ Host github.com
   $ git stach pop # 恢复暂存的本地修改(如果有)
   ```
 
-<!--rehype:className=style-timeline-->
-
-统计查询
----
+## 统计查询
 
 ### 查看 git 上的个人代码量
-<!--rehype:wrap-class=row-span-2-->
 
 - `username` 需要改成自己的
 
@@ -1022,10 +967,8 @@ Host github.com
 git log --author="username" --pretty=tformat: --numstat | awk \
 '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -
 ```
-<!--rehype:className=wrap-text-->
 
 ### 统计每个人增删行数
-<!--rehype:wrap-class=row-span-2-->
 
 ```bash
 git log --format='%aN' | sort -u |\
@@ -1033,7 +976,6 @@ git log --format='%aN' | sort -u |\
   git log --author="$name" --pretty=tformat: --numstat | awk \
   '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -; done
 ```
-<!--rehype:className=wrap-text-->
 
 ### 查看仓库提交者排名
 
@@ -1042,7 +984,6 @@ git log --format='%aN' | sort -u |\
 ```bash
 git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 10
 ```
-<!--rehype:className=wrap-text-->
 
 ### 提交数统计
 
@@ -1090,11 +1031,9 @@ $ git count-objects -vH
 $ git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | awk '/^blob/ {print substr($0,6)}' | sort --numeric-sort --key=2 --reverse | head -n 10 | cut -c 13-
 ```
 
-Conventional Commmits
-----
+## Conventional Commmits
 
 ### 格式
-<!--rehype:wrap-class=col-span-3-->
 
 ```text
 <type>(<scope>): <short summary>
@@ -1112,21 +1051,18 @@ Conventional Commmits
 ```
 
 ### 常用
-<!--rehype:wrap-class=row-span-1-->
 
-|   类型   |  描述 |
-| ----------|------------ |
-| `feat:`   | 新特性     |
-| `fix(scope):`   | 修复 scope 中的 Bug |
+| 类型 | 描述 |
+| ---------- | ------------ |
+| `feat:` | 新特性 |
+| `fix(scope):` | 修复 scope 中的 Bug |
 | `feat!:` / `feat(scope)!:` | breaking change /  重构 API |
 | `chore(deps):` | 更新依赖 |
-<!--rehype:className=left-align-->
 
 ### Commit 类型
-<!--rehype:wrap-class=col-span-2-->
 
-|   类型   |  描述 |
-| ----------|------------ |
+| 类型 | 描述 |
+| ---------- | ------------ |
 | `build:` | 变更影响的是**构建系统**或者**外部依赖** (如: gulp, npm) |
 | `ci:` | 修改了 CI 配置文件或脚本 (如: Github Action, Travis) |
 | `chore:` | **【重要】** 变更不影响源代码或测试（如更新了辅助工具、库等) |
@@ -1138,10 +1074,8 @@ Conventional Commmits
 | `revert:` | 回退代码 |
 | `style:` | 变更不影响一些有意义的代码 (如: 删除空格、格式化代码、添加分号等) |
 | `test:` | 添加测试代码或修正已有的测试 |
-<!--rehype:className=left-align-->
 
-patch 补丁的使用
-----
+## patch 补丁的使用
 
 ### 简单创建
 
@@ -1172,8 +1106,6 @@ $ git diff commit_id > my.patch
     $ git apply --reject path/to/my.patch
     ```
 
-<!--rehype:className=style-timeline-->
-
 ### Email patch 方式
 
 ```bash
@@ -1188,9 +1120,12 @@ $ git format-patch -3
 $ git am < email.txt
 ```
 
-另见
----
+## 另见
 
 - [最常用的 git 提示和技巧](https://github.com/git-tips/tips)
 - [Conventional Commits 官方网站](https://www.conventionalcommits.org/zh-hans/v1.0.0/) _(conventionalcommits.org)_
 - [Conventional Commits Cheatsheet](https://gist.github.com/Zekfad/f51cb06ac76e2457f11c80ed705c95a3) _(gist.github.com)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/git.md](https://github.com/jaywcjlove/reference/blob/main/docs/git.md)
+
+获取日期：2026-10-15

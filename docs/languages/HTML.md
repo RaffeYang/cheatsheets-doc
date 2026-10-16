@@ -1,19 +1,10 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/html.md
-Retrieved on: 2026-10-15
--->
-
-HTML 备忘清单
-===
+# HTML 备忘清单
 
 此 HTML 快速参考备忘单以可读布局列出了常见的 `HTML` 和 `HTML5` 标记。
 
-入门
-------------
+## 入门
 
 ### hello.html
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```html
 <!DOCTYPE html>
@@ -65,13 +56,11 @@ HTML 备忘清单
 </a>
 ```
 
----
-
-:-|:-
-:-|:-
-`href`   | 超链接指向的 URL |
-`rel`    | 链接 URL 的关系 |
-`target` | 链接目标位置：`_self`/`_blank`/`_top`/`_parent` |
+| :- | :- |
+| :- | :- |
+| `href` | 超链接指向的 URL |
+| `rel` | 链接 URL 的关系 |
+| `target` | 链接目标位置：`_self`/`_blank`/`_top`/`_parent` |
 
 请参阅：[\<a> 属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a#attributes)
 
@@ -83,17 +72,14 @@ HTML 备忘清单
   alt="在此处描述图像"
   width="400" height="400">
 ```
-<!--rehype:className=wrap-text -->
 
----
-
-|   |           |                                          |
-|---|-----------|------------------------------------------|
-|   | `src` _(URL/路径)_ | 必填，图片位置 |
-|   | `alt`     | 描述图像 |
-|   | `width`   | 图像宽度 |
-|   | `height`  | 图像高度 |
-|   | `loading` | 浏览器应该如何加载 |
+|  |  |  |
+| --- | ----------- | ------------------------------------------ |
+|  | `src` _(URL/路径)_ | 必填，图片位置 |
+|  | `alt` | 描述图像 |
+|  | `width` | 图像宽度 |
+|  | `height` | 图像高度 |
+|  | `loading` | 浏览器应该如何加载 |
 
 请参阅：[图像嵌入元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)
 
@@ -133,18 +119,17 @@ HTML 备忘清单
 
 ### Section Divisions
 
-:-|:-
-:-|:-
-`<div></div>`   | 页面内容的划分或部分
-`<span></span>` | 其他内容中的文本部分
-`<p></p>`       | 文本段落
-`<br>`          | 换行
-`<hr>`          | 水平分割线
+| :- | :- |
+| :- | :- |
+| `<div></div>` | 页面内容的划分或部分 |
+| `<span></span>` | 其他内容中的文本部分 |
+| `<p></p>` | 文本段落 |
+| `<br>` | 换行 |
+| `<hr>` | 水平分割线 |
 
 这些标签用于将页面划分为多个部分
 
 ### 内部框架
-<!--rehype:wrap-class=row-span-2-->
 
 ```html
 <iframe
@@ -156,17 +141,8 @@ HTML 备忘清单
   src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
 </iframe>
 ```
-<!--rehype:className=wrap-text -->
 
 #### ↓ 预览
-
-<iframe id="inlineFrameExample"
-  title="Inline Frame Example"
-  width="100%"
-  height="200"
-  frameborder="0"
-  src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
-</iframe>
 
 请参阅：[内联框架元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe)
 
@@ -207,8 +183,7 @@ HTML 备忘清单
 </head>
 ```
 
-HTML5 标签
--------------
+## HTML5 标签
 
 ### 页面
 
@@ -241,42 +216,41 @@ HTML5 标签
 ```
 
 ### HTML5 Tags
-<!--rehype:wrap-class=row-span-4-->
 
-:-|:-
-:-|:-
-[article](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article)       | 独立的内容
-[aside](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/aside)           | 次要内容
-[audio](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio)           | 嵌入声音或音频流
-[bdi](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/bdi)               | 双向隔离元件
-[canvas](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/canvas)         | 通过JavaScript绘制图形
-[data](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/data)             | 机器可读内容
-[datalist](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/datalist)     | 一组预定义选项
-[details](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/details)       | 其他信息
-[dialog](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/dialog)         | 对话框或子窗口
-[embed](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/embed)           | 嵌入外部应用程序
-[figcaption](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figcaption) | 图形的标题或图例
-[figure](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figure)         | 插图
-[footer](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/footer)         | 页脚或最不重要的
-[header](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/header)         | 刊头或重要信息
-[main](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/main)             | 文件的主要内容
-[mark](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/mark)             | 突出显示的文本
-[meter](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meter)           | 已知范围内的标量值
-[nav](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/nav)               | 导航链接的一部分
-[output](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/output)         | 计算的结果
-[picture](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture)       | 用于多个图像源的容器
-[progress](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/progress)     | 任务的完成进度
-[rp](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/rp)                 | 提供回退括号
-[rt](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/rt)                 | 定义字符的发音
-[ruby](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ruby)             | 表示ruby注释
-[section](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section)       | 一系列相关内容中的组
-[source](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source)         | 媒体元素的资源
-[summary](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/summary)       | 元素的摘要
-[template](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)     | 定义HTML片段
-[time](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/time)             | 时间或日期
-[track](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/track)           | 媒体元素的字幕信息
-[video](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)           | 嵌入视频
-[wbr](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/wbr)               | 换行机会
+| :- | :- |
+| :- | :- |
+| [article](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article) | 独立的内容 |
+| [aside](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/aside) | 次要内容 |
+| [audio](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio) | 嵌入声音或音频流 |
+| [bdi](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/bdi) | 双向隔离元件 |
+| [canvas](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/canvas) | 通过JavaScript绘制图形 |
+| [data](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/data) | 机器可读内容 |
+| [datalist](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/datalist) | 一组预定义选项 |
+| [details](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/details) | 其他信息 |
+| [dialog](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/dialog) | 对话框或子窗口 |
+| [embed](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/embed) | 嵌入外部应用程序 |
+| [figcaption](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figcaption) | 图形的标题或图例 |
+| [figure](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figure) | 插图 |
+| [footer](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/footer) | 页脚或最不重要的 |
+| [header](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/header) | 刊头或重要信息 |
+| [main](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/main) | 文件的主要内容 |
+| [mark](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/mark) | 突出显示的文本 |
+| [meter](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meter) | 已知范围内的标量值 |
+| [nav](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/nav) | 导航链接的一部分 |
+| [output](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/output) | 计算的结果 |
+| [picture](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/picture) | 用于多个图像源的容器 |
+| [progress](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/progress) | 任务的完成进度 |
+| [rp](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/rp) | 提供回退括号 |
+| [rt](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/rt) | 定义字符的发音 |
+| [ruby](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ruby) | 表示ruby注释 |
+| [section](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section) | 一系列相关内容中的组 |
+| [source](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source) | 媒体元素的资源 |
+| [summary](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/summary) | 元素的摘要 |
+| [template](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template) | 定义HTML片段 |
+| [time](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/time) | 时间或日期 |
+| [track](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/track) | 媒体元素的字幕信息 |
+| [video](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video) | 嵌入视频 |
+| [wbr](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/wbr) | 换行机会 |
 
 ### HTML5 Video
 
@@ -286,14 +260,8 @@ HTML5 标签
     很抱歉，您的浏览器不支持嵌入式视频。
 </video>
 ```
-<!--rehype:className=wrap-text -->
 
 #### ↓ 预览
-
-<video controls="" width="100%">
-    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-    很抱歉，您的浏览器不支持嵌入式视频。
-</video>
 
 ### HTML5 Audio
 
@@ -304,14 +272,8 @@ HTML5 标签
     您的浏览器不支持音频元素。
 </audio>
 ```
-<!--rehype:className=wrap-text -->
 
 #### ↓ 预览
-
-<audio controls
-    src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
-    您的浏览器不支持音频元素。
-</audio>
 
 ### HTML5 Ruby
 
@@ -323,17 +285,13 @@ HTML5 标签
   音 <rp>(</rp><rt>yīn</rt><rp>)</rp>
 </ruby>
 ```
-<!--rehype:className=wrap-text -->
 
 #### ↓ 预览
-<!--rehype:wrap-style=text-align: center;-->
 
-<ruby style="font-size: 4rem;">
-  汉 <rp>(</rp><rt>hàn</rt><rp>)</rp>
-  字 <rp>(</rp><rt>zì</rt><rp>)</rp>
-  拼 <rp>(</rp><rt>pīn</rt><rp>)</rp>
-  音 <rp>(</rp><rt>yīn</rt><rp>)</rp>
-</ruby>
+  汉 (hàn)
+  字 (zì)
+  拼 (pīn)
+  音 (yīn)
 
 ### HTML5 kdi
 
@@ -347,11 +305,9 @@ HTML5 标签
 
 #### ↓ 预览
 
-<ul>
- <li>User <bdi>hrefs</bdi>: 60 points</li>
- <li>User <bdi>jdoe</bdi>: 80 points</li>
- <li>User <bdi>إيان</bdi>: 90 points</li>
-</ul>
+ User hrefs: 60 points
+ User jdoe: 80 points
+ User إيان: 90 points
 
 ### HTML5 progress
 
@@ -359,21 +315,17 @@ HTML5 标签
 <progress value="50" max="100"></progress>
 ```
 
-<progress value="50" max="100" style="width: 100%"></progress>
-
 ### HTML5 mark
 
 ```html
 <p>我爱<mark>备忘清单</mark></p>
 ```
 
-<p>我爱<mark>备忘清单</mark></p>
+我爱备忘清单
 
-HTML 表格
---------------
+## HTML 表格
 
 ### Table 示例
-<!--rehype:wrap-class=row-span-2-->
 
 ```html
 <table>
@@ -397,45 +349,43 @@ HTML 表格
 ```
 
 ### HTML表格标签
-<!--rehype:wrap-class=row-span-2-->
 
-标签|说明
-:-|:-
-[\<table>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table)       | 定义表格
-[\<th>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/th)             | 定义表格中的标题单元格
-[\<tr>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/tr)             | 定义表中的行
-[\<td>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/td)             | 定义表格中的单元格
-[\<caption>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/caption)   | 定义表格标题
-[\<colgroup>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/colgroup) | 定义一组列
-[\<col>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/col)           | 定义表中的列
-[\<thead>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/thead)       | 对标题内容进行分组
-[\<tbody>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/tbody)       | 将正文内容分组
-[\<tfoot>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/tfoot)       | 对页脚内容进行分组
+| 标签 | 说明 |
+| :- | :- |
+| [\<table>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table) | 定义表格 |
+| [\<th>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/th) | 定义表格中的标题单元格 |
+| [\<tr>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/tr) | 定义表中的行 |
+| [\<td>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/td) | 定义表格中的单元格 |
+| [\<caption>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/caption) | 定义表格标题 |
+| [\<colgroup>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/colgroup) | 定义一组列 |
+| [\<col>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/col) | 定义表中的列 |
+| [\<thead>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/thead) | 对标题内容进行分组 |
+| [\<tbody>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/tbody) | 将正文内容分组 |
+| [\<tfoot>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/tfoot) | 对页脚内容进行分组 |
 
 ### \<td> 属性
 
-属性|说明
-:-|:-
-`colspan` | 单元格应跨越的列数
-`headers` | 单元格与一个或多个标题单元格相关
-`rowspan` | 单元格应跨越的行数
+| 属性 | 说明 |
+| :- | :- |
+| `colspan` | 单元格应跨越的列数 |
+| `headers` | 单元格与一个或多个标题单元格相关 |
+| `rowspan` | 单元格应跨越的行数 |
 
 请参阅：[td\#属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/td#attributes)
 
 ### \<th> 属性
 
-属性|说明
-:-|:-
-`colspan`                                                                        | 单元格应跨越的列数
-`headers`                                                                        | 单元格与一个或多个标题单元格相关
-`rowspan`                                                                        | 单元格应跨越的行数
-`abbr`                                                                           | 单元格内容的描述
-[scope](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/th#attr-scope) | 表头元素(在\<th>中定义)关联的单元格
+| 属性 | 说明 |
+| :- | :- |
+| `colspan` | 单元格应跨越的列数 |
+| `headers` | 单元格与一个或多个标题单元格相关 |
+| `rowspan` | 单元格应跨越的行数 |
+| `abbr` | 单元格内容的描述 |
+| [scope](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/th#attr-scope) | 表头元素(在\<th>中定义)关联的单元格 |
 
 请参阅：[th\#属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/th#attributes)
 
-HTML 列表
-----
+## HTML 列表
 
 ### 无序列表
 
@@ -474,11 +424,9 @@ HTML 列表
 
 请参阅：[描述列表元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/dl)
 
-HTML 表单
------------
+## HTML 表单
 
 ### Form 标签
-<!--rehype:wrap-class=row-span-2-->
 
 ```html
 <form method="POST" action="api/login">
@@ -497,31 +445,29 @@ HTML 表单
 
 #### ↓ 预览
 
-<form method="POST" action="api/login" style="padding: 20px;">
-  <label for="email">邮箱: </label>
-  <input type="email" id="email" name="email" class="border border-slate-400 mt-2">
-  <br/>
-  <label for="pwd">密码:</label>
-  <input type="password" id="pwd" name="pwd" class="border border-slate-400 mt-2">
-  <br/>
-  <input type="submit" value="登录" class="mt-2">
-  <br/>
-  <input type="checkbox" id="ck" name="ck" class="mt-2">
-  <label for="ck">记住我</label>
-</form>
+  邮箱:
+
+   /
+  密码:
+
+   /
+
+   /
+
+  记住我
 
 HTML `<form>` 元素用于收集信息并将其发送到外部源。
 
 ### Form 属性
 
-属性|说明
-:-|:-
-`name`     | 脚本形式的名称
-`action`   | 表单脚本的URL
-`method`   | HTTP方法，`POST`/`GET` _(默认)_
-`enctype`  | 介质类型，请参见[enctype](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLFormElement/enctype)
-`onsubmit` | 提交表单时运行
-`onreset`  | 在窗体重置时运行
+| 属性 | 说明 |
+| :- | :- |
+| `name` | 脚本形式的名称 |
+| `action` | 表单脚本的URL |
+| `method` | HTTP方法，`POST`/`GET` _(默认)_ |
+| `enctype` | 介质类型，请参见[enctype](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLFormElement/enctype) |
+| `onsubmit` | 提交表单时运行 |
+| `onreset` | 在窗体重置时运行 |
 
 ### Label 标签
 
@@ -531,8 +477,6 @@ HTML `<form>` 元素用于收集信息并将其发送到外部源。
 <input type="text" id="user" name="name"/>
 </label>
 ```
-
----
 
 ```html
 <!-- 'for' 属性 -->
@@ -551,10 +495,7 @@ HTML `<form>` 元素用于收集信息并将其发送到外部源。
 
 #### ↓ 预览
 
-<form style="padding: 20px;">
-  <label for="username">Username:</label>
-  <input type="text" name="username" id="username" class="border border-slate-400">
-</form>
+  Username:
 
 请参阅：[HTML输入标记](/html#html-input-tags)
 
@@ -563,13 +504,10 @@ HTML `<form>` 元素用于收集信息并将其发送到外部源。
 ```html
 <textarea rows="2" cols="30" name="address" id="address"></textarea>
 ```
-<!--rehype:className=wrap-text -->
 
 #### ↓ 预览
 
-<form style="padding: 20px;">
     <textarea rows="2" cols="30" name="address" id="address" class="border border-slate-400"style="width: 100%"></textarea>
-</form>
 
 Textarea 是一个多行文本输入控件
 
@@ -584,12 +522,10 @@ Textarea 是一个多行文本输入控件
 
 #### ↓ 预览
 
-<form style="padding: 20px;">
     <input type="radio" name="gender" id="m">
     <label for="m">Male</label>
     <input type="radio" name="gender" id="f">
     <label for="f">Female</label>
-</form>
 
 单选按钮用于让用户只选择一个
 
@@ -604,12 +540,10 @@ Textarea 是一个多行文本输入控件
 
 #### ↓ 预览
 
-<form style="padding: 20px;">
     <input type="checkbox" name="sports" id="soccer">
     <label for="soccer">Soccer</label>
     <input type="checkbox" name="sports" id="baseball">
     <label for="baseball">Baseball</label>
-</form>
 
 复选框允许用户选择一个或多个
 
@@ -626,14 +560,11 @@ Textarea 是一个多行文本输入控件
 
 #### ↓ 预览
 
-<form style="padding: 20px">
-  <label for="city">City:</label>
-  <select name="city" id="city" class="border border-slate-400">
+  City:
+
       <option value="1">Sydney</option>
       <option value="2">Melbourne</option>
       <option value="3">Cromwell</option>
-  </select>
-</form>
 
 选择框是选项的下拉列表
 
@@ -651,15 +582,11 @@ Textarea 是一个多行文本输入控件
 
 #### ↓ 预览
 
-<form style="padding: 20px">
-<fieldset class="border border-slate-400" style="padding: 20px">
-  <legend>Your favorite monster</legend>
-  <input type="radio" id="kra" name="monster">
-  <label for="kra">Kraken</label><br/>
-  <input type="radio" id="sas" name="monster">
-  <label for="sas">Sasquatch</label>
-</fieldset>
-</form>
+  Your favorite monster
+
+  Kraken /
+
+  Sasquatch
 
 ### 数据列表标签（HTML5）
 
@@ -678,18 +605,14 @@ Textarea 是一个多行文本输入控件
 
 #### ↓ 预览
 
-<form style="padding: 20px">
-  <label for="myBrowser">Choose a browser:</label>
-  <input list="browsers" id="myBrowser" name="myBrowser"/>
-  <datalist id="browsers">
+  Choose a browser:
+
     <option value="Chrome">
     <option value="Firefox">
     <option value="Internet Explorer">
     <option value="Opera">
     <option value="Safari">
     <option value="Microsoft Edge">
-  </datalist>
-</form>
 
 ### 提交和重置按钮
 
@@ -704,21 +627,13 @@ Textarea 是一个多行文本输入控件
 
 #### ↓ 预览
 
-<form action="register.php" method="post" style="padding: 20px">
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name"">
-  <input type="submit" value="提交">
-  <input type="reset" value="重置">
-</form>
+  Name:
 
 `将数据提交到服务器` 重置为默认值
 
-HTML input 标签
------------
-<!--rehype:body-class=cols-2-->
+## HTML input 标签
 
 ### Input 属性
-<!--rehype:wrap-class=row-span-2-->
 
 输入标记是一个空元素，用于标识要从用户处获取的特定类型的字段信息。
 
@@ -726,80 +641,75 @@ HTML input 标签
 <input type="text" name="?" value="?" minlength="6"  required />
 ```
 
----
-
-:-|:-
-:-|:-
-`type="…"`              | 正在输入的数据类型
-`value="…"`             | 默认值
-`name="…"`              | 用于在 HTTP 请求中描述此数据
-`id="…"`                | 其他 HTML 元素的唯一标识符
-`readonly`              | 停止用户修改
-`disabled`              | 停止任何交互
-`checked`               | 单选或复选框是否选中
-`required`              | 是强制性的，参阅[必填](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/required#example)
-`placeholder="…"`       | 添加临时，请参阅[::placeholder](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::placeholder#examples)
-`autocomplete="off"`    | 禁用自动完成
-`autocapitalize="none"` | 禁用自动大写
-`inputmode="…"`         | 显示特定键盘，请参阅[inputmode](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/inputmode)
-`list="…"`              | 关联的[datalist](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/datalist)的id
-`maxlength="…"`         | 最大字符数
-`minlength="…"`         | 最小字符数
-`min="…"`               | 范围和编号上的最小数值
-`max="…"`               | 范围和编号上的最大数值
-`step="…"`              | 数字如何在范围和数字中递增
-`pattern="…"`           | 指定一个[正则表达式](./regex.md)，请参阅[pattern](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/pattern)
-`autofocus`             | 集中精力
-`spellcheck`            | 执行拼写检查
-`multiple`              | 是否允许[多个](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/multiple)值
-`accept=""`             | [file](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/file) 中需要文件类型上载控件
+| :- | :- |
+| :- | :- |
+| `type="…"` | 正在输入的数据类型 |
+| `value="…"` | 默认值 |
+| `name="…"` | 用于在 HTTP 请求中描述此数据 |
+| `id="…"` | 其他 HTML 元素的唯一标识符 |
+| `readonly` | 停止用户修改 |
+| `disabled` | 停止任何交互 |
+| `checked` | 单选或复选框是否选中 |
+| `required` | 是强制性的，参阅[必填](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/required#example) |
+| `placeholder="…"` | 添加临时，请参阅[::placeholder](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::placeholder#examples) |
+| `autocomplete="off"` | 禁用自动完成 |
+| `autocapitalize="none"` | 禁用自动大写 |
+| `inputmode="…"` | 显示特定键盘，请参阅[inputmode](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/inputmode) |
+| `list="…"` | 关联的[datalist](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/datalist)的id |
+| `maxlength="…"` | 最大字符数 |
+| `minlength="…"` | 最小字符数 |
+| `min="…"` | 范围和编号上的最小数值 |
+| `max="…"` | 范围和编号上的最大数值 |
+| `step="…"` | 数字如何在范围和数字中递增 |
+| `pattern="…"` | 指定一个[正则表达式](https://github.com/jaywcjlove/reference/blob/main/docs/regex.md)，请参阅[pattern](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/pattern) |
+| `autofocus` | 集中精力 |
+| `spellcheck` | 执行拼写检查 |
+| `multiple` | 是否允许[多个](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/multiple)值 |
+| `accept=""` | [file](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/file) 中需要文件类型上载控件 |
 
 请参阅：[\<input>元素 的属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#attributes)
 
 ### Input 类型
 
-|               |                  |
-|---------------|------------------|
-`type="checkbox"` | <input type="checkbox">
-`type="radio"`    | <input type="radio">
-`type="file"`     | <input type="file">
-`type="hidden"`   | <input type="hidden">
-`type="text"`     | <input type="text">
-`type="password"` | <input type="password">
-`type="image"`    | <input type="image" src="https://raw.githubusercontent.com/mdn/learning-area/master/html/forms/image-type-example/login.png" width="70">
-`type="reset"`    | <input type="reset">
-`type="button"`   | <input type="button">
-`type="submit"`   | <input type="submit">
+|  |  |
+| --------------- | ------------------ |
+| `type="checkbox"` |
+| `type="radio"` |
+| `type="file"` |
+| `type="hidden"` |
+| `type="text"` |
+| `type="password"` |
+| `type="image"` |
+| `type="reset"` |
+| `type="button"` |
+| `type="submit"` |
 
 #### HTML5 中的新输入类型
 
-|               |                  |
-|---------------|------------------|
-| `type="color"`          | <input type="color" value="#0FB881"> |
-| `type="date"`           | <input type="date">                  |
-| `type="time"`           | <input type="time">                  |
-| `type="month"`          | <input type="month">                 |
-| `type="datetime-local"` | <input type="datetime-local">        |
-| `type="week"`           | <input type="week">                  |
-| `type="email"`          | <input type="email">                 |
-| `type="tel"`            | <input type="tel">                   |
-| `type="url"`            | <input type="url">                   |
-| `type="number"`         | <input type="number">                |
-| `type="search"`         | <input type="search">                |
-| `type="range"`          | <input type="range">                 |
+|  |  |
+| --------------- | ------------------ |
+| `type="color"` |  |
+| `type="date"` |  |
+| `type="time"` |  |
+| `type="month"` |  |
+| `type="datetime-local"` |  |
+| `type="week"` |  |
+| `type="email"` |  |
+| `type="tel"` |  |
+| `type="url"` |  |
+| `type="number"` |  |
+| `type="search"` |  |
+| `type="range"` |  |
 
 ### Input CSS 选择器
 
-|               |                  |
-|---------------|------------------|
-| `input:focus` | 当键盘聚焦时       |
+|  |  |
+| --------------- | ------------------ |
+| `input:focus` | 当键盘聚焦时 |
 
-HTML meta 标签
------------
-<!--rehype:body-class=cols-2-->
+## HTML meta 标签
 
 ### Meta 标签
-<!--rehype:wrap-class=row-span-5-->
 
 meta 标记描述 HTML 文档中的元数据。它解释了关于 HTML 的其他材料。
 
@@ -814,16 +724,12 @@ meta 标记描述 HTML 文档中的元数据。它解释了关于 HTML 的其他
 <meta name="twitter:title" content="···">
 ```
 
----
-
 ```html
 <!-- url -->
 <link rel="canonical"       href="https://···">
 <meta property="og:url"  content="https://···">
 <meta name="twitter:url" content="https://···">
 ```
-
----
 
 ```html
 <!-- 描述 -->
@@ -832,30 +738,22 @@ meta 标记描述 HTML 文档中的元数据。它解释了关于 HTML 的其他
 <meta name="twitter:description" content="···">
 ```
 
----
-
 ```html
 <!-- image -->
 <meta property="og:image"  content="https://···">
 <meta name="twitter:image" content="https://···">
 ```
 
----
-
 ```html
 <!-- ua -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 ```
-
----
 
 ```html
 <!-- viewport -->
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="width=1024">
 ```
-
----
 
 ```html
 <!-- 重定向 -->
@@ -919,11 +817,9 @@ Facebook、Instagram、Pinterest、LinkedIn 等使用。
 
 请参阅：[Geotagging](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
 
-标签语义化
-------
+## 标签语义化
 
 ### 复杂布局
-<!--rehype:wrap-class=row-span-2-->
 
 ```
 ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
@@ -956,7 +852,6 @@ Facebook、Instagram、Pinterest、LinkedIn 等使用。
 ```
 
 ### 复杂布局
-<!--rehype:wrap-class=row-span-2-->
 
 ```
 ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
@@ -1019,9 +914,12 @@ Facebook、Instagram、Pinterest、LinkedIn 等使用。
 ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯
 ```
 
-另见
---------
+## 另见
 
 - [HTML 4.01 Specification](https://www.w3.org/TR/REC-html40/cover.html#minitoc) _(w3.org)_
 - [HTML Tutorial](https://wangchujiang.com/html-tutorial/) _(jaywcjlove.github.io)_
-- [Emmet 备忘清单，提升 HTML 和 CSS 代码编写的工具包](./emmet.md) _(jaywcjlove.github.io)_
+- [Emmet 备忘清单，提升 HTML 和 CSS 代码编写的工具包](https://github.com/jaywcjlove/reference/blob/main/docs/emmet.md) _(jaywcjlove.github.io)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/html.md](https://github.com/jaywcjlove/reference/blob/main/docs/html.md)
+
+获取日期：2026-10-15

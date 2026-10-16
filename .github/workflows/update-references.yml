@@ -8,6 +8,9 @@ on:
     paths:
       - "custom/**/*.md" # 当自定义 .md 文件更改时触发
 
+permissions:
+  contents: write
+
 jobs:
   update-references:
     runs-on: ubuntu-latest
@@ -27,23 +30,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pyyaml
 
-      - name: Check if custom files changed only
-        id: check_changes
+      - name: Offline tests and quality before update
         run: |
-          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q "^custom/.*\.md$" && \
-             ! git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -v "^custom/.*\.md$" | grep -q ".*"; then
-            echo "custom_only=true" >> $GITHUB_OUTPUT
-          else
-            echo "custom_only=false" >> $GITHUB_OUTPUT
-          fi
+          python -B -m unittest
+          python -B doc_quality.py
+          python -B update_references.py --format-only --check
 
       - name: Update references (custom files only)
-        if: github.event_name == 'push' && steps.check_changes.outputs.custom_only == 'true'
+        if: github.event_name == 'push'
         run: python update_references.py --custom-only
 
       - name: Update all references
-        if: github.event_name != 'push' || steps.check_changes.outputs.custom_only != 'true'
+        if: github.event_name != 'push'
         run: python update_references.py
+
+      - name: Offline tests and quality before commit
+        run: |
+          python -B -m unittest
+          python -B doc_quality.py
+          python -B update_references.py --format-only --check
 
       - name: Commit and push if changed
         run: |

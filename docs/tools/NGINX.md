@@ -1,19 +1,10 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/nginx.md
-Retrieved on: 2026-10-15
--->
-
-NGINX 备忘清单
-===
+# NGINX 备忘清单
 
 这个 [nginx](https://nginx.org/en/) 快速参考备忘单显示了它的常用命和配置使用清单。
 
-入门
-----
+## 入门
 
 ### 服务管理
-<!--rehype:wrap-class=row-span-2-->
 
 ```bash
 sudo systemctl reload nginx  # 重新加载 nginx
@@ -48,28 +39,24 @@ location / {
 ```
 
 ### 简单代理
-<!--rehype:wrap-class=row-span-2-->
 
 Ubuntu/Debian
 
 ```shell
 $ sudo apt update && sudo apt install -y nginx
 ```
-<!--rehype:className=wrap-text-->
 
 RHEL/CentOS
 
 ```shell
 $ sudo yum install -y epel-release nginx && sudo systemctl enable --now nginx
 ```
-<!--rehype:className=wrap-text-->
 
 Docker 安装
 
 ```bash
 $ docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d nginx
 ```
-<!--rehype:className=wrap-text-->
 
 ### 配置路径
 
@@ -79,37 +66,35 @@ $ docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d ngin
 - `/var/www/html` _(default docroot)_
 - `logs`: `/var/log/nginx/access.log`, `/var/log/nginx/error.log`
 
-配置
----
+## 配置
 
 ### 全局变量
-<!--rehype:wrap-class=col-span-2 row-span-4-->
 
-| 变量 | 说明
-:- | :-
-`$args` | 这个变量等于请求行中的参数，同 `$query_string`
-`$remote_port` | 客户端的端口
-`$content_length` | 请求头中的 `Content-length` 字段
-`$remote_user` | 已经经过 `Auth Basic Module` 验证的用户名
-`$content_type` | 请求头中的 `Content-Type` 字段
-`$request_filename` | 当前请求的文件路径，由 `root` 或alias指令与URI请求生成
-`$document_root` | 当前请求在 `root` 指令中指定的值
-`$scheme` | HTTP方法（如http，https）
-`$host` | 请求主机头字段，否则为服务器名称
-`$hostname` | 主机名
-`$http_user_agent` | 客户端`agent`信息
-`$http_cookie` | 客户端`cookie`信息
-`$server_protocol` | 请求使用的协议，通常是`HTTP/1.0`或`HTTP/1.1`
-`$server_addr` | 服务器地址，在完成一次系统调用后可以确定这个值
-`$server_name` | 服务器名称
-`$server_port` | 请求到达服务器的端口号
-`$limit_rate` | 这个变量可以限制连接速率
-`$request_method` | 客户端请求的动作，如 GET/POST
-`$request_uri` | 包含请求参数的原始URI，不包含主机名，如：`/foo/bar.php?arg=baz`
-`$remote_addr` | 客户端的IP地址
-`$uri` | 不带请求参数的当前URI，`$uri`不包含主机名，如 `/foo/bar.html`
-`$document_uri` | 与 `$uri` 相同
-`$nginx_version` | `nginx` 版本
+| 变量 | 说明 |
+| :- | :- |
+| `$args` | 这个变量等于请求行中的参数，同 `$query_string` |
+| `$remote_port` | 客户端的端口 |
+| `$content_length` | 请求头中的 `Content-length` 字段 |
+| `$remote_user` | 已经经过 `Auth Basic Module` 验证的用户名 |
+| `$content_type` | 请求头中的 `Content-Type` 字段 |
+| `$request_filename` | 当前请求的文件路径，由 `root` 或alias指令与URI请求生成 |
+| `$document_root` | 当前请求在 `root` 指令中指定的值 |
+| `$scheme` | HTTP方法（如http，https） |
+| `$host` | 请求主机头字段，否则为服务器名称 |
+| `$hostname` | 主机名 |
+| `$http_user_agent` | 客户端`agent`信息 |
+| `$http_cookie` | 客户端`cookie`信息 |
+| `$server_protocol` | 请求使用的协议，通常是`HTTP/1.0`或`HTTP/1.1` |
+| `$server_addr` | 服务器地址，在完成一次系统调用后可以确定这个值 |
+| `$server_name` | 服务器名称 |
+| `$server_port` | 请求到达服务器的端口号 |
+| `$limit_rate` | 这个变量可以限制连接速率 |
+| `$request_method` | 客户端请求的动作，如 GET/POST |
+| `$request_uri` | 包含请求参数的原始URI，不包含主机名，如：`/foo/bar.php?arg=baz` |
+| `$remote_addr` | 客户端的IP地址 |
+| `$uri` | 不带请求参数的当前URI，`$uri`不包含主机名，如 `/foo/bar.html` |
+| `$document_uri` | 与 `$uri` 相同 |
+| `$nginx_version` | `nginx` 版本 |
 
 更多全局变量[查看官方文档](https://nginx.org/en/docs/varindex.html)
 
@@ -187,15 +172,14 @@ upstream backend {
 响应时间短的优先分配
 
 ### server 可选参数
-<!--rehype:wrap-class=row-span-2-->
 
-:- | :-
-:- | :-
-`weight` | 访问权重数值越高，收到请求越多
-`fail_timeout` | 指定的时间内必须提供响应
-`max_fails` | 尝试失败服务器连接的最大次数
-`down` | 标记一个服务器不再接受任何请求
-`backup` | 有服务器宕机，标记的机器接收请求
+| :- | :- |
+| :- | :- |
+| `weight` | 访问权重数值越高，收到请求越多 |
+| `fail_timeout` | 指定的时间内必须提供响应 |
+| `max_fails` | 尝试失败服务器连接的最大次数 |
+| `down` | 标记一个服务器不再接受任何请求 |
+| `backup` | 有服务器宕机，标记的机器接收请求 |
 
 配置示例
 
@@ -235,7 +219,6 @@ upstream memcached_backend {
 激活缓存以连接到上游服务器
 
 ### 子文件夹中的代理
-<!--rehype:wrap-class=col-span-2-->
 
 ```nginx {1,2}
 location /folder/ { # / 很重要！
@@ -248,7 +231,6 @@ location /folder/ { # / 很重要！
 ```
 
 ### 反向代理
-<!--rehype:wrap-class=row-span-3-->
 
 #### 基础
 
@@ -310,7 +292,6 @@ server {
 适用于 Node.js、Streamlit、Jupyter 等
 
 ### 静态资源（传统 Web 服务器）
-<!--rehype:wrap-class=col-span-2-->
 
 ```nginx
 server {
@@ -329,7 +310,6 @@ server {
 ```
 
 ### HTTPS 协议
-<!--rehype:wrap-class=col-span-2-->
 
 大多数 SSL 选项取决于您的应用程序做什么或需要什么
 
@@ -361,8 +341,7 @@ server {
 
 您可以使用 Let's Encrypt 轻松保护您的网站/应用程序。去 [lets-encrypt](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx.html) 获取更多信息
 
-虚拟主机与重定向
----
+## 虚拟主机与重定向
 
 ### 基础服务器块
 
@@ -397,7 +376,6 @@ server {
 ```
 
 ### 重定向(301永久)
-<!--rehype:wrap-class=row-span-2-->
 
 将 <www.demo.com> 重定向到 demo.com
 
@@ -441,10 +419,10 @@ server {
 
 ### 重定向参数
 
-:- | :-
-:- | :-
-`permanent` | 永久性重定向。日志中的状态码为 `301`
-`redirect` | 临时重定向。日志中的状态码为 `302`
+| :- | :- |
+| :- | :- |
+| `permanent` | 永久性重定向。日志中的状态码为 `301` |
+| `redirect` | 临时重定向。日志中的状态码为 `302` |
 
 ### HTTP 请求端真实的IP
 
@@ -453,14 +431,10 @@ location / {
   proxy_set_header X-Forwarded-For $remote_addr;
 }
 ```
-<!--rehype:className=wrap-text -->
 
-示例
-----
-<!--rehype:body-class=cols-6-->
+## 示例
 
 ### websocket 的代理 keepalive
-<!--rehype:wrap-class=col-span-3-->
 
 ```nginx
 # Upstreams
@@ -486,10 +460,8 @@ server {
   }
 }
 ```
-<!--rehype:className=wrap-text -->
 
 ### Apache 的反向代理
-<!--rehype:wrap-class=col-span-3-->
 
 ```nginx
 server {
@@ -517,10 +489,8 @@ server {
   }
 }
 ```
-<!--rehype:className=wrap-text -->
 
 ### Gitlab 的反向代理
-<!--rehype:wrap-class=col-span-4 row-span-3-->
 
 ```nginx
 server {
@@ -549,7 +519,6 @@ server {
 ```
 
 ### 重定向整个网站
-<!--rehype:wrap-class=col-span-2-->
 
 ```nginx
 server {
@@ -557,10 +526,8 @@ server {
   return 301 $scheme://new-site.com$request_uri;
 }
 ```
-<!--rehype:className=wrap-text -->
 
 ### 重定向单页
-<!--rehype:wrap-class=col-span-2-->
 
 ```nginx
 server {
@@ -569,20 +536,16 @@ server {
   }
 }
 ```
-<!--rehype:className=wrap-text -->
 
 ### 重定向整个子路径
-<!--rehype:wrap-class=col-span-2-->
 
 ```nginx
 location /old-site {
   rewrite ^/old-site/(.*) http://example.org/new-site/$1 permanent;
 }
 ```
-<!--rehype:className=wrap-text -->
 
 ### 负载均衡
-<!--rehype:wrap-class=col-span-3-->
 
 ```nginx
 upstream example {
@@ -608,7 +571,6 @@ server {
 ```
 
 ### 内容缓存
-<!--rehype:wrap-class=col-span-3-->
 
 允许浏览器基本上永久地缓存静态内容。 Nginx 将为您设置 Expires 和 Cache-Control 头信息
 
@@ -629,7 +591,6 @@ location = /empty.gif {
 ```
 
 ### 跨域问题
-<!--rehype:wrap-class=col-span-3-->
 
 ```nginx
 server {
@@ -650,7 +611,6 @@ server {
 ```
 
 ### 重定向 URI 来解决跨域问题
-<!--rehype:wrap-class=col-span-3 row-span-2-->
 
 ```nginx
 upstream test {
@@ -693,7 +653,6 @@ server {
 ```
 
 ### 跳转到带 www 的域上面
-<!--rehype:wrap-class=col-span-3-->
 
 ```nginx
 server {
@@ -715,7 +674,6 @@ server {
 ```
 
 ### 代理转发
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```nginx
 upstream server-api {
@@ -756,7 +714,6 @@ server {
 ```
 
 ### 屏蔽 IP
-<!--rehype:wrap-class=col-span-4-->
 
 可以放到 `http`, `server`, `location`, `limit_except` 语句块
 
@@ -784,7 +741,6 @@ deny all;
 ```
 
 ### 强制将 http 重定向到 https
-<!--rehype:wrap-class=col-span-4-->
 
 ```nginx
 server {
@@ -797,7 +753,6 @@ server {
 ```
 
 ### 代理转发连接替换
-<!--rehype:wrap-class=col-span-2-->
 
 ```nginx
 location ^~/api/upload {
@@ -809,7 +764,6 @@ location ^~/api/upload {
 将地址 `/api/upload` 替换为 `/wfs/v1/upload`
 
 ### 爬虫 User-Agent 过滤
-<!--rehype:wrap-class=col-span-4-->
 
 ```nginx
 location / {
@@ -822,7 +776,6 @@ location / {
 ```
 
 ### 图片防盗链
-<!--rehype:wrap-class=col-span-2-->
 
 ```nginx
 location ~* \.(gif|jpg|png|swf|flv)$ {
@@ -838,7 +791,6 @@ location ~* \.(gif|jpg|png|swf|flv)$ {
 ```
 
 ### 虚拟目录配置
-<!--rehype:wrap-class=col-span-2-->
 
 ```nginx
 location /img/ {
@@ -854,7 +806,6 @@ location /img/ {
 ```
 
 ### 屏蔽文件目录
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 通用备份和归档文件
 
@@ -863,7 +814,6 @@ location ~* "\.(old|orig|original|php#|php~|php_bak|save|swo|aspx?|tpl|sh|bash|b
     deny all;
 }
 ```
-<!--rehype:className=wrap-text -->
 
 拒绝访问 `.git` 和 `.svn` 目录
 
@@ -872,7 +822,6 @@ location ~ (.git|.svn) {
     deny all;
 }
 ```
-<!--rehype:className=wrap-text -->
 
 拒绝访问隐藏文件和目录
 
@@ -883,7 +832,6 @@ location ~ /\.(?!well-known\/) {
 ```
 
 ### 防盗图配置
-<!--rehype:wrap-class=col-span-4-->
 
 ```nginx
 location ~ \/public\/(css|js|img)\/.*\.(js|css|gif|jpg|jpeg|png|bmp|swf) {
@@ -895,7 +843,6 @@ location ~ \/public\/(css|js|img)\/.*\.(js|css|gif|jpg|jpeg|png|bmp|swf) {
 ```
 
 ### ulimit 不继承系统设置的问题
-<!--rehype:wrap-class=col-span-2-->
 
 - 执行 status 命令
 
@@ -920,12 +867,10 @@ location ~ \/public\/(css|js|img)\/.*\.(js|css|gif|jpg|jpeg|png|bmp|swf) {
   LimitNOFILE=65535
   ...
   ```
-<!--rehype:className=style-timeline-->
 
 解决 `systemctl` 管理的 ulimit 不继承系统设置的问题
 
 ### Gzip 配置
-<!--rehype:wrap-class=col-span-4-->
 
 ```nginx
 gzip  on;
@@ -946,7 +891,6 @@ gzip_disable  "msie6";
 ```
 
 ### 阻止常见攻击
-<!--rehype:wrap-class=col-span-3-->
 
 #### base64编码的网址
 
@@ -965,7 +909,6 @@ location ~* "(eval\()" {
 ```
 
 ### 使网站不可索引
-<!--rehype:wrap-class=col-span-3-->
 
 ```nginx
 add_header X-Robots-Tag "noindex";
@@ -976,7 +919,6 @@ location = /robots.txt {
 ```
 
 ### 获取请求ip
-<!--rehype:wrap-class=col-span-3-->
 
 ```nginx
 server {
@@ -1004,7 +946,6 @@ server {
 ```
 
 ### 判断请求参数
-<!--rehype:wrap-class=col-span-3-->
 
 ```nginx
 # 判断多个参数示例
@@ -1021,7 +962,6 @@ if ( $flagts = "011" ) {
 ```
 
 ### 流量镜像配置
-<!--rehype:wrap-class=col-span-3-->
 
 ```nginx
 server {
@@ -1058,8 +998,11 @@ server {
 }
 ```
 
-另见
----
+## 另见
 
 - [Nginx 安装维护入门学习笔记](https://jaywcjlove.github.io/nginx-tutorial) _(jaywcjlove.github.io)_
 - [advanced-nginx-cheatsheet](https://virtubox.github.io/advanced-nginx-cheatsheet/) _(virtubox.github.io)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/nginx.md](https://github.com/jaywcjlove/reference/blob/main/docs/nginx.md)
+
+获取日期：2026-10-15

@@ -1,20 +1,10 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/nvm.md
-Retrieved on: 2026-10-15
--->
-
-nvm 备忘清单
-===
+# nvm 备忘清单
 
 nvm 是一个用于管理电脑上多个 node.js 版本的程序
-<!--rehype:style=padding-top: 12px;-->
 
-入门
------
+## 入门
 
 ### 安装
-<!--rehype:wrap-class=row-span-5-->
 
 Node Version Manager 用于管理多个活动的 Node.js 版本
 
@@ -31,12 +21,10 @@ Node Version Manager 用于管理多个活动的 Node.js 版本
 ```shell
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```
-<!--rehype:className=wrap-text-->
 
 ```shell
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```
-<!--rehype:className=wrap-text-->
 
 #### 快速使用
 
@@ -56,7 +44,6 @@ nvm current
 ```
 
 ### 安装指定版本的 node 程序
-<!--rehype:wrap-class=row-span-2-->
 
 version 设置为 `latest` 安装最新版本或者设置为 "lts" 安装最近的 LTS（长期支持）版本。
 
@@ -81,7 +68,6 @@ nvm list [available]
 ```
 
 ### 卸载指定版本
-<!--rehype:wrap-class=row-span-2-->
 
 ```shell
 # <version> 可选设置 latest/lts/newest
@@ -150,3 +136,7 @@ nvm node_mirror <node_mirror_url>
 ```shell
 nvm npm_mirror <npm_mirror_url>
 ```
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/nvm.md](https://github.com/jaywcjlove/reference/blob/main/docs/nvm.md)
+
+获取日期：2026-10-15

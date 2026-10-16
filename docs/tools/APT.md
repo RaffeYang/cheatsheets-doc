@@ -1,19 +1,11 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/apt.md
-Retrieved on: 2026-10-15
--->
-
-APT 备忘清单
-===
+# APT 备忘清单
 
 这个 APT 快速参考备忘单显示了它的常用命令使用清单。
 
-APT 清单查询
----
+## APT 清单查询
 
 ### 介绍
-<!--rehype:wrap-class=row-span-2-->
+
 APT（`A`dvanced `P`ackaging `T`ools）是`Debian`及其派生的`Linux`软件包管理器。APT可以自动下载，配置，安装二进制或者源代码格式的软件包，因此简化了Unix系统上管理软件的过程。APT最早被设计成`dpkg的前端`，用来处理deb格式的软件包。现在经过`APT-RPM`组织修改，APT已经可以安装在支持RPM的系统管理RPM包。
 
 它结合了apt-get和apt-cache工具中最常用的命令以及选项与默认值。`apt`命令必须以具有`sudo`权限的用户运行。
@@ -23,8 +15,6 @@ APT（`A`dvanced `P`ackaging `T`ools）是`Debian`及其派生的`Linux`软件�
 ```bash
 $ apt [ OPTIONS ] COMMAND
 ```
-
-----
 
 相关参考文献
 
@@ -91,7 +81,6 @@ $ sudo apt install package_name
 ```bash
 $ sudo apt install <package_name> --only-upgrade
 ```
-<!--rehype:className=wrap-text -->
 
 安装多个软件包，包名用空格分隔。
 
@@ -107,7 +96,6 @@ $ sudo apt install /full/path/file.deb
 ```
 
 ### remove和purge
-<!--rehype:wrap-class=row-span-2-->
 
 要删除已安装的程序包，你可以使用apt子命令`remove`和`purge`。
 
@@ -145,7 +133,6 @@ $ sudo apt autoremove
 ```
 
 ### list
-<!--rehype:wrap-class=row-span-2-->
 
 打印所有软件包的列表，包括软件包的版本和结构的信息。
 
@@ -210,3 +197,7 @@ $ sudo apt update
 ```bash
 $ sudo select-editor
 ```
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/apt.md](https://github.com/jaywcjlove/reference/blob/main/docs/apt.md)
+
+获取日期：2026-10-15

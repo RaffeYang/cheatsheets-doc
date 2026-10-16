@@ -1,31 +1,39 @@
-#!/usr/bin/env python3
 import argparse
 import glob
 import os
 import re
-import shutil
+import tempfile
+import time
 from datetime import datetime
 
-import requests
-import yaml
+from pathlib import Path
+
+from markdown_format import format_markdown
 
 
 def load_config(config_file):
     """加载配置文件"""
+    import yaml
+
     with open(config_file, "r") as f:
         return yaml.safe_load(f)
 
 
-def download_file(owner, repo, branch, file_path):
-    """从 GitHub 下载特定文件的内容"""
+def download_file(owner, repo, branch, file_path, attempts=3):
+    """Download with bounded timeout and retry; failures reach the caller."""
+    import requests
     url = f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{file_path}"
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        return response.text
-    else:
-        print(f"Error downloading {url}: {response.status_code}")
-        return None
+    for attempt in range(attempts):
+        try:
+            response = requests.get(url, timeout=(10, 30))
+            response.raise_for_status()
+            if not response.text.strip():
+                raise ValueError(f"Empty upstream file: {url}")
+            return response.text
+        except (requests.RequestException, ValueError):
+            if attempt + 1 == attempts:
+                raise
+            time.sleep(2 ** attempt)
 
 
 def add_attribution(content, owner, repo, file_path, branch):
@@ -151,9 +159,10 @@ def capitalize_filename(filename):
         "prettier": "Prettier",
         "npm": "npm",
         "yarn": "Yarn",
-        "pnpm": "pnpm",
-        "pip": "pip",
-        "conda": "Conda",
+        "pnpm": "PNPM",
+        "pip": "Pip",
+        "uv": "UV",
+        "rust": "Rust",
         "homebrew": "Homebrew",
         "apt": "APT",
         "yum": "YUM",
@@ -258,91 +267,98 @@ def capitalize_filename(filename):
     return os.path.join(path, new_name)
 
 
+def prepare_content(content, destination):
+    from doc_quality import fenced_blocks, check_document
+    formatted = format_markdown(content)
+    if fenced_blocks(content) != fenced_blocks(formatted):
+        raise ValueError(f"Code fences changed: {destination}")
+    if Path(destination).name == "UV.md":
+        formatted = re.sub(r"(?m)^# uv(?=\s|$)", "# UV", formatted, count=1)
+    errors = check_document(formatted, Path(destination), links=False)
+    if errors:
+        raise ValueError("; ".join(errors))
+    return formatted
+
+
 def save_file(content, destination):
-    """保存文件内容到目标路径"""
-    # 确保目标目录存在
-    os.makedirs(os.path.dirname(destination), exist_ok=True)
+    """Validate first, then atomically replace a single UTF-8 document."""
+    destination = Path(destination)
+    formatted = prepare_content(content, destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=destination.parent,
+                                         prefix=".reference-", delete=False) as handle:
+            temporary = Path(handle.name)
+            handle.write(formatted)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, destination)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
 
-    # 确保文件名首字母大写
-    destination = capitalize_filename(destination)
 
-    with open(destination, "w", encoding="utf-8") as f:
-        f.write(content)
+CUSTOM_MAPPING = {
+    "custom/languages": "docs/languages", "custom/frameworks": "docs/frameworks",
+    "custom/tools": "docs/tools", "custom/formats": "docs/formats",
+    "custom/references": "docs/references", "custom/prompts": "prompts",
+    "custom/snippets": "snippets", "custom/misc": "misc",
+}
 
-    print(f"Saved to {destination}")
+
+def custom_contents():
+    result = {}
+    for source, target in CUSTOM_MAPPING.items():
+        for path in sorted(Path(source).glob("*.md")):
+            destination = str(Path(target) / path.name)
+            if not Path(destination).exists():
+                destination = str(Path(target) / capitalize_filename(path.name))
+            if destination.casefold() in {p.casefold() for p in result}:
+                raise ValueError(f"Duplicate custom destination: {destination}")
+            result[destination] = path.read_text(encoding="utf-8")
+    return result
 
 
 def update_references(config):
-    """根据配置更新参考资料"""
-    for repo_config in config["repositories"]:
-        owner = repo_config["owner"]
-        repo = repo_config["repo"]
-        branch = repo_config.get("branch", "main")
-
-        print(f"\nProcessing {owner}/{repo}...")
-
-        for file_config in repo_config["files"]:
-            file_path = file_config["path"]
-            destination = file_config["destination"]
-            start_marker = file_config.get("start_marker")
-            end_marker = file_config.get("end_marker")
-            transformations = file_config.get("transformations")
-
-            print(f"  Downloading {file_path}...")
-            content = download_file(owner, repo, branch, file_path)
-
-            if content:
-                # 添加归属信息
-                content = add_attribution(content, owner, repo, file_path, branch)
-
-                # 过滤内容（如果指定了标记）
-                content = filter_content(content, start_marker, end_marker)
-
-                # 转换内容（如果指定了转换）
-                content = transform_content(content, transformations)
-
-                # 保存到目标位置
-                save_file(content, destination)
+    """Stage every candidate and aggregate errors before replacing any output."""
+    from doc_quality import config_entries
+    pending, errors = {}, []
+    custom = custom_contents()
+    entries = list(config_entries(config))
+    for owner, repo, branch, item in entries:
+        destination = item["destination"]
+        if destination in custom:
+            continue
+        try:
+            raw = download_file(owner, repo, branch, item["path"])
+            start, end = item.get("start_marker"), item.get("end_marker")
+            if start or end:
+                if not start or not end or raw.find(start) < 0 or raw.find(end, raw.find(start)) < 0:
+                    raise ValueError("Filter markers missing or incomplete")
+            content = filter_content(raw, start, end)
+            content = transform_content(content, item.get("transformations"))
+            content = add_attribution(content, owner, repo, item["path"], branch)
+            pending[destination] = prepare_content(content, destination)
+        except Exception as exc:
+            errors.append(f"{destination}: {exc}")
+    for destination, content in custom.items():
+        try:
+            pending[destination] = prepare_content(content, destination)
+        except Exception as exc:
+            errors.append(f"{destination}: {exc}")
+    if errors:
+        raise ValueError("Update aborted; no documents replaced:\n" + "\n".join(errors))
+    for destination, content in pending.items():
+        save_file(content, destination)
+    return len(pending)
 
 
 def process_custom_files():
-    """处理用户自定义的 .md 文件"""
-    print("\nProcessing custom .md files...")
-
-    # 定义源目录和目标目录映射
-    directory_mapping = {
-        "custom/languages": "docs/languages",
-        "custom/frameworks": "docs/frameworks",
-        "custom/tools": "docs/tools",
-        "custom/formats": "docs/formats",
-        "custom/references": "docs/references",
-        "custom/prompts": "prompts",
-        "custom/snippets": "snippets",
-        "custom/misc": "misc",
-    }
-
-    # 确保所有自定义目录存在
-    for src_dir in directory_mapping.keys():
-        os.makedirs(src_dir, exist_ok=True)
-
-    # 处理每个自定义目录中的 .md 文件
-    for src_dir, dest_dir in directory_mapping.items():
-        md_files = glob.glob(f"{src_dir}/*.md")
-
-        for md_file in md_files:
-            # 获取文件名
-            _, filename = os.path.split(md_file)
-
-            # 创建目标路径（确保首字母大写）
-            dest_path = os.path.join(dest_dir, filename)
-            dest_path = capitalize_filename(dest_path)
-
-            # 确保目标目录存在
-            os.makedirs(os.path.dirname(dest_path), exist_ok=True)
-
-            # 复制文件
-            shutil.copy2(md_file, dest_path)
-            print(f"Copied custom file: {md_file} -> {dest_path}")
+    pending = {path: prepare_content(content, path) for path, content in custom_contents().items()}
+    for path, content in pending.items():
+        save_file(content, path)
+    return len(pending)
 
 
 def create_initial_structure():
@@ -412,6 +428,21 @@ def create_initial_structure():
     print("Initial directory structure created.")
 
 
+def format_existing_files(check=False):
+    """离线规范化已存在的文档，默认不重新下载上游。"""
+    changed = 0
+    for directory in ("docs", "prompts"):
+        for path in sorted(Path(directory).rglob("*.md")):
+            original = path.read_text(encoding="utf-8")
+            formatted = format_markdown(original)
+            if original != formatted:
+                changed += 1
+                print(f"{'Needs formatting' if check else 'Formatted'}: {path}")
+                if not check:
+                    save_file(formatted, path)
+    return changed
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Update reference materials from GitHub repositories"
@@ -425,7 +456,17 @@ def main():
     parser.add_argument(
         "--custom-only", action="store_true", help="Only process custom files"
     )
+    parser.add_argument("--format-only", action="store_true", help="Format local docs without downloading")
+    parser.add_argument("--check", action="store_true", help="With --format-only, check without writing")
     args = parser.parse_args()
+    if args.check and not args.format_only:
+        parser.error("--check requires --format-only")
+    if args.format_only:
+        changed = format_existing_files(check=args.check)
+        print(f"{changed} file(s) {'need formatting' if args.check else 'formatted'}")
+        if args.check and changed:
+            raise SystemExit(1)
+        return
 
     if args.init:
         create_initial_structure()
@@ -434,8 +475,8 @@ def main():
         config = load_config(args.config)
         update_references(config)
 
-    # 处理用户自定义的 .md 文件
-    process_custom_files()
+    if args.custom_only:
+        process_custom_files()
 
     print("\nAll references updated successfully!")
 

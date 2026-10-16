@@ -1,8 +1,9 @@
 Keynote 备忘清单
 
 ### 通用操作
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 开始语音输入 | Start dictation | Fn-D |
 | 打开主题选择器 | Open the theme chooser | ⌘N |
 | 打开主题选择器并显示语言弹出菜单 | Open the theme chooser and show the Language pop-up menu | ⌥⌘N |
@@ -47,8 +48,9 @@ Keynote 备忘清单
 | 退出但保留窗口 | Quit Keynote and keep windows open | ⌥⌘Q |
 
 ### 文本导航
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 左移一个字符 | Move one character to the left | ← |
 | 右移一个字符 | Move one character to the right | → |
 | 向后移动一个字符 | Move one character backward | ⌃B |
@@ -75,8 +77,9 @@ Keynote 备忘清单
 | 跳转到指定幻灯片 | Go to specific slide | ⌃⌘G |
 
 ### 文本选择
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 选择一个或多个字符 | Select one or more characters | 点击并拖动 |
 | 选择一个单词 | Select a word | 双击 |
 | 选择一个段落 | Select a paragraph | 三击 |
@@ -99,8 +102,9 @@ Keynote 备忘清单
 | 移动项目符号及其子项 | Move bullet with sub-bullets | 拖动项目符号 |
 
 ### 文字格式
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 显示字体窗口 | Show the Fonts window | ⌘T |
 | 显示颜色窗口 | Show the Colors window | ⇧⌘C |
 | 加粗 | Apply boldface | ⌘B |
@@ -118,9 +122,9 @@ Keynote 备忘清单
 | 上标 | Superscript | ⌃⌘+ |
 | 下标 | Subscript | ⌃⌘- |
 | 左对齐 | Align left | ⌘{ |
-| 居中对齐 | Center text | ⌘| |
+| 居中对齐 | Center text | ⌘ |  |
 | 右对齐 | Align right | ⌘} |
-| 两端对齐 | Justify | ⌥⌘| |
+| 两端对齐 | Justify | ⌥⌘ |  |
 | 减少缩进 | Decrease indent | ⌘[ |
 | 增加缩进 | Increase indent | ⌘] |
 | 减少列表缩进 | Decrease list indent | ⇧Tab |
@@ -141,8 +145,9 @@ Keynote 备忘清单
 | 交换前后字符 | Transpose characters | ⌃T |
 
 ### 表格与对象操作
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 显示或隐藏对象列表 | Show or hide the object list | ⇧⌘L |
 | 全选对象 | Select all objects | 选择一个对象后 ⌘A |
 | 取消选择对象 | Deselect all objects | 选择一个对象后 ⇧⌘A |
@@ -186,8 +191,9 @@ Keynote 备忘清单
 | 定义为文本占位符 | Define as text placeholder | ⌃⌥⌘T |
 
 ### 演示控制
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 播放演示文稿 | Play presentation | ⌥⌘P |
 | 从第一张幻灯片播放 | Play from first slide | ⌥点击播放按钮 |
 | 下一张幻灯片或构建 | Next slide or build | → 或 ↓ |
@@ -221,8 +227,9 @@ Keynote 备忘清单
 | 排练模式中切换显示器 | Switch displays in rehearsal mode | ⌥X |
 
 ### 幻灯片管理
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 创建同级新幻灯片 | Create new slide (same level) | Return 或 ⇧⌘N |
 | 缩进幻灯片 | Indent slide | Tab |
 | 减少缩进 | Outdent slide | ⇧Tab |
@@ -247,8 +254,9 @@ Keynote 备忘清单
 | 选择最后一张幻灯片 | Select last slide | ⌘↓ |
 
 ### 图形编辑
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 编辑自定义形状 | Make a custom shape editable | 双击形状边缘 |
 | 使用钢笔工具绘制形状 | Draw a custom shape with Pen tool | ⌥⇧⌘P |
 | 移动形状节点 | Move point of editable shape | 拖动节点 |
@@ -261,8 +269,9 @@ Keynote 备忘清单
 | 调整贝塞尔曲线 | Reshape Bézier control | 拖动控制柄 |
 
 ### 表格编辑
+
 | 命令（中文） | Command (EN) | Shortcut |
-|---|---|---|
+| --- | --- | --- |
 | 插入公式 | Insert equation | ⌥⌘E |
 | 在上方添加行 | Add row above | ⌥↑ |
 | 在下方添加行 | Add row below | ⌥↓ |
@@ -311,5 +320,3 @@ Keynote 备忘清单
 | 启用自动填充 | Turn on autofill mode | ⌘\ |
 | 从左侧列填充 | Autofill from left column | ⌃⌘\ |
 | 从上方行填充 | Autofill from above row | ⌥⌘\ |
-
-

@@ -1,16 +1,8 @@
-
-<!-- 
-Source: https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md
-Retrieved on: 2026-10-15
--->
-
-package.json 备忘清单
-===
+# package.json 备忘清单
 
 这个快速参考备忘清单，显示了关于 package.json 文件中所需内容的全部内容。
 
-重要字段
-----
+## 重要字段
 
 ### 介绍
 
@@ -19,7 +11,7 @@ package.json 备忘清单
 - [npm 文档](https://docs.npmjs.com/files/package.json) _(npmjs.com)_
 - [yarnpkg 文档](https://classic.yarnpkg.com/en/docs/package-json) _(yarnpkg.com)_
 - [packages 文档](https://nodejs.org/api/packages.html) _(nodejs.org)_
-- [npm 备忘清单(速查表)](./npm.md) _(jaywcjlove.github.io)_
+- [npm 备忘清单(速查表)](https://github.com/jaywcjlove/reference/blob/main/docs/npm.md) _(jaywcjlove.github.io)_
 
 ### `name`
 
@@ -57,7 +49,6 @@ package.json 备忘清单
 如果没有 `name` 和`version` 字段，您的包将无法安装
 
 ### 安装 `name` 包
-<!--rehype:wrap-class=col-span-2-->
 
 ```sh
 yarn add [包名]
@@ -76,12 +67,10 @@ npmjs 下载地址
 ```bash
 https://registry.npmjs.org/[包名]/-/[包名]-[version].tgz
 ```
-<!--rehype:className=wrap-text-->
 
 这是您的 `包` 的名称。 它在URL中使用，作为参数命令行，以及 `node_modules` 中的目录名。
 
-信息类字段
-----
+## 信息类字段
 
 ### `description`
 
@@ -94,7 +83,6 @@ https://registry.npmjs.org/[包名]/-/[包名]-[version].tgz
 帮助使用者了解包的功能的字符串，包管理器也会把这个字符串作为搜索关键词。
 
 ### `license`
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 所有包都应该指定许可证，以便让用户了解他们是在什么授权下使用此包，以及此包还有哪些附加限制。
 
@@ -128,8 +116,7 @@ https://registry.npmjs.org/[包名]/-/[包名]-[version].tgz
 
 一个字符串数组，当在包管理器里搜索包时很有用。
 
-链接类字段
-----
+## 链接类字段
 
 各种指向项目文档、issues 上报，以及代码托管网站的链接字段。
 
@@ -144,7 +131,6 @@ https://registry.npmjs.org/[包名]/-/[包名]-[version].tgz
 是包的项目主页或者文档首页。
 
 ### `repository`
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 ```json
 {
@@ -170,8 +156,7 @@ https://registry.npmjs.org/[包名]/-/[包名]-[version].tgz
 
 问题反馈系统的 URL，或者是 email 地址之类的链接。用户通过该途径向你反馈问题。
 
-项目维护类字段
-----
+## 项目维护类字段
 
 ### `author`
 
@@ -191,7 +176,6 @@ https://registry.npmjs.org/[包名]/-/[包名]-[version].tgz
 作者信息，一个人。
 
 ### `contributors`
-<!--rehype:wrap-class=col-span-2-->
 
 ```json
 {
@@ -292,7 +276,6 @@ https://registry.npmjs.org/[包名]/-/[包名]-[version].tgz
 ## 打包包字段
 
 ### `esnext`
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 完整的[提案在这里](http://2ality.com/2017/04/transpiling-dependencies-babel.html)。 简短说明：
 
@@ -387,14 +370,13 @@ import sub from "mod/sub"
 ```
 
 ### 条件导出(exports)
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
-:- | -
-:- | -
-`export` | 通过 `import` 或 `import()` 或 `es` 模块加载的任何顶层导入或解析操作加载时，匹配。
-`require` | 当包通过 `require()` 加载时匹配。预期的格式包括 CommonJS、JSON 和本地插件。
-`node` | 匹配任何 `Node.js` 环境。可以是 `cjs` 或 `es` 模块文件。必须在 `import` 或 `require` 之后。
-`default` | 默认的降级条件。可以是一个 `cjs` 或 `es` 模块文件。这个条件应该总是排在最后。
+| :- | - |
+| :- | - |
+| `export` | 通过 `import` 或 `import()` 或 `es` 模块加载的任何顶层导入或解析操作加载时，匹配。 |
+| `require` | 当包通过 `require()` 加载时匹配。预期的格式包括 CommonJS、JSON 和本地插件。 |
+| `node` | 匹配任何 `Node.js` 环境。可以是 `cjs` 或 `es` 模块文件。必须在 `import` 或 `require` 之后。 |
+| `default` | 默认的降级条件。可以是一个 `cjs` 或 `es` 模块文件。这个条件应该总是排在最后。 |
 
 ```js
 {
@@ -409,7 +391,7 @@ import sub from "mod/sub"
 }
 ```
 
-<red>注意：</red>由于 `require` 和 `import` 互斥，所以 `require` 不能加载 `es` 的模块，`export` 不能加载 `cjs` 模块
+注意：由于 `require` 和 `import` 互斥，所以 `require` 不能加载 `es` 的模块，`export` 不能加载 `cjs` 模块
 
 ### `main` Vs `exports`
 
@@ -420,7 +402,7 @@ import sub from "mod/sub"
 } 
 ```
 
-如果同时出现 <red>~~`main`~~</red> 和 `exports` 字段，只会读取 `exports` 字段
+如果同时出现 ~~`main`~~ 和 `exports` 字段，只会读取 `exports` 字段
 
 ## 任务类字段
 
@@ -440,16 +422,11 @@ import sub from "mod/sub"
 
 有一些特殊的脚本名称。 如果定义了 `preinstall` 脚本，它会在包安装前被调用。 出于兼容性考虑，`install`、`postinstall` 和 `prepublish` 脚本会在包完成安装后被调用。
 
-----
-
 `start` 脚本的默认值为 `node server.js`。
-
-----
 
 参考文档：[npm docs](https://docs.npmjs.com/files/package.json#default-values)
 
 ### 特定的 `scripts`
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 对于以下脚本，`npm` 支持 `package.json` 文件的 `scripts` 默认命令字段：
 
@@ -501,7 +478,6 @@ import sub from "mod/sub"
 你的包很可能依赖其他包。你可以在你的 `package.json` 文件里指定那些依赖。
 
 ### `dependencies`
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 这些是你的包的开发版和发布版都需要的依赖。
 
@@ -531,7 +507,6 @@ import sub from "mod/sub"
 参考文档：[npm docs](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#dependencies).
 
 ### workspaces
-<!--rehype:wrap-class=row-span-2-->
 
 ```json
 {
@@ -641,13 +616,11 @@ import sub from "mod/sub"
 
 它允许对等依赖项标记为可选
 
-系统
-----
+## 系统
 
 你可以提供和你的包关联的系统级的信息，比如操作系统兼容性之类。
 
 ### `engines`
-<!--rehype:wrap-class=col-span-2 row-span-2-->
 
 指定使用你的包客户必须使用的版本，这将检查 `process.versions` 以及当前 `yarn` 版本。
 
@@ -686,8 +659,7 @@ import sub from "mod/sub"
 
 使用这个选项指定你的包将只能在某些 CPU 体系架构上运行，这会检查 `process.arch`。
 
-发布
-----
+## 发布
 
 ### `private`
 
@@ -700,7 +672,6 @@ import sub from "mod/sub"
 如果你不想你的包发布到包管理器(npm 或者 私有包管理)，设置为 `true`。
 
 ### `publishConfig`
-<!--rehype:wrap-class=col-span-2-->
 
 这些配置值将在你的包发布时使用。比如，你可以给包打标签。
 
@@ -716,12 +687,9 @@ import sub from "mod/sub"
 
 可以覆盖任何配置值，但只有 `tag`，`registry` 和 `access` 可能对于发布而言很重要，[npm-config](https://docs.npmjs.com/misc/config#config-settings)。
 
-Yarn
-----
+## Yarn
 
 ### `flat`
-
-<!-- markdownlint-disable MD042 -->
 
 如果你的包只允许给定依赖的一个版本，你想强制和命令行上 [yarn install --flat](#) 相同的行为，把这个值设为 `true`。
 
@@ -734,7 +702,6 @@ Yarn
 请注意，如果你的 `package.json` 包含 `"flat": true` 并且其它包依赖你的包 (比如你在构建一个库，而不是应用)， 其它那些包也需要在它们的 `package.json` 加上 `"flat": true`，或者在命令行上用 `yarn install --flat` 安装。
 
 ### `resolutions`
-<!--rehype:wrap-class=col-span-2-->
 
 ```json
 {
@@ -750,11 +717,14 @@ Yarn
 
 注意，`yarn install --flat` 命令将会自动在 `package.json` 文件里加入 `resolutions` 字段。
 
-另见
-----
+## 另见
 
 - [PACKAGE.JSON 中文说明](https://jaywcjlove.github.io/package.json) _(github.io)_
 - [npm 文档](https://docs.npmjs.com/files/package.json) _(npmjs.com)_
 - [yarnpkg 文档](https://classic.yarnpkg.com/en/docs/package-json) _(yarnpkg.com)_
 - [packages 文档](https://nodejs.org/api/packages.html) _(nodejs.org)_
-- [npm 备忘清单(速查表)](./npm.md) _(jaywcjlove.github.io)_
+- [npm 备忘清单(速查表)](https://github.com/jaywcjlove/reference/blob/main/docs/npm.md) _(jaywcjlove.github.io)_
+
+来源：[https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md](https://github.com/jaywcjlove/reference/blob/main/docs/package.json.md)
+
+获取日期：2026-10-15
