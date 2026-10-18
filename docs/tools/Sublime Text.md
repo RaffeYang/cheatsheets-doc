@@ -153,4 +153,4 @@ $ subl README.md
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/sublime-text.md](https://github.com/jaywcjlove/reference/blob/main/docs/sublime-text.md)
 
-获取日期：2026-10-15
+获取日期：2026-10-18

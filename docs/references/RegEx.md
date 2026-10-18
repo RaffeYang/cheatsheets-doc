@@ -1118,4 +1118,4 @@ mysql> SELECT regexp_instr('abbabba', 'b{2}', 1, 3, 1);
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/regex.md](https://github.com/jaywcjlove/reference/blob/main/docs/regex.md)
 
-获取日期：2026-10-15
+获取日期：2026-10-18

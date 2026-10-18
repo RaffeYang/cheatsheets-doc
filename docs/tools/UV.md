@@ -30,8 +30,6 @@ pip install uv
 pipx install uv
 ```
 
-命令核对参考：[uv 官方 CLI 文档](https://docs.astral.sh/uv/reference/cli/)（2026-10-16）。
-
 ## 入门
 
 ### 创建新项目
@@ -121,4 +119,4 @@ uv build
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/uv.md](https://github.com/jaywcjlove/reference/blob/main/docs/uv.md)
 
-获取日期：2026-10-16
+获取日期：2026-10-18

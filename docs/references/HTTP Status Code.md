@@ -126,4 +126,4 @@ HTTP 状态码备忘清单。 每个 HTTP 状态代码的快速参考。
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/http-status-code.md](https://github.com/jaywcjlove/reference/blob/main/docs/http-status-code.md)
 
-获取日期：2026-10-15
+获取日期：2026-10-18

@@ -1123,4 +1123,4 @@ $ rm -vrf "$HOME/Library/Application Support/mkcert"  _wildcard.example*
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/openssl.md](https://github.com/jaywcjlove/reference/blob/main/docs/openssl.md)
 
-获取日期：2026-10-15
+获取日期：2026-10-18

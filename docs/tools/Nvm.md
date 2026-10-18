@@ -139,4 +139,4 @@ nvm npm_mirror <npm_mirror_url>
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/nvm.md](https://github.com/jaywcjlove/reference/blob/main/docs/nvm.md)
 
-获取日期：2026-10-15
+获取日期：2026-10-18

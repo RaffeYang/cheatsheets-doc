@@ -358,4 +358,4 @@ CSS 定义了一大组[命名颜色](https://www.w3.org/TR/css-color-4/#named-co
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/colors-named.md](https://github.com/jaywcjlove/reference/blob/main/docs/colors-named.md)
 
-获取日期：2026-10-15
+获取日期：2026-10-18

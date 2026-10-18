@@ -1066,4 +1066,4 @@ export const theme: Theme<typeof vars> = stylex.createTheme(vars, {
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/stylex.md](https://github.com/jaywcjlove/reference/blob/main/docs/stylex.md)
 
-获取日期：2026-10-15
+获取日期：2026-10-18

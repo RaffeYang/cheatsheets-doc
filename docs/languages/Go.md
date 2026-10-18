@@ -1402,4 +1402,4 @@ type ReadWriter interface {  // ReadWriter 接口既有方法也有类型，所�
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/golang.md](https://github.com/jaywcjlove/reference/blob/main/docs/golang.md)
 
-获取日期：2026-10-15
+获取日期：2026-10-18
