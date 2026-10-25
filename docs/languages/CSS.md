@@ -1933,4 +1933,4 @@ ul > li:not(:last-child)::after {
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/css.md](https://github.com/jaywcjlove/reference/blob/main/docs/css.md)
 
-获取日期：2026-10-18
+获取日期：2026-10-25
