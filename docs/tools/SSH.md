@@ -298,4 +298,4 @@ $ ssh -R 5000:localhost:3306 user@example.com -N
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/ssh.md](https://github.com/jaywcjlove/reference/blob/main/docs/ssh.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01

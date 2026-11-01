@@ -19,7 +19,6 @@
 | `&ast;` | * | `&#42;` | 星号 | u+002A ISOnum | \\002a | \52 |
 | `&plus;` | + | `&#43;` | 加号 | u+002B ISOnum | \\002b | \53 |
 | `&comma;` | , | `&#44;` | 逗号 | u+002C ISOnum | \\002c | \54 |
-| `&minus;` | - | `&#45;` | 连字符减号 | u+002D ISOnum | \\002d | \55 |
 | `&period;` | . | `&#46;` | 句号 | u+002E ISOnum | \\002e | \56 |
 | `&sol;` | / | `&#47;` | 固相线 | u+002F ISOnum | \\002f | \57 |
 | `&colon;` | : | `&#58;` | 冒号 | u+003A ISOnum | \\003a | \72 |
@@ -166,7 +165,7 @@
 | ------------------ | -------- | -------------- | ----------------------------------- | ------------------ | ----------- | --------------------- |
 | `&Alpha;` | Α | `&#913;` | greek capital letter alpha | u+0391 | \\0391 | \u0391 |
 | `&Beta;` | Β | `&#914;` | greek capital letter beta | u+0392 | \\0392 | \u0392 |
-| `&Gamma;` | Γ | `&#915;` | greek capital letter gamma | u+0393 ISOgrk3 | \\0393 | \u0395 |
+| `&Gamma;` | Γ | `&#915;` | greek capital letter gamma | u+0393 ISOgrk3 | \\0393 | \u0393 |
 | `&Delta;` | Δ | `&#916;` | greek capital letter delta | u+0394 ISOgrk3 | \\0394 | \u0394 |
 | `&Epsilon;` | Ε | `&#917;` | greek capital letter epsilon | u+0395 | \\0395 | \u0395 |
 | `&Zeta;` | Ζ | `&#918;` | greek capital letter zeta | u+0396 | \\0396 | \u0396 |
@@ -209,7 +208,7 @@
 | `&sigma;` | σ | `&#963;` | greek small letter sigma | u+03C3 ISOgrk3 | \\03C3 | \u03c3 |
 | `&tau;` | τ | `&#964;` | greek small letter tau | u+03C4 ISOgrk3 | \\03C4 | \u03c4 |
 | `&upsilon;` | υ | `&#965;` | greek small letter upsilon | u+03C5 ISOgrk3 | \\03C5 | \u03c5 |
-| `&phi;` | φ | `&#966;` | greek small letter phi | u+03C6 ISOgrk3 | \\03C6 | \03c6 |
+| `&phi;` | φ | `&#966;` | greek small letter phi | u+03C6 ISOgrk3 | \\03C6 | \u03c6 |
 | `&chi;` | χ | `&#967;` | greek small letter chi | u+03C7 ISOgrk3 | \\03C7 | \u03c7 |
 | `&psi;` | ψ | `&#968;` | greek small letter psi | u+03C8 ISOgrk3 | \\03C8 | \u03c8 |
 | `&omega;` | ω | `&#969;` | greek small letter omega | u+03C9 ISOgrk3 | \\03C9 | \u03c9 |
@@ -241,12 +240,12 @@
 | `&permil;` | ‰ | `&#8240;` | per mille sign | u+2030 ISOtech | \\2030 | \u2030 |
 | `&lsaquo;` | ‹ | `&#8249;` | single left-pointing angle quotation mark | u+2039 ISO proposed | \\2039 | \u2039 |
 | `&rsaquo;` | › | `&#8250;` | single right-pointing angle quotation mark | u+203A ISO proposed | \\203A | \u203a |
-| `&bull;` | • | `&#8226;` | bullet, aka. black small circle | u+2022 ISOpub | \\2022 | \u2219 |
+| `&bull;` | • | `&#8226;` | bullet, aka. black small circle | u+2022 ISOpub | \\2022 | \u2022 |
 | `&hellip;` | … | `&#8230;` | horizontal ellipsis, aka three dot leader | u+2026 ISOpub | \\2026 | \u2026 |
 | `&prime;` | ′ | `&#8242;` | prime, aka minutes, aka feet | u+2032 ISOtech | \\2032 | \u2032 |
 | `&Prime;` | ″ | `&#8243;` | double prime, aka seconds, aka inches | u+2033 ISOtech | \\2033 | \u2033 |
 | `&oline;` | ‾ | `&#8254;` | overline, aka spacing overscore | u+203E NEW | \\203E | \u203e |
-| `&frasl;` | ⁄ | `&#8260;` | fraction slash | u+2044 NEW | \\2044 | \u8260 |
+| `&frasl;` | ⁄ | `&#8260;` | fraction slash | u+2044 NEW | \\2044 | \u2044 |
 
 ### HTML Letter-like Symbols
 
@@ -256,7 +255,7 @@
 | `&image;` | ℑ | `&#8465;` | blackletter capital I, aka imaginary part | u+2111 ISOamso | \\2111 | \u2111 |
 | `&real;` | ℜ | `&#8476;` | blackletter capital R, aka real part symbol | u+211C ISOamso | \\211C | \u211c |
 | `&trade;` | ™ | `&#8482;` | trade mark sign | u+2122 ISOnum | \\2122 | \u2122 |
-| `&alefsym;` | ℵ | `&#8501;` | alef symbol | u+2135 NEW | \\2135 | \u |
+| `&alefsym;` | ℵ | `&#8501;` | alef symbol | u+2135 NEW | \\2135 | \u2135 |
 
 ### HTML Arrows
 
@@ -271,12 +270,12 @@
 | `&lArr;` | ⇐ | `&#8656;` | leftwards double arrow can be used for ‘is implied by’ | u+21D0 ISOtech | \\21D0 | \u21d0 |
 | `&uArr;` | ⇑ | `&#8657;` | upwards double arrow | u+21D1 ISOamsa | \\21D1 | \u21d1 |
 | `&rArr;` | ⇒ | `&#8658;` | rightwards double arrow | u+21D2 ISOtech | \\21D2 | \u21d2 |
-| `&dArr;` | ⇓ | `&#8659;` | downwards double arrow | u+21D3 ISOamsa | \\21D3 | \ud1d3 |
+| `&dArr;` | ⇓ | `&#8659;` | downwards double arrow | u+21D3 ISOamsa | \\21D3 | \u21d3 |
 | `&hArr;` | ⇔ | `&#8660;` | left right double arrow | u+21D4 ISOamsa | \\21D4 | \u21d4 |
-|  | ◄ | `&#9668;` | black left pointing triangle | U+25C0 | \\25C0 | \u25c0 |
-|  | ► | `&#9658;` | black right pointing triangle | u+25B6 | \\25b6 | \u25b6 |
-|  | ▲ | `&#9650;` | black up pointing triangle | u+25B2 | \\25b2 | \25b2 |
-|  | ▼ | `&#9660;` | black down pointing triangle | u+25BC | \\25bc | \25bc |
+|  | ◀ | `&#9664;` | black left pointing triangle | U+25C0 | \\25C0 | \u25c0 |
+|  | ▶ | `&#9654;` | black right pointing triangle | u+25B6 | \\25b6 | \u25b6 |
+|  | ▲ | `&#9650;` | black up pointing triangle | u+25B2 | \\25b2 | \u25b2 |
+|  | ▼ | `&#9660;` | black down pointing triangle | u+25BC | \\25bc | \u25bc |
 
 ### HTML 数学运算符
 
@@ -290,16 +289,16 @@
 | `&isin;` | ∈ | `&#8712;` | element of | u+2208 ISOtech | \\2208 | \u2208 |
 | `&notin;` | ∉ | `&#8713;` | not an element of | u+2209 ISOtech | \\2209 | \u2209 |
 | `&ni;` | ∋ | `&#8715;` | contains as member | u+220B ISOtech | \\220B | \u220b |
-| `&prod;` | ∏ | `&#8719;` | n-ary product, aka product sign | u+220F ISOamsb | \\220F | \u03a0 |
-| `&sum;` | ∑ | `&#8721;` | n-ary sumation | u+2211 ISOamsb | \\2211 | \u03a3 |
+| `&prod;` | ∏ | `&#8719;` | n-ary product, aka product sign | u+220F ISOamsb | \\220F | \u220f |
+| `&sum;` | ∑ | `&#8721;` | n-ary sumation | u+2211 ISOamsb | \\2211 | \u2211 |
 | `&minus;` | − | `&#8722;` | minus sign | u+2212 ISOtech | \\2212 | \u2212 |
 | `&lowast;` | ∗ | `&#8727;` | asterisk operator | u+2217 ISOtech | \\2217 | \u2217 |
 | `&radic;` | √ | `&#8730;` | square root, aka radical sign | u+221A ISOtech | \\221A | \u221a |
 | `&prop;` | ∝ | `&#8733;` | proportional to | u+221D ISOtech | \\221D | \u221d |
 | `&infin;` | ∞ | `&#8734;` | infinity | u+221E ISOtech | \\221E | \u221e |
 | `&ang;` | ∠ | `&#8736;` | angle | u+2220 ISOamso | \\2220 | \u2220 |
-| `&and;` | ⊥ | `&#8869;` | logical and, aka wedge | u+2227 ISOtech | \\2227 | \u2227 |
-| `&or;` | ⊦ | `&#8870;` | logical or, aka vee | u+2228 ISOtech | \\2228 | \u2228 |
+| `&and;` | ∧ | `&#8743;` | logical and, aka wedge | u+2227 ISOtech | \\2227 | \u2227 |
+| `&or;` | ∨ | `&#8744;` | logical or, aka vee | u+2228 ISOtech | \\2228 | \u2228 |
 | `&cap;` | ∩ | `&#8745;` | intersection, aka cap | u+2229 ISOtech | \\2229 | \u2229 |
 | `&cup;` | ∪ | `&#8746;` | union, aka cup | u+222A ISOtech | \\222A | \u222a |
 | `&int;` | ∫ | `&#8747;` | integral | u+222B ISOtech | \\222B | \u222b |
@@ -329,8 +328,8 @@
 | `&rceil;` | ⌉ | `&#8969;` | right ceiling | u+2309 ISOamsc | \\2309 | \u2309 |
 | `&lfloor;` | ⌊ | `&#8970;` | left floor, aka apl downstile | u+230A ISOamsc | \\230A | \u230a |
 | `&rfloor;` | ⌋ | `&#8971;` | right floor | u+230B ISOamsc | \\230B | \u230b |
-| `&lang;` | 〈 | `&#9001;` | left-pointing angle bracket | u+2329 ISOtech | \\2329 | \u2329 |
-| `&rang;` | 〉 | `&#9002;` | right-pointing angle bracket | u+232A ISOtech | \\232A | \u232a |
+| `&lang;` | ⟨ | `&#10216;` | mathematical left angle bracket | u+27E8 ISOtech | \\27E8 | \u27e8 |
+| `&rang;` | ⟩ | `&#10217;` | mathematical right angle bracket | u+27E9 ISOtech | \\27E9 | \u27e9 |
 
 ### HTML 杂项
 
@@ -348,4 +347,4 @@
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/html-char.md](https://github.com/jaywcjlove/reference/blob/main/docs/html-char.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01

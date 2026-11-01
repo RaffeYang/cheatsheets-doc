@@ -1547,4 +1547,4 @@ router.push('/?counter=10', '/about?counter=10', { shallow: true })
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/nextjs.md](https://github.com/jaywcjlove/reference/blob/main/docs/nextjs.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01

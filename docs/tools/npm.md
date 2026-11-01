@@ -418,4 +418,4 @@ ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/npm.md](https://github.com/jaywcjlove/reference/blob/main/docs/npm.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01

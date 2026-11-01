@@ -128,7 +128,7 @@ api_sever = FastApi(...)
 有时候当你已经拥有详细设计文档，但未编写功能代码时，可以直接使用 docstring 中的描述来让 copilot 生成代码。
 
 ```python
-def send_email(to_address: Email, subject: str, content: HTML): -> StatusCode:
+def send_email(to_address: Email, subject: str, content: HTML) -> StatusCode:
     """
     Send email to specified address
 
@@ -190,7 +190,7 @@ class data:
 ```python
 timeout = 60
 
-def send_email(to_address: Email, subject: str, content: HTML): -> StatusCode:
+def send_email(to_address: Email, subject: str, content: HTML) -> StatusCode:
     ...
 
 class Email:
@@ -550,4 +550,4 @@ dailogs = [
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/github-copilot.md](https://github.com/jaywcjlove/reference/blob/main/docs/github-copilot.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01

@@ -219,4 +219,4 @@
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/sketch.md](https://github.com/jaywcjlove/reference/blob/main/docs/sketch.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01

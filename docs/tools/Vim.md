@@ -788,4 +788,4 @@ dfx # 删除文本直到字符“x”(包括字符“x”): delete forward x
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/vim.md](https://github.com/jaywcjlove/reference/blob/main/docs/vim.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01

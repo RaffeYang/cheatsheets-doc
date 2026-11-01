@@ -146,7 +146,7 @@ message += "Part 2."
 ```python
 >>> website = 'Quick Reference'
 >>> f"Hello, {website}"
-"Hello, Quick Reference"
+'Hello, Quick Reference'
 >>> num = 10
 >>> f'{num} + 10 = {num + 10}'
 '10 + 10 = 20'
@@ -461,7 +461,7 @@ True
 ```python
 >>> website = 'Reference'
 >>> f"Hello, {website}"
-"Hello, Reference"
+'Hello, Reference'
 >>> num = 10
 >>> f'{num} + 10 = {num + 10}'
 '10 + 10 = 20'
@@ -1109,8 +1109,8 @@ print(math.sqrt(16))  # => 4.0
 
 ```python
 from math import ceil, floor
-print(ceil(3.7))   # => 4.0
-print(floor(3.7))  # => 3.0
+print(ceil(3.7))   # => 4
+print(floor(3.7))  # => 3
 ```
 
 ### 导入一个模块的全部
@@ -1352,7 +1352,7 @@ class Dog(Animal):
         print("Woof!")
  
 Yoki = Dog("Yoki", 4)
-print(Yoki.name) # => YOKI
+print(Yoki.name) # => Yoki
 print(Yoki.legs) # => 4
 Yoki.sound()     # => Woof!
 ```
@@ -1804,11 +1804,11 @@ finally:                 # 在所有情况下执行
 def square(x):
     return x ** 2
 
-使用 map 函数
+# 使用 map 函数
 numbers = [1, 2, 3, 4]
 result = map(square, numbers)
 
-转换为列表查看结果
+# 转换为列表查看结果
 print(list(result))  # 输出: [1, 4, 9, 16]
 ```
 
@@ -1950,4 +1950,4 @@ pipenv shell
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/python.md](https://github.com/jaywcjlove/reference/blob/main/docs/python.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01

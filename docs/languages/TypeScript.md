@@ -2297,4 +2297,4 @@ $ tsc app.ts util.ts --target esnext --outfile index.js
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/typescript.md](https://github.com/jaywcjlove/reference/blob/main/docs/typescript.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01

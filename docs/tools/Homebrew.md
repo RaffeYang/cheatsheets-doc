@@ -202,4 +202,4 @@ $ sudo rm -rf /opt/homebrew
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/homebrew.md](https://github.com/jaywcjlove/reference/blob/main/docs/homebrew.md)
 
-获取日期：2026-10-25
+获取日期：2026-11-01
