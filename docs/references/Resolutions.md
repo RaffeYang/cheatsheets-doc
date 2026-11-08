@@ -261,4 +261,4 @@
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/resolutions.md](https://github.com/jaywcjlove/reference/blob/main/docs/resolutions.md)
 
-获取日期：2026-11-01
+获取日期：2026-11-08

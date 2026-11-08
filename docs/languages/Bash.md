@@ -1158,4 +1158,4 @@ m           # 设置图形模式
 
 来源：[https://github.com/jaywcjlove/reference/blob/main/docs/bash.md](https://github.com/jaywcjlove/reference/blob/main/docs/bash.md)
 
-获取日期：2026-11-01
+获取日期：2026-11-08
